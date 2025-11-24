@@ -1,0 +1,581 @@
+{
+  "decorations": {
+    "permanent_shop": [
+      {
+        "name": "Ancient Barbarian Statue",
+        "description": "A stone statue depicting a fierce barbarian warrior from ancient times. This permanent decoration adds a sense of history and power to your village.",
+        "released": "2012",
+        "availability": "Permanently available in Shop for Gold",
+        "category": "Permanent Shop Decoration"
+      },
+      {
+        "name": "Barbarian Statue",
+        "description": "A proud statue of the classic Barbarian, one of Clash's most iconic troops. Shows your appreciation for the basics.",
+        "released": "2012",
+        "availability": "Permanently available in Shop for Gold",
+        "category": "Permanent Shop Decoration"
+      },
+      {
+        "name": "Dragon Statue",
+        "description": "An imposing statue of a dragon. When tapped by visiting players, it breathes fire and roars.",
+        "released": "2012",
+        "availability": "Permanently available in Shop for Gold (requires higher Town Hall)",
+        "category": "Permanent Shop Decoration"
+      },
+      {
+        "name": "Champion Statue",
+        "description": "The rarest permanent shop decoration. This golden trophy can be tapped by visiting players to show your achievements.",
+        "released": "2012",
+        "availability": "Permanently available in Shop for very high Gold cost",
+        "category": "Permanent Shop Decoration"
+      }
+    ],
+    "war_league": [
+      {
+        "name": "Bronze League Medal",
+        "description": "A bronze medal decoration showcasing your clan's achievement in War Leagues.",
+        "released": "2017",
+        "availability": "Purchasable with League Medals, requires Bronze League or higher",
+        "category": "War League Decoration"
+      },
+      {
+        "name": "Silver League Medal",
+        "description": "A silver medal decoration displaying your clan's War League prowess.",
+        "released": "2017",
+        "availability": "Purchasable with League Medals, requires Silver League or higher",
+        "category": "War League Decoration"
+      },
+      {
+        "name": "Gold League Medal",
+        "description": "A prestigious gold medal for clans competing at Gold League level.",
+        "released": "2017",
+        "availability": "Purchasable with League Medals, requires Gold League or higher",
+        "category": "War League Decoration"
+      },
+      {
+        "name": "Champion League Trophy",
+        "description": "An elite trophy decoration for Champion League War participants.",
+        "released": "2017",
+        "availability": "Purchasable with League Medals, requires Champion League",
+        "category": "War League Decoration"
+      }
+    ],
+    "limited_events": [
+      {
+        "name": "Sleepy King",
+        "description": "An exclusive decoration showing the Barbarian King taking a royal nap. Part of Supercell ID Rewards.",
+        "released": "2024",
+        "availability": "Supercell ID Rewards - 3,000 points (available for 10 months)",
+        "category": "Limited Event Decoration"
+      },
+      {
+        "name": "Brawl's Star",
+        "description": "A special decoration honoring Brawl Stars, Supercell's iconic game. Features a glowing star with Brawl Stars branding.",
+        "released": "2024",
+        "availability": "Supercell ID Rewards - 3,000 points (available for 10 months)",
+        "category": "Limited Event Decoration"
+      },
+      {
+        "name": "Pretty Portal",
+        "description": "A swirling pink portal rotating counterclockwise with magical sparkles, framed by tree branches and leafy vines on stone steps.",
+        "released": "September 2024",
+        "availability": "Mini Spotlight Event - 1,550 Event Medals",
+        "category": "Limited Event Decoration"
+      },
+      {
+        "name": "Cuddly Chest",
+        "description": "A wooden treasure chest surrounded by gold coins. Opens and closes its lid, revealing a turquoise tongue and chomping teeth in a playful animation.",
+        "released": "September 2024",
+        "availability": "Mini Spotlight Event - 1,550 Event Medals",
+        "category": "Limited Event Decoration"
+      },
+      {
+        "name": "Storied Statue",
+        "description": "Commemorates the 'Lost and Crowned' short film (September 2020). Depicts Larry and Peter reaching for a spinning golden crown.",
+        "released": "September 2024",
+        "availability": "Mini Spotlight Event - 1,550 Event Medals",
+        "category": "Limited Event Decoration"
+      },
+      {
+        "name": "Decision Dice",
+        "description": "A floating green decision dice suspended above a glowing purple dent. Can be tapped to roll a new number.",
+        "released": "September 2024",
+        "availability": "Tabletop RPG Season - 515 Event Medals or Gold Pass",
+        "category": "Limited Event Decoration"
+      },
+      {
+        "name": "Festival Lantern",
+        "description": "A beautiful Diwali-themed lantern that glows warmly. A real celebration delight!",
+        "released": "October 2024",
+        "availability": "Diwali Event (October 10-31) - Shop purchase",
+        "category": "Limited Event Decoration"
+      },
+      {
+        "name": "9th Anniversary Cake",
+        "description": "A special cake released to celebrate Clash of Clans' 9th anniversary in August 2021.",
+        "released": "August 2021",
+        "availability": "9th Anniversary Event (August 2021)",
+        "category": "Anniversary Decoration"
+      },
+      {
+        "name": "Red Campaign Statue",
+        "description": "Barbarian King statue with red shoulder armor from the 2016 Red Campaign charity event.",
+        "released": "2016",
+        "availability": "Red Campaign Event (2016) - Later added to shop without red coloring",
+        "category": "Limited Event Decoration"
+      },
+      {
+        "name": "Master Builder Statue",
+        "description": "A statue of the Master Builder who returned in September 2017 as part of a limited edition pack.",
+        "released": "September 2017",
+        "availability": "Limited pack - 1 statue + 500 gems for $4.99 (September 2017)",
+        "category": "Limited Event Decoration"
+      }
+    ],
+    "lunar_new_year": [
+      {
+        "name": "Lunar New Year Dragon",
+        "description": "A festive dragon decoration celebrating the Lunar New Year. Features fireworks effects when tapped.",
+        "released": "February 2018",
+        "availability": "Lunar New Year Event 2018 - 500 Gold to remove, gives 25,000 Gold",
+        "category": "Lunar New Year Event"
+      },
+      {
+        "name": "Golden Money Bag",
+        "description": "A golden bag overflowing with coins. When tapped, plays gold collection sound effects and shows gold scattering.",
+        "released": "February 2018",
+        "availability": "Lunar New Year Event 2018 - 1,000 Gold to remove, gives 75,000 Gold",
+        "category": "Lunar New Year Event"
+      },
+      {
+        "name": "Snake Festival Decoration",
+        "description": "A super decoration celebrating the Year of the Snake with special Lunar New Year theming.",
+        "released": "February 2025",
+        "availability": "Snake Festival Medal Event (Feb 2025) - Snake Medals in Trader Shop",
+        "category": "Lunar New Year Event"
+      }
+    ]
+  },
+  "obstacles": {
+    "clashmas_trees": [
+      {
+        "name": "2012 Clashmas Tree",
+        "description": "The original Christmas tree from Clash's launch year. Features a unique design different from later years.",
+        "released": "December 2012",
+        "availability": "Spawned naturally during Clashmas 2012 - No longer available",
+        "category": "Special Seasonal Obstacle"
+      },
+      {
+        "name": "2013 Clashmas Tree",
+        "description": "A festive evergreen tree covered in snow and decorations. Appears during winter season.",
+        "released": "December 2013",
+        "availability": "Spawned naturally during Clashmas 2013 - No longer available",
+        "category": "Special Seasonal Obstacle"
+      },
+      {
+        "name": "2019 Clashmas Tree",
+        "description": "A snowy Christmas tree with twinkling lights. When touched, snow falls and you hear festive sounds.",
+        "released": "December 2019",
+        "availability": "Spawned naturally during Clashmas 2019 - 25,000 Gold to remove, gives 75,000 Gold",
+        "category": "Special Seasonal Obstacle"
+      },
+      {
+        "name": "2020 Clashmas Tree",
+        "description": "Another year's festive tree with unique decorations and effects.",
+        "released": "December 2020",
+        "availability": "Spawned naturally during Clashmas 2020",
+        "category": "Special Seasonal Obstacle"
+      },
+      {
+        "name": "2021 Clashmas Tree",
+        "description": "Features festive lights that twinkle. Part of the Rudolph series theme.",
+        "released": "December 2021",
+        "availability": "Spawned naturally during Clashmas 2021 or Gold Pass reward",
+        "category": "Special Seasonal Obstacle"
+      }
+    ],
+    "halloween": [
+      {
+        "name": "2015 Halloween Cauldron",
+        "description": "A bubbling cauldron that makes spooky sounds when tapped. During Halloween 2015, made special Halloween sounds.",
+        "released": "October 2015",
+        "availability": "Spawned naturally during Halloween 2015 - No longer available",
+        "category": "Halloween Obstacle"
+      },
+      {
+        "name": "2017 Halloween Tombstone",
+        "description": "A spooky tombstone with eerie effects and sounds when touched.",
+        "released": "October 2017",
+        "availability": "Spawned naturally during Halloween 2017 - No longer available",
+        "category": "Halloween Obstacle"
+      },
+      {
+        "name": "2018 Halloween Obstacle",
+        "description": "Special Halloween-themed obstacle with spooky voice effects when tapped.",
+        "released": "October 2018",
+        "availability": "Spawned naturally during Halloween 2018 - No longer available",
+        "category": "Halloween Obstacle"
+      }
+    ],
+    "anniversary_cakes": [
+      {
+        "name": "5th Anniversary Cake",
+        "description": "A celebration cake with strawberries on top, released for Clash's 5th birthday.",
+        "released": "August 2017",
+        "availability": "Spawned naturally during 5th Anniversary - 10,000 Gold to remove",
+        "category": "Anniversary Obstacle"
+      },
+      {
+        "name": "6th Anniversary Cake",
+        "description": "Similar to 5th anniversary but with blueberries instead of strawberries on top.",
+        "released": "August 2018",
+        "availability": "Spawned naturally during 6th Anniversary",
+        "category": "Anniversary Obstacle"
+      },
+      {
+        "name": "8th Anniversary Cake",
+        "description": "A pink cake with a sword stuck into it. When touched, a barbarian pops out and strikes a bodybuilding pose with cheering sounds.",
+        "released": "August 2020",
+        "availability": "Spawned during 8th Anniversary - 10,000 Gold to remove, gives 101,010 Gold",
+        "category": "Anniversary Obstacle"
+      },
+      {
+        "name": "10th Anniversary Cake",
+        "description": "Three gift boxes stacked on top of each other. When touched, shows special animations.",
+        "released": "August 2022",
+        "availability": "Spawned during 10th Anniversary",
+        "category": "Anniversary Obstacle"
+      }
+    ],
+    "special_events": [
+      {
+        "name": "Gem Box",
+        "description": "A mysterious box packed with gems! Rare and valuable - you can only have 1 at a time.",
+        "released": "2012",
+        "availability": "Spawns randomly in villages - 1,000 Elixir to remove, gives 25 Gems",
+        "category": "Special Obstacle"
+      },
+      {
+        "name": "Spike-y Cactus",
+        "description": "Released to celebrate Brawl Stars launch. Resembles the Brawler character Spike.",
+        "released": "December 2018",
+        "availability": "Spawned during Brawl Stars celebration event - No longer available",
+        "category": "Special Obstacle"
+      },
+      {
+        "name": "Mysterious Object",
+        "description": "A soccer ball obstacle for the Clash with Haaland event. Bounces when selected.",
+        "released": "April 26, 2024",
+        "availability": "Spawned during Clash with Haaland event (April 2024)",
+        "category": "Special Obstacle"
+      },
+      {
+        "name": "Money in the Bank",
+        "description": "A WWE-themed briefcase with the WWE logo, overflowing with dollar bills featuring Goblin Builder faces.",
+        "released": "April 1, 2025",
+        "availability": "Spawned during ClashaMania WWE event (April 2025)",
+        "category": "Special Obstacle"
+      },
+      {
+        "name": "Ancient Stone",
+        "description": "An extremely rare odd-looking stone from very early game versions. Only a handful of players still have it.",
+        "released": "2012 (Early Beta)",
+        "availability": "No longer available - became unobtainable shortly after game release",
+        "category": "Ultra Rare Obstacle"
+      }
+    ],
+    "meteorites_2025": [
+      {
+        "name": "Glowy Ore Meteorite",
+        "description": "A glowing meteorite that provides special ore resources when removed.",
+        "released": "November 2025",
+        "availability": "Cosmic Rock Medal Event (October-November 2025)",
+        "category": "Event Meteorite"
+      }
+    ]
+  },
+  "hero_skins": {
+    "barbarian_king": [
+      {
+        "name": "Skeleton King",
+        "description": "A Halloween-themed skeletonized king carrying a tombstone sword. Features unique animations where arms fall off while holding sword.",
+        "released": "October 2019",
+        "availability": "Gold Pass (October 2019 Season) - Later available for 1,500 Gems (October 2020)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Rudolph King",
+        "description": "Part of the Rudolph series with festive Christmas theme. Released alongside Rudolph Warden and Clashmas Queen.",
+        "released": "December 2019",
+        "availability": "Gold Pass (December 2019) - Available for 1,500 Gems (December 2020)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Haaland King",
+        "description": "Collaboration skin with soccer star Erling Haaland. Perfectly recreates Haaland's appearance in Clash universe.",
+        "released": "May 2024",
+        "availability": "Special collaboration offer - $9.99",
+        "category": "Legendary Collaboration Skin",
+        "rarity": "Legendary"
+      },
+      {
+        "name": "Squad Busters King",
+        "description": "Released as pre-registration reward for Squad Busters. Features Squad Busters art style.",
+        "released": "May 2024",
+        "availability": "Squad Busters pre-registration reward",
+        "category": "Legendary Skin",
+        "rarity": "Legendary"
+      },
+      {
+        "name": "Half-Orcish King",
+        "description": "Tabletop RPG themed skin featuring a half-orc warrior design.",
+        "released": "September 2024",
+        "availability": "Tabletop RPG Season special offer - $3.99",
+        "category": "Standard Skin",
+        "rarity": "Standard"
+      },
+      {
+        "name": "Berserker King",
+        "description": "Part of the Cosmic Curse season with fierce cosmic warrior theme.",
+        "released": "October 2024",
+        "availability": "Cosmic Curse Season special offer (October 5-31, 2024)",
+        "category": "Standard Skin",
+        "rarity": "Standard"
+      },
+      {
+        "name": "Dark Days King",
+        "description": "Noir-style vintage gangster with pinstripe outfit and old-school swagger from the Dark Days theme.",
+        "released": "June 2025",
+        "availability": "Dark Days Season special offer - $3.99",
+        "category": "Standard Skin",
+        "rarity": "Standard"
+      }
+    ],
+    "archer_queen": [
+      {
+        "name": "Ice Queen",
+        "description": "A frozen-themed queen with icy effects and animations.",
+        "released": "November 2019",
+        "availability": "Gold Pass (November 2019) - Available for 1,500 Gems (December 2020)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Clashmas Queen",
+        "description": "Part of the Christmas series alongside Rudolph King and Rudolph Warden.",
+        "released": "December 2022",
+        "availability": "Gold Pass (December 2022 Season)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Gladiator Queen",
+        "description": "Roman gladiator-themed queen with classical warrior design.",
+        "released": "September 2021",
+        "availability": "Gold Pass (September 2021 Season) - Available for 1,500 Gems (September 2022)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "9th Anniversary Queen",
+        "description": "Special anniversary skin that shoots records instead of arrows. First skin to change AQ's attack effects.",
+        "released": "August 2021",
+        "availability": "Gold Pass (August 2021 Season) - Available for 1,500 Gems (August 2022)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "World Championship Queen",
+        "description": "Celebrates 2021 CoC World Championship with special flame effects and champion-themed archers.",
+        "released": "November 2021",
+        "availability": "Special World Championship offer - $9.99",
+        "category": "Legendary Skin",
+        "rarity": "Legendary"
+      },
+      {
+        "name": "Archer Hunter (Cosmic Curse)",
+        "description": "Goth-themed queen from Cosmic Curse season with dark celestial energy and haunted appearance.",
+        "released": "October 2024",
+        "availability": "Gold Pass (October 2024 Season)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Dark Days Archer Queen",
+        "description": "Vintage noir-style queen with sleek trench coat and sharp black-and-white aesthetic.",
+        "released": "June 2025",
+        "availability": "Dark Days Season - Available in Shop",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      }
+    ],
+    "grand_warden": [
+      {
+        "name": "Rudolph Warden",
+        "description": "Christmas-themed warden as part of the Rudolph series with festive reindeer elements.",
+        "released": "December 2021",
+        "availability": "Gold Pass (December 2021 Season)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Wild West Warden",
+        "description": "Western-themed warden with cowboy styling.",
+        "released": "May 2024",
+        "availability": "Special offer alongside Wild West King",
+        "category": "Standard Skin",
+        "rarity": "Standard"
+      },
+      {
+        "name": "Eternal Warden",
+        "description": "Cosmic-themed warden who transformed a meteoroid into a deliverer of doom for Cosmic Curse season.",
+        "released": "October 2024",
+        "availability": "Cosmic Curse Season special offer (October 5-31, 2024)",
+        "category": "Standard Skin",
+        "rarity": "Standard"
+      },
+      {
+        "name": "Tabletop RPG Grand Warden",
+        "description": "Dungeons & Dragons inspired warden design from Tabletop RPG season.",
+        "released": "September 2024",
+        "availability": "Gold Pass (September 2024) - Added back after community feedback",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      }
+    ],
+    "royal_champion": [
+      {
+        "name": "Jungle Champion",
+        "description": "Tropical jungle-themed champion with nature-inspired design.",
+        "released": "April 2021",
+        "availability": "Special offer - $3.99",
+        "category": "Standard Skin",
+        "rarity": "Standard"
+      },
+      {
+        "name": "Gladiator Champion",
+        "description": "Part of the Gladiator collection with classical warrior theme.",
+        "released": "September 2021",
+        "availability": "Gold Pass (September 2021 Season)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Winter Champion",
+        "description": "Festive winter-themed champion with snowy effects.",
+        "released": "December 2020",
+        "availability": "Gold Pass (December 2020 Season)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Shadow Champion",
+        "description": "Dark shadow-themed champion from the Shadow collection.",
+        "released": "March 2022",
+        "availability": "Gold Pass (March 2022 Season)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Primal Champion",
+        "description": "Prehistoric tribal-themed champion from Primal collection.",
+        "released": "March 2022",
+        "availability": "Special offer - $9.99",
+        "category": "Legendary Skin",
+        "rarity": "Legendary"
+      },
+      {
+        "name": "Summer Champion",
+        "description": "Beach and summer-themed champion with tropical vibes.",
+        "released": "June 2022",
+        "availability": "Gold Pass (June 2022 Season)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Party Champion",
+        "description": "Celebratory party-themed champion with festive design.",
+        "released": "August 2022",
+        "availability": "Gold Pass (August 2022 Season)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Pixel Champion",
+        "description": "Retro 8-bit pixel art styled champion from Pixel collection.",
+        "released": "August 2022",
+        "availability": "Special offer - $4.99",
+        "category": "Legendary Skin",
+        "rarity": "Legendary"
+      },
+      {
+        "name": "Magic Champion",
+        "description": "Mystical magic-themed champion with spell effects from Magic collection.",
+        "released": "October 2022",
+        "availability": "Special offer - $9.99",
+        "category": "Legendary Skin",
+        "rarity": "Legendary"
+      },
+      {
+        "name": "Pirate Champion",
+        "description": "Swashbuckling pirate-themed champion from Pirate collection.",
+        "released": "November 2022",
+        "availability": "Gold Pass (November 2022 Season)",
+        "category": "Gold Pass Skin",
+        "rarity": "Gold"
+      },
+      {
+        "name": "Jolly Champion",
+        "description": "Cheerful Christmas-themed champion from Jolly collection.",
+        "released": "December 2022",
+        "availability": "Special offer - $9.99",
+        "category": "Legendary Skin",
+        "rarity": "Legendary"
+      },
+      {
+        "name": "Cursed Champion",
+        "description": "Haunted cosmic champion from Cosmic Curse season with dark celestial powers.",
+        "released": "October 2024",
+        "availability": "Cosmic Curse Season special offer (October 5-31, 2024)",
+        "category": "Standard Skin",
+        "rarity": "Standard"
+      }
+    ],
+    "minion_prince": [
+      {
+        "name": "Nightmare Prince",
+        "description": "Dark noir-era styled prince from Cosmic Curse season, swapping playful flair for sharp black-and-white aesthetics.",
+        "released": "October 2024",
+        "availability": "Cosmic Curse Season special offer (October 5-31, 2024) - Features Meteor Staff Equipment",
+        "category": "Standard Skin",
+        "rarity": "Standard"
+      },
+      {
+        "name": "Dark Days Minion Prince",
+        "description": "Noir-era rebel with black-and-white vintage gangster look fitting the gritty Dark Days streets.",
+        "released": "June 2025",
+        "availability": "Dark Days Season special offer",
+        "category": "Standard Skin",
+        "rarity": "Standard"
+      }
+    ]
+  },
+  "sceneries": [
+    {
+      "name": "Cosmic Scenery",
+      "description": "A meteoroid that drifted peacefully across the cosmos until transformed by Eternal Warden into a doom deliverer. Features space and meteor themes.",
+      "released": "October 3, 2024",
+      "availability": "Cosmic Curse Season (October 3-31, 2024)",
+      "category": "Seasonal Scenery"
+    },
+    {
+      "name": "Dark Days Scenery",
+      "description": "Transforms village into a moody black-and-white cityscape with dark alleys and flickering lights. Complete noir film aesthetic.",
+      "released": "June 2025",
+      "availability": "Dark Days Season Gold Pass",
+      "category": "Seasonal Scenery"
+    }
+  ]
+}
