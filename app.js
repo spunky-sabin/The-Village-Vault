@@ -41,11 +41,11 @@ async function loadJSON(url) {
 }
 
 async function loadAllMasterData() {
-    const decorations = await loadJSON("src/data-json/decorations.json");
-    const obstacles = await loadJSON("src/data-json/obstacles.json");
-    const heroesData = await loadJSON("src/data-json/heros.json");
-    const sceneries = await loadJSON("src/data-json/sceneries.json") || { sceneries: [] };
-    const clanCapital = await loadJSON("src/data-json/clan-capital.json") || [];
+    const decorations = await loadJSON("decorations.json");
+    const obstacles = await loadJSON("obstacles.json");
+    const heroesData = await loadJSON("heros.json");
+    const sceneries = await loadJSON("sceneries.json") || { sceneries: [] };
+    const clanCapital = await loadJSON("clan-capital.json") || [];
 
     // Format Decorations
     const formattedDecorations = decorations ? decorations.map(item => ({
