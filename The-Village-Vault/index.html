@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Village Vault - The Ultimate Encyclopedia of In-Game Assets</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Homepage Specific Styles */
+        body.homepage {
+            background: hsl(210, 30%, 8%);
+        }
+
+        
+
+        .hero-section {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, 
+                hsla(210, 30%, 8%, 1) 0%,
+                hsla(210, 25%, 12%, 0.8) 50%,
+                hsla(210, 30%, 8%, 1) 100%);
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, hsla(45, 100%, 60%, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, hsla(174, 77%, 47%, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 0%, hsla(210, 30%, 15%, 0.5) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            width: 100%;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            filter: drop-shadow(0 10px 30px hsla(45, 100%, 60%, 0.3));
+            animation: float 3s ease-in-out infinite;
+            display: none;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            color: var(--foreground);
+            text-shadow: 0 2px 10px hsla(0, 0%, 0%, 0.5),
+                        0 0 30px hsla(45, 100%, 60%, 0.3);
+            line-height: 1.2;
+            margin: 0;
+        }
+
+        .hero-title .highlight {
+            color: var(--gold);
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3.5vw, 2rem);
+            color: hsl(210, 15%, 85%);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            line-height: 1.6;
+            max-width: 100%;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            color: hsl(210, 15%, 80%);
+            line-height: 1.8;
+            max-width: 100%;
+            margin: 1rem 0;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            align-items: center;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            color: hsl(210, 15%, 80%);
+            flex-wrap: wrap;
+        }
+
+        .feature-icon {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 50%;
+            flex-shrink: 0;
+            font-weight: bold;
+            color: var(--primary-foreground);
+            font-size: 1.2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-btn {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            border: 2px solid;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .hero-btn-primary {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            color: var(--primary-foreground);
+            border-color: var(--gold);
+            box-shadow: 0 4px 15px hsla(45, 100%, 60%, 0.3);
+        }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px hsla(45, 100%, 60%, 0.5);
+        }
+
+        .hero-btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .hero-btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .hero-btn-secondary:hover {
+            background: hsla(45, 100%, 60%, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px hsla(45, 100%, 60%, 0.2);
+        }
+
+        .hero-btn-secondary:active {
+            transform: translateY(0);
+        }
+
+        .hero-btn-upload {
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .hero-btn-upload:hover {
+            background: hsla(45, 100%, 60%, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px hsla(45, 100%, 60%, 0.2);
+        }
+
+        .hero-btn-upload:active {
+            transform: translateY(0);
+        }
+
+        .hero-image-container {
+            flex: 1;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            min-height: 500px;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px hsla(0, 0%, 0%, 0.7));
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% {
+                filter: drop-shadow(0 20px 40px hsla(0, 0%, 0%, 0.7));
+            }
+            50% {
+                filter: drop-shadow(0 30px 50px hsla(45, 100%, 60%, 0.2));
+            }
+        }
+
+        .hero-image-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, hsla(45, 100%, 60%, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(40px);
+            z-index: -1;
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+            padding: 2rem;
+            background: hsla(210, 20%, 16%, 0.5);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            color: hsl(210, 15%, 75%);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .hero-content {
+                gap: 1.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-btn {
+                justify-content: center;
+                width: 100%;
+            }
+
+            .hero-image-container {
+                min-height: 300px;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-container {
+                padding: 1rem;
+            }
+
+            .hero-title {
+                font-size: 1.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            .hero-subtitle {
+                font-size: 0.95rem;
+            }
+
+            .hero-description {
+                font-size: 0.95rem;
+            }
+
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Additional Enhancements */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .hero-logo,
+            .hero-image,
+            .hero-image-glow {
+                animation: none;
+            }
+
+            .hero-btn:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="homepage">
+    <div id="root">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-background"></div>
+            <div class="hero-container">
+                <!-- Left Content -->
+                <div class="hero-content">
+                    <!-- Logo will be placed here -->
+                    <div class="hero-logo-container">
+                        <img src="src/assets/logo.png" alt="The Village Vault" class="hero-logo" onerror="this.style.display='none'">
+                    </div>
+
+                    <div>
+                        <h1 class="hero-title">
+                            THE VILLAGE <span class="highlight">VAULT</span>
+                        </h1>
+                        <p class="hero-subtitle">
+                            The Ultimate Encyclopedia of In-Game Assets.
+                        </p>
+                    </div>
+
+                    <p class="hero-description">
+                        Discover, track, and explore every cosmetic item in your favorite game. 
+                        From hero skins to decorations, we've got everything catalogued and ready for you.
+                    </p>
+
+                    <div class="hero-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span>Browse all hero skins, decorations, and cosmetics</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span>Track your collection and find missing items</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span>Advanced filtering and powerful search</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">✓</div>
+                            <span>Organize by category or view everything at once</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-buttons">
+                        <a href="index-vanilla.html" class="hero-btn hero-btn-primary">
+                            Browse All Cosmetics →
+                        </a>
+                        <button class="hero-btn hero-btn-upload" onclick="openUploadModal()">
+                            Upload Collection Data
+                        </button>
+                        <button class="hero-btn hero-btn-secondary" onclick="document.querySelector('.stats-section').scrollIntoView({behavior: 'smooth'})">
+                            Learn More ↓
+                        </button>
+                    </div>
+                    
+                    <!-- Upload Modal -->
+                    <div id="upload-modal-homepage" class="modal" style="display: none;">
+                        <div class="modal-overlay"></div>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h2 class="modal-title">
+                                    <svg class="modal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17 8 12 3 7 8"></polyline>
+                                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    </svg>
+                                    Upload Your Collection Data
+                                </h2>
+                                <button class="modal-close-btn" onclick="closeUploadModal()">&times;</button>
+                            </div>
+                            <p class="modal-description">Paste your game's JSON data below to track your collection progress. The app will automatically detect which items you own.</p>
+
+                            <div class="modal-instructions">
+                                <h4>How to get your data:</h4>
+                                <ol>
+                                    <li>Open your game's data export feature</li>
+                                    <li>Copy the entire JSON data output</li>
+                                    <li>Paste it into the text area below</li>
+                                    <li>Click "Analyze Collection" to see your progress</li>
+                                </ol>
+                            </div>
+
+                            <div class="modal-form">
+                                <label class="textarea-label">JSON Data</label>
+                                <textarea 
+                                    id="json-input-homepage" 
+                                    class="json-textarea" 
+                                    placeholder='Paste your JSON data here... Example: {"decorations": [{"Code": 1001, "Count": 1}], ...}'
+                                ></textarea>
+                            </div>
+
+                            <div class="modal-actions">
+                                <button class="btn btn-secondary" onclick="closeUploadModal()">Cancel</button>
+                                <button class="btn btn-primary" onclick="handleHomepageUpload()">
+                                    <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                                    </svg>
+                                    <span>Analyze Collection</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-section">
+                        <div class="stat-item">
+                            <div class="stat-number">4</div>
+                            <div class="stat-label">Categories</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">1000+</div>
+                            <div class="stat-label">Items</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Item Types</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">∞</div>
+                            <div class="stat-label">Possibilities</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="hero-image-container">
+                    <div class="hero-image-wrapper">
+                        <div class="hero-image-glow"></div>
+                        <img src="src/assets/hero-image.png" alt="The Village Vault Hero" class="hero-image" onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Modal functions
+        function openUploadModal() {
+            document.getElementById('upload-modal-homepage').style.display = 'flex';
+        }
+
+        function closeUploadModal() {
+            document.getElementById('upload-modal-homepage').style.display = 'none';
+        }
+
+        // Handle JSON upload and parsing
+        function handleHomepageUpload() {
+            const input = document.getElementById('json-input-homepage').value.trim();
+            if (!input) {
+                showToast("Error", "Please paste your JSON!", "error");
+                return;
+            }
+
+            try {
+                const parsed = JSON.parse(input);
+                // Save to sessionStorage so it persists during the session
+                sessionStorage.setItem('userCollectionData', JSON.stringify(parsed));
+                showToast("Success!", "Data saved! Redirecting to app...");
+                
+                // Close modal
+                closeUploadModal();
+                
+                // Redirect after a short delay
+                setTimeout(() => {
+                    window.location.href = 'index-vanilla.html';
+                }, 1500);
+            } catch (error) {
+                showToast("Invalid JSON", "Please check your JSON formatting", "error");
+                console.error('JSON Parse Error:', error);
+            }
+        }
+
+        // Toast notification function
+        function showToast(title, message, type = "success") {
+            const style = document.createElement('style');
+            if (!document.getElementById('toast-styles')) {
+                style.id = 'toast-styles';
+                style.textContent = `
+                    .toast-container {
+                        position: fixed;
+                        bottom: 2rem;
+                        right: 2rem;
+                        z-index: 9999;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+                    .toast {
+                        background: hsl(142, 76%, 47%);
+                        color: white;
+                        padding: 1rem 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                        font-size: 1rem;
+                        animation: slideIn 0.3s ease;
+                    }
+                    .toast-error {
+                        background: hsl(0, 84.2%, 60.2%);
+                    }
+                    .toast-fade-out {
+                        animation: slideOut 0.3s ease;
+                    }
+                    @keyframes slideIn {
+                        from {
+                            transform: translateX(400px);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: translateX(0);
+                            opacity: 1;
+                        }
+                    }
+                    @keyframes slideOut {
+                        to {
+                            transform: translateX(400px);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+
+            let container = document.getElementById('toast-container-homepage');
+            if (!container) {
+                container = document.createElement('div');
+                container.id = 'toast-container-homepage';
+                container.className = 'toast-container';
+                document.body.appendChild(container);
+            }
+
+            const toast = document.createElement('div');
+            toast.className = `toast ${type === 'error' ? 'toast-error' : ''}`;
+            toast.innerHTML = `<strong>${title}</strong><br>${message}`;
+            
+            container.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('toast-fade-out');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Close modal when clicking overlay
+        document.addEventListener('click', function(e) {
+            const modal = document.getElementById('upload-modal-homepage');
+            if (e.target === modal) {
+                closeUploadModal();
+            }
+        });
+
+        // Smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add entrance animation
+        window.addEventListener('load', () => {
+            document.querySelector('.hero-content').style.opacity = '1';
+            document.querySelector('.hero-image-container').style.opacity = '1';
+        });
+    </script>
+</body>
+</html>
