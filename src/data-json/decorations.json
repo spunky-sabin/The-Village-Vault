@@ -1,0 +1,986 @@
+[
+  {
+    "SN": 1,
+    "Name": "Barbarian Statue",
+    "Code": "18000000",
+    "TID": "TID_DECORATION_BARBARIAN_STATUE",
+    "name": "Mighty Statue",
+    "image": "images/decorations/Decoration_HV_Mighty_Statue.png"
+  },
+  {
+    "SN": 2,
+    "Name": "Torch",
+    "Code": "18000001",
+    "TID": "TID_DECORATION_TORCH",
+    "name": "Torch",
+    "image": "images/decorations/torch.png"
+  },
+  {
+    "SN": 3,
+    "Name": "White Flag",
+    "Code": "18000003",
+    "TID": "TID_DECORATION_WHITE_FLAG",
+    "name": "White Flag",
+    "image": "images/decorations/Decoration_HV_White_Flag.png"
+  },
+  {
+    "SN": 4,
+    "Name": "Skull Flag",
+    "Code": "18000004",
+    "TID": "TID_DECORATION_SKULL_FLAG",
+    "name": "Pirate Flag",
+    "image": "images/decorations/Decoration_HV_Pirate_Flag.png"
+  },
+  {
+    "SN": 5,
+    "Name": "Flower box 1",
+    "Code": "18000005",
+    "TID": "TID_DECORATION_FLOWERBOX1",
+    "name": "Cornflower Bed",
+    "image": "images/decorations/Decoration_HV_Cornflower_Bed.png"
+  },
+  {
+    "SN": 6,
+    "Name": "Flower box 2",
+    "Code": "18000006",
+    "TID": "TID_DECORATION_FLOWERBOX2",
+    "name": "Sunflower Bed",
+    "image": "images/decorations/Decoration_HV_Sunflower_Bed.png"
+  },
+  {
+    "SN": 7,
+    "Name": "Windmeter",
+    "Code": "18000007",
+    "TID": "TID_DECORATION_WINDMETER",
+    "name": "Weather Vane",
+    "image": "images/decorations/Decoration_HV_Weather_Vane.png"
+  },
+  {
+    "SN": 8,
+    "Name": "Down Arrow Flag",
+    "Code": "18000008",
+    "TID": "TID_DECORATION_DOWNARROW_FLAG",
+    "name": "Rally Flag",
+    "image": "images/decorations/Decoration_HV_Rally_Flag.png"
+  },
+  {
+    "SN": 9,
+    "Name": "Up Arrow Flag",
+    "Code": "18000009",
+    "TID": "TID_DECORATION_UPARROW_FLAG",
+    "name": "Point Flag",
+    "image": "images/decorations/Decoration_HV_Point_Flag.png"
+  },
+  {
+    "SN": 10,
+    "Name": "Skull Altar",
+    "Code": "18000010",
+    "TID": "TID_DECORATION_SKULL_ALTAR",
+    "name": "Ancient Skull",
+    "image": "images/decorations/Decoration_HV_Ancient_Skull.png"
+  },
+  {
+    "SN": 11,
+    "Name": "PEKKA Statue",
+    "Code": "18000033",
+    "TID": "TID_DECORATION_PEKKA_STATUE",
+    "name": "Statue of P.E.K.K.A",
+    "image": "images/decorations/Decoration_HV_PEKKA_Statue.png"
+  },
+  {
+    "SN": 12,
+    "Name": "BK Statue",
+    "Code": "18000037",
+    "TID": "TID_DECORATION_BK_STATUE",
+    "name": "Mighty Hero Statue",
+    "image": "images/decorations/Decoration_HV_Barbarian_King_Statue.png"
+  },
+  {
+    "SN": 13,
+    "Name": "Builder Statue",
+    "Code": "18000046",
+    "TID": "TID_DECORATION_BUILDER_STATUE",
+    "name": "Builder Statue",
+    "image": "images/decorations/Decoration_HV_Builder_Statue.png"
+  },
+  {
+    "SN": 14,
+    "Name": "Rex Calibur",
+    "Code": "18000047",
+    "TID": "TID_DECORATION_SWORD_IN_STONE",
+    "name": "The Champion Statue",
+    "image": "images/decorations/Decoration_HV_The_Champion_Statue.png"
+  },
+  {
+    "SN": 15,
+    "Name": "League I Statue",
+    "Code": "18000048",
+    "TID": "TID_DECORATION_LEAGUE_I_STATUE",
+    "name": "The Master Statue",
+    "image": "images/decorations/Decoration_HV_The_Master_Statue.png"
+  },
+  {
+    "SN": 16,
+    "Name": "League II Statue",
+    "Code": "18000049",
+    "TID": "TID_DECORATION_LEAGUE_II_STATUE",
+    "name": "The Contender Statue",
+    "image": "images/decorations/Decoration_HV_The_Contender_Statue.png"
+  },
+  {
+    "SN": 17,
+    "Name": "League III Statue",
+    "Code": "18000050",
+    "TID": "TID_DECORATION_LEAGUE_III_STATUE",
+    "name": "The Challenger Statue",
+    "image": "images/decorations/Decoration_HV_The_Challenger_Statue.png"
+  },
+  {
+    "SN": 18,
+    "Name": "Shield Statue",
+    "Code": "18000051",
+    "TID": "TID_DECORATION_WAR_SHIELD",
+    "name": "The Warrior Statue",
+    "image": "images/decorations/Decoration_HV_The_Warrior_Statue.png"
+  },
+  {
+    "SN": 19,
+    "Name": "Golden Hog",
+    "Code": "18000052",
+    "TID": "TID_DECORATION_GOLDEN_HOG",
+    "name": "Golden Hog",
+    "image": "images/decorations/Decoration_HV_ Golden_Piggy_Bank.png"
+  },
+  {
+    "SN": 20,
+    "Name": "Snowman",
+    "Code": "18000054",
+    "TID": "TID_DECORATION_SNOWMAN",
+    "name": "Snowman",
+    "image": "images/decorations/Decoration_HV_Snowman.png"
+  },
+  {
+    "SN": 21,
+    "Name": "Snowman",
+    "Code": "18000055",
+    "TID": "TID_DECORATION_SNOWMAN",
+    "name": "Snowman",
+    "image": "images/decorations/Decoration_HV_Snowman.png"
+  },
+  {
+    "SN": 22,
+    "Name": "Dragon Statue",
+    "Code": "18000057",
+    "TID": "TID_DECORATION_DRAGON_STATUE",
+    "name": "Dragon Statue",
+    "image": "images/decorations/Decoration_HV_Dragon_Statue.png"
+  },
+  {
+    "SN": 23,
+    "Name": "Golden Goblin",
+    "Code": "18000058",
+    "TID": "TID_DECORATION_GOLDEN_GOBLIN",
+    "name": "Golden Poet",
+    "image": "images/decorations/Decoration_HV_Golden_Poet.png"
+  },
+  {
+    "SN": 24,
+    "Name": "SuperTroopStatue",
+    "Code": "18000059",
+    "TID": "TID_DECORATION_SUPER_TROOP_STATUE",
+    "name": "Super Statue",
+    "image": "images/decorations/Decoration_HV_Super_Statue.png"
+  },
+  {
+    "SN": 25,
+    "Name": "ShortFilmStatue",
+    "Code": "18000060",
+    "TID": "TID_DECORATION_SHORT_FILM_STATUE",
+    "name": "Storied Statue",
+    "image": "images/decorations/Decoration_HV_Storied_Statue.png"
+  },
+  {
+    "SN": 26,
+    "Name": "SC 10Year Fountain",
+    "Code": "18000061",
+    "TID": "TID_DECORATION_10_YEAR_FOUNTAIN",
+    "name": "Anniversary Fountain",
+    "image": "images/decorations/Decoration_HV_Anniversary_Fountain.png"
+  },
+  {
+    "SN": 27,
+    "Name": "Clockwork Statue",
+    "Code": "18000062",
+    "TID": "TID_DECORATION_CLOCKWORK_STATUE",
+    "name": "Clockwork Statue",
+    "image": "images/decorations/Decoration_HV_Clockwork_Statue.png"
+  },
+  {
+    "SN": 28,
+    "Name": "8 Year Birthday Statue",
+    "Code": "18000063",
+    "TID": "TID_DECORATION_8YEAR_BIRTHDAY_STATUE",
+    "name": "A Piece of Birthday Cake",
+    "image": "images/decorations/Decoration_HV_A_Piece_Of_Birthday_Cake.png"
+  },
+  {
+    "SN": 29,
+    "Name": "Pirate Deco",
+    "Code": "18000064",
+    "TID": "TID_DECORATION_PIRATE_ANCHOR",
+    "name": "Retired Anchor",
+    "image": "images/decorations/Decoration_HV_Anchor_Statue.png"
+  },
+  {
+    "SN": 30,
+    "Name": "Logmas Deco",
+    "Code": "18000065",
+    "TID": "TID_DECO_LOGMAS_TREE",
+    "name": "Logmas Tree",
+    "image": "images/decorations/Decoration_HV_Logmas_Tree.png"
+  },
+  {
+    "SN": 31,
+    "Name": "Golden Wall Breaker",
+    "Code": "18000066",
+    "TID": "TID_DECO_FIREWORK_FANBOY",
+    "name": "Firework Fanboy",
+    "image": "images/decorations/Decoration_HV_Firework_Fanboy.png"
+  },
+  {
+    "SN": 32,
+    "Name": "Jungle Deco",
+    "Code": "18000067",
+    "TID": "TID_DECO_TH14_FOUNTAIN",
+    "name": "Flowing Fountain",
+    "image": "images/decorations/Decoration_HV_Flowing_Fountain.png"
+  },
+  {
+    "SN": 33,
+    "Name": "9 Year Birthday Statue",
+    "Code": "18000068",
+    "TID": "TID_DECORATION_9YEAR_BIRTHDAY_STATUE",
+    "name": "Fiery Figure",
+    "image": "images/decorations/Decoration_HV_Fiery_Figure.png"
+  },
+  {
+    "SN": 34,
+    "Name": "Fallen Wizard Statue",
+    "Code": "18000069",
+    "TID": "TID_WIZARD_STATUE",
+    "name": "Wizard Statue",
+    "image": "images/decorations/Decoration_HV_Wizard_Statue.png"
+  },
+  {
+    "SN": 35,
+    "Name": "10 Year Birthday Statue",
+    "Code": "18000070",
+    "TID": "TID_DECORATION_10YEAR_BIRTHDAY_STATUE",
+    "name": "Goblin King Tribute",
+    "image": "images/decorations/Decoration_HV_Goblin_King_Tribute.png"
+  },
+  {
+    "SN": 36,
+    "Name": "Clash Fest Statue",
+    "Code": "18000071",
+    "TID": "TID_DECORATION_CLASH_FEST_22_STATUE",
+    "name": "Eternal Flame",
+    "image": "images/decorations/Decoration_HV_Eternal_Flame.png"
+  },
+  {
+    "SN": 37,
+    "Name": "Clashmas22 Deco",
+    "Code": "18000072",
+    "TID": "TID_DECORATION_CLASHMAS_22",
+    "name": "Clashmas Sleigh",
+    "image": "images/decorations/Decoration_HV_Clashmas_Sleigh.png"
+  },
+  {
+    "SN": 38,
+    "Name": "LNY2023Statue",
+    "Code": "18000073",
+    "TID": "TID_STATUE_LNY_2023",
+    "name": "Magic Show Statue",
+    "image": "images/decorations/Decoration_HV_Magic_Show_Statue.png"
+  },
+  {
+    "SN": 39,
+    "Name": "Baby Dragon Painted",
+    "Code": "18000074",
+    "TID": "TID_DECO_PAINTED_BABY_DRAGON",
+    "name": "Decorated Dragon Statue",
+    "image": "images/decorations/Decoration_HV_Decorated_Dragon_Statue.png"
+  },
+  {
+    "SN": 40,
+    "Name": "Dark Ages Dragon_Statue",
+    "Code": "18000075",
+    "TID": "TID_DECO_DARK_AGES_DRAGON",
+    "name": "Dragon Trophy",
+    "image": "images/decorations/Decoration_HV_Dragon_Trophy_1.png"
+  },
+  {
+    "SN": 41,
+    "Name": "Terry Statue",
+    "Code": "18000079",
+    "TID": "TID_BOOKS_OF_CLASH",
+    "name": "Books of Clash",
+    "image": "images/decorations/Decoration_HV_Books_of_Clash_Statue_active.png"
+  },
+  {
+    "SN": 42,
+    "Name": "Goblin pit",
+    "Code": "18000089",
+    "TID": "TID_DECO_GOBLIN_CELLAR",
+    "name": "Goblin Cellar",
+    "image": "images/decorations/Decoration_HV_Goblin_Pit.png"
+  },
+  {
+    "SN": 43,
+    "Name": "Goblin Dragon Statue",
+    "Code": "18000090",
+    "TID": "TID_DECO_GOBLIN_DRAGON_STATUE",
+    "name": "Goblin Dragon Statue",
+    "image": "images/decorations/Decoration_HV_Goblin_Dragon_Statue.png"
+  },
+  {
+    "SN": 44,
+    "Name": "Halloween2023_coffin",
+    "Code": "18000096",
+    "TID": "TID_DECO_COFFIN",
+    "name": "Cosy Coffin",
+    "image": "images/decorations/Decoration_HV_Coffin.png"
+  },
+  {
+    "SN": 45,
+    "Name": "hoggywise",
+    "Code": "18000097",
+    "TID": "TID_DECO_CLOWN",
+    "name": "Friendly Clown",
+    "image": "images/decorations/Decoration_HV_Hoggywise.png"
+  },
+  {
+    "SN": 46,
+    "Name": "Halloween2023_dead_jakuzzi",
+    "Code": "18000098",
+    "TID": "TID_DECO_DEAD_JAKUZZI",
+    "name": "Spooky Spa",
+    "image": "images/decorations/Decoration_HV_Jacuzzi.png"
+  },
+  {
+    "SN": 47,
+    "Name": "Halloween2023_scarecrow",
+    "Code": "18000099",
+    "TID": "TID_DECO_SCARECROW",
+    "name": "Pumpkin Scarecrow",
+    "image": "images/decorations/Decoration_HV_Axe_Pumpkin.png"
+  },
+  {
+    "SN": 48,
+    "Name": "Halloween2023_completion_cauldron",
+    "Code": "18000100",
+    "TID": "TID_BUILDING_CLASHOWEEN_BUILDING",
+    "name": "Sour Elixir Cauldron",
+    "image": "images/decorations/Decoration_HV_Sour_Elixir_Cauldron.png"
+  },
+  {
+    "SN": 49,
+    "Name": "World Finals23 Statue",
+    "Code": "18000101",
+    "TID": "TID_WORLD_FINALS_23_STATUE",
+    "name": "World Finals 23 Statue",
+    "image": "images/decorations/Decoration_HV_World_Finals_23_Statue.png"
+  },
+  {
+    "SN": 50,
+    "Name": "Bath",
+    "Code": "18000103",
+    "TID": "TID_DECO_DUCK_POND",
+    "name": "Duck Bath",
+    "image": "images/decorations/Decoration_HV_Duck_Bath.png"
+  },
+  {
+    "SN": 51,
+    "Name": "Hog Park",
+    "Code": "18000109",
+    "TID": "TID_DECO_HOG_PEN",
+    "name": "Hog Pen",
+    "image": "images/decorations/Decoration_HV_Hog_Pen.png"
+  },
+  {
+    "SN": 52,
+    "Name": "ClashClam",
+    "Code": "18000114",
+    "TID": "TID_DECO_COZY_CLAM",
+    "name": "Cozy Clam",
+    "image": "images/decorations/Decoration_HV_Cozy_Clam.png"
+  },
+  {
+    "SN": 53,
+    "Name": "ClashMas2023_dough_building",
+    "Code": "18000115",
+    "TID": "TID_DECO_GINGERBREAD_BUILDING",
+    "name": "Gingerbread Bakery",
+    "image": "images/decorations/Decroration_HV_Gingerbread_ Hub_2.png"
+  },
+  {
+    "SN": 54,
+    "Name": "ClashMas2023_jinglebell",
+    "Code": "18000116",
+    "TID": "TID_DECO_JINGLEBELL",
+    "name": "Jingle Bell",
+    "image": "images/decorations/Decroration_HV_Jingle_Bell.png"
+  },
+  {
+    "SN": 55,
+    "Name": "ClashMas2023_hogmaster",
+    "Code": "18000117",
+    "TID": "TID_DECO_HOGMASTER",
+    "name": "Barbarian Santa",
+    "image": "images/decorations/Decroration_HV_Barbarian_Santa.png"
+  },
+  {
+    "SN": 56,
+    "Name": "ClashMas2023_sock",
+    "Code": "18000118",
+    "TID": "TID_DECO_SOCK",
+    "name": "Skeleton Sock",
+    "image": "images/decorations/Decroration_HV_Skeleton_Sock.png"
+  },
+  {
+    "SN": 57,
+    "Name": "CNY_2023_anchor",
+    "Code": "18000119",
+    "TID": "TID_DECO_LNY24_ANCHOR",
+    "name": "Lucky Anchor",
+    "image": "images/decorations/Decoration_HV_Lucky_Anchor.png"
+  },
+  {
+    "SN": 58,
+    "Name": "CNY_2023_Crab",
+    "Code": "18000120",
+    "TID": "TID_DECO_LNY24_CRAB",
+    "name": "Crab at home",
+    "image": "images/decorations/Decoration_HV_Crab_at_home_1.png"
+  },
+  {
+    "SN": 59,
+    "Name": "CNY_2023_dragon",
+    "Code": "18000121",
+    "TID": "TID_DECO_LNY24_BABY_DRAGON",
+    "name": "Baby Dragon Statue",
+    "image": "images/decorations/Decoration_HV_Baby_Dragon_Statue.png"
+  },
+  {
+    "SN": 60,
+    "Name": "LNY_2024_dragonpinata",
+    "Code": "18000122",
+    "TID": "TID_DECO_LNY24_DRAGON_PINATA",
+    "name": "Dragon Pinata",
+    "image": "images/decorations/Decoration_HV_Dragon_Pinata.png"
+  },
+  {
+    "SN": 61,
+    "Name": "Space_2024_crater",
+    "Code": "18000123",
+    "TID": "TID_DECO_SPACE_2024_CRATER",
+    "name": "Clashy Crater",
+    "image": "images/decorations/Decoration_HV_Clashy_Crater.png"
+  },
+  {
+    "SN": 62,
+    "Name": "Space_2024_globe",
+    "Code": "18000124",
+    "TID": "TID_DECO_SPACE_2024_GLOBE",
+    "name": "Stone Globe",
+    "image": "images/decorations/Decoration_HV_Stone_Globe.png"
+  },
+  {
+    "SN": 63,
+    "Name": "Space_2024_goblin_statue",
+    "Code": "18000125",
+    "TID": "TID_DECO_SPACE_2024_GOBLIN_STATUE",
+    "name": "Goblin Explorer",
+    "image": "images/decorations/Decoration_HV_Goblin_Explorer.png"
+  },
+  {
+    "SN": 64,
+    "Name": "babydragon_statue",
+    "Code": "18000126",
+    "TID": "TID_DECO_EGYPT_2024_BABYDRAGON",
+    "name": "Baby Ptah",
+    "image": "images/decorations/Baby_Ptah.png"
+  },
+  {
+    "SN": 65,
+    "Name": "Egypt_2024_goblin",
+    "Code": "18000127",
+    "TID": "TID_DECO_EGYPT_2024_GOBLIN",
+    "name": "Goblin Pharaoh",
+    "image": "images/decorations/Goblin_Pharaoh.png"
+  },
+  {
+    "SN": 66,
+    "Name": "Egypt_2024_hog",
+    "Code": "18000128",
+    "TID": "TID_DECO_EGYPT_2024_HOG",
+    "name": "Hog Sphinx",
+    "image": "images/decorations/Hog_Sphinx.png"
+  },
+  {
+    "SN": 67,
+    "Name": "CW_gift_crownsword",
+    "Code": "18000129",
+    "TID": "TID_DECO_GIFT_2024_CROWNSWORD",
+    "name": "Crown Sword",
+    "image": "images/decorations/Crown_Sword.png"
+  },
+  {
+    "SN": 68,
+    "Name": "Game Campaign",
+    "Code": "18000130",
+    "TID": "TID_DECO_GAME_CAMPAIGN",
+    "name": "Surprising Squad",
+    "image": "images/decorations/Surprising Squad.png"
+  },
+  {
+    "SN": 69,
+    "Name": "clashball_goldenboot",
+    "Code": "18000131",
+    "TID": "TID_DECO_CLASHBALL_GOLDENBOOT",
+    "name": "Golden Boot",
+    "image": "images/decorations/Decoration_HV_Golden_Boot.png"
+  },
+  {
+    "SN": 70,
+    "Name": "clashball_trophyball",
+    "Code": "18000132",
+    "TID": "TID_DECO_CLASHBALL_TROPHYBALL",
+    "name": "Bestest Ball",
+    "image": "images/decorations/Decoration_HV_Trophy_Ball.png"
+  },
+  {
+    "SN": 71,
+    "Name": "clashball_statuecharacter",
+    "Code": "18000133",
+    "TID": "TID_DECO_CLASHBALL_STATUECHARACTER",
+    "name": "Haaland Statue",
+    "image": "images/decorations/Decoration_HV_Haaland_Statue.png"
+  },
+  {
+    "SN": 72,
+    "Name": "clashball_trophycrown",
+    "Code": "18000134",
+    "TID": "TID_DECO_CLASHBALL_TROPHYCROWN",
+    "name": "Triumphant Trophy",
+    "image": "images/decorations/Decoration_HV_Trophy_Crown.png"
+  },
+  {
+    "SN": 73,
+    "Name": "clashball_trophycup",
+    "Code": "18000135",
+    "TID": "TID_DECO_CLASHBALL_TROPHYCUP",
+    "name": "Celebration Cup",
+    "image": "images/decorations/Decoration_HV_Trophy_Cup.png"
+  },
+  {
+    "SN": 74,
+    "Name": "clashball_trophybeverage",
+    "Code": "18000136",
+    "TID": "TID_DECO_CLASHBALL_TROPHYBEVERAGE",
+    "name": "Victory Milk",
+    "image": "images/decorations/Decoration_HV_Milk_Trophy.png"
+  },
+  {
+    "SN": 75,
+    "Name": "WildWest_cactus",
+    "Code": "18000137",
+    "TID": "TID_DECO_WILDWEST_CACTUS",
+    "name": "Cactus Guy",
+    "image": "images/decorations/WildWest_Deco_Cactus_High.png"
+  },
+  {
+    "SN": 76,
+    "Name": "WildWest_skelly",
+    "Code": "18000138",
+    "TID": "TID_DECO_WILDWEST_SKELLY",
+    "name": "Cowboy Skeleton",
+    "image": "images/decorations/WildWest_Deco_Skelly_High.png"
+  },
+  {
+    "SN": 77,
+    "Name": "WildWest_totem",
+    "Code": "18000139",
+    "TID": "TID_DECO_WILDWEST_TOTEM",
+    "name": "Dragon Totem",
+    "image": "images/decorations/WildWest_Deco_Totem_High.png"
+  },
+  {
+    "SN": 78,
+    "Name": "Clashball2024_completion_deco_goal",
+    "Code": "18000140",
+    "TID": "TID_DECO_CLASHBALL_GOAL",
+    "name": "Football Camp",
+    "image": "images/decorations/Decoration_HV_Building_Goal_Ball.png"
+  },
+  {
+    "SN": 79,
+    "Name": "Anime_FORTUNE_TELLER",
+    "Code": "18000141",
+    "TID": "TID_DECO_ANIME_FORTUNETELLER",
+    "name": "Wizard Vendor",
+    "image": "images/decorations/Decoration_HV_wizard_anime_event_building.png"
+  },
+  {
+    "SN": 80,
+    "Name": "Anime_bonsaitree",
+    "Code": "18000143",
+    "TID": "TID_DECO_ANIME_BONSAI_TREE",
+    "name": "Cherry Bonsai",
+    "image": "images/decorations/Anime_CherryBonsaiTree.png"
+  },
+  {
+    "SN": 81,
+    "Name": "Anime_chibi_archer",
+    "Code": "18000144",
+    "TID": "TID_DECO_ANIME_CHIBI_ARCHER",
+    "name": "Chibi Archer",
+    "image": "images/decorations/Anime_ChibiArcher.png"
+  },
+  {
+    "SN": 82,
+    "Name": "Anime_giant_school_girl",
+    "Code": "18000145",
+    "TID": "TID_DECO_ANIME_GIANT_SCHOOL_GIRL",
+    "name": "Kawaii Giant",
+    "image": "images/decorations/Anime_SuperDeco_Giant_Schoolgirl.png"
+  },
+  {
+    "SN": 83,
+    "Name": "SC_Store_brawlstars",
+    "Code": "18000147",
+    "TID": "TID_DECO_SC_BRAWLSTARS",
+    "name": "Brawl's Star",
+    "image": "images/decorations/Brawl's_Star.png"
+  },
+  {
+    "SN": 84,
+    "Name": "SC_Store_gauntlet",
+    "Code": "18000148",
+    "TID": "TID_DECO_SC_GAUNTLET",
+    "name": "Gargantuan Gauntlet",
+    "image": "images/decorations/Gargantuan_Gauntlet.png"
+  },
+  {
+    "SN": 85,
+    "Name": "SC_Store_royalebed",
+    "Code": "18000150",
+    "TID": "TID_DECO_SC_ROYALE_BED",
+    "name": "Sleepy King",
+    "image": "images/decorations/Sleepy_King.png"
+  },
+  {
+    "SN": 86,
+    "Name": "ClashGames_firebowl",
+    "Code": "18000151",
+    "TID": "TID_DECO_CLASHGAMES_FIREBOWL",
+    "name": "Champion's Flame",
+    "image": "images/decorations/Decoration_ClashGames_Firebowl.png"
+  },
+  {
+    "SN": 87,
+    "Name": "ClashGames_goblindive",
+    "Code": "18000152",
+    "TID": "TID_DECO_CLASHGAMES_GOBLINDIVE",
+    "name": "Goblin High Dive",
+    "image": "images/decorations/ClashGames_Deco_Diver.png"
+  },
+  {
+    "SN": 88,
+    "Name": "ClashGames_archerfoot",
+    "Code": "18000153",
+    "TID": "TID_DECO_CLASHGAMES_ARCHERFOOT",
+    "name": "Foot Tribute",
+    "image": "images/decorations/Decoration_ClashGames_ArcherFoot.png"
+  },
+  {
+    "SN": 89,
+    "Name": "TTRPG_treeportal",
+    "Code": "18000154",
+    "TID": "TID_DECO_TTRPG_TREEPORTAL",
+    "name": "Pretty Portal",
+    "image": "images/decorations/Pretty_Portal.png"
+  },
+  {
+    "SN": 90,
+    "Name": "TTRPG_superdeco_d20",
+    "Code": "18000155",
+    "TID": "TID_DECO_TTRPG_SUPERDECO_D20",
+    "name": "Decision Dice",
+    "image": "images/decorations/TTRPG_SuperDeco_Dice_Roll.png"
+  },
+  {
+    "SN": 91,
+    "Name": "Clashoween2024_completion_deco",
+    "Code": "18000157",
+    "TID": "TID_DECO_CLASHOWEEN_2024",
+    "name": "Hydra Headstone",
+    "image": "images/decorations/Hydra_Headstone.png"
+  },
+  {
+    "SN": 92,
+    "Name": "Clashoween2024_prisonbox",
+    "Code": "18000158",
+    "TID": "TID_DECO_CLASHOWEEN_2024_PRISONBOX",
+    "name": "Jailbroken Box",
+    "image": "images/decorations/Obstacle_HV_Prison_Box.png"
+  },
+  {
+    "SN": 93,
+    "Name": "Clashoween2024_superdeco_cauldron",
+    "Code": "18000159",
+    "TID": "TID_DECO_CLASHOWEEN_2024_SUPERDECO_CAULDRON",
+    "name": "Bubble Boil Cauldron",
+    "image": "images/decorations/Obstacle_HV_Cauldron_Smiling.png"
+  },
+  {
+    "SN": 94,
+    "Name": "Superdeco_mochapot",
+    "Code": "18000160",
+    "TID": "TID_DECO_SUPERDECO_MOCHAPOT",
+    "name": "Abra-Cada-Brewer",
+    "image": "images/decorations/Abra-Cada-Brewer.png"
+  },
+  {
+    "SN": 95,
+    "Name": "Festival_Lantern",
+    "Code": "18000161",
+    "TID": "TID_DECO_DIWALI_2024",
+    "name": "Festival Lantern",
+    "image": "images/decorations/Festival_Lantern.webp"
+  },
+  {
+    "SN": 96,
+    "Name": "Clashmas_2024_completion_deco",
+    "Code": "18000162",
+    "TID": "TID_DECO_CLASHMAS_2024",
+    "name": "Rocking Reindeer",
+    "image": "images/decorations/Rocking_Reindeer.png"
+  },
+  {
+    "SN": 97,
+    "Name": "Clashmas_2024_choir",
+    "Code": "18000163",
+    "TID": "TID_DECO_CLASHMAS_2024_CHOIR",
+    "name": "Clockwork Choir",
+    "image": "images/decorations/Clashmas24_Choir.png"
+  },
+  {
+    "SN": 98,
+    "Name": "Clashmas2024_superdeco_globe",
+    "Code": "18000164",
+    "TID": "TID_DECO_CLASHMAS_2024_SUPERDECO_GLOBE",
+    "name": "Snow Globe",
+    "image": "images/decorations/Clashmas24_SnowGlobe.png"
+  },
+  {
+    "SN": 99,
+    "Name": "Clashmas_2024_Sack",
+    "Code": "18000165",
+    "TID": "TID_DECO_CLASHMAS_2024_SACK",
+    "name": "Gift Bag",
+    "image": "images/decorations/Gift_Bag.png"
+  },
+  {
+    "SN": 100,
+    "Name": "Lny_2025_completion_deco",
+    "Code": "18000166",
+    "TID": "TID_DECO_LNY_2025",
+    "name": "Snake Shrine",
+    "image": "images/decorations/Snake_Shrine.png"
+  },
+  {
+    "SN": 101,
+    "Name": "Lny_2025_monkstatue_deco",
+    "Code": "18000167",
+    "TID": "TID_DECO_LNY_2025_MONK",
+    "name": "Monk Statue",
+    "image": "images/decorations/LNY25_Monk_Statue_Marketing.png"
+  },
+  {
+    "SN": 102,
+    "Name": "Fire_Ice_superdeco_sauna",
+    "Code": "18000168",
+    "TID": "TID_DECO_FIRE_ICE_SAUNA",
+    "name": "Cozy Sauna",
+    "image": "images/decorations/Fire&Ice_Sauna_Super_Deco.png"
+  },
+  {
+    "SN": 103,
+    "Name": "Lny_2025_superdeco_fortunecookie",
+    "Code": "18000169",
+    "TID": "TID_DECO_LNY_2025_COOKIE",
+    "name": "Lucky Cookies",
+    "image": "images/decorations/LNY25_Fortune Cookie_SuperDeco.png"
+  },
+  {
+    "SN": 104,
+    "Name": "Military_2025_super_deco_range",
+    "Code": "18000170",
+    "TID": "TID_DECO_MILITARY_2025_SUPERDECO_RANGE",
+    "name": "Shooting Range",
+    "image": "images/decorations/Shooting_Range.png"
+  },
+  {
+    "SN": 105,
+    "Name": "April_2025_completion_deco",
+    "Code": "18000171",
+    "TID": "TID_DECO_APRIL_2025",
+    "name": "WWE Title",
+    "image": "images/decorations/Deco_WWE_Title.png"
+  },
+  {
+    "SN": 106,
+    "Name": "April_2025_goblins_deco",
+    "Code": "18000172",
+    "TID": "TID_DECO_APRIL_GOBLINS_2025",
+    "name": "Rumbling Goblins",
+    "image": "images/decorations/apr25_hv_deco_goblin_marketing.png"
+  },
+  {
+    "SN": 107,
+    "Name": "April_2025_coc_giant_deco",
+    "Code": "18000173",
+    "TID": "TID_DECO_COC_GIANT_2025",
+    "name": "Golden Giant",
+    "image": "images/decorations/Deco_Golden_Giant.png"
+  },
+  {
+    "SN": 108,
+    "Name": "Deco_AQ_PouringStatue",
+    "Code": "18000174",
+    "TID": "TID_CREATOR_FOUNTAIN_DECO",
+    "name": "Creator Fountain",
+    "image": "images/decorations/Creator_Fountain.png"
+  },
+  {
+    "SN": 109,
+    "Name": "April_2025_super_deco",
+    "Code": "18000175",
+    "TID": "TID_DECO_APRIL_2025_SUPERDECO",
+    "name": "Surprise Wheel",
+    "image": "images/decorations/SpinWheel Regular.png"
+  },
+  {
+    "SN": 110,
+    "Name": "Japan_2025_deco",
+    "Code": "18000176",
+    "TID": "TID_DECO_JAPAN_2025",
+    "name": "Sacred Gate",
+    "image": "images/decorations/Sacred_Gate.png"
+  },
+  {
+    "SN": 111,
+    "Name": "DarkDays_2025_super_deco",
+    "Code": "18000177",
+    "TID": "TID_DECO_DARKDAYS_2025_SUPERDECO",
+    "name": "Jingle Maker",
+    "image": "images/decorations/DarkDays_SuperDeco_Piano.png"
+  },
+  {
+    "SN": 112,
+    "Name": "Darkdays_2025_completion_deco",
+    "Code": "18000178",
+    "TID": "TID_DECO_DARKDAYS_2025",
+    "name": "Looter Wagon",
+    "image": "images/decorations/Looter_Wagon.png"
+  },
+  {
+    "SN": 113,
+    "Name": "Frozen Wizard",
+    "Code": "18000179",
+    "TID": "TID_DECO_CLASHARAMA_FROZEN_WIZARD_2025",
+    "name": "Frozen Wizard",
+    "image": "images/decorations/Frozen_Wizard.webp"
+  },
+  {
+    "SN": 114,
+    "Name": "clasharama_ep01_super_deco",
+    "Code": "18000180",
+    "TID": "TID_DECO_CLASHARAMA_EP01_SUPERDECO",
+    "name": "Clashy Carving",
+    "image": "images/decorations/Clashy_Carving.webp"
+  },
+  {
+    "SN": 115,
+    "Name": "Sketch Summoner",
+    "Code": "18000181",
+    "TID": "TID_DECO_CLASHARAMA_EP02_SUPERDECO_PAINT",
+    "name": "Sketch Summoner",
+    "image": "images/decorations/Sketch_Summoner.webp"
+  },
+  {
+    "SN": 116,
+    "Name": "CyberClash_superdeco_holoprojector",
+    "Code": "18000182",
+    "TID": "TID_DECO_CYBERCLASH_HOLOPROJECTOR",
+    "name": "Cyber Hologram",
+    "image": "images/decorations/CyberClash_SuperDeco_Holoprojector.png"
+  },
+  {
+    "SN": 117,
+    "Name": "CLASHARAMA_SODASTAND_DECO",
+    "Code": "18000183",
+    "TID": "TID_DECO_CLASHARAMA_SODASTAND_2025",
+    "name": "Soda Stand",
+    "image": "images/decorations/Soda_Stand.webp"
+  },
+  {
+    "SN": 118,
+    "Name": "CLASHARAMA_TABLE_DECO",
+    "Code": "18000184",
+    "TID": "TID_DECO_CLASHARAMA_TABLE_2025",
+    "name": "Party Bench",
+    "image": "images/decorations/Party_Bench.webp"
+  },
+  {
+    "SN": 119,
+    "Name": "COMMUNITY_CROWN_AND_SWORD_DECO",
+    "Code": "18000185",
+    "TID": "TID_DECO_COMMUNITY_CROWN_AND_SWORD",
+    "name": "Justice Crown",
+    "image": "images/decorations/Justice_Crown.png"
+  },
+  {
+    "SN": 120,
+    "Name": "Cosmic_Lantern_Deco",
+    "Code": "18000186",
+    "TID": "TTID_COSMICCURSE_DECO_LANTERN",
+    "name": "Cosmic Lantern",
+    "image": "images/decorations/Cosmic_Lantern.png"
+  },
+  {
+    "SN": 121,
+    "Name": "Fortune_Printer",
+    "Code": "18000189",
+    "TID": "TID_DECO_DIWALI_RANGOLI_2024",
+    "name": "Fortune Printer",
+    "image": "images/decorations/Fortune_Printer.webp"
+  },
+  {
+    "SN": 122,
+    "Name": "Boombox",
+    "Code": "18000190",
+    "TID": "TID_DECO_COSMIC_BOOMBOX",
+    "name": "Boombox",
+    "image": "images/decorations/Boom_Box.png"
+  },
+  {
+    "SN": 123,
+    "Name": "Cursed_Tome",
+    "Code": "18000191",
+    "TID": "TID_DECO_COSMIC_BOOK_OF_SPELLS",
+    "name": "Cursed Tome",
+    "image": "images/decorations/Cursed_Tome.png"
+  }
+]
