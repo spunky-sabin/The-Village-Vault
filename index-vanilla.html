@@ -1,7 +1,9 @@
-::-webkit-scrollbar-thumb:hover {
-    background: var(--muted);
-}
-    </style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Village Vault</title>
 </head>
 <body>
     <div id="root">
@@ -378,6 +380,7 @@
         <div id="toast-container" class="toast-container"></div>
     </div>
 
+
     <script>
 // ============================================
 // STATE MANAGEMENT
@@ -693,28 +696,33 @@ function updateTypeFilterUI(categoryId) {
     const typeFilterOptions = document.getElementById('type-filter-options');
     const mobileTypeFilterOptions = document.getElementById('mobile-type-filter-options');
     
-    let filterHTML = '';
-    
-    if (categoryId === 'cosmetic-compendium') {
-        filterHTML = `
-            <button class="filter-btn active" data-type-filter="all">All Items</button>
-            <button class="filter-btn" data-type-filter="heroskin">Hero Skins</button>
-            <button class="filter-btn" data-type-filter="scenery">Sceneries</button>
-            <button class="filter-btn" data-type-filter="obstacle">Obstacles</button>
-            <button class="filter-btn" data-type-filter="decoration">Decorations</button>
-            <button class="filter-btn" data-type-filter="clan">Clan House Parts</button>
-        `;
-    } else if (categoryId === 'hero-wardrobe') {
-        filterHTML = '<button class="filter-btn active" data-type-filter="heroskin" disabled style="opacity: 0.7;">Hero Skins</button>';
-    } else if (categoryId === 'clan-hall-aesthetics') {
-        filterHTML = '<button class="filter-btn active" data-type-filter="clan" disabled style="opacity: 0.7;">Clan Items</button>';
-    } else {
-        filterHTML = `
-            <button class="filter-btn active" data-type-filter="both">Both</button>
-            <button class="filter-btn" data-type-filter="decoration">Decorations</button>
-            <button class="filter-btn" data-type-filter="obstacle">Obstacles</button>
-        `;
-    }
+    const filterConfigs = {
+        'cosmetic-compendium': [
+            { value: 'all', label: 'All Items' },
+            { value: 'heroskin', label: 'Hero Skins' },
+            { value: 'scenery', label: 'Sceneries' },
+            { value: 'obstacle', label: 'Obstacles' },
+            { value: 'decoration', label: 'Decorations' },
+            { value: 'clan', label: 'Clan House Parts' }
+        ],
+        'hero-wardrobe': [
+            { value: 'heroskin', label: 'Hero Skins', disabled: true }
+        ],
+        'clan-hall-aesthetics': [
+            { value: 'clan', label: 'Clan Items', disabled: true }
+        ],
+        'home-village-decor': [
+            { value: 'all', label: 'All Items' },
+            { value: 'decoration', label: 'Decorations' },
+            { value: 'obstacle', label: 'Obstacles' },
+            { value: 'scenery', label: 'Sceneries' }
+        ]
+    };
+
+    const filters = filterConfigs[categoryId] || [];
+    const filterHTML = filters.map((f, i) => 
+        `<button class="filter-btn ${i === 0 ? 'active' : ''}" data-type-filter="${f.value}" ${f.disabled ? 'disabled style="opacity: 0.7; cursor: not-allowed;"' : ''}>${f.label}</button>`
+    ).join('');
     
     if (typeFilterOptions) typeFilterOptions.innerHTML = filterHTML;
     if (mobileTypeFilterOptions) mobileTypeFilterOptions.innerHTML = filterHTML;
@@ -884,14 +892,14 @@ function updateProgressTracker() {
     const total = categoryItems.length;
     const pct = total > 0 ? Math.round((owned / total) * 100) : 0;
 
-    el.style.display = "grid";
+    el.style.display = "block";
     el.innerHTML = `
-        <div class="stat-item"><div class="stat-value">${owned}</div><div class="stat-label">Owned</div></div>
-        <div class="stat-item"><div class="stat-value">${total}</div><div class="stat-label">Total Items</div></div>
-        <div class="stat-item">
-            <div class="stat-value">${pct}%</div>
-            <div class="stat-label">Complete</div>
-            <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.9rem; font-weight: 600;">${owned}/${total} items collected</span>
+            <span style="font-size: 1.1rem; font-weight: 700; color: var(--gold);">${pct}%</span>
+        </div>
+        <div class="progress-bar" style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
+            <div class="progress-fill" style="width: ${pct}%; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 0.3s ease;"></div>
         </div>
     `;
 }
@@ -1222,6 +1230,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: hsl(210, 30%, 8%);
     color: hsl(210, 20%, 98%);
+    scrollbar-gutter: stable;
     background-image: 
         radial-gradient(circle at 20% 50%, hsla(210, 30%, 15%, 0.4) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, hsla(210, 30%, 20%, 0.3) 0%, transparent 50%);
@@ -1357,9 +1366,8 @@ body {
    CATEGORY NAVIGATION
    ============================================ */
 .category-nav {
-    background: hsla(210, 25%, 12%, 0.5);
+    background: hsla(210, 25%, 12%, 0.95);
     border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 100;
@@ -1581,7 +1589,6 @@ body {
     gap: 0.5rem;
     padding: 0.375rem;
     border-radius: 0.375rem;
-    transition: background 0.2s;
 }
 
 .filter-checkbox:hover {
@@ -1713,41 +1720,33 @@ body {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 0.75rem;
-    padding: 1rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem;
+    padding: 1.25rem;
+    contain: layout style paint;
 }
 
 .stat-item {
-    text-align: center;
-    padding: 0.75rem;
+    display: none;
 }
 
 .stat-value {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--primary);
-    margin-bottom: 0.25rem;
+    display: none;
 }
 
 .stat-label {
-    font-size: 0.875rem;
-    color: var(--muted-foreground);
+    display: none;
 }
 
 .progress-bar {
     width: 100%;
-    height: 0.75rem;
-    background: var(--secondary);
-    border-radius: 0.375rem;
+    height: 0.5rem;
+    background: var(--border);
+    border-radius: 0.25rem;
     overflow: hidden;
-    margin-top: 0.5rem;
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--gold-light), var(--gold));
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
     transition: width 0.5s ease;
     box-shadow: 0 0 10px hsla(45, 100%, 60%, 0.4);
 }
@@ -1931,6 +1930,8 @@ body {
     transition: transform 0.6s;
     transform-style: preserve-3d;
     cursor: pointer;
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .item-card.flipped {
@@ -2008,7 +2009,6 @@ body {
     font-size: 0.7rem;
     font-weight: 600;
     text-transform: uppercase;
-    backdrop-filter: blur(4px);
 }
 
 .item-type-badge.decoration {
@@ -2157,8 +2157,7 @@ body {
 .modal-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.8);
 }
 
 .modal-content {

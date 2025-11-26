@@ -17,18 +17,24 @@ const state = {
     selectedOwnership: [],
     selectedTypes: [],
     sortBy: 'newest',
-    loading: false,
-};
-
-// Item descriptions and details (from Clash of Clans wiki data)
-const itemDetails = {
-    // This would be populated from your JSON files with additional metadata
-    // Format: { code: { released: "date", availability: "how to get", description: "..." } }
+    visibleLimit: 50
 };
 
 // ============================================
-// LOAD JSON FILES
+// UTILITY FUNCTIONS
 // ============================================
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
 async function loadJSON(url) {
     try {
         const res = await fetch(url);
@@ -36,123 +42,81 @@ async function loadJSON(url) {
         return await res.json();
     } catch (err) {
         console.error("Error loading", url, err);
-        return [];
+        return null;
     }
 }
 
+// Generic item formatter
+function formatItem(item, type, category, heroName = null, heroId = null) {
+    return {
+        code: String(item.Code || item.code),
+        name: item.name || item.skin_name || "Unknown Item",
+        image: item.image || item.image_path || "",
+        rarity: item.rarity || "common",
+        category,
+        type,
+        owned: false,
+        description: item.description || "",
+        released: item.released || "Unknown",
+        availability: item.availability || "",
+        ...(heroName && { heroName }),
+        ...(heroId && { heroId })
+    };
+}
+
 async function loadAllMasterData() {
-    const decorations = await loadJSON("decorations.json");
-    const obstacles = await loadJSON("obstacles.json");
-    const heroesData = await loadJSON("heros.json");
-    const sceneries = await loadJSON("sceneries.json") || { sceneries: [] };
-    const clanCapital = await loadJSON("clan-capital.json") || [];
+    // Use Promise.all to fetch all JSON files in parallel
+    const [decorations, obstacles, heroesData, sceneries, clanCapital] = await Promise.all([
+        loadJSON("decorations.json"),
+        loadJSON("obstacles.json"),
+        loadJSON("heros.json"),
+        loadJSON("sceneries.json"),
+        loadJSON("clan-capital.json")
+    ]).then(results => [
+        results[0],
+        results[1],
+        results[2],
+        results[3] || { sceneries: [] },
+        results[4] || []
+    ]);
 
-    // Format Decorations
-    const formattedDecorations = decorations ? decorations.map(item => ({
-        code: String(item.Code),
-        name: item.name || "Unknown Decoration",
-        image: item.image || "",
-        rarity: item.rarity || "common",
-        category: "Decoration",
-        type: "decoration",
-        owned: false,
-        description: item.description || "A decorative item for your village.",
-        released: item.released || "Unknown",
-        availability: item.availability || "Available in shop"
-    })) : [];
+    // Format all items using generic function
+    const formattedDecorations = decorations?.map(item => formatItem(item, "decoration", "Decoration")) || [];
+    
+    const formattedObstacles = obstacles?.map(item => formatItem(item, "obstacle", "Obstacle")) || [];
+    
+    const formattedSceneries = sceneries.sceneries?.map(item => formatItem(item, "scenery", "Scenery")) || [];
 
-    // Format Obstacles
-    const formattedObstacles = obstacles ? obstacles.map(item => ({
-        code: String(item.Code),
-        name: item.name || "Unknown Obstacle",
-        image: item.image || "",
-        rarity: item.rarity || "common",
-        category: "Obstacle",
-        type: "obstacle",
-        owned: false,
-        description: item.description || "An obstacle that can be removed or kept.",
-        released: item.released || "Unknown",
-        availability: item.availability || "Spawns naturally"
-    })) : [];
+    const formattedClanCapital = clanCapital?.map(item => formatItem(item, "clan", "Clan Item")) || [];
 
-    // Format Hero Skins
+    // Format Hero Skins with hero context
     const formattedHeroSkins = [];
-    if (heroesData && heroesData.heroes) {
+    if (heroesData?.heroes) {
         heroesData.heroes.forEach(hero => {
             if (hero.skins && Array.isArray(hero.skins)) {
-                const heroId = hero.name
-                    .toLowerCase()
-                    .replace(/\s+/g, '_')
-                    .replace(/[^a-z0-9_]/g, '');
-                
+                const heroId = hero.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
                 hero.skins.forEach(skin => {
-                    formattedHeroSkins.push({
-                        code: String(skin.code),
-                        name: skin.skin_name || "Unknown Skin",
-                        image: skin.image_path || "",
-                        rarity: skin.rarity || "common",
-                        category: "Hero Skin",
-                        heroName: hero.name,
-                        heroId: heroId,
-                        type: "heroskin",
-                        owned: false,
-                        description: skin.description || `A special skin for ${hero.name}.`,
-                        released: skin.released || "Unknown",
-                        availability: skin.availability || "Available in shop"
-                    });
+                    formattedHeroSkins.push(formatItem(skin, "heroskin", "Hero Skin", hero.name, heroId));
                 });
             }
         });
     }
 
-    // Format Sceneries
-    const formattedSceneries = sceneries && sceneries.sceneries ? sceneries.sceneries.map(item => ({
-        code: String(item.Code),
-        name: item.name || "Unknown Scenery",
-        image: item.image || "",
-        rarity: item.rarity || "common",
-        category: "Scenery",
-        type: "scenery",
-        owned: false,
-        description: item.description || "A beautiful scenery for your village.",
-        released: item.released || "Unknown",
-        availability: item.availability || "Available in shop"
-    })) : [];
-
-    // Format Clan Capital Items
-    const formattedClanCapital = clanCapital.length ? clanCapital.map(item => ({
-        code: String(item.Code),
-        name: item.name || "Unknown Clan Item",
-        image: item.image || "",
-        rarity: item.rarity || "common",
-        category: item.category || "Clan Item",
-        type: "clan",
-        owned: false,
-        description: item.description || "A decoration for your Clan Capital.",
-        released: item.released || "Unknown",
-        availability: item.availability || "Clan Capital exclusive"
-    })) : [];
-
     // Organize by category
     state.allItems = {
-        'cosmetic-compendium': [
-            ...formattedDecorations,
-            ...formattedObstacles,
-            ...formattedHeroSkins,
-            ...formattedSceneries,
-            ...formattedClanCapital
-        ],
+        'cosmetic-compendium': [...formattedDecorations, ...formattedObstacles, ...formattedHeroSkins, ...formattedSceneries, ...formattedClanCapital],
         'hero-wardrobe': formattedHeroSkins,
         'home-village-decor': [...formattedDecorations, ...formattedObstacles, ...formattedSceneries],
         'clan-hall-aesthetics': formattedClanCapital
     };
 
     state.items = state.allItems['cosmetic-compendium'];
-    console.log("Loaded items by category:", {
-        'Cosmetic Compendium': state.allItems['cosmetic-compendium'].length,
-        'Hero Wardrobe': state.allItems['hero-wardrobe'].length,
-        'Home Village Decor': state.allItems['home-village-decor'].length,
-        'Clan Hall Aesthetics': state.allItems['clan-hall-aesthetics'].length
+    console.log("Loaded items:", {
+        'Cosmetic': formattedDecorations.length,
+        'Obstacles': formattedObstacles.length,
+        'Hero Skins': formattedHeroSkins.length,
+        'Sceneries': formattedSceneries.length,
+        'Clan Items': formattedClanCapital.length
     });
 }
 
@@ -238,6 +202,7 @@ function filterByHero(heroId) {
 function switchCategory(categoryId) {
     state.activeCategory = categoryId;
     state.items = state.allItems[categoryId] || [];
+    state.visibleLimit = 50; // Reset pagination when switching categories
     
     if (state.hasUserData) {
         state.items = state.items.map(item => ({
@@ -260,29 +225,33 @@ function updateTypeFilterUI(categoryId) {
     const typeFilterOptions = document.getElementById('type-filter-options');
     const mobileTypeFilterOptions = document.getElementById('mobile-type-filter-options');
     
-    let filterHTML = '';
-    
-    if (categoryId === 'cosmetic-compendium') {
-        filterHTML = `
-            <button class="filter-btn active" data-type-filter="all">All Items</button>
-            <button class="filter-btn" data-type-filter="heroskin">Hero Skins</button>
-            <button class="filter-btn" data-type-filter="scenery">Sceneries</button>
-            <button class="filter-btn" data-type-filter="obstacle">Obstacles</button>
-            <button class="filter-btn" data-type-filter="decoration">Decorations</button>
-            <button class="filter-btn" data-type-filter="clan">Clan House Parts</button>
-        `;
-    } else if (categoryId === 'hero-wardrobe') {
-        filterHTML = '<button class="filter-btn active" data-type-filter="heroskin" disabled style="opacity: 0.7; cursor: not-allowed;">Hero Skins</button>';
-    } else if (categoryId === 'clan-hall-aesthetics') {
-        filterHTML = '<button class="filter-btn active" data-type-filter="clan" disabled style="opacity: 0.7; cursor: not-allowed;">Clan Items</button>';
-    } else {
-        filterHTML = `
-            <button class="filter-btn active" data-type-filter="both">Both</button>
-            <button class="filter-btn" data-type-filter="decoration">Decorations</button>
-            <button class="filter-btn" data-type-filter="obstacle">Obstacles</button>
-            <button class="filter-btn" data-type-filter="scenery">Sceneries</button>
-        `;
-    }
+    const filterConfigs = {
+        'cosmetic-compendium': [
+            { value: 'all', label: 'All Items' },
+            { value: 'heroskin', label: 'Hero Skins' },
+            { value: 'scenery', label: 'Sceneries' },
+            { value: 'obstacle', label: 'Obstacles' },
+            { value: 'decoration', label: 'Decorations' },
+            { value: 'clan', label: 'Clan House Parts' }
+        ],
+        'hero-wardrobe': [
+            { value: 'heroskin', label: 'Hero Skins', disabled: true }
+        ],
+        'clan-hall-aesthetics': [
+            { value: 'clan', label: 'Clan Items', disabled: true }
+        ],
+        'home-village-decor': [
+            { value: 'all', label: 'All Items' },
+            { value: 'decoration', label: 'Decorations' },
+            { value: 'obstacle', label: 'Obstacles' },
+            { value: 'scenery', label: 'Sceneries' }
+        ]
+    };
+
+    const filters = filterConfigs[categoryId] || [];
+    const filterHTML = filters.map((f, i) => 
+        `<button class="filter-btn ${i === 0 ? 'active' : ''}" data-type-filter="${f.value}" ${f.disabled ? 'disabled style="opacity: 0.7; cursor: not-allowed;"' : ''}>${f.label}</button>`
+    ).join('');
     
     if (typeFilterOptions) typeFilterOptions.innerHTML = filterHTML;
     if (mobileTypeFilterOptions) mobileTypeFilterOptions.innerHTML = filterHTML;
@@ -331,6 +300,18 @@ function getFilteredItems() {
 // ============================================
 // RENDERING UI
 // ============================================
+const TYPE_LABELS = {
+    'decoration': 'Decoration',
+    'obstacle': 'Obstacle',
+    'heroskin': 'Hero Skin',
+    'scenery': 'Scenery',
+    'clan': 'Clan Item'
+};
+
+function getTypeBadgeText(type, category) {
+    return TYPE_LABELS[type] || category;
+}
+
 function createItemCard(item) {
     const container = document.createElement("div");
     container.className = "item-card-container";
@@ -339,13 +320,7 @@ function createItemCard(item) {
     card.className = `item-card rarity-${item.rarity} type-${item.type}`;
     if (state.hasUserData && !item.owned) card.classList.add("grayscale");
 
-    let typeBadgeText = '';
-    if (item.type === 'decoration') typeBadgeText = 'Decoration';
-    else if (item.type === 'obstacle') typeBadgeText = 'Obstacle';
-    else if (item.type === 'heroskin') typeBadgeText = 'Hero Skin';
-    else if (item.type === 'scenery') typeBadgeText = 'Scenery';
-    else if (item.type === 'clan') typeBadgeText = 'Clan Item';
-    else typeBadgeText = item.category;
+    const typeBadgeText = getTypeBadgeText(item.type, item.category);
 
     const ownershipBadge = state.hasUserData ? `
         <div class="item-status-badge ${item.owned ? 'owned' : 'missing'}">
@@ -353,7 +328,6 @@ function createItemCard(item) {
         </div>
     ` : '';
 
-    // Front of card
     const frontHTML = `
         <div class="item-card-front">
             ${ownershipBadge}
@@ -361,7 +335,7 @@ function createItemCard(item) {
                 ${typeBadgeText}
             </div>
             <div class="item-image-container">
-                <img src="${item.image}" class="item-image" loading="lazy" alt="${item.name}">
+                <img src="${item.image}" class="item-image" loading="lazy" alt="${item.name}" width="100%" height="auto" style="display: block;">
             </div>
             <div class="item-info">
                 <h3>${item.name}</h3>
@@ -370,10 +344,9 @@ function createItemCard(item) {
         </div>
     `;
 
-    // Back of card with details
     const backHTML = `
         <div class="item-card-back">
-            <button class="item-close-btn" onclick="event.stopPropagation(); this.closest('.item-card').classList.remove('flipped');">×</button>
+            <button class="item-close-btn" aria-label="Close details" onclick="event.stopPropagation(); this.closest('.item-card').classList.remove('flipped');">×</button>
             <div class="item-details">
                 <h3>${item.name}</h3>
                 
@@ -414,7 +387,6 @@ function createItemCard(item) {
 
     card.innerHTML = frontHTML + backHTML;
     
-    // Add click handler to flip card
     card.addEventListener('click', (e) => {
         if (!e.target.closest('.item-close-btn')) {
             card.classList.toggle('flipped');
@@ -431,6 +403,7 @@ function renderItems() {
     const count = document.getElementById("items-count");
 
     const items = getFilteredItems();
+    const visibleItems = items.slice(0, state.visibleLimit);
 
     list.innerHTML = "";
     count.textContent = items.length;
@@ -441,7 +414,27 @@ function renderItems() {
     }
     msg.style.display = "none";
 
-    items.forEach(i => list.appendChild(createItemCard(i)));
+    // Use DocumentFragment for efficient DOM rendering
+    const fragment = document.createDocumentFragment();
+    visibleItems.forEach(i => fragment.appendChild(createItemCard(i)));
+    list.appendChild(fragment);
+
+    // Add "Load More" button if there are more items
+    if (items.length > state.visibleLimit) {
+        const loadMoreContainer = document.createElement('div');
+        loadMoreContainer.className = "item-card-container";
+        loadMoreContainer.innerHTML = `
+            <button id="load-more-btn" class="btn btn-secondary" style="width: 100%; padding: 1rem; cursor: pointer;">
+                Load More (${items.length - state.visibleLimit} remaining)
+            </button>
+        `;
+        list.appendChild(loadMoreContainer);
+
+        document.getElementById('load-more-btn').addEventListener('click', () => {
+            state.visibleLimit += 50;
+            renderItems();
+        });
+    }
 }
 
 function updateProgressTracker() {
@@ -467,12 +460,12 @@ function updateProgressTracker() {
 
     el.style.display = "block";
     el.innerHTML = `
-        <div class="stat-item"><div class="stat-value">${owned}</div><div>Owned</div></div>
-        <div class="stat-item"><div class="stat-value">${total}</div><div>Total Items</div></div>
-        <div class="stat-item">
-            <div class="stat-value">${pct}%</div>
-            <div>Complete</div>
-            <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 0.9rem; font-weight: 600;">${owned}/${total} items collected</span>
+            <span style="font-size: 1.1rem; font-weight: 700; color: var(--gold);">${pct}%</span>
+        </div>
+        <div class="progress-bar" style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
+            <div class="progress-fill" style="width: ${pct}%; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 0.3s ease;"></div>
         </div>
     `;
 }
@@ -569,13 +562,15 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     });
 
-    // Search
+    // Search with debounce to prevent excessive re-renders
     const searchInput = document.getElementById("search-input");
     if (searchInput) {
-        searchInput.addEventListener("input", e => {
+        const debouncedSearch = debounce(e => {
             state.searchQuery = e.target.value;
+            state.visibleLimit = 50; // Reset pagination on search
             updateUI();
-        });
+        }, 300);
+        searchInput.addEventListener("input", debouncedSearch);
     }
 
     // Sort
@@ -635,6 +630,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Upload / Clear
     const uploadBtn = document.getElementById("upload-btn");
     if (uploadBtn) {
+        uploadBtn.setAttribute('aria-label', 'Upload your collection data');
         uploadBtn.addEventListener("click", () => openModal("upload-modal"));
     }
     
@@ -645,6 +641,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     const clearDataBtn = document.getElementById("clear-data-btn");
     if (clearDataBtn) {
+        clearDataBtn.setAttribute('aria-label', 'Clear your collection data');
         clearDataBtn.addEventListener("click", handleDataClear);
     }
 });
@@ -693,6 +690,7 @@ function showToast(title, message, type = "success") {
 document.addEventListener("DOMContentLoaded", () => {
     // Modal close buttons
     document.querySelectorAll(".modal-close-btn").forEach(btn => {
+        btn.setAttribute('aria-label', 'Close modal');
         btn.addEventListener("click", () => {
             const modal = btn.closest(".modal");
             if (modal) {
@@ -750,17 +748,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // Sync mobile search
+    // Sync mobile search with debounce
     const mobileSearchInput = document.getElementById("mobile-search-input");
     if (mobileSearchInput) {
-        mobileSearchInput.addEventListener("input", e => {
+        const debouncedMobileSearch = debounce(e => {
             state.searchQuery = e.target.value;
+            state.visibleLimit = 50; // Reset pagination on search
             const desktopSearch = document.getElementById("search-input");
             if (desktopSearch) {
                 desktopSearch.value = e.target.value;
             }
             updateUI();
-        });
+        }, 300);
+        mobileSearchInput.addEventListener("input", debouncedMobileSearch);
     }
 
     // Sync mobile sort
