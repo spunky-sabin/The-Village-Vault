@@ -64,6 +64,19 @@ function formatItem(item, type, category, heroName = null, heroId = null) {
     };
 }
 
+async function prefetchImages(items) {
+    // Pre-load all images in the background with low priority
+    items.forEach(item => {
+        if (item.image) {
+            const link = document.createElement('link');
+            link.rel = 'prefetch';
+            link.as = 'image';
+            link.href = item.image;
+            document.head.appendChild(link);
+        }
+    });
+}
+
 async function loadAllMasterData() {
     // Use Promise.all to fetch all JSON files in parallel
     const [decorations, obstacles, heroesData, sceneries, clanCapital] = await Promise.all([
@@ -111,6 +124,12 @@ async function loadAllMasterData() {
     };
 
     state.items = state.allItems['cosmetic-compendium'];
+    
+    // Prefetch all images in background (low priority)
+    const allItemsFlat = Object.values(state.allItems).flat();
+    const uniqueImages = [...new Set(allItemsFlat.map(item => item.image).filter(Boolean))];
+    prefetchImages(allItemsFlat);
+    
     console.log("Loaded items:", {
         'Cosmetic': formattedDecorations.length,
         'Obstacles': formattedObstacles.length,
@@ -118,6 +137,7 @@ async function loadAllMasterData() {
         'Sceneries': formattedSceneries.length,
         'Clan Items': formattedClanCapital.length
     });
+    console.log(`Prefetching ${uniqueImages.length} unique images...`);
 }
 
 // ============================================
