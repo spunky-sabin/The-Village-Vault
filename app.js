@@ -56,7 +56,7 @@ function initImageObserver() {
                     imageObserver.unobserve(img);
                 }
             });
-        }, { rootMargin: '100px' }); // Load images 100px before they enter viewport
+        }, { rootMargin: '100px' });
     } else {
         console.warn('IntersectionObserver not supported, falling back to immediate loading');
     }
@@ -64,7 +64,6 @@ function initImageObserver() {
 
 async function loadJSON(url) {
     try {
-        // Resolve relative paths correctly
         const fullPath = url.startsWith('src/') ? url : `src/data-json/${url}`;
         const res = await fetch(fullPath);
         if (!res.ok) throw new Error("HTTP Error " + res.status);
@@ -109,7 +108,6 @@ async function preloadImages(items, maxImages = 20) {
                 resolve();
             };
             
-            // Add timeout for very slow images (5 seconds)
             setTimeout(resolve, 5000);
         });
     });
@@ -118,7 +116,6 @@ async function preloadImages(items, maxImages = 20) {
 }
 
 async function loadAllMasterData() {
-    // Use Promise.all to fetch all JSON files in parallel
     const [decorations, obstacles, heroesData, sceneries, clanCapital, itemDetails] = await Promise.all([
         loadJSON("decorations.json"),
         loadJSON("obstacles.json"),
@@ -173,8 +170,16 @@ async function loadAllMasterData() {
                 }
             }
         } else if (itemType === 'scenery' && itemDetails.sceneries) {
-            const found = itemDetails.sceneries.find(s => 
-                s.name.toLowerCase().trim() === normalizedName
+            // FIXED: Properly handle itemDetails.sceneries.all_sceneries structure
+            let sceneryArray = [];
+            if (Array.isArray(itemDetails.sceneries)) {
+                sceneryArray = itemDetails.sceneries;
+            } else if (itemDetails.sceneries.all_sceneries && Array.isArray(itemDetails.sceneries.all_sceneries)) {
+                sceneryArray = itemDetails.sceneries.all_sceneries;
+            }
+
+            const found = sceneryArray.find(s => 
+                s.name && s.name.toLowerCase().trim() === normalizedName
             );
             if (found) return found;
         }
@@ -199,7 +204,6 @@ async function loadAllMasterData() {
 
     const formattedClanCapital = clanCapital?.map(item => formatItem(item, "clan", "Clan Item")) || [];
 
-    // Format Hero Skins with hero context
     const formattedHeroSkins = [];
     if (heroesData?.heroes) {
         heroesData.heroes.forEach(hero => {
@@ -213,7 +217,6 @@ async function loadAllMasterData() {
         });
     }
 
-    // Organize by category
     state.allItems = {
         'cosmetic-compendium': [...formattedDecorations, ...formattedObstacles, ...formattedHeroSkins, ...formattedSceneries, ...formattedClanCapital],
         'hero-wardrobe': formattedHeroSkins,
@@ -223,7 +226,6 @@ async function loadAllMasterData() {
 
     state.items = state.allItems['cosmetic-compendium'];
     
-    // Preload only the first batch of images (visible items)
     await preloadImages(state.items, 50);
 }
 
@@ -309,7 +311,7 @@ function filterByHero(heroId) {
 function switchCategory(categoryId) {
     state.activeCategory = categoryId;
     state.items = state.allItems[categoryId] || [];
-    state.visibleLimit = 50; // Reset pagination when switching categories
+    state.visibleLimit = 50;
     
     if (state.hasUserData) {
         state.items = state.items.map(item => ({
@@ -399,7 +401,7 @@ function getFilteredItems() {
         case "name-asc": filtered.sort((a, b) => a.name.localeCompare(b.name)); break;
         case "name-desc": filtered.sort((a, b) => b.name.localeCompare(a.name)); break;
         case "newest":
-        default: filtered.sort((a, b) => b.code - a.code);
+        default: filtered.sort((a, b) => b.code - b.code);
     }
     return filtered;
 }
@@ -494,12 +496,10 @@ function createItemCard(item) {
 
     card.innerHTML = frontHTML + backHTML;
     
-    // Set up lazy loading with IntersectionObserver
     const imgEl = card.querySelector('.item-image');
     if (imageObserver && imgEl) {
         imageObserver.observe(imgEl);
     } else if (imgEl && !imageObserver) {
-        // Fallback for browsers without IntersectionObserver
         imgEl.src = imgEl.dataset.src;
         imgEl.onload = () => imgEl.classList.add('loaded');
     }
@@ -531,12 +531,10 @@ function renderItems() {
     }
     msg.style.display = "none";
 
-    // Use DocumentFragment for efficient DOM rendering
     const fragment = document.createDocumentFragment();
     visibleItems.forEach(i => fragment.appendChild(createItemCard(i)));
     list.appendChild(fragment);
 
-    // Add "Load More" button if there are more items
     if (items.length > state.visibleLimit) {
         const loadMoreContainer = document.createElement('div');
         loadMoreContainer.className = "item-card-container";
@@ -626,7 +624,6 @@ function handleDataUpload() {
 
 function handleDataClear() {
     state.userOwnedCodes = new Set();
-    // Reset owned flag for all items across all categories
     Object.keys(state.allItems).forEach(categoryId => {
         state.allItems[categoryId] = state.allItems[categoryId].map(i => ({ ...i, owned: false }));
     });
@@ -664,7 +661,7 @@ function openModal(modalId) {
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
-        modal.style.display = 'none';
+        modal.style.display = "none";
     }
 }
 
@@ -693,7 +690,6 @@ function showToast(title, message, type = "success") {
 // INITIALIZE APP
 // ============================================
 document.addEventListener("DOMContentLoaded", async () => {
-    // Initialize the IntersectionObserver for lazy loading
     initImageObserver();
     
     await loadAllMasterData();
@@ -714,31 +710,26 @@ document.addEventListener("DOMContentLoaded", async () => {
     
     updateUI();
 
-    // Category Tab Switching
     const categoryTabs = document.querySelectorAll('.category-tab');
     categoryTabs.forEach(tab => {
         tab.addEventListener('click', () => {
             const categoryId = tab.getAttribute('data-category');
-            
             categoryTabs.forEach(t => t.classList.remove('active'));
             tab.classList.add('active');
-            
             switchCategory(categoryId);
         });
     });
 
-    // Search with debounce to prevent excessive re-renders
     const searchInput = document.getElementById("search-input");
     if (searchInput) {
         const debouncedSearch = debounce(e => {
             state.searchQuery = e.target.value;
-            state.visibleLimit = 50; // Reset pagination on search
+            state.visibleLimit = 50;
             updateUI();
         }, 300);
         searchInput.addEventListener("input", debouncedSearch);
     }
 
-    // Sort
     const sortSelect = document.getElementById("sort-select");
     if (sortSelect) {
         sortSelect.addEventListener("change", e => {
@@ -747,52 +738,39 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // Type filters
     attachTypeFilterListeners();
 
-    // Ownership filters
     const ownershipCheckboxes = document.querySelectorAll('.ownership-filter');
     ownershipCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', e => {
             const ownership = e.target.value;
-            
             ownershipCheckboxes.forEach(cb => {
-                if (cb !== e.target) {
-                    cb.checked = false;
-                }
+                if (cb !== e.target) cb.checked = false;
             });
-            
             filterByOwnership(ownership);
         });
     });
 
-    // Hero filters
     const heroFilterCheckboxes = document.querySelectorAll('.hero-filter');
     heroFilterCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', e => {
             const heroId = e.target.value;
             filterByHero(heroId);
             const mobileCheckbox = document.querySelector(`.mobile-hero-filter[value="${heroId}"]`);
-            if (mobileCheckbox) {
-                mobileCheckbox.checked = checkbox.checked;
-            }
+            if (mobileCheckbox) mobileCheckbox.checked = checkbox.checked;
         });
     });
 
-    // Mobile Hero filters
     const mobileHeroFilterCheckboxes = document.querySelectorAll('.mobile-hero-filter');
     mobileHeroFilterCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', e => {
             const heroId = e.target.value;
             filterByHero(heroId);
             const desktopCheckbox = document.querySelector(`.hero-filter[value="${heroId}"]`);
-            if (desktopCheckbox) {
-                desktopCheckbox.checked = checkbox.checked;
-            }
+            if (desktopCheckbox) desktopCheckbox.checked = checkbox.checked;
         });
     });
 
-    // Upload / Clear
     const uploadBtn = document.getElementById("upload-btn");
     if (uploadBtn) {
         uploadBtn.setAttribute('aria-label', 'Upload your collection data');
@@ -810,59 +788,43 @@ document.addEventListener("DOMContentLoaded", async () => {
         clearDataBtn.addEventListener("click", handleDataClear);
     }
 
-    // Modal close buttons
     document.querySelectorAll(".modal-close-btn").forEach(btn => {
         btn.setAttribute('aria-label', 'Close modal');
         btn.addEventListener("click", () => {
             const modal = btn.closest(".modal");
-            if (modal) {
-                modal.style.display = "none";
-            }
+            if (modal) modal.style.display = "none";
         });
     });
 
-    // Modal overlay close
     document.querySelectorAll(".modal-overlay").forEach(overlay => {
         overlay.addEventListener("click", () => {
             const modal = overlay.closest(".modal");
-            if (modal) {
-                modal.style.display = "none";
-            }
+            if (modal) modal.style.display = "none";
         });
     });
 
-    // Cancel buttons
     document.querySelectorAll(".modal-cancel-btn").forEach(btn => {
         btn.addEventListener("click", () => {
             const modal = btn.closest(".modal");
-            if (modal) {
-                modal.style.display = "none";
-            }
+            if (modal) modal.style.display = "none";
         });
     });
 
-    // Mobile filter button
     const mobileFilterBtn = document.getElementById("mobile-filter-btn");
     if (mobileFilterBtn) {
         mobileFilterBtn.addEventListener("click", () => openModal("filter-modal"));
     }
 
-    // Mobile ownership filters
     document.querySelectorAll(".mobile-ownership-filter").forEach(checkbox => {
         checkbox.addEventListener("change", () => {
             const ownership = checkbox.value;
-            
             document.querySelectorAll(".mobile-ownership-filter").forEach(cb => {
-                if (cb !== checkbox) {
-                    cb.checked = false;
-                }
+                if (cb !== checkbox) cb.checked = false;
             });
-            
             filterByOwnership(ownership);
         });
     });
 
-    // Apply filters button (mobile)
     const applyFiltersBtn = document.getElementById("apply-filters-btn");
     if (applyFiltersBtn) {
         applyFiltersBtn.addEventListener("click", () => {
@@ -870,30 +832,24 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
-    // Sync mobile search with debounce
     const mobileSearchInput = document.getElementById("mobile-search-input");
     if (mobileSearchInput) {
         const debouncedMobileSearch = debounce(e => {
             state.searchQuery = e.target.value;
-            state.visibleLimit = 50; // Reset pagination on search
+            state.visibleLimit = 50;
             const desktopSearch = document.getElementById("search-input");
-            if (desktopSearch) {
-                desktopSearch.value = e.target.value;
-            }
+            if (desktopSearch) desktopSearch.value = e.target.value;
             updateUI();
         }, 300);
         mobileSearchInput.addEventListener("input", debouncedMobileSearch);
     }
 
-    // Sync mobile sort
     const mobileSortSelect = document.getElementById("mobile-sort-select");
     if (mobileSortSelect) {
         mobileSortSelect.addEventListener("change", e => {
             state.sortBy = e.target.value;
             const desktopSort = document.getElementById("sort-select");
-            if (desktopSort) {
-                desktopSort.value = e.target.value;
-            }
+            if (desktopSort) desktopSort.value = e.target.value;
             updateUI();
         });
     }
