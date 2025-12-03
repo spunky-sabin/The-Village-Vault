@@ -830,7 +830,7 @@ img, picture, video, svg {
 /* Small phones (375px): 5 columns */
 @media (min-width: 375px) and (max-width: 424px) {
     .items-grid {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 0.5rem;
     }
 }
@@ -838,7 +838,7 @@ img, picture, video, svg {
 /* Medium phones (425px): 5 columns */
 @media (min-width: 425px) and (max-width: 599px) {
     .items-grid {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 0.6rem;
     }
 }
@@ -846,7 +846,7 @@ img, picture, video, svg {
 /* Large phones (600px-767px): 6 columns */
 @media (min-width: 600px) and (max-width: 767px) {
     .items-grid {
-        grid-template-columns: repeat(6, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 0.75rem;
     }
 }
@@ -854,7 +854,7 @@ img, picture, video, svg {
 /* Tablets (768px-1024px): 7 columns */
 @media (min-width: 768px) and (max-width: 1024px) {
     .items-grid {
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 0.9rem;
     }
 }
@@ -862,7 +862,7 @@ img, picture, video, svg {
 /* Small desktops (1025px-1279px): 8 columns */
 @media (min-width: 1025px) and (max-width: 1279px) {
     .items-grid {
-        grid-template-columns: repeat(8, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 1rem;
     }
 }
@@ -870,7 +870,7 @@ img, picture, video, svg {
 /* Large desktops (1280px+): 10 columns */
 @media (min-width: 1280px) {
     .items-grid {
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         gap: 1.2rem;
     }
 }
