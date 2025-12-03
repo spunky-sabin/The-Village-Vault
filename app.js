@@ -116,20 +116,18 @@ async function preloadImages(items, maxImages = 20) {
 }
 
 async function loadAllMasterData() {
-    const [decorations, obstacles, heroesData, sceneries, clanCapital, itemDetails] = await Promise.all([
+    const [decorations, obstacles, heroesData, sceneries, itemDetails] = await Promise.all([
         loadJSON("decorations.json"),
         loadJSON("obstacles.json"),
         loadJSON("heros.json"),
         loadJSON("sceneries.json"),
-        loadJSON("clan-capital.json"),
         loadJSON("item-details.json")
     ]).then(results => [
         results[0],
         results[1],
         results[2],
         results[3] || { sceneries: [] },
-        results[4] || [],
-        results[5] || {}
+        results[4] || {}
     ]);
 
     function findItemDetails(itemName, itemType) {
@@ -202,7 +200,7 @@ async function loadAllMasterData() {
         return formatItem(item, "scenery", "Scenery", null, null, details);
     }) || [];
 
-    const formattedClanCapital = clanCapital?.map(item => formatItem(item, "clan", "Clan Item")) || [];
+    const formattedClanCapital = [];
 
     const formattedHeroSkins = [];
     if (heroesData?.heroes) {

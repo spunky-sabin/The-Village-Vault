@@ -420,14 +420,12 @@ async function loadAllMasterData() {
     const obstacles = await loadJSON("src/data-json/obstacles.json");
     const heroesData = await loadJSON("src/data-json/heros.json");
     const sceneries = await loadJSON("src/data-json/sceneries.json");
-    const clanCapital = await loadJSON("src/data-json/clan-capital.json");
     const itemDetails = await loadJSON("src/data-json/item-details.json");
     
     itemDetailsDatabase = itemDetails || {};
 
     function findItemDetails(itemName, itemType) {
         if (!itemDetails || !itemName) {
-            console.log(`No details found for: ${itemName} (type: ${itemType})`);
             return null;
         }
         
@@ -442,7 +440,6 @@ async function loadAllMasterData() {
                         d.name.toLowerCase().trim() === normalizedName
                     );
                     if (found) {
-                        console.log(`Found decoration details for: ${itemName}`, found);
                         return found;
                     }
                 }
@@ -455,7 +452,6 @@ async function loadAllMasterData() {
                         o.name.toLowerCase().trim() === normalizedName
                     );
                     if (found) {
-                        console.log(`Found obstacle details for: ${itemName}`, found);
                         return found;
                     }
                 }
@@ -468,22 +464,27 @@ async function loadAllMasterData() {
                         s.name.toLowerCase().trim() === normalizedName
                     );
                     if (found) {
-                        console.log(`Found hero skin details for: ${itemName}`, found);
                         return found;
                     }
                 }
             }
         } else if (itemType === 'scenery' && itemDetails.sceneries) {
-            const found = itemDetails.sceneries.find(s => 
-                s.name.toLowerCase().trim() === normalizedName
+            // Properly handle itemDetails.sceneries.all_sceneries structure
+            let sceneryArray = [];
+            if (Array.isArray(itemDetails.sceneries)) {
+                sceneryArray = itemDetails.sceneries;
+            } else if (itemDetails.sceneries.all_sceneries && Array.isArray(itemDetails.sceneries.all_sceneries)) {
+                sceneryArray = itemDetails.sceneries.all_sceneries;
+            }
+            
+            const found = sceneryArray.find(s => 
+                s.name && s.name.toLowerCase().trim() === normalizedName
             );
             if (found) {
-                console.log(`Found scenery details for: ${itemName}`, found);
                 return found;
             }
         }
         
-        console.log(`No details found for: ${itemName} (type: ${itemType})`);
         return null;
     }
 
@@ -562,18 +563,7 @@ async function loadAllMasterData() {
         };
     }) : [];
 
-    const formattedClanCapital = clanCapital ? clanCapital.map(item => ({
-        code: String(item.Code),
-        name: item.name || "Unknown Clan Item",
-        image: item.image || "",
-        rarity: item.rarity || "common",
-        category: item.category || "Clan Item",
-        type: "clan",
-        owned: false,
-        description: item.description || "A decoration for your Clan Capital.",
-        released: item.released || "Unknown",
-        availability: item.availability || "Clan Capital exclusive"
-    })) : [];
+    const formattedClanCapital = [];
 
     state.allItems = {
         'cosmetic-compendium': [
