@@ -7,6 +7,27 @@
     "image": "images/obs/Obstacle_HV_Stone_large.png"
   },
   {
+    "SN": 52,
+    "name": "Rock",
+    "Code": "8000002",
+    "TID": "TID_OBSTACLE_STONE_1",
+    "image": "images/obs/Obstacle_HV_Stone_1.png"
+  },
+  {
+    "SN": 50,
+    "name": "Rock",
+    "Code": "8000003",
+    "TID": "TID_OBSTACLE_STONE_FLAT",
+    "image": "images/obs/Obstacle_HV_Stone_2.png"
+  },
+  {
+    "SN": 56,
+    "name": "Stone",
+    "Code": "8000014",
+    "TID": "TID_OBSTACLE_ROCK_PILLAR",
+    "image": "images/obs/Obstacle_HV_Stone_pillar.png"
+  },
+  {
     "SN": 2,
     "name": "2012 Stone",
     "Code": "8000015",
@@ -28,67 +49,18 @@
     "image": "images/obs/Obstacle_HV_Clashmas_Tree_2013.png"
   },
   {
-    "SN": 5,
-    "name": "Clashmas Tree (2014)",
-    "Code": "8000032",
-    "TID": "TID_2014_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2014.png"
-  },
-  {
-    "SN": 6,
-    "name": "Clashmas Tree (2015)",
-    "Code": "8000037",
-    "TID": "TID_2015_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2015.png"
-  },
-  {
-    "SN": 7,
-    "name": "Clashmas Tree (2016)",
-    "Code": "8000040",
-    "TID": "TID_2016_TREE",
-    "image": "images/obs/XMas_Tree_2016.png"
-  },
-  {
-    "SN": 8,
-    "name": "Clashmas Tree (2017)",
-    "Code": "8000069",
-    "TID": "TID_2017_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2017.png"
-  },
-  {
-    "SN": 9,
-    "name": "Clashmas Tree (2018)",
-    "Code": "8000072",
-    "TID": "TID_2018_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2018.png"
-  },
-  {
-    "SN": 10,
-    "name": "Clashmas Tree (2019)",
-    "Code": "8000078",
-    "TID": "TID_2019_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2019.png"
-  },
-  {
-    "SN": 11,
-    "name": "Clashmas Tree (2020)",
-    "Code": "8000082",
-    "TID": "TID_2020_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2020.png"
-  },
-  {
-    "SN": 12,
-    "name": "Clashmas Tree (2021)",
-    "Code": "8000086",
-    "TID": "TID_2021_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2021.png"
-  },
-  {
     "SN": 13,
     "name": "Halloween Tombstone",
     "Code": "8000031",
     "TID": "TID_2014_HALLOWEEN_TOMBSTONE",
     "image": "images/obs/Obstacle_HV_Hallloween_Headstone.png"
+  },
+  {
+    "SN": 5,
+    "name": "Clashmas Tree (2014)",
+    "Code": "8000032",
+    "TID": "TID_2014_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2014.png"
   },
   {
     "SN": 14,
@@ -98,11 +70,32 @@
     "image": "images/obs/Obstacle_HV_Halloween_Cauldron.png"
   },
   {
+    "SN": 6,
+    "name": "Clashmas Tree (2015)",
+    "Code": "8000037",
+    "TID": "TID_2015_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2015.png"
+  },
+  {
     "SN": 15,
     "name": "Scary Pumpkin",
     "Code": "8000039",
     "TID": "TID_2016_SCARY_PUMPKIN",
     "image": "images/obs/Obstacle_HV_Scary_Pumpkin.png"
+  },
+  {
+    "SN": 7,
+    "name": "Clashmas Tree (2016)",
+    "Code": "8000040",
+    "TID": "TID_2016_TREE",
+    "image": "images/obs/XMas_Tree_2016.png"
+  },
+  {
+    "SN": 57,
+    "name": "Old Barbarian Statue",
+    "Code": "8000055",
+    "TID": "TID_OBSTACLE_OLD_BARBARIAN_STATUE",
+    "image": "images/obs/Obstacle_BB_Old_Barbarian_Statue.png"
   },
   {
     "SN": 16,
@@ -126,6 +119,13 @@
     "image": "images/obs/Obstacle_HV_Firework_Stash.png"
   },
   {
+    "SN": 8,
+    "name": "Clashmas Tree (2017)",
+    "Code": "8000069",
+    "TID": "TID_2017_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2017.png"
+  },
+  {
     "SN": 19,
     "name": "2018 Fortune Tree CNY",
     "Code": "8000070",
@@ -140,6 +140,13 @@
     "image": "images/obs/Obstacle_HV_6th_Anniversary_Cake.png"
   },
   {
+    "SN": 9,
+    "name": "Clashmas Tree (2018)",
+    "Code": "8000072",
+    "TID": "TID_2018_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2018.png"
+  },
+  {
     "SN": 21,
     "name": "2018 Witch's Hat",
     "Code": "8000073",
@@ -148,10 +155,17 @@
   },
   {
     "SN": 22,
-    "name": "Spike-y Cactus", 
+    "name": "Spike-y Cactus",
     "Code": "8000074",
     "TID": "TID_2018_SPIKE_Y_CACTUS",
     "image": "images/obs/Spike-y_Cactus.png"
+  },
+  {
+    "SN": 58,
+    "name": "Glowy Lantern (BB)",
+    "Code": "8000075",
+    "TID": "TID_OBSTACLE_LANTERN_CNY2019",
+    "image": "images/obs/Obstacle_BB_Glowy_Lantern.png"
   },
   {
     "SN": 23,
@@ -166,6 +180,13 @@
     "Code": "8000077",
     "TID": "TID_2019_SPOOKY_TREE",
     "image": "images/obs/Obstacle_HV_Spooky_Tree.png"
+  },
+  {
+    "SN": 10,
+    "name": "Clashmas Tree (2019)",
+    "Code": "8000078",
+    "TID": "TID_2019_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2019.png"
   },
   {
     "SN": 25,
@@ -189,6 +210,13 @@
     "image": "images/obs/Obstacle_HV_Vacant_Tomb.png"
   },
   {
+    "SN": 11,
+    "name": "Clashmas Tree (2020)",
+    "Code": "8000082",
+    "TID": "TID_2020_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2020.png"
+  },
+  {
     "SN": 28,
     "name": "Lucky Shrub",
     "Code": "8000083",
@@ -208,6 +236,13 @@
     "Code": "8000085",
     "TID": "TID_2021_FRIENDLY_FLOWER",
     "image": "images/obs/Obstacle_HV_Friendly_Flower.png"
+  },
+  {
+    "SN": 12,
+    "name": "Clashmas Tree (2021)",
+    "Code": "8000086",
+    "TID": "TID_2021_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2021.png"
   },
   {
     "SN": 31,
@@ -232,7 +267,7 @@
   },
   {
     "SN": 34,
-    "name": "Rabbit Lantern", 
+    "name": "Rabbit Lantern",
     "Code": "8000090",
     "TID": "TID_2023_RABBIT_LANTERN",
     "image": "images/obs/Rabbit_Lantern.png"
@@ -260,7 +295,7 @@
   },
   {
     "SN": 38,
-    "name": "Lucky Letterbox", 
+    "name": "Lucky Letterbox",
     "Code": "8000113",
     "TID": "TID_2023_LUCKY_LETTERBOX_CNY",
     "image": "images/obs/Lucky_Letterbox.png"
@@ -308,62 +343,6 @@
     "image": "images/obs/april25 moneybox 01.png"
   },
   {
-    "SN": 50,
-    "name": "Rock",
-    "Code": "8000003",
-    "TID": "TID_OBSTACLE_STONE_FLAT",
-    "image": "images/obs/Obstacle_HV_Stone_2.png"
-  },
-  {
-    "SN": 51,
-    "name": "Rock",
-    "Code": "80000010",
-    "TID": "TID_OBSTACLE_TRUNK_FALLEN",
-    "image": "images/obs/Obstacle_HV_Stone_2.png"
-  },
-  {
-    "SN": 52,
-    "name": "Rock",
-    "Code": "8000002",
-    "TID": "TID_OBSTACLE_STONE_1",
-    "image": "images/obs/Obstacle_HV_Stone_1.png"
-  },
-  {
-    "SN": 53,
-    "name": "Stone",
-    "Code": "80000011",
-    "TID": "TID_OBSTACLE_STONE_3",
-    "image": "images/obs/Obstacle_HV_Stone_3.png"
-  },
-  {
-    "SN": 54,
-    "name": "Stone",
-    "Code": "80000012",
-    "TID": "TID_OBSTACLE_STONE_4",
-    "image": "images/obs/Obstacle_HV_Stone_4.png"
-  },
-  {
-    "SN": 56,
-    "name": "Stone",
-    "Code": "8000014",
-    "TID": "TID_OBSTACLE_ROCK_PILLAR",
-    "image": "images/obs/Obstacle_HV_Stone_pillar.png"
-  },
-  {
-    "SN": 57,
-    "name": "Old Barbarian Statue",
-    "Code": "8000055",
-    "TID": "TID_OBSTACLE_OLD_BARBARIAN_STATUE",
-    "image": "images/obs/Obstacle_BB_Old_Barbarian_Statue.png"
-  },
-  {
-    "SN": 58,
-    "name": "Glowy Lantern (BB)",
-    "Code": "8000075",
-    "TID": "TID_OBSTACLE_LANTERN_CNY2019",
-    "image": "images/obs/Obstacle_BB_Glowy_Lantern.png"
-  },
-  {
     "SN": 59,
     "name": "13th Anniversary Cake (2025)",
     "Code": "8000131",
@@ -397,5 +376,26 @@
     "Code": "8000135",
     "TID": "TID_OBSTACLE_COSMICTREE",
     "image": "images/obs/Cursed_Seedling.png"
+  },
+  {
+    "SN": 51,
+    "name": "Rock",
+    "Code": "80000010",
+    "TID": "TID_OBSTACLE_TRUNK_FALLEN",
+    "image": "images/obs/Obstacle_HV_Stone_2.png"
+  },
+  {
+    "SN": 53,
+    "name": "Stone",
+    "Code": "80000011",
+    "TID": "TID_OBSTACLE_STONE_3",
+    "image": "images/obs/Obstacle_HV_Stone_3.png"
+  },
+  {
+    "SN": 54,
+    "name": "Stone",
+    "Code": "80000012",
+    "TID": "TID_OBSTACLE_STONE_4",
+    "image": "images/obs/Obstacle_HV_Stone_4.png"
   }
 ]
