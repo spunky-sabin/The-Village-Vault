@@ -308,41 +308,6 @@
     "image": "images/obs/april25 moneybox 01.png"
   },
   {
-    "SN": 45,
-    "name": "Tree",
-    "Code": "8000000",
-    "TID": "TID_OBSTACLE_TREE",
-    "image": "images/obs/Obstacle_HV_Small_Tree.png"
-  },
-  {
-    "SN": 46,
-    "name": "Bush",
-    "Code": "8000004",
-    "TID": "TID_OBSTACLE_BUSH",
-    "image": "images/obs/Obstacle_HV_Bush.png"
-  },
-  {
-    "SN": 47,
-    "name": "Tree",
-    "Code": "8000005",
-    "TID": "TID_OBSTACLE_NOTEXTURE_TREE",
-    "image": "images/obs/Obstacle_HV_Medium_Tree.png"
-  },
-  {
-    "SN": 48,
-    "name": "Trunk",
-    "Code": "8000006",
-    "TID": "TID_OBSTACLE_TRUNK_LEFT",
-    "image": "images/obs/Obstacle_HV_Trunk_1.png"
-  },
-  {
-    "SN": 49,
-    "name": "Trunk",
-    "Code": "8000007",
-    "TID": "TID_OBSTACLE_TRUNK_RIGHT",
-    "image": "images/obs/Obstacle_HV_Trunk_2.png"
-  },
-  {
     "SN": 50,
     "name": "Rock",
     "Code": "8000003",
@@ -354,7 +319,7 @@
     "name": "Rock",
     "Code": "80000010",
     "TID": "TID_OBSTACLE_TRUNK_FALLEN",
-    "image": "images/obs/Obstacle_HV_Fallen_Trunk.png"
+    "image": "images/obs/Obstacle_HV_Stone_2.png"
   },
   {
     "SN": 52,
@@ -376,13 +341,6 @@
     "Code": "80000012",
     "TID": "TID_OBSTACLE_STONE_4",
     "image": "images/obs/Obstacle_HV_Stone_4.png"
-  },
-  {
-    "SN": 55,
-    "name": "Tree",
-    "Code": "8000013",
-    "TID": "TID_OBSTACLE_TREE_TEXURE",
-    "image": "images/obs/Obstacle_HV_Large_Tree.png"
   },
   {
     "SN": 56,

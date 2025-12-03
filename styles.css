@@ -474,6 +474,9 @@ img, picture, video, svg {
     padding: 0.375rem;
     border-radius: 0.375rem;
     transition: background 0.2s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .filter-checkbox:hover {
@@ -513,6 +516,9 @@ img, picture, video, svg {
     font-size: 0.875rem;
     color: var(--foreground);
     user-select: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Sub-checkbox for hero filters */
