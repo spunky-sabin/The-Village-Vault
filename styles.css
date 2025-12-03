@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -17,10 +18,18 @@ body {
     -moz-osx-font-smoothing: grayscale;
     background: hsl(210, 30%, 8%);
     color: hsl(210, 20%, 98%);
-    background-image: 
+    overflow-x: hidden;
+    background-image:
         radial-gradient(circle at 20% 50%, hsla(210, 30%, 15%, 0.4) 0%, transparent 50%),
         radial-gradient(circle at 80% 80%, hsla(210, 30%, 20%, 0.3) 0%, transparent 50%);
     min-height: 100vh;
+}
+
+/* Prevent media from overflowing and help layout shrink properly */
+img, picture, video, svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ============================================
@@ -56,6 +65,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 /* ============================================
@@ -548,6 +558,7 @@ body {
 .main-content {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
     background: var(--background);
 }
 
@@ -804,30 +815,71 @@ body {
 /* ============================================
    ITEMS GRID
    ============================================ */
+/* Default for the tiniest screens: force 5 columns so tiny phones get 5 items/row */
+/* CHANGE: explicit grid-template-columns added to ensure 5 items per row at 320px */
 .items-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(5, 1fr); /* critical: ensures 5 columns even at 320px */
+    gap: 0.35rem;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    overflow: visible;
 }
 
-@media (min-width: 640px) {
+/* Small phones (375px): 5 columns */
+@media (min-width: 375px) and (max-width: 424px) {
     .items-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.5rem;
+    }
+}
+
+/* Medium phones (425px): 5 columns */
+@media (min-width: 425px) and (max-width: 599px) {
+    .items-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.6rem;
+    }
+}
+
+/* Large phones (600px-767px): 6 columns */
+@media (min-width: 600px) and (max-width: 767px) {
+    .items-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.75rem;
+    }
+}
+
+/* Tablets (768px-1024px): 7 columns */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .items-grid {
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0.9rem;
+    }
+}
+
+/* Small desktops (1025px-1279px): 8 columns */
+@media (min-width: 1025px) and (max-width: 1279px) {
+    .items-grid {
+        grid-template-columns: repeat(8, 1fr);
         gap: 1rem;
     }
 }
 
-@media (min-width: 1024px) {
+/* Large desktops (1280px+): 10 columns */
+@media (min-width: 1280px) {
     .items-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1.5rem;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1.2rem;
     }
 }
 
-@media (min-width: 1280px) {
-    .items-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
+/* FORCE: grid items can't impose a minimum width on the grid cell */
+/* CHANGE: added to stop content from forcing cell wider than the fraction */
+.items-grid > * {
+    width: 100%;
+    min-width: 0; /* Allows items to shrink smaller than their content's min width */
 }
 
 /* ============================================
@@ -836,8 +888,12 @@ body {
 .item-card-container {
     perspective: 1000px;
     height: 100%;
+    aspect-ratio: 1;
+    display: flex;
+    max-width: 100%; /* ensure grid cell doesn't overflow */
 }
 
+/* CHANGE: ensure card is flexible and won't force a min-width; center text and prevent overflow */
 .item-card {
     position: relative;
     background: var(--card);
@@ -846,10 +902,20 @@ body {
     overflow: hidden;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* ensure image on top, info below */
+    align-items: stretch;
     height: 100%;
+    width: 100%;
     cursor: pointer;
     transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
+    min-width: 0; /* important to prevent content from forcing card wider */
+
+    /* prevent text from overlaying image by default */
+    overflow: hidden;
+    text-align: left; /* left keeps long titles readable — change to center if you prefer */
+    word-break: break-word;
 }
 
 .item-card.flipped {
@@ -867,6 +933,7 @@ body {
     backface-visibility: hidden;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
 }
 
 .item-card-front {
@@ -935,19 +1002,29 @@ body {
 }
 
 /* Item type badge */
+/* Make the small type badge text tiny */
 .item-type-badge {
-    position: absolute;
-    bottom: 0.5rem;
-    left: 0.5rem;
-    z-index: 10;
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
-    font-size: 0.7rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    backdrop-filter: blur(4px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-size: 0.45rem !important;
+    padding: 2px 4px !important;
+    top: 3px !important;
+    right: 3px !important;
+    opacity: 0.9;
 }
+
+/* Make the category below the name smaller too */
+.item-card .item-info p {
+    font-size: 0.55rem !important;
+    margin-top: 0.2rem;
+}
+
+/* Shrink the item title text on mobile */
+@media (max-width: 600px) {
+    .item-card .item-info h3 {
+        font-size: 0.70rem !important;
+        line-height: 1.1;
+    }
+}
+
 
 .item-type-badge.decoration {
     background: rgba(59, 130, 246, 0.9);
@@ -975,12 +1052,42 @@ body {
 }
 
 /* Item image container */
+/* CHANGE: ensure the image container is intrinsic (won't be shrunk by text), set z-index so image sits below badges but above backgrounds */
 .item-image-container {
     aspect-ratio: 1;
     background: linear-gradient(to bottom right, var(--secondary), var(--input));
-    padding: 1rem;
+    padding: 0.3rem;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    height: auto;
+    flex: 0 0 auto; /* critical: image stays its own space, text won't overlap it */
+    z-index: 1;
+}
+
+/* Optimize padding for different screen sizes */
+@media (min-width: 310px) and (max-width: 424px) {
+    .item-image-container {
+        padding: 0.28rem; /* slightly reduced for tiny viewports */
+    }
+}
+
+@media (min-width: 425px) and (max-width: 599px) {
+    .item-image-container {
+        padding: 0.35rem;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 767px) {
+    .item-image-container {
+        padding: 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .item-image-container {
+        padding: 0.6rem;
+    }
 }
 
 .item-image-overlay {
@@ -989,49 +1096,103 @@ body {
     background: linear-gradient(to top, var(--background), transparent);
     opacity: 0;
     transition: opacity 0.3s;
+    z-index: 2;
 }
 
 .item-card:hover:not(.flipped) .item-image-overlay {
     opacity: 0.5;
 }
 
+/* CHANGE: ensure image itself never gets overlapped and scales inside container */
 .item-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
     position: relative;
-    z-index: 10;
+    z-index: 3;
     transition: transform 0.3s;
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
 }
 
 .item-card:hover:not(.flipped) .item-image {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* Item info */
+/* CHANGE: make item-info occupy its own space below the image; clamp text so it cannot overflow and cover image */
 .item-info {
-    padding: 0.75rem;
+    padding: 0.4rem;
     border-top: 1px solid var(--border);
     background: hsla(210, 25%, 12%, 0.8);
     backdrop-filter: blur(4px);
-    flex-grow: 1;
+    /* keep info below image and not stretch beyond card */
+    flex: 0 0 auto;
     display: flex;
     flex-direction: column;
+    gap: 0.15rem;
+    min-height: 0;
+    z-index: 4;
 }
 
+/* small adjustments for tiny screens */
+@media (min-width: 375px) and (max-width: 424px) {
+    .item-info {
+        padding: 0.35rem;
+    }
+}
+
+@media (min-width: 425px) and (max-width: 599px) {
+    .item-info {
+        padding: 0.45rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .item-info {
+        padding: 0.5rem;
+    }
+}
+
+/* TITLE: clamp to 2 lines so it doesn't push/cover image */
 .item-info h3 {
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 0.65rem;
     color: var(--foreground);
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* clamp to 2 lines */
+    line-height: 1.05;
+    max-height: calc(1.05em * 2);
+    margin: 0;
 }
 
+/* DESCRIPTION / META: clamp to 2 lines as well, smaller font */
 .item-info p {
-    font-size: 0.75rem;
+    font-size: 0.55rem;
     color: var(--muted-foreground);
-    margin-top: 0.25rem;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2; /* clamp to 2 lines */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.05;
+    max-height: calc(1.05em * 2);
+}
+
+/* For very tiny devices, reduce text size slightly so 5 items can fit */
+@media (max-width: 360px) {
+    .item-info h3 {
+        font-size: 0.6rem;
+        -webkit-line-clamp: 2;
+    }
+    .item-info p {
+        font-size: 0.52rem;
+    }
 }
 
 /* Card back content */
@@ -1116,7 +1277,7 @@ body {
 .modal {
     position: fixed;
     inset: 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 1000;

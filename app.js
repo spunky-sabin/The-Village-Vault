@@ -1,5 +1,6 @@
 /**
- * The Village Vault - Enhanced Version
+ * The Village Vault - Main Application
+ * Consolidated from all HTML files and scripts
  * Features: Card flip animations, detailed item info, enhanced filtering
  */
 
@@ -20,9 +21,13 @@ const state = {
     visibleLimit: 50
 };
 
+let itemDetailsDatabase = {};
+
 // ============================================
 // UTILITY FUNCTIONS
 // ============================================
+let imageObserver = null;
+
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -35,9 +40,35 @@ function debounce(func, wait) {
     };
 }
 
+// Initialize Intersection Observer for lazy loading images
+function initImageObserver() {
+    if ('IntersectionObserver' in window) {
+        imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    if (img.dataset.src && !img.src) {
+                        img.src = img.dataset.src;
+                        img.onload = () => img.classList.add('loaded');
+                        img.onerror = () => {
+                            console.warn('Image failed to load:', img.dataset.src);
+                            img.style.display = 'none';
+                        };
+                    }
+                    imageObserver.unobserve(img);
+                }
+            });
+        }, { rootMargin: '100px' }); // Load images 100px before they enter viewport
+    } else {
+        console.warn('IntersectionObserver not supported, falling back to immediate loading');
+    }
+}
+
 async function loadJSON(url) {
     try {
-        const res = await fetch(url);
+        // Resolve relative paths correctly
+        const fullPath = url.startsWith('src/') ? url : `src/data-json/${url}`;
+        const res = await fetch(fullPath);
         if (!res.ok) throw new Error("HTTP Error " + res.status);
         return await res.json();
     } catch (err) {
@@ -47,58 +78,128 @@ async function loadJSON(url) {
 }
 
 // Generic item formatter
-function formatItem(item, type, category, heroName = null, heroId = null) {
+function formatItem(item, type, category, heroName = null, heroId = null, details = null) {
     return {
         code: String(item.Code || item.code),
         name: item.name || item.skin_name || "Unknown Item",
         image: item.image || item.image_path || "",
-        rarity: item.rarity || "common",
+        rarity: details?.rarity || item.rarity || "common",
         category,
         type,
         owned: false,
-        description: item.description || "",
-        released: item.released || "Unknown",
-        availability: item.availability || "",
+        description: details?.description || item.description || "",
+        released: details?.released || item.released || "Unknown",
+        availability: details?.availability || item.availability || "",
         ...(heroName && { heroName }),
         ...(heroId && { heroId })
     };
 }
 
-async function prefetchImages(items) {
-    // Pre-load all images in the background with low priority
-    items.forEach(item => {
-        if (item.image) {
-            const link = document.createElement('link');
-            link.rel = 'prefetch';
-            link.as = 'image';
-            link.href = item.image;
-            document.head.appendChild(link);
-        }
+// Preload images with better error handling and timeout
+async function preloadImages(items, maxImages = 20) {
+    const itemsToPreload = items.slice(0, maxImages);
+    
+    const promises = itemsToPreload.map(item => {
+        return new Promise(resolve => {
+            if (!item.image) return resolve();
+
+            const img = new Image();
+            img.src = item.image;
+            img.onload = resolve;
+            img.onerror = () => {
+                console.warn('Image failed to preload:', img.src);
+                resolve();
+            };
+            
+            // Add timeout for very slow images (5 seconds)
+            setTimeout(resolve, 5000);
+        });
     });
+
+    return Promise.all(promises);
 }
 
 async function loadAllMasterData() {
     // Use Promise.all to fetch all JSON files in parallel
-    const [decorations, obstacles, heroesData, sceneries, clanCapital] = await Promise.all([
+    const [decorations, obstacles, heroesData, sceneries, clanCapital, itemDetails] = await Promise.all([
         loadJSON("decorations.json"),
         loadJSON("obstacles.json"),
         loadJSON("heros.json"),
         loadJSON("sceneries.json"),
-        loadJSON("clan-capital.json")
+        loadJSON("clan-capital.json"),
+        loadJSON("item-details.json")
     ]).then(results => [
         results[0],
         results[1],
         results[2],
         results[3] || { sceneries: [] },
-        results[4] || []
+        results[4] || [],
+        results[5] || {}
     ]);
 
-    // Format all items using generic function
-    const formattedDecorations = decorations?.map(item => formatItem(item, "decoration", "Decoration")) || [];
+    itemDetailsDatabase = itemDetails || {};
+
+    function findItemDetails(itemName, itemType) {
+        if (!itemDetails || !itemName) {
+            return null;
+        }
+        
+        const normalizedName = itemName.toLowerCase().trim();
+        
+        if (itemType === 'decoration' && itemDetails.decorations) {
+            const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
+            for (const cat of categories) {
+                if (itemDetails.decorations[cat]) {
+                    const found = itemDetails.decorations[cat].find(d => 
+                        d.name.toLowerCase().trim() === normalizedName
+                    );
+                    if (found) return found;
+                }
+            }
+        } else if (itemType === 'obstacle' && itemDetails.obstacles) {
+            const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
+            for (const cat of categories) {
+                if (itemDetails.obstacles[cat]) {
+                    const found = itemDetails.obstacles[cat].find(o => 
+                        o.name.toLowerCase().trim() === normalizedName
+                    );
+                    if (found) return found;
+                }
+            }
+        } else if (itemType === 'heroskin' && itemDetails.hero_skins) {
+            const heroes = ['barbarian_king', 'archer_queen', 'grand_warden', 'royal_champion', 'minion_prince'];
+            for (const hero of heroes) {
+                if (itemDetails.hero_skins[hero]) {
+                    const found = itemDetails.hero_skins[hero].find(s => 
+                        s.name.toLowerCase().trim() === normalizedName
+                    );
+                    if (found) return found;
+                }
+            }
+        } else if (itemType === 'scenery' && itemDetails.sceneries) {
+            const found = itemDetails.sceneries.find(s => 
+                s.name.toLowerCase().trim() === normalizedName
+            );
+            if (found) return found;
+        }
+        
+        return null;
+    }
+
+    const formattedDecorations = decorations?.map(item => {
+        const details = findItemDetails(item.name, 'decoration');
+        return formatItem(item, "decoration", "Decoration", null, null, details);
+    }) || [];
     
-    const formattedObstacles = obstacles?.map(item => formatItem(item, "obstacle", "Obstacle")) || [];
+    const formattedObstacles = obstacles?.map(item => {
+        const details = findItemDetails(item.name, 'obstacle');
+        return formatItem(item, "obstacle", "Obstacle", null, null, details);
+    }) || [];
     
-    const formattedSceneries = sceneries.sceneries?.map(item => formatItem(item, "scenery", "Scenery")) || [];
+    const formattedSceneries = sceneries.sceneries?.map(item => {
+        const details = findItemDetails(item.name, 'scenery');
+        return formatItem(item, "scenery", "Scenery", null, null, details);
+    }) || [];
 
     const formattedClanCapital = clanCapital?.map(item => formatItem(item, "clan", "Clan Item")) || [];
 
@@ -109,7 +210,8 @@ async function loadAllMasterData() {
             if (hero.skins && Array.isArray(hero.skins)) {
                 const heroId = hero.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
                 hero.skins.forEach(skin => {
-                    formattedHeroSkins.push(formatItem(skin, "heroskin", "Hero Skin", hero.name, heroId));
+                    const details = findItemDetails(skin.skin_name, 'heroskin');
+                    formattedHeroSkins.push(formatItem(skin, "heroskin", "Hero Skin", hero.name, heroId, details));
                 });
             }
         });
@@ -125,19 +227,17 @@ async function loadAllMasterData() {
 
     state.items = state.allItems['cosmetic-compendium'];
     
-    // Prefetch all images in background (low priority)
-    const allItemsFlat = Object.values(state.allItems).flat();
-    const uniqueImages = [...new Set(allItemsFlat.map(item => item.image).filter(Boolean))];
-    prefetchImages(allItemsFlat);
+    // Preload only the first batch of images (visible items)
+    console.log("Preloading initial images...");
+    await preloadImages(state.items, 50);
     
     console.log("Loaded items:", {
-        'Cosmetic': formattedDecorations.length,
+        'Decorations': formattedDecorations.length,
         'Obstacles': formattedObstacles.length,
         'Hero Skins': formattedHeroSkins.length,
         'Sceneries': formattedSceneries.length,
         'Clan Items': formattedClanCapital.length
     });
-    console.log(`Prefetching ${uniqueImages.length} unique images...`);
 }
 
 // ============================================
@@ -355,7 +455,7 @@ function createItemCard(item) {
                 ${typeBadgeText}
             </div>
             <div class="item-image-container">
-                <img src="${item.image}" class="item-image" loading="lazy" alt="${item.name}" width="100%" height="auto" style="display: block;">
+                <img src="" data-src="${item.image}" class="item-image" loading="lazy" alt="${item.name}" width="100%" height="auto" style="display: block;">
             </div>
             <div class="item-info">
                 <h3>${item.name}</h3>
@@ -406,6 +506,16 @@ function createItemCard(item) {
     `;
 
     card.innerHTML = frontHTML + backHTML;
+    
+    // Set up lazy loading with IntersectionObserver
+    const imgEl = card.querySelector('.item-image');
+    if (imageObserver && imgEl) {
+        imageObserver.observe(imgEl);
+    } else if (imgEl && !imageObserver) {
+        // Fallback for browsers without IntersectionObserver
+        imgEl.src = imgEl.dataset.src;
+        imgEl.onload = () => imgEl.classList.add('loaded');
+    }
     
     card.addEventListener('click', (e) => {
         if (!e.target.closest('.item-close-btn')) {
@@ -520,6 +630,7 @@ function handleDataUpload() {
     if (result.success) {
         showToast("Success!", result.message);
         closeModal("upload-modal");
+        document.getElementById("clear-data-btn").style.display = "block";
         updateUI();
     } else {
         showToast("Invalid JSON", result.message, "error");
@@ -528,9 +639,14 @@ function handleDataUpload() {
 
 function handleDataClear() {
     state.userOwnedCodes = new Set();
+    // Reset owned flag for all items across all categories
+    Object.keys(state.allItems).forEach(categoryId => {
+        state.allItems[categoryId] = state.allItems[categoryId].map(i => ({ ...i, owned: false }));
+    });
     state.items = state.items.map(i => ({ ...i, owned: false }));
     state.hasUserData = false;
     sessionStorage.removeItem('userCollectionData');
+    document.getElementById("clear-data-btn").style.display = "none";
     updateUI();
     showToast("Cleared", "Your data has been reset.");
 }
@@ -549,9 +665,52 @@ function attachTypeFilterListeners() {
 }
 
 // ============================================
+// UTILITY FUNCTIONS (Modals & Notifications)
+// ============================================
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+}
+
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'none';
+    }
+}
+
+function showToast(title, message, type = "success") {
+    const container = document.getElementById("toast-container");
+    if (!container) return;
+
+    const toast = document.createElement("div");
+    toast.className = `toast toast-${type}`;
+    toast.innerHTML = `
+        <div class="toast-content">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+        </div>
+    `;
+    
+    container.appendChild(toast);
+    
+    setTimeout(() => {
+        toast.classList.add("toast-fade-out");
+        setTimeout(() => toast.remove(), 300);
+    }, 3000);
+}
+
+// ============================================
 // INITIALIZE APP
 // ============================================
 document.addEventListener("DOMContentLoaded", async () => {
+    console.log("Initializing app...");
+    
+    // Initialize the IntersectionObserver for lazy loading
+    initImageObserver();
+    
     console.log("Loading JSON data...");
     await loadAllMasterData();
     
@@ -561,6 +720,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         try {
             const parsed = JSON.parse(userCollectionData);
             const result = parseUserData(JSON.stringify(parsed));
+            if (result.success) {
+                document.getElementById("clear-data-btn").style.display = "block";
+            }
             console.log("Loaded collection data from session:", result);
         } catch (err) {
             console.error("Error loading session collection data:", err);
@@ -664,50 +826,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         clearDataBtn.setAttribute('aria-label', 'Clear your collection data');
         clearDataBtn.addEventListener("click", handleDataClear);
     }
-});
 
-// ============================================
-// UTILITY FUNCTIONS
-// ============================================
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'flex';
-    }
-}
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'none';
-    }
-}
-
-function showToast(title, message, type = "success") {
-    const container = document.getElementById("toast-container");
-    if (!container) return;
-
-    const toast = document.createElement("div");
-    toast.className = `toast toast-${type}`;
-    toast.innerHTML = `
-        <div class="toast-content">
-            <div class="toast-title">${title}</div>
-            <div class="toast-message">${message}</div>
-        </div>
-    `;
-    
-    container.appendChild(toast);
-    
-    setTimeout(() => {
-        toast.classList.add("toast-fade-out");
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
-}
-
-// ============================================
-// MODAL & FILTER EVENT HANDLERS
-// ============================================
-document.addEventListener("DOMContentLoaded", () => {
     // Modal close buttons
     document.querySelectorAll(".modal-close-btn").forEach(btn => {
         btn.setAttribute('aria-label', 'Close modal');
