@@ -4,40 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Village Vault - The Ultimate Encyclopedia of In-Game Assets</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Hero Landing Page Styles */
+        /* =============== BASE & VARIABLES =============== */
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }
         body.hero-page {
             background: hsl(210, 30%, 8%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #fff;
+        }
+        :root {
+            --gold: #FFD700;
+            --gold-light: #FFE680;
+            --foreground: #ffffff;
+            --border: #444444;
         }
 
+        /* =============== HERO SECTION =============== */
         .hero-section {
             position: relative;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
-            background: linear-gradient(135deg, 
+            padding: 2rem 1rem;
+            background: linear-gradient(135deg,
                 hsla(210, 30%, 8%, 1) 0%,
                 hsla(210, 25%, 12%, 0.8) 50%,
                 hsla(210, 30%, 8%, 1) 100%);
-            padding: 1rem 0;
+            text-align: center;
+            overflow: hidden;
         }
-
         .hero-section::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
+            inset: 0;
+            background-image:
                 radial-gradient(circle at 20% 50%, hsla(45, 100%, 60%, 0.15) 0%, transparent 50%),
                 radial-gradient(circle at 80% 80%, hsla(174, 77%, 47%, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 50% 0%, hsla(210, 30%, 15%, 0.5) 0%, transparent 70%);
             pointer-events: none;
-            z-index: 0;
         }
 
         .hero-container {
@@ -45,113 +51,123 @@
             z-index: 2;
             max-width: 900px;
             width: 100%;
-            padding: 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 3rem;
-        }
-
-        .hero-content {
-            flex: 1;
+            padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            max-width: 700px;
-            width: 100%;
-            text-align: center;
+            align-items: center;
         }
 
+        /* =============== LOGO =============== */
         .hero-logo {
             width: clamp(80px, 15vw, 120px);
             height: clamp(80px, 15vw, 120px);
-            margin: 0 auto 1rem;
             filter: drop-shadow(0 10px 30px hsla(45, 100%, 60%, 0.3));
-            animation: float 3s ease-in-out infinite;
-            display: none;
+            animation: float 4s ease-in-out infinite;
+            margin: 0 auto 1rem;
         }
-
         @keyframes float {
-            0%, 100% { transform: translateY(0px); }
+            0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
         }
 
+        /* =============== TYPOGRAPHY =============== */
         .hero-title {
             font-size: clamp(2.5rem, 6vw, 4.5rem);
             font-weight: 900;
             letter-spacing: 0.15em;
             color: var(--foreground);
-            text-shadow: 0 2px 10px hsla(0, 0%, 0%, 0.5),
-                        0 0 30px hsla(45, 100%, 60%, 0.3);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5), 0 0 30px hsla(45, 100%, 60%, 0.3);
             line-height: 1.2;
             margin: 0;
         }
-
         .hero-title .highlight {
-            color: var(--gold);
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .hero-subtitle {
             font-size: clamp(1.2rem, 3.5vw, 2rem);
             color: hsl(210, 15%, 85%);
             font-weight: 300;
             letter-spacing: 0.05em;
             line-height: 1.6;
-            max-width: 100%;
         }
-
         .hero-description {
             font-size: clamp(0.9rem, 2.5vw, 1.3rem);
             color: hsl(210, 15%, 80%);
             line-height: 1.8;
-            max-width: 100%;
+            max-width: 700px;
             margin: 1rem 0;
         }
 
-        .hero-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            margin: 2rem 0;
-            align-items: center;
-        }
-
+        /* =============== SMOOTH SVG CHECKMARKS =============== */
         .feature-item {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-size: clamp(0.95rem, 2.2vw, 1.1rem);
             color: hsl(210, 15%, 80%);
-            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .feature-item:nth-child(1) { animation-delay: 0.2s; }
+        .feature-item:nth-child(2) { animation-delay: 0.4s; }
+        .feature-item:nth-child(3) { animation-delay: 0.6s; }
+        .feature-item:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .feature-icon {
-            width: 28px;
-            height: 28px;
+        .feature-check {
+            width: 1.8em;
+            height: 1.8em;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            border-radius: 50%;
+            padding: 0.35em;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            border-radius: 50%;
-            flex-shrink: 0;
-            font-weight: bold;
-            color: var(--primary-foreground);
-            font-size: 1.2rem;
         }
 
+        .feature-check svg {
+            width: 100%;
+            height: 100%;
+            stroke: #000;
+            stroke-width: 3.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            animation: checkDraw 0.6s ease-out forwards 0.3s;
+        }
+
+        @keyframes checkDraw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* =============== BUTTONS =============== */
         .hero-buttons {
             display: flex;
             gap: 1.5rem;
-            margin-top: 2.5rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
             justify-content: center;
         }
-
         .hero-btn {
             padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 3rem);
             font-size: clamp(0.95rem, 2vw, 1.1rem);
@@ -167,39 +183,17 @@
             white-space: nowrap;
             text-decoration: none;
         }
-
         .hero-btn-primary {
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            color: var(--primary-foreground);
+            color: #000;
             border-color: var(--gold);
             box-shadow: 0 4px 15px hsla(45, 100%, 60%, 0.3);
         }
+        .hero-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px hsla(45, 100%, 60%, 0.5); }
+        .hero-btn-secondary { background: transparent; color: var(--gold); border-color: var(--gold); }
+        .hero-btn-secondary:hover { background: hsla(45, 100%, 60%, 0.15); transform: translateY(-3px); }
 
-        .hero-btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px hsla(45, 100%, 60%, 0.5);
-        }
-
-        .hero-btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .hero-btn-secondary {
-            background: transparent;
-            color: var(--gold);
-            border-color: var(--gold);
-        }
-
-        .hero-btn-secondary:hover {
-            background: hsla(45, 100%, 60%, 0.1);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px hsla(45, 100%, 60%, 0.2);
-        }
-
-        .hero-btn-secondary:active {
-            transform: translateY(0);
-        }
-
+        /* =============== STATS =============== */
         .stats-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -209,22 +203,16 @@
             background: hsla(210, 20%, 16%, 0.5);
             border-radius: 12px;
             border: 1px solid var(--border);
+            max-width: 800px;
+            width: 100%;
         }
-
-        .stat-item {
-            text-align: center;
-        }
-
         .stat-number {
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 900;
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
         }
-
         .stat-label {
             font-size: clamp(0.85rem, 2vw, 1rem);
             color: hsl(210, 15%, 75%);
@@ -233,651 +221,115 @@
             font-weight: 600;
         }
 
-        /* App section hidden by default */
-        .app-section {
-            display: none;
-        }
-
-        .app-section.active {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
+        /* =============== RESPONSIVE =============== */
         @media (max-width: 768px) {
-            .hero-container {
-                flex-direction: column;
-                gap: 2rem;
-                padding: clamp(0.75rem, 3vw, 2rem);
-            }
-
-            .hero-content {
-                gap: 1.5rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .hero-btn {
-                justify-content: center;
-                width: 100%;
-            }
-
-            .hero-title {
-                font-size: clamp(1.5rem, 5vw, 2rem);
-                letter-spacing: 0.1em;
-            }
-
-            .hero-subtitle {
-                font-size: clamp(1rem, 3vw, 1rem);
-            }
-
-            .hero-features {
-                gap: 1rem;
-            }
-
-            .stats-section {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                padding: 1.5rem;
-            }
-
-            .stat-number {
-                font-size: clamp(1.5rem, 4vw, 2rem);
-            }
-
-            .stat-label {
-                font-size: clamp(0.7rem, 1.5vw, 0.875rem);
-            }
+            .hero-container { padding: 1.5rem 1rem; }
+            .hero-title { font-size: clamp(2rem, 6vw, 3rem); }
+            .stats-section { grid-template-columns: repeat(2, 1fr); }
         }
-
         @media (max-width: 480px) {
-            .hero-container {
-                padding: clamp(0.75rem, 2vw, 1rem);
-                gap: 1.5rem;
-                min-height: auto;
-            }
+            .hero-title { font-size: clamp(1.8rem, 6.5vw, 2.5rem); }
+            .stats-section { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 340px) {
+            .hero-container { padding: 1.2rem 0.8rem; gap: 1.5rem; }
+            .hero-logo { width: clamp(60px, 20vw, 90px) !important; height: clamp(60px, 20vw, 90px) !important; }
+            .hero-title { font-size: clamp(1.5rem, 8vw, 2.2rem) !important; letter-spacing: 0.08em; }
+            .hero-subtitle { font-size: clamp(1rem, 4.5vw, 1.3rem); }
+            .hero-description { font-size: 0.9rem; padding: 0 0.5rem; }
 
-            .hero-content {
-                gap: 1rem;
-            }
-
-            .hero-title {
-                font-size: clamp(1.2rem, 4.5vw, 1.5rem);
-                letter-spacing: 0.08em;
-                line-height: 1.3;
-            }
-
-            .hero-subtitle {
-                font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-                letter-spacing: 0.02em;
-            }
-
-            .hero-description {
-                font-size: clamp(0.85rem, 2vw, 0.95rem);
-                margin: 0.5rem 0;
-            }
-
-            .hero-features {
-                gap: 0.75rem;
-            }
-
-            .feature-icon {
-                width: 24px;
-                height: 24px;
-                font-size: 1rem;
-            }
-
+            /* Force vertical stacking + perfect centering on tiny screens */
             .feature-item {
-                font-size: clamp(0.8rem, 1.8vw, 0.9rem);
-                gap: 0.75rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.8rem;
             }
-
             .hero-buttons {
-                gap: 0.75rem;
+                flex-direction: column;
+                width: 100%;
+                padding: 0 1rem;
             }
-
             .hero-btn {
-                padding: clamp(0.7rem, 1.5vw, 0.9rem) clamp(1rem, 2vw, 1.5rem);
-                font-size: clamp(0.85rem, 1.8vw, 0.95rem);
-                border-radius: 6px;
+                width: 100%;
+                max-width: 280px;
+                justify-content: center;
+                padding: 0.9rem 1.2rem;
             }
-
-            .stats-section {
-                grid-template-columns: 1fr;
-                gap: 0.75rem;
-                padding: 1rem;
-                margin-top: 1.5rem;
-            }
-
-            .stat-item {
-                padding: 0.75rem;
-            }
-
-            .stat-number {
-                font-size: clamp(1.25rem, 3.5vw, 1.5rem);
-                margin-bottom: 0.25rem;
-            }
-
-            .stat-label {
-                font-size: clamp(0.65rem, 1.2vw, 0.75rem);
-            }
+            .stats-section { padding: 1.4rem 1rem; gap: 1.2rem; }
         }
 
+        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
-            .hero-logo {
-                animation: none;
-            }
-
-            .hero-btn:hover {
-                transform: none;
-            }
-        }
-
-        /* Extra small devices (under 375px) */
-        @media (max-width: 374px) {
-            .hero-container {
-                padding: 0.5rem;
-            }
-
-            .hero-title {
-                font-size: clamp(1rem, 4vw, 1.2rem);
-                letter-spacing: 0.06em;
-            }
-
-            .hero-subtitle {
-                font-size: clamp(0.8rem, 2vw, 0.9rem);
-            }
-
-            .hero-description {
-                font-size: clamp(0.75rem, 1.8vw, 0.85rem);
-                margin: 0.25rem 0;
-            }
-
-            .feature-item {
-                font-size: clamp(0.75rem, 1.5vw, 0.85rem);
-                gap: 0.5rem;
-            }
-
-            .hero-btn {
-                padding: clamp(0.6rem, 1.2vw, 0.8rem) clamp(0.8rem, 1.5vw, 1rem);
-                font-size: clamp(0.8rem, 1.5vw, 0.9rem);
-            }
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition: none !important; }
+            .hero-logo, .feature-item, .feature-check svg { animation: none !important; }
+            .feature-check svg { stroke-dashoffset: 0; }
+            .feature-item { opacity: 1; transform: none; }
         }
     </style>
 </head>
-<body class="hero-page" id="app-body">
-    <div id="root">
-        <!-- HERO LANDING PAGE SECTION -->
-        <section class="hero-section" id="hero-section">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="hero-logo-container">
-                        <img src="src/assets/logo.png" alt="The Village Vault" class="hero-logo" onerror="this.style.display='none'">
-                    </div>
+<body class="hero-page">
+    <section class="hero-section">
+        <div class="hero-container">
+            <img src="src/assets/logo.png" alt="The Village Vault Logo" class="hero-logo" onerror="this.style.display='none'">
 
-                    <div>
-                        <h1 class="hero-title">
-                            THE VILLAGE <span class="highlight">VAULT</span>
-                        </h1>
-                        <p class="hero-subtitle">
-                            The Ultimate Encyclopedia of In-Game Assets.
-                        </p>
-                    </div>
+            <h1 class="hero-title">THE VILLAGE <span class="highlight">VAULT</span></h1>
+            <p class="hero-subtitle">The Ultimate Encyclopedia of In-Game Assets.</p>
+            <p class="hero-description">
+                Discover, track, and explore every cosmetic item in your favorite game. 
+                From hero skins to decorations, we've got everything catalogued and ready for you.
+            </p>
 
-                    <p class="hero-description">
-                        Discover, track, and explore every cosmetic item in your favorite game. 
-                        From hero skins to decorations, we've got everything catalogued and ready for you.
-                    </p>
-
-                    <div class="hero-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <span>Browse all hero skins, decorations, and cosmetics</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <span>Track your collection and find missing items</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <span>Advanced filtering and powerful search</span>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">✓</div>
-                            <span>Organize by category or view everything at once</span>
-                        </div>
+            <div class="hero-features">
+                <div class="feature-item">
+                    <div class="feature-check" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="4,12 9,17 20,6"></polyline>
+                        </svg>
                     </div>
-
-                    <div class="hero-buttons">
-                        <button class="hero-btn hero-btn-primary" onclick="goToApp()">
-                            Browse All Cosmetics →
-                        </button>
-                        <button class="hero-btn hero-btn-secondary" onclick="document.querySelector('.stats-section').scrollIntoView({behavior: 'smooth'})">
-                            Learn More ↓
-                        </button>
+                    <span>Browse all hero skins, decorations, and cosmetics</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="4,12 9,17 20,6"></polyline>
+                        </svg>
                     </div>
-
-                    <div class="stats-section">
-                        <div class="stat-item">
-                            <div class="stat-number">4</div>
-                            <div class="stat-label">Categories</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">1000+</div>
-                            <div class="stat-label">Items</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">5</div>
-                            <div class="stat-label">Item Types</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">∞</div>
-                            <div class="stat-label">Possibilities</div>
-                        </div>
+                    <span>Track your collection and find missing items</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="4,12 9,17 20,6"></polyline>
+                        </svg>
                     </div>
+                    <span>Advanced filtering and powerful search</span>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="4,12 9,17 20,6"></polyline>
+                        </svg>
+                    </div>
+                    <span>Organize by category or view everything at once</span>
                 </div>
             </div>
-        </section>
 
-        <!-- APP SECTION -->
-        <div class="app-section" id="app-section">
-            <!-- Header -->
-            <header class="header">
-            <div class="header-content">
-                <div class="header-inner">
-                    <img src="src/assets/logo.png" alt="The Village Vault Logo" class="header-logo" onerror="this.style.display='none'">
-                    <div class="header-text">
-                        <h1 class="header-title">THE VILLAGE VAULT</h1>
-                        <p class="header-subtitle">Track Every Treasure. Claim Every Item.</p>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Category Tabs -->
-        <nav class="category-nav">
-            <div class="category-tabs-container">
-                <button class="category-tab active" data-category="cosmetic-compendium">
-                    <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
-                    </svg>
-                    <span class="category-label">COSMETIC COMPENDIUM</span>
-                    <span class="category-label-short">COMPENDIUM</span>
+            <div class="hero-buttons">
+                <button class="hero-btn hero-btn-primary" onclick="window.location.href='index-main.html'">
+                    Browse All Cosmetics →
                 </button>
-                <button class="category-tab" data-category="hero-wardrobe">
-                    <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                    </svg>
-                    <span class="category-label">HERO'S WARDROBE</span>
-                    <span class="category-label-short">WARDROBE</span>
-                </button>
-                <button class="category-tab" data-category="home-village-decor">
-                    <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                    </svg>
-                    <span class="category-label">HOME VILLAGE DECOR</span>
-                    <span class="category-label-short">DECOR</span>
-                </button>
-                <button class="category-tab" data-category="clan-hall-aesthetics">
-                    <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                    </svg>
-                    <span class="category-label">CLAN HALL AESTHETICS</span>
-                    <span class="category-label-short">CLAN</span>
+                <button class="hero-btn hero-btn-secondary" onclick="document.querySelector('.stats-section').scrollIntoView({behavior: 'smooth'})">
+                    Learn More ↓
                 </button>
             </div>
-        </nav>
 
-        <div class="main-container">
-            <!-- Sidebar Filter (Desktop) -->
-            <aside class="sidebar">
-                <div class="sidebar-content">
-                    <h2 class="sidebar-title">Filter Your Treasury</h2>
-                    
-                    <!-- Search -->
-                    <div class="search-container">
-                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                        <input 
-                            type="text" 
-                            id="search-input" 
-                            class="search-input" 
-                            placeholder="Search for items..."
-                        >
-                    </div>
-
-                    <!-- Item Type Filter -->
-                    <div class="filter-group" id="type-filter-group">
-                        <h3 class="filter-title">Item Type</h3>
-                        <div class="filter-options filter-buttons" id="type-filter-options">
-                            <button class="filter-btn active" data-type-filter="all">All Items</button>
-                            <button class="filter-btn" data-type-filter="heroskin">Hero Skins</button>
-                            <button class="filter-btn" data-type-filter="scenery">Sceneries</button>
-                            <button class="filter-btn" data-type-filter="obstacle">Obstacles</button>
-                            <button class="filter-btn" data-type-filter="decoration">Decorations</button>
-                            <button class="filter-btn" data-type-filter="clan">Clan House Parts</button>
-                        </div>
-                    </div>
-
-                    <!-- Hero Filter (Hero's Wardrobe only) -->
-                    <div class="filter-group" id="hero-filter-group" style="display: none;">
-                        <h3 class="filter-title">Hero</h3>
-                        <div class="filter-options">
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="barbarian_king" class="hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Barbarian King</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="archer_queen" class="hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Archer Queen</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="royal_champion" class="hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Royal Champion</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="grand_warden" class="hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Grand Warden</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="minion_prince" class="hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Minion Prince</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="battle_machine" class="hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Battle Machine</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="flying_machine" class="hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Flying Machine</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Ownership Filter -->
-                    <div class="filter-group">
-                        <h3 class="filter-title">Ownership</h3>
-                        <div class="filter-options">
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="owned" class="ownership-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Owned</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="missing" class="ownership-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Missing</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- Main Content -->
-            <main class="main-content">
-                <div class="content-container">
-                    <!-- Data Upload & Progress -->
-                    <div class="upload-section">
-                        <div class="upload-controls">
-                            <button id="upload-btn" class="btn btn-primary">
-                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                    <polyline points="17 8 12 3 7 8"></polyline>
-                                    <line x1="12" y1="3" x2="12" y2="15"></line>
-                                </svg>
-                                <span>Upload Collection Data</span>
-                            </button>
-                            <button id="clear-data-btn" class="btn btn-icon-small" style="display: none;">
-                                <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-                                </svg>
-                            </button>
-                        </div>
-                        <div id="welcome-banner" class="welcome-banner">
-                            <h3>Welcome to The Village Vault!</h3>
-                            <p>Upload your collection data to start tracking your treasures and unlock special features.</p>
-                        </div>
-                        <div id="progress-tracker" class="progress-tracker" style="display: none;"></div>
-                    </div>
-
-                    <!-- Mobile Filter Button -->
-                    <div class="mobile-filter-section">
-                        <button id="mobile-filter-btn" class="btn btn-mobile-filter">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
-                            </svg>
-                            <span>Filter / Sort</span>
-                        </button>
-                    </div>
-
-                    <!-- Desktop Sort -->
-                    <div class="desktop-controls">
-                        <div class="items-count">
-                            Showing <span id="items-count">0</span> items
-                        </div>
-                        <div class="sort-container">
-                            <label for="sort-select" class="sort-label">Sort By:</label>
-                            <select id="sort-select" class="sort-select">
-                                <option value="newest">Newest First</option>
-                                <option value="oldest">Oldest First</option>
-                                <option value="name-asc">Name A-Z</option>
-                                <option value="name-desc">Name Z-A</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Items Grid -->
-                    <div class="items-grid" id="items-grid"></div>
-
-                    <!-- No Items Message -->
-                    <div id="no-items-message" class="no-items-message" style="display: none;">
-                        <p class="no-items-title">No items found</p>
-                        <p class="no-items-subtitle">Try adjusting your filters</p>
-                    </div>
-                </div>
-            </main>
-        </div>
-
-        <!-- Modal for Data Upload -->
-        <div id="upload-modal" class="modal">
-            <div class="modal-overlay"></div>
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title">
-                        <svg class="modal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="17 8 12 3 7 8"></polyline>
-                            <line x1="12" y1="3" x2="12" y2="15"></line>
-                        </svg>
-                        Upload Your Collection Data
-                    </h2>
-                    <button class="modal-close-btn">&times;</button>
-                </div>
-                <p class="modal-description">Paste your game's JSON data below to track your collection progress.</p>
-
-                <div class="modal-instructions">
-                    <h4>How to get your data:</h4>
-                    <ol>
-                        <li>Open your game's data export feature</li>
-                        <li>Copy the entire JSON data output</li>
-                        <li>Paste it into the text area below</li>
-                        <li>Click "Analyze Collection"</li>
-                    </ol>
-                </div>
-
-                <div class="modal-form">
-                    <label class="textarea-label">JSON Data</label>
-                    <textarea 
-                        id="json-input" 
-                        class="json-textarea" 
-                        placeholder='Paste your JSON data here...'
-                    ></textarea>
-                </div>
-
-                <div class="modal-actions">
-                    <button class="btn btn-secondary modal-cancel-btn">Cancel</button>
-                    <button id="analyze-btn" class="btn btn-primary">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                        </svg>
-                        <span>Analyze Collection</span>
-                    </button>
-                </div>
+            <div class="stats-section">
+                <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Categories</div></div>
+                <div class="stat-item"><div class="stat-number">1000+</div><div class="stat-label">Items</div></div>
+                <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Item Types</div></div>
+                <div class="stat-item"><div class="stat-number">∞</div><div class="stat-label">Possibilities</div></div>
             </div>
         </div>
-
-        <!-- Mobile Filter Modal -->
-        <div id="filter-modal" class="modal">
-            <div class="modal-overlay"></div>
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title">Filter & Sort</h2>
-                    <button class="modal-close-btn">&times;</button>
-                </div>
-
-                <div class="modal-form">
-                    <!-- Mobile Search -->
-                    <div class="search-container">
-                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                        </svg>
-                        <input 
-                            type="text" 
-                            id="mobile-search-input" 
-                            class="search-input" 
-                            placeholder="Search for items..."
-                        >
-                    </div>
-
-                    <!-- Mobile Type Filter -->
-                    <div class="filter-group" id="mobile-type-filter-group">
-                        <h3 class="filter-title">Item Type</h3>
-                        <div class="filter-options filter-buttons" id="mobile-type-filter-options">
-                            <button class="filter-btn active" data-type-filter="all">All Items</button>
-                            <button class="filter-btn" data-type-filter="heroskin">Hero Skins</button>
-                            <button class="filter-btn" data-type-filter="scenery">Sceneries</button>
-                            <button class="filter-btn" data-type-filter="obstacle">Obstacles</button>
-                            <button class="filter-btn" data-type-filter="decoration">Decorations</button>
-                            <button class="filter-btn" data-type-filter="clan">Clan House Parts</button>
-                        </div>
-                    </div>
-
-                    <!-- Mobile Hero Filter -->
-                    <div class="filter-group" id="mobile-hero-filter-group" style="display: none;">
-                        <h3 class="filter-title">Hero</h3>
-                        <div class="filter-options">
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="barbarian_king" class="mobile-hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Barbarian King</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="archer_queen" class="mobile-hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Archer Queen</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="royal_champion" class="mobile-hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Royal Champion</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="grand_warden" class="mobile-hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Grand Warden</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="minion_prince" class="mobile-hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Minion Prince</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="battle_machine" class="mobile-hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Battle Machine</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="flying_machine" class="mobile-hero-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Flying Machine</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Mobile Ownership Filter -->
-                    <div class="filter-group">
-                        <h3 class="filter-title">Ownership</h3>
-                        <div class="filter-options">
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="owned" class="mobile-ownership-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Owned</span>
-                            </label>
-                            <label class="filter-checkbox">
-                                <input type="checkbox" value="missing" class="mobile-ownership-filter">
-                                <span class="checkbox-custom"></span>
-                                <span class="checkbox-label">Missing</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Mobile Sort -->
-                    <div class="filter-group">
-                        <h3 class="filter-title">Sort By</h3>
-                        <select id="mobile-sort-select" class="sort-select">
-                            <option value="newest">Newest First</option>
-                            <option value="oldest">Oldest First</option>
-                            <option value="name-asc">Name A-Z</option>
-                            <option value="name-desc">Name Z-A</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="modal-actions">
-                    <button class="btn btn-secondary modal-cancel-btn" style="flex: 1;">Cancel</button>
-                    <button id="apply-filters-btn" class="btn btn-primary" style="flex: 1;">Apply</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Toast Notifications -->
-        <div id="toast-container" class="toast-container"></div>
-        </div>
-    </div>
-
-    <!-- External JavaScript -->
-    <script src="app.js"></script>
-    <script>
-        // Navigation function to go from hero page to app
-        function goToApp() {
-            document.getElementById('hero-section').style.display = 'none';
-            document.getElementById('app-section').classList.add('active');
-            document.getElementById('app-body').classList.remove('hero-page');
-            window.scrollTo(0, 0);
-        }
-
-        // Check if we should show app on load
-        document.addEventListener('DOMContentLoaded', function() {
-            const fromHero = sessionStorage.getItem('visitedFromHero');
-            if (fromHero === 'true') {
-                goToApp();
-                sessionStorage.removeItem('visitedFromHero');
-            }
-        });
-    </script>
+    </section>
 </body>
 </html>
-
