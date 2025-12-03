@@ -21,8 +21,6 @@ const state = {
     visibleLimit: 50
 };
 
-let itemDetailsDatabase = {};
-
 // ============================================
 // UTILITY FUNCTIONS
 // ============================================
@@ -137,8 +135,6 @@ async function loadAllMasterData() {
         results[5] || {}
     ]);
 
-    itemDetailsDatabase = itemDetails || {};
-
     function findItemDetails(itemName, itemType) {
         if (!itemDetails || !itemName) {
             return null;
@@ -228,16 +224,7 @@ async function loadAllMasterData() {
     state.items = state.allItems['cosmetic-compendium'];
     
     // Preload only the first batch of images (visible items)
-    console.log("Preloading initial images...");
     await preloadImages(state.items, 50);
-    
-    console.log("Loaded items:", {
-        'Decorations': formattedDecorations.length,
-        'Obstacles': formattedObstacles.length,
-        'Hero Skins': formattedHeroSkins.length,
-        'Sceneries': formattedSceneries.length,
-        'Clan Items': formattedClanCapital.length
-    });
 }
 
 // ============================================
@@ -706,12 +693,9 @@ function showToast(title, message, type = "success") {
 // INITIALIZE APP
 // ============================================
 document.addEventListener("DOMContentLoaded", async () => {
-    console.log("Initializing app...");
-    
     // Initialize the IntersectionObserver for lazy loading
     initImageObserver();
     
-    console.log("Loading JSON data...");
     await loadAllMasterData();
     
     const userCollectionData = sessionStorage.getItem('userCollectionData');
@@ -723,7 +707,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             if (result.success) {
                 document.getElementById("clear-data-btn").style.display = "block";
             }
-            console.log("Loaded collection data from session:", result);
         } catch (err) {
             console.error("Error loading session collection data:", err);
         }
