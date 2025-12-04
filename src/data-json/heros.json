@@ -320,6 +320,12 @@
           "TID": "TID_WASTELANDS_KING",
           "code": "52000285",
           "image_path": "src/assets/heroskin/BK_Wastelands_03_NoShadow.webp"
+        },
+        {
+          "skin_name": "Awakened King",
+          "TID": "TID_FROSTAGE_KING",
+          "code": "52000286",
+          "image_path": "src/assets/heroskin/BarbarianKing_FrostAge_f50_3k.webp"
         }
       ]
     },
@@ -637,6 +643,12 @@
           "TID": "TID_WASTELANDS_QUEEN",
           "code": "52000221",
           "image_path": "src/assets/heroskin/AQ_Wastelands_01.webp"
+        },
+        {
+          "skin_name": "Blizzard Queen",
+          "TID": "TID_FROSTAGE_QUEEN",
+          "code": "52000222",
+          "image_path": "src/assets/heroskin/ArcherQueen_FrostAge_f90_3k_noGroundShadow.webp"
         }
       ]
     },
@@ -902,6 +914,12 @@
           "TID": "TID_WASTELANDS_WARDEN",
           "code": "52000242",
           "image_path": "src/assets/heroskin/GW_Wastelands_01.webp"
+        },
+        {
+          "skin_name": "Grand Warlock",
+          "TID": "TID_FROSTAGE_WARDEN",
+          "code": "52000243",
+          "image_path": "src/assets/heroskin/GrandWarden_FrostAge_f50_3k.webp"
         }
       ]
     },
@@ -1058,7 +1076,7 @@
           "skin_name": "Football Champion",
           "TID": "TID_FOOTBALL_CHAMPION",
           "code": "52000120",
-          "image_path": "src/assets/heroskin/football-champion.637x623q50.webp-removebg-preview.webp"
+          "image_path": "src/assets/heroskin/football-champion.webp"
         },
         {
           "skin_name": "Wild West Champion",
@@ -1083,6 +1101,12 @@
           "TID": "TID_WASTELANDS_CHAMPION",
           "code": "52000164",
           "image_path": "src/assets/heroskin/RC_Wastelands_01.webp"
+        },
+        {
+          "skin_name": "Explorer Champion",
+          "TID": "TID_FROSTAGE_CHAMPION",
+          "code": "52000165",
+          "image_path": "src/assets/heroskin/RoyalChampion_FrostAge_f15_3k_noGroundshadows.webp"
         },
         {
           "skin_name": "Anime Champion",
@@ -1228,9 +1252,15 @@
         },
         {
           "skin_name": "Armored Prince",
-          "TID": "TID_ARMORED_PRINCE",
+          "TID": "TID_WASTELANDS_MINION_PRINCE",
           "code": "52000260",
           "image_path": "src/assets/heroskin/MP_Wastelands_02_NoShadow.webp"
+        },
+        {
+          "skin_name": "Frost Prince",
+          "TID": "TID_FROSTAGE_MINION_PRINCE",
+          "code": "52000261",
+          "image_path": "src/assets/heroskin/MinionPrince_FrostAge_f60_3k.webp"
         }
       ]
     }

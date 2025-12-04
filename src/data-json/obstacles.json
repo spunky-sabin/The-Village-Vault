@@ -1,33 +1,5 @@
 [
   {
-    "SN": 1,
-    "name": "Normal Large Stone",
-    "Code": "8000001",
-    "TID": "TID_NORMAL_LARGE_STONE",
-    "image": "images/obs/Obstacle_HV_Stone_large.webp"
-  },
-  {
-    "SN": 52,
-    "name": "Rock",
-    "Code": "8000002",
-    "TID": "TID_OBSTACLE_STONE_1",
-    "image": "images/obs/Obstacle_HV_Stone_1.webp"
-  },
-  {
-    "SN": 50,
-    "name": "Rock",
-    "Code": "8000003",
-    "TID": "TID_OBSTACLE_STONE_FLAT",
-    "image": "images/obs/Obstacle_HV_Stone_2.webp"
-  },
-  {
-    "SN": 56,
-    "name": "Stone",
-    "Code": "8000014",
-    "TID": "TID_OBSTACLE_ROCK_PILLAR",
-    "image": "images/obs/Obstacle_HV_Stone_pillar.webp"
-  },
-  {
     "SN": 2,
     "name": "2012 Stone",
     "Code": "8000015",
@@ -378,24 +350,11 @@
     "image": "images/obs/Cursed_Seedling.webp"
   },
   {
-    "SN": 51,
-    "name": "Rock",
-    "Code": "80000010",
-    "TID": "TID_OBSTACLE_TRUNK_FALLEN",
-    "image": "images/obs/Obstacle_HV_Stone_2.webp"
-  },
-  {
-    "SN": 53,
-    "name": "Stone",
-    "Code": "80000011",
-    "TID": "TID_OBSTACLE_STONE_3",
-    "image": "images/obs/Obstacle_HV_Stone_3.webp"
-  },
-  {
-    "SN": 54,
-    "name": "Stone",
-    "Code": "80000012",
-    "TID": "TID_OBSTACLE_STONE_4",
-    "image": "images/obs/Obstacle_HV_Stone_4.webp"
+    "SN": 64,
+    "name": "2025 Christmas Tree",
+    "Code": "8000137",
+    "TID": "TID_OBSTACLE_XMAS_TREE_2025",
+    "image": "images/obs/Clashmas_Tree_2025.webp"
   }
+
 ]
