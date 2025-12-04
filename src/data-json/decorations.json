@@ -1,7 +1,7 @@
 [
   {
     "SN": 1,
-    "Name": "Barbarian Statue",
+    "Name": "Mighty Statue",
     "Code": "18000000",
     "TID": "TID_DECORATION_BARBARIAN_STATUE",
     "name": "Mighty Statue",
@@ -998,5 +998,37 @@
     "TID": "TID_PRESTIGE_DECO_CRAFTED_DEFENCES",
     "name": "Crafted Statue",
     "image": "images/decorations/Crafted_Statue.webp"
+  },
+  {
+    "SN": 126,
+    "Name": "Battle Machine Statue",
+    "Code": "18000056",
+    "TID": "TID_DECORATION_BATTLEMACHINE",
+    "name": "Battle Machine Statue",
+    "image": "images/decorations/Battle_Machine_Statue.webp"
+  },
+  {
+    "SN": 127,
+    "Name": "Master Builder's Return",
+    "Code": "18000080",
+    "TID": "TID_MASTER_BUILDER'S_RETURN",
+    "name": "Master Builder's Return",
+    "image": "images/decorations/Master_Builder_Return.webp"
+  },
+  {
+    "SN": 128,
+    "Name": "Archer Queen Statue",
+    "Code": "18000043",
+    "TID": "TID_DECORATION_ARCHER_QUEEN_STATUE",
+    "name": "Archer Queen Statue",
+    "image": "images/decorations/ArcherQueenStatue.webp"
+  },
+  {
+    "SN": 129,
+    "Name": "Ancient Barbarian Statue",
+    "Code": "18000041",
+    "TID": "TID_DECORATION_ANCIENT_BARBARIAN_STATUE",
+    "name": "Ancient Barbarian Statue",
+    "image": "images/decorations/Old_Barbarian_Statue_B.webp"
   }
 ]
