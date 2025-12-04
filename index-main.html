@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,13 +10,15 @@
     <meta property="og:title" content="The Village Vault - Clash of Clans Collection Tracker">
     <meta property="og:description" content="Track your hero skins, sceneries, decorations, and obstacles!">
 </head>
+
 <body>
     <div id="root">
         <!-- Header -->
         <header class="header">
             <div class="header-content">
                 <div class="header-inner">
-                    <img src="src/assets/logo.png" alt="The Village Vault Logo" class="header-logo" onerror="this.style.display='none'">
+                    <img src="src/assets/logo.png" alt="The Village Vault Logo" class="header-logo"
+                        onerror="this.style.display='none'">
                     <div class="header-text">
                         <h1 class="header-title">THE VILLAGE VAULT</h1>
                         <p class="header-subtitle">Track Every Treasure. Claim Every Item.</p>
@@ -29,28 +32,30 @@
             <div class="category-tabs-container">
                 <button class="category-tab active" data-category="cosmetic-compendium" aria-current="true">
                     <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
                     </svg>
                     <span class="category-label">COSMETIC COMPENDIUM</span>
                     <span class="category-label-short">COMPENDIUM</span>
                 </button>
                 <button class="category-tab" data-category="hero-wardrobe" aria-current="false">
                     <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        <path
+                            d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                     <span class="category-label">HERO'S WARDROBE</span>
                     <span class="category-label-short">WARDROBE</span>
                 </button>
                 <button class="category-tab" data-category="home-village-decor" aria-current="false">
                     <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                     </svg>
                     <span class="category-label">HOME VILLAGE DECOR</span>
                     <span class="category-label-short">DECOR</span>
                 </button>
                 <button class="category-tab" data-category="sceneries" aria-current="false">
                     <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        <path
+                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                     </svg>
                     <span class="category-label">SCENERIES</span>
                     <span class="category-label-short">SCENERIES</span>
@@ -63,19 +68,14 @@
             <aside class="sidebar">
                 <div class="sidebar-content">
                     <h2 class="sidebar-title">Filter Your Treasury</h2>
-                    
+
                     <!-- Search -->
                     <div class="search-container">
                         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
-                        <input 
-                            type="text" 
-                            id="search-input" 
-                            class="search-input" 
-                            placeholder="Search for items..."
-                        >
+                        <input type="text" id="search-input" class="search-input" placeholder="Search for items...">
                     </div>
 
                     <!-- Item Type Filter -->
@@ -159,7 +159,8 @@
                     <div class="upload-section">
                         <div class="upload-controls">
                             <button id="upload-btn" class="btn btn-primary">
-                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
                                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                     <polyline points="17 8 12 3 7 8"></polyline>
                                     <line x1="12" y1="3" x2="12" y2="15"></line>
@@ -168,19 +169,26 @@
                             </button>
                             <button id="clear-data-btn" class="btn btn-icon-small" style="display: none;">
                                 <svg viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                    <path
+                                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
                                 </svg>
                             </button>
-                            <button id="export-btn" class="btn btn-secondary">Export My Collection</button>
+
                         </div>
                         <div id="welcome-banner" class="welcome-banner">
                             <h3>Welcome to The Village Vault!</h3>
-                            <p>Upload your collection data to start tracking your treasures and unlock special features.</p>
+                            <p>Upload your collection data to start tracking your treasures and unlock special features.
+                            </p>
                         </div>
-                        <div id="global-progress" class="progress-tracker global" style="display:none; margin-bottom: 1rem;">
-                            <strong>Overall Collection: <span id="global-owned">0</span>/<span id="global-total">0</span> (<span id="global-pct">0</span>%)</strong>
-                            <div class="progress-bar" style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
-                                <div class="progress-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 0.3s ease;"></div>
+                        <div id="global-progress" class="progress-tracker global"
+                            style="display:none; margin-bottom: 1rem;">
+                            <strong>Overall Collection: <span id="global-owned">0</span>/<span
+                                    id="global-total">0</span> (<span id="global-pct">0</span>%)</strong>
+                            <div class="progress-bar"
+                                style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
+                                <div class="progress-fill"
+                                    style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 0.3s ease;">
+                                </div>
                             </div>
                         </div>
                         <div id="progress-tracker" class="progress-tracker" style="display: none;"></div>
@@ -253,18 +261,15 @@
 
                 <div class="modal-form">
                     <label class="textarea-label">JSON Data</label>
-                    <textarea 
-                        id="json-input" 
-                        class="json-textarea" 
-                        placeholder='Paste your JSON data here...'
-                    ></textarea>
+                    <textarea id="json-input" class="json-textarea"
+                        placeholder='Paste your JSON data here...'></textarea>
                 </div>
 
                 <div class="modal-actions">
                     <button class="btn btn-secondary modal-cancel-btn">Cancel</button>
                     <button id="analyze-btn" class="btn btn-primary">
                         <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
                         </svg>
                         <span>Analyze Collection</span>
                     </button>
@@ -288,12 +293,8 @@
                             <circle cx="11" cy="11" r="8"></circle>
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
-                        <input 
-                            type="text" 
-                            id="mobile-search-input" 
-                            class="search-input" 
-                            placeholder="Search for items..."
-                        >
+                        <input type="text" id="mobile-search-input" class="search-input"
+                            placeholder="Search for items...">
                     </div>
 
                     <!-- Mobile Type Filter -->
@@ -397,423 +398,423 @@
     </div>
 
     <script>
-// ============================================
-// STATE MANAGEMENT
-// ============================================
-const state = {
-    allItems: {},
-    items: [],
-    userOwnedCodes: new Set(),
-    hasUserData: false,
-    activeCategory: 'cosmetic-compendium',
-    searchQuery: '',
-    selectedHeroes: [],
-    selectedOwnership: [],
-    selectedTypes: [],
-    sortBy: 'newest',
-};
+        // ============================================
+        // STATE MANAGEMENT
+        // ============================================
+        const state = {
+            allItems: {},
+            items: [],
+            userOwnedCodes: new Set(),
+            hasUserData: false,
+            activeCategory: 'cosmetic-compendium',
+            searchQuery: '',
+            selectedHeroes: [],
+            selectedOwnership: [],
+            selectedTypes: [],
+            sortBy: 'newest',
+        };
 
-let itemDetailsDatabase = {};
+        let itemDetailsDatabase = {};
 
-// ============================================
-// LOAD JSON FILES
-// ============================================
-async function loadJSON(url) {
-    try {
-        const res = await fetch(url);
-        if (!res.ok) throw new Error("HTTP Error " + res.status);
-        return await res.json();
-    } catch (err) {
-        console.error("Error loading", url, err);
-        return null;
-    }
-}
-
-async function loadAllMasterData() {
-    const decorations = await loadJSON("src/data-json/decorations.json");
-    const obstacles = await loadJSON("src/data-json/obstacles.json");
-    const heroesData = await loadJSON("src/data-json/heros.json");
-    const sceneries = await loadJSON("src/data-json/sceneries.json");
-    const itemDetails = await loadJSON("src/data-json/item-details.json");
-    
-    itemDetailsDatabase = itemDetails || {};
-    const itemDetailsSafe = itemDetails || {};
-
-    function findItemDetails(itemName, itemType) {
-        if (!itemDetailsSafe || !itemName) {
-            return null;
-        }
-        
-        // Normalize the name for comparison
-        const normalizedName = itemName.toLowerCase().trim();
-        
-        if (itemType === 'decoration' && itemDetailsSafe.decorations) {
-            const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
-            for (const cat of categories) {
-                if (itemDetailsSafe.decorations[cat]) {
-                    const found = itemDetailsSafe.decorations[cat].find(d => 
-                        d.name.toLowerCase().trim() === normalizedName
-                    );
-                    if (found) {
-                        return found;
-                    }
-                }
-            }
-        } else if (itemType === 'obstacle' && itemDetailsSafe.obstacles) {
-            const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
-            for (const cat of categories) {
-                if (itemDetailsSafe.obstacles[cat]) {
-                    const found = itemDetailsSafe.obstacles[cat].find(o => 
-                        o.name.toLowerCase().trim() === normalizedName
-                    );
-                    if (found) {
-                        return found;
-                    }
-                }
-            }
-        } else if (itemType === 'heroskin' && itemDetailsSafe.hero_skins) {
-            const heroes = ['barbarian_king', 'archer_queen', 'grand_warden', 'royal_champion', 'minion_prince'];
-            for (const hero of heroes) {
-                if (itemDetailsSafe.hero_skins[hero]) {
-                    const found = itemDetailsSafe.hero_skins[hero].find(s => 
-                        s.name.toLowerCase().trim() === normalizedName
-                    );
-                    if (found) {
-                        return found;
-                    }
-                }
-            }
-        } else if (itemType === 'scenery' && itemDetailsSafe.sceneries) {
-            // Properly handle itemDetails.sceneries.all_sceneries structure
-            let sceneryArray = [];
-            if (Array.isArray(itemDetailsSafe.sceneries)) {
-                sceneryArray = itemDetailsSafe.sceneries;
-            } else if (itemDetailsSafe.sceneries.all_sceneries && Array.isArray(itemDetailsSafe.sceneries.all_sceneries)) {
-                sceneryArray = itemDetailsSafe.sceneries.all_sceneries;
-            }
-            
-            const found = sceneryArray.find(s => 
-                s.name && s.name.toLowerCase().trim() === normalizedName
-            );
-            if (found) {
-                return found;
+        // ============================================
+        // LOAD JSON FILES
+        // ============================================
+        async function loadJSON(url) {
+            try {
+                const res = await fetch(url);
+                if (!res.ok) throw new Error("HTTP Error " + res.status);
+                return await res.json();
+            } catch (err) {
+                console.error("Error loading", url, err);
+                return null;
             }
         }
-        
-        return null;
-    }
 
-    const formattedDecorations = decorations ? decorations.map(item => {
-        const details = findItemDetails(item.name, 'decoration');
-        return {
-            code: String(item.Code),
-            name: item.name || "Unknown Decoration",
-            image: item.image || "",
-            rarity: item.rarity || "common",
-            category: "Decoration",
-            type: "decoration",
-            owned: false,
-            description: details?.description || "A decorative item for your village.",
-            released: details?.released || "Unknown",
-            availability: details?.availability || "Available in shop"
-        };
-    }) : [];
+        async function loadAllMasterData() {
+            const decorations = await loadJSON("src/data-json/decorations.json");
+            const obstacles = await loadJSON("src/data-json/obstacles.json");
+            const heroesData = await loadJSON("src/data-json/heros.json");
+            const sceneries = await loadJSON("src/data-json/sceneries.json");
+            const itemDetails = await loadJSON("src/data-json/item-details.json");
 
-    const formattedObstacles = obstacles ? obstacles.map(item => {
-        const details = findItemDetails(item.name, 'obstacle');
-        return {
-            code: String(item.Code),
-            name: item.name || "Unknown Obstacle",
-            image: item.image || "",
-            rarity: item.rarity || "common",
-            category: "Obstacle",
-            type: "obstacle",
-            owned: false,
-            description: details?.description || "An obstacle that can be removed or kept.",
-            released: details?.released || "Unknown",
-            availability: details?.availability || "Spawns naturally"
-        };
-    }) : [];
+            itemDetailsDatabase = itemDetails || {};
+            const itemDetailsSafe = itemDetails || {};
 
-    const formattedHeroSkins = [];
-    if (heroesData && heroesData.heroes) {
-        heroesData.heroes.forEach(hero => {
-            if (hero.skins && Array.isArray(hero.skins)) {
-                const heroId = hero.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
-                
-                hero.skins.forEach(skin => {
-                    const details = findItemDetails(skin.skin_name, 'heroskin');
-                    formattedHeroSkins.push({
-                        code: String(skin.code),
-                        name: skin.skin_name || "Unknown Skin",
-                        image: skin.image_path || "",
-                        rarity: details?.rarity || skin.rarity || "common",
-                        category: "Hero Skin",
-                        heroName: hero.name,
-                        heroId: heroId,
-                        type: "heroskin",
-                        owned: false,
-                        description: details?.description || `A special skin for ${hero.name}.`,
-                        released: details?.released || "Unknown",
-                        availability: details?.availability || "Available in shop"
-                    });
+            function findItemDetails(itemName, itemType) {
+                if (!itemDetailsSafe || !itemName) {
+                    return null;
+                }
+
+                // Normalize the name for comparison
+                const normalizedName = itemName.toLowerCase().trim();
+
+                if (itemType === 'decoration' && itemDetailsSafe.decorations) {
+                    const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
+                    for (const cat of categories) {
+                        if (itemDetailsSafe.decorations[cat]) {
+                            const found = itemDetailsSafe.decorations[cat].find(d =>
+                                d.name.toLowerCase().trim() === normalizedName
+                            );
+                            if (found) {
+                                return found;
+                            }
+                        }
+                    }
+                } else if (itemType === 'obstacle' && itemDetailsSafe.obstacles) {
+                    const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
+                    for (const cat of categories) {
+                        if (itemDetailsSafe.obstacles[cat]) {
+                            const found = itemDetailsSafe.obstacles[cat].find(o =>
+                                o.name.toLowerCase().trim() === normalizedName
+                            );
+                            if (found) {
+                                return found;
+                            }
+                        }
+                    }
+                } else if (itemType === 'heroskin' && itemDetailsSafe.hero_skins) {
+                    const heroes = ['barbarian_king', 'archer_queen', 'grand_warden', 'royal_champion', 'minion_prince'];
+                    for (const hero of heroes) {
+                        if (itemDetailsSafe.hero_skins[hero]) {
+                            const found = itemDetailsSafe.hero_skins[hero].find(s =>
+                                s.name.toLowerCase().trim() === normalizedName
+                            );
+                            if (found) {
+                                return found;
+                            }
+                        }
+                    }
+                } else if (itemType === 'scenery' && itemDetailsSafe.sceneries) {
+                    // Properly handle itemDetails.sceneries.all_sceneries structure
+                    let sceneryArray = [];
+                    if (Array.isArray(itemDetailsSafe.sceneries)) {
+                        sceneryArray = itemDetailsSafe.sceneries;
+                    } else if (itemDetailsSafe.sceneries.all_sceneries && Array.isArray(itemDetailsSafe.sceneries.all_sceneries)) {
+                        sceneryArray = itemDetailsSafe.sceneries.all_sceneries;
+                    }
+
+                    const found = sceneryArray.find(s =>
+                        s.name && s.name.toLowerCase().trim() === normalizedName
+                    );
+                    if (found) {
+                        return found;
+                    }
+                }
+
+                return null;
+            }
+
+            const formattedDecorations = decorations ? decorations.map(item => {
+                const details = findItemDetails(item.name, 'decoration');
+                return {
+                    code: String(item.Code),
+                    name: item.name || "Unknown Decoration",
+                    image: item.image || "",
+                    rarity: item.rarity || "common",
+                    category: "Decoration",
+                    type: "decoration",
+                    owned: false,
+                    description: details?.description || "A decorative item for your village.",
+                    released: details?.released || "Unknown",
+                    availability: details?.availability || "Available in shop"
+                };
+            }) : [];
+
+            const formattedObstacles = obstacles ? obstacles.map(item => {
+                const details = findItemDetails(item.name, 'obstacle');
+                return {
+                    code: String(item.Code),
+                    name: item.name || "Unknown Obstacle",
+                    image: item.image || "",
+                    rarity: item.rarity || "common",
+                    category: "Obstacle",
+                    type: "obstacle",
+                    owned: false,
+                    description: details?.description || "An obstacle that can be removed or kept.",
+                    released: details?.released || "Unknown",
+                    availability: details?.availability || "Spawns naturally"
+                };
+            }) : [];
+
+            const formattedHeroSkins = [];
+            if (heroesData && heroesData.heroes) {
+                heroesData.heroes.forEach(hero => {
+                    if (hero.skins && Array.isArray(hero.skins)) {
+                        const heroId = hero.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+
+                        hero.skins.forEach(skin => {
+                            const details = findItemDetails(skin.skin_name, 'heroskin');
+                            formattedHeroSkins.push({
+                                code: String(skin.code),
+                                name: skin.skin_name || "Unknown Skin",
+                                image: skin.image_path || "",
+                                rarity: details?.rarity || skin.rarity || "common",
+                                category: "Hero Skin",
+                                heroName: hero.name,
+                                heroId: heroId,
+                                type: "heroskin",
+                                owned: false,
+                                description: details?.description || `A special skin for ${hero.name}.`,
+                                released: details?.released || "Unknown",
+                                availability: details?.availability || "Available in shop"
+                            });
+                        });
+                    }
                 });
             }
-        });
-    }
 
-    const rawSceneries = sceneries && (
-        Array.isArray(sceneries) ? sceneries :
-        sceneries.sceneries || sceneries.all_sceneries || []
-    );
+            const rawSceneries = sceneries && (
+                Array.isArray(sceneries) ? sceneries :
+                    sceneries.sceneries || sceneries.all_sceneries || []
+            );
 
-    const formattedSceneries = rawSceneries.map(item => {
-        const details = findItemDetails(item.name || item.Name, 'scenery');
-        return {
-            code: String(item.Code || item.code),
-            name: item.name || item.Name || "Unknown Scenery",
-            image: item.image || item.image_path || "",
-            rarity: item.rarity || "common",
-            category: "Scenery",
-            type: "scenery",
-            owned: false,
-            description: details?.description || "A beautiful scenery for your village.",
-            released: details?.released || "Unknown",
-            availability: details?.availability || "Available in shop"
-        };
-    });
-
-    const formattedClanCapital = [];
-
-    state.allItems = {
-        'cosmetic-compendium': [
-            ...formattedDecorations,
-            ...formattedObstacles,
-            ...formattedHeroSkins,
-            ...formattedSceneries,
-            ...formattedClanCapital
-        ],
-        'hero-wardrobe': formattedHeroSkins,
-        'home-village-decor': [...formattedDecorations, ...formattedObstacles],
-        'sceneries': formattedSceneries
-    };
-
-    state.items = state.allItems['cosmetic-compendium'];
-    console.log("Loaded items:", {
-        'Cosmetic Compendium': state.allItems['cosmetic-compendium'].length,
-        'Hero Wardrobe': state.allItems['hero-wardrobe'].length,
-        'Home Village Decor': state.allItems['home-village-decor'].length,
-        'Sceneries': state.allItems['sceneries'].length
-    });
-
-    document.getElementById("loading-screen")?.classList.add("fade-out");
-    setTimeout(() => document.getElementById("loading-screen")?.remove(), 600);
-}
-
-// ============================================
-// JSON PARSER
-// ============================================
-function extractCodesFromJSON(obj) {
-    const codes = new Set();
-
-    function walk(v) {
-        if (Array.isArray(v)) {
-            v.forEach(item => {
-                if (typeof item === "number") {
-                    codes.add(String(item));
-                } else if (item && typeof item === "object") {
-                    walk(item);
-                }
+            const formattedSceneries = rawSceneries.map(item => {
+                const details = findItemDetails(item.name || item.Name, 'scenery');
+                return {
+                    code: String(item.Code || item.code),
+                    name: item.name || item.Name || "Unknown Scenery",
+                    image: item.image || item.image_path || "",
+                    rarity: item.rarity || "common",
+                    category: "Scenery",
+                    type: "scenery",
+                    owned: false,
+                    description: details?.description || "A beautiful scenery for your village.",
+                    released: details?.released || "Unknown",
+                    availability: details?.availability || "Available in shop"
+                };
             });
-        } else if (v && typeof v === "object") {
-            if ("data" in v && typeof v.data === "number") {
-                codes.add(String(v.data));
-            }
-            if ("code" in v) {
-                codes.add(String(v.code));
-            }
-            Object.values(v).forEach(walk);
+
+            const formattedClanCapital = [];
+
+            state.allItems = {
+                'cosmetic-compendium': [
+                    ...formattedDecorations,
+                    ...formattedObstacles,
+                    ...formattedHeroSkins,
+                    ...formattedSceneries,
+                    ...formattedClanCapital
+                ],
+                'hero-wardrobe': formattedHeroSkins,
+                'home-village-decor': [...formattedDecorations, ...formattedObstacles],
+                'sceneries': formattedSceneries
+            };
+
+            state.items = state.allItems['cosmetic-compendium'];
+            console.log("Loaded items:", {
+                'Cosmetic Compendium': state.allItems['cosmetic-compendium'].length,
+                'Hero Wardrobe': state.allItems['hero-wardrobe'].length,
+                'Home Village Decor': state.allItems['home-village-decor'].length,
+                'Sceneries': state.allItems['sceneries'].length
+            });
+
+            document.getElementById("loading-screen")?.classList.add("fade-out");
+            setTimeout(() => document.getElementById("loading-screen")?.remove(), 600);
         }
-    }
 
-    walk(obj);
-    return [...codes];
-}
+        // ============================================
+        // JSON PARSER
+        // ============================================
+        function extractCodesFromJSON(obj) {
+            const codes = new Set();
 
-function parseUserData(jsonString) {
-    try {
-        const parsed = JSON.parse(jsonString);
-        const codes = extractCodesFromJSON(parsed);
+            function walk(v) {
+                if (Array.isArray(v)) {
+                    v.forEach(item => {
+                        if (typeof item === "number") {
+                            codes.add(String(item));
+                        } else if (item && typeof item === "object") {
+                            walk(item);
+                        }
+                    });
+                } else if (v && typeof v === "object") {
+                    if ("data" in v && typeof v.data === "number") {
+                        codes.add(String(v.data));
+                    }
+                    if ("code" in v) {
+                        codes.add(String(v.code));
+                    }
+                    Object.values(v).forEach(walk);
+                }
+            }
 
-        state.userOwnedCodes = new Set(codes);
-        sessionStorage.setItem('userCollectionData', jsonString);
+            walk(obj);
+            return [...codes];
+        }
 
-        Object.keys(state.allItems).forEach(categoryId => {
-            state.allItems[categoryId] = state.allItems[categoryId].map(item => ({
-                ...item,
-                owned: state.userOwnedCodes.has(item.code)
-            }));
-        });
+        function parseUserData(jsonString) {
+            try {
+                const parsed = JSON.parse(jsonString);
+                const codes = extractCodesFromJSON(parsed);
 
-        state.items = state.items.map(item => ({
-            ...item,
-            owned: state.userOwnedCodes.has(item.code)
-        }));
+                state.userOwnedCodes = new Set(codes);
+                sessionStorage.setItem('userCollectionData', jsonString);
 
-        state.hasUserData = true;
-        return { success: true, message: `Matched ${codes.length} unique codes.` };
-    } catch (err) {
-        console.error("Parse error:", err);
-        return { success: false, message: "Invalid JSON" };
-    }
-}
+                Object.keys(state.allItems).forEach(categoryId => {
+                    state.allItems[categoryId] = state.allItems[categoryId].map(item => ({
+                        ...item,
+                        owned: state.userOwnedCodes.has(item.code)
+                    }));
+                });
 
-// ============================================
-// FILTERING & SORTING
-// ============================================
-function filterByType(type) {
-    state.selectedTypes = type === 'all' ? [] : [type];
-    updateUI();
-}
+                state.items = state.items.map(item => ({
+                    ...item,
+                    owned: state.userOwnedCodes.has(item.code)
+                }));
 
-function filterByHero(heroId) {
-    if (state.selectedHeroes.includes(heroId)) {
-        state.selectedHeroes = state.selectedHeroes.filter(h => h !== heroId);
-    } else {
-        state.selectedHeroes = [...state.selectedHeroes, heroId];
-    }
-    updateUI();
-}
+                state.hasUserData = true;
+                return { success: true, message: `Matched ${codes.length} unique codes.` };
+            } catch (err) {
+                console.error("Parse error:", err);
+                return { success: false, message: "Invalid JSON" };
+            }
+        }
 
-function switchCategory(categoryId) {
-    state.activeCategory = categoryId;
-    state.items = state.allItems[categoryId] || [];
-    
-    if (state.hasUserData) {
-        state.items = state.items.map(item => ({
-            ...item,
-            owned: state.userOwnedCodes.has(item.code)
-        }));
-    }
-    
-    if (categoryId !== 'hero-wardrobe') {
-        state.selectedHeroes = [];
-    }
-    
-    state.selectedHeroes = []; // Reset hero filters
-    state.selectedTypes = [];
-    updateTypeFilterUI(categoryId);
-    state.searchQuery = '';
-    updateUI();
-}
+        // ============================================
+        // FILTERING & SORTING
+        // ============================================
+        function filterByType(type) {
+            state.selectedTypes = type === 'all' ? [] : [type];
+            updateUI();
+        }
 
-function updateTypeFilterUI(categoryId) {
-    const typeFilterOptions = document.getElementById('type-filter-options');
-    const mobileTypeFilterOptions = document.getElementById('mobile-type-filter-options');
-    
-    const filterConfigs = {
-        'cosmetic-compendium': [
-            { value: 'all', label: 'All Items' },
-            { value: 'heroskin', label: 'Hero Skins' },
-            { value: 'scenery', label: 'Sceneries' },
-            { value: 'obstacle', label: 'Obstacles' },
-            { value: 'decoration', label: 'Decorations' },
-            { value: 'clan', label: 'Clan House Parts' }
-        ],
-        'hero-wardrobe': [
-            { value: 'heroskin', label: 'Hero Skins', disabled: true }
-        ],
-        'sceneries': [
-            { value: 'scenery', label: 'Sceneries', disabled: true }
-        ],
-        'home-village-decor': [
-            { value: 'all', label: 'All Items' },
-            { value: 'decoration', label: 'Decorations' },
-            { value: 'obstacle', label: 'Obstacles' }
-        ]
-    };
+        function filterByHero(heroId) {
+            if (state.selectedHeroes.includes(heroId)) {
+                state.selectedHeroes = state.selectedHeroes.filter(h => h !== heroId);
+            } else {
+                state.selectedHeroes = [...state.selectedHeroes, heroId];
+            }
+            updateUI();
+        }
 
-    const filters = filterConfigs[categoryId] || [];
-    const filterHTML = filters.map((f, i) => 
-        `<button class="filter-btn ${i === 0 ? 'active' : ''}" data-type-filter="${f.value}" ${f.disabled ? 'disabled style="opacity: 0.7; cursor: not-allowed;"' : ''}>${f.label}</button>`
-    ).join('');
-    
-    if (typeFilterOptions) typeFilterOptions.innerHTML = filterHTML;
-    if (mobileTypeFilterOptions) mobileTypeFilterOptions.innerHTML = filterHTML;
-    
-    attachTypeFilterListeners();
-}
+        function switchCategory(categoryId) {
+            state.activeCategory = categoryId;
+            state.items = state.allItems[categoryId] || [];
 
-function filterByOwnership(ownership) {
-    if (state.selectedOwnership.includes(ownership)) {
-        state.selectedOwnership = [];
-    } else {
-        state.selectedOwnership = [ownership];
-    }
-    updateUI();
-}
+            if (state.hasUserData) {
+                state.items = state.items.map(item => ({
+                    ...item,
+                    owned: state.userOwnedCodes.has(item.code)
+                }));
+            }
 
-function getFilteredItems() {
-    let filtered = state.items.filter(item => {
-        const matchSearch = item.name.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
-                           (item.code && item.code.toString().includes(state.searchQuery));
-        
-        const matchType = state.selectedTypes.length === 0 || state.selectedTypes.includes(item.type);
-        
-        const matchHero = state.activeCategory !== 'hero-wardrobe' || 
-                         state.selectedHeroes.length === 0 || 
-                         (item.heroId && state.selectedHeroes.includes(item.heroId));
-        
-        const matchOwnership =
-            state.selectedOwnership.length === 0 ||
-            (state.selectedOwnership.includes("owned") && item.owned) ||
-            (state.selectedOwnership.includes("missing") && !item.owned);
+            if (categoryId !== 'hero-wardrobe') {
+                state.selectedHeroes = [];
+            }
 
-        return matchSearch && matchType && matchHero && matchOwnership;
-    });
+            state.selectedHeroes = []; // Reset hero filters
+            state.selectedTypes = [];
+            updateTypeFilterUI(categoryId);
+            state.searchQuery = '';
+            updateUI();
+        }
 
-    switch (state.sortBy) {
-        case "oldest": filtered.sort((a, b) => a.code - b.code); break;
-        case "name-asc": filtered.sort((a, b) => a.name.localeCompare(b.name)); break;
-        case "name-desc": filtered.sort((a, b) => b.name.localeCompare(b.name)); break;
-        case "newest":
-        default: filtered.sort((a, b) => b.code - a.code);
-    }
-    return filtered;
-}
+        function updateTypeFilterUI(categoryId) {
+            const typeFilterOptions = document.getElementById('type-filter-options');
+            const mobileTypeFilterOptions = document.getElementById('mobile-type-filter-options');
 
-// ============================================
-// RENDERING UI
-// ============================================
-function createItemCard(item) {
-    const container = document.createElement("div");
-    container.className = "item-card-container";
-    
-    const card = document.createElement("div");
-    card.className = `item-card rarity-${item.rarity} type-${item.type}`;
-    if (state.hasUserData && !item.owned) card.classList.add("grayscale");
+            const filterConfigs = {
+                'cosmetic-compendium': [
+                    { value: 'all', label: 'All Items' },
+                    { value: 'heroskin', label: 'Hero Skins' },
+                    { value: 'scenery', label: 'Sceneries' },
+                    { value: 'obstacle', label: 'Obstacles' },
+                    { value: 'decoration', label: 'Decorations' },
+                    { value: 'clan', label: 'Clan House Parts' }
+                ],
+                'hero-wardrobe': [
+                    { value: 'heroskin', label: 'Hero Skins', disabled: true }
+                ],
+                'sceneries': [
+                    { value: 'scenery', label: 'Sceneries', disabled: true }
+                ],
+                'home-village-decor': [
+                    { value: 'all', label: 'All Items' },
+                    { value: 'decoration', label: 'Decorations' },
+                    { value: 'obstacle', label: 'Obstacles' }
+                ]
+            };
 
-    let typeBadgeText = '';
-    if (item.type === 'decoration') typeBadgeText = 'Decoration';
-    else if (item.type === 'obstacle') typeBadgeText = 'Obstacle';
-    else if (item.type === 'heroskin') typeBadgeText = 'Hero Skin';
-    else if (item.type === 'scenery') typeBadgeText = 'Scenery';
-    else if (item.type === 'clan') typeBadgeText = 'Clan Item';
-    else typeBadgeText = item.category;
+            const filters = filterConfigs[categoryId] || [];
+            const filterHTML = filters.map((f, i) =>
+                `<button class="filter-btn ${i === 0 ? 'active' : ''}" data-type-filter="${f.value}" ${f.disabled ? 'disabled style="opacity: 0.7; cursor: not-allowed;"' : ''}>${f.label}</button>`
+            ).join('');
 
-    const ownershipBadge = state.hasUserData ? `
+            if (typeFilterOptions) typeFilterOptions.innerHTML = filterHTML;
+            if (mobileTypeFilterOptions) mobileTypeFilterOptions.innerHTML = filterHTML;
+
+            attachTypeFilterListeners();
+        }
+
+        function filterByOwnership(ownership) {
+            if (state.selectedOwnership.includes(ownership)) {
+                state.selectedOwnership = [];
+            } else {
+                state.selectedOwnership = [ownership];
+            }
+            updateUI();
+        }
+
+        function getFilteredItems() {
+            let filtered = state.items.filter(item => {
+                const matchSearch = item.name.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
+                    (item.code && item.code.toString().includes(state.searchQuery));
+
+                const matchType = state.selectedTypes.length === 0 || state.selectedTypes.includes(item.type);
+
+                const matchHero = state.activeCategory !== 'hero-wardrobe' ||
+                    state.selectedHeroes.length === 0 ||
+                    (item.heroId && state.selectedHeroes.includes(item.heroId));
+
+                const matchOwnership =
+                    state.selectedOwnership.length === 0 ||
+                    (state.selectedOwnership.includes("owned") && item.owned) ||
+                    (state.selectedOwnership.includes("missing") && !item.owned);
+
+                return matchSearch && matchType && matchHero && matchOwnership;
+            });
+
+            switch (state.sortBy) {
+                case "oldest": filtered.sort((a, b) => a.code - b.code); break;
+                case "name-asc": filtered.sort((a, b) => a.name.localeCompare(b.name)); break;
+                case "name-desc": filtered.sort((a, b) => b.name.localeCompare(b.name)); break;
+                case "newest":
+                default: filtered.sort((a, b) => b.code - a.code);
+            }
+            return filtered;
+        }
+
+        // ============================================
+        // RENDERING UI
+        // ============================================
+        function createItemCard(item) {
+            const container = document.createElement("div");
+            container.className = "item-card-container";
+
+            const card = document.createElement("div");
+            card.className = `item-card rarity-${item.rarity} type-${item.type}`;
+            if (state.hasUserData && !item.owned) card.classList.add("grayscale");
+
+            let typeBadgeText = '';
+            if (item.type === 'decoration') typeBadgeText = 'Decoration';
+            else if (item.type === 'obstacle') typeBadgeText = 'Obstacle';
+            else if (item.type === 'heroskin') typeBadgeText = 'Hero Skin';
+            else if (item.type === 'scenery') typeBadgeText = 'Scenery';
+            else if (item.type === 'clan') typeBadgeText = 'Clan Item';
+            else typeBadgeText = item.category;
+
+            const ownershipBadge = state.hasUserData ? `
         <div class="item-status-badge ${item.owned ? 'owned' : 'missing'}">
             ${item.owned ? '✓ Owned' : '✕ Missing'}
         </div>
     ` : '';
 
-    const frontHTML = `
+            const frontHTML = `
         <div class="item-card-front">
-            ${ownershipBadge}
             <div class="item-type-badge ${item.type}">
                 ${typeBadgeText}
             </div>
             <div class="item-image-container">
+                ${ownershipBadge}
                 <img src="${item.image}" class="item-image" loading="lazy" alt="${item.name}">
             </div>
             <div class="item-info">
@@ -823,117 +824,59 @@ function createItemCard(item) {
         </div>
     `;
 
-    const backHTML = `
-        <div class="item-card-back">
-            <button class="item-close-btn" onclick="event.stopPropagation(); this.closest('.item-card').classList.remove('flipped');">×</button>
-            <div class="item-details">
-                <h3>${item.name}</h3>
-                
-                <div class="item-details-section">
-                    <div class="item-details-label">Description</div>
-                    <div class="item-details-value">${item.description || 'No description available.'}</div>
-                </div>
-                
-                <div class="item-details-section">
-                    <div class="item-details-label">Released</div>
-                    <div class="item-details-value">${item.released || 'Unknown'}</div>
-                </div>
-                
-                <div class="item-details-section">
-                    <div class="item-details-label">How to Obtain</div>
-                    <div class="item-details-value">${item.availability || 'Unknown'}</div>
-                </div>
-                
-                ${item.heroName ? `
-                    <div class="item-details-section">
-                        <div class="item-details-label">Hero</div>
-                        <div class="item-details-value">${item.heroName}</div>
-                    </div>
-                ` : ''}
-            </div>
-        </div>
-    `;
+            card.innerHTML = frontHTML;
 
-    card.innerHTML = frontHTML + backHTML;
-    
-    card.addEventListener('click', (e) => {
-        if (!e.target.closest('.item-close-btn')) {
-            const isFlippingToBack = !card.classList.contains('flipped');
-            card.classList.toggle('flipped');
-            if (isFlippingToBack) {
-                setTimeout(() => fitTextToCard(card), 600); // Adjust 600 to match your CSS transition duration in ms
-            }
+            card.addEventListener('click', () => {
+                showItemDetailModal(item);
+            });
+            container.appendChild(card);
+            return container;
         }
-    });
-    
-    container.appendChild(card);
-    return container;
-}
 
-function fitTextToCard(card) {
-    const back = card.querySelector('.item-card-back');
-    const details = card.querySelector('.item-details');
-    if (!details) return;
 
-    back.style.overflowY = 'hidden';
 
-    // Reset to initial font size
-    details.style.fontSize = ''; // Remove inline to use CSS default
+        function renderItems() {
+            const list = document.getElementById("items-grid");
+            const msg = document.getElementById("no-items-message");
+            const count = document.getElementById("items-count");
 
-    // Force reflow
-    details.offsetHeight;
+            const items = getFilteredItems();
 
-    let fontSize = parseFloat(getComputedStyle(details).fontSize);
+            list.innerHTML = "";
+            count.textContent = items.length;
 
-    while (details.scrollHeight > back.clientHeight && fontSize > 8) {
-        fontSize -= 0.5;
-        details.style.fontSize = `${fontSize}px`;
-        details.offsetHeight; // Reflow
-    }
-}
+            if (!items.length) {
+                msg.style.display = "block";
+                return;
+            }
+            msg.style.display = "none";
 
-function renderItems() {
-    const list = document.getElementById("items-grid");
-    const msg = document.getElementById("no-items-message");
-    const count = document.getElementById("items-count");
+            items.forEach(i => list.appendChild(createItemCard(i)));
+        }
 
-    const items = getFilteredItems();
+        function updateProgressTracker() {
+            const el = document.getElementById("progress-tracker");
+            if (!state.hasUserData) {
+                el.style.display = "none";
+                return;
+            }
 
-    list.innerHTML = "";
-    count.textContent = items.length;
+            let categoryItems = state.allItems[state.activeCategory] || [];
 
-    if (!items.length) {
-        msg.style.display = "block";
-        return;
-    }
-    msg.style.display = "none";
+            if (state.selectedTypes.length > 0) {
+                categoryItems = categoryItems.filter(item => state.selectedTypes.includes(item.type));
+            }
 
-    items.forEach(i => list.appendChild(createItemCard(i)));
-}
+            if (state.activeCategory === 'hero-wardrobe' && state.selectedHeroes.length > 0) {
+                categoryItems = categoryItems.filter(item => item.heroId && state.selectedHeroes.includes(item.heroId));
+            }
 
-function updateProgressTracker() {
-    const el = document.getElementById("progress-tracker");
-    if (!state.hasUserData) {
-        el.style.display = "none";
-        return;
-    }
+            const owned = categoryItems.filter(i => i.owned).length;
+            const total = categoryItems.length;
+            const pct = total > 0 ? Math.round((owned / total) * 100) : 0;
 
-    let categoryItems = state.allItems[state.activeCategory] || [];
-    
-    if (state.selectedTypes.length > 0) {
-        categoryItems = categoryItems.filter(item => state.selectedTypes.includes(item.type));
-    }
-    
-    if (state.activeCategory === 'hero-wardrobe' && state.selectedHeroes.length > 0) {
-        categoryItems = categoryItems.filter(item => item.heroId && state.selectedHeroes.includes(item.heroId));
-    }
-    
-    const owned = categoryItems.filter(i => i.owned).length;
-    const total = categoryItems.length;
-    const pct = total > 0 ? Math.round((owned / total) * 100) : 0;
-
-    el.style.display = "block";
-    el.innerHTML = `
+            el.style.display = "block";
+            el.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
             <span style="font-size: 0.9rem; font-weight: 600;">${owned}/${total} items collected</span>
             <span style="font-size: 1.1rem; font-weight: 700; color: var(--gold);">${pct}%</span>
@@ -942,377 +885,468 @@ function updateProgressTracker() {
             <div class="progress-fill" style="width: ${pct}%; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 0.3s ease;"></div>
         </div>
     `;
-}
+        }
 
-function updateGlobalProgress() {
-    if (!state.hasUserData) {
-        document.getElementById("global-progress").style.display = "none";
-        return;
-    }
-    const all = Object.values(state.allItems).flat();
-    const owned = all.filter(i => i.owned).length;
-    const total = all.length;
-    const pct = total > 0 ? Math.round((owned / total) * 100) : 0;
+        function updateGlobalProgress() {
+            if (!state.hasUserData) {
+                document.getElementById("global-progress").style.display = "none";
+                return;
+            }
+            const all = Object.values(state.allItems).flat();
+            const owned = all.filter(i => i.owned).length;
+            const total = all.length;
+            const pct = total > 0 ? Math.round((owned / total) * 100) : 0;
 
-    document.getElementById("global-progress").style.display = "block";
-    document.getElementById("global-owned").textContent = owned;
-    document.getElementById("global-total").textContent = total;
-    document.getElementById("global-pct").textContent = pct;
-    document.querySelector("#global-progress .progress-fill").style.width = pct + "%";
-}
+            document.getElementById("global-progress").style.display = "block";
+            document.getElementById("global-owned").textContent = owned;
+            document.getElementById("global-total").textContent = total;
+            document.getElementById("global-pct").textContent = pct;
+            document.querySelector("#global-progress .progress-fill").style.width = pct + "%";
+        }
 
-function updateUI() {
-    renderItems();
-    updateProgressTracker();
-    updateGlobalProgress();
-    
-    const heroFilterGroup = document.getElementById('hero-filter-group');
-    const mobileHeroFilterGroup = document.getElementById('mobile-hero-filter-group');
-    const isHeroWardrobe = state.activeCategory === 'hero-wardrobe';
-    
-    if (heroFilterGroup) {
-        heroFilterGroup.style.display = isHeroWardrobe ? 'block' : 'none';
-    }
-    if (mobileHeroFilterGroup) {
-        mobileHeroFilterGroup.style.display = isHeroWardrobe ? 'block' : 'none';
-    }
-}
+        function updateUI() {
+            renderItems();
+            updateProgressTracker();
+            updateGlobalProgress();
 
-// ============================================
-// EVENT HANDLING
-// ============================================
-function handleDataUpload() {
-    const input = document.getElementById("json-input").value.trim();
-    if (!input) {
-        showToast("Error", "Please paste your JSON!", "error");
-        return;
-    }
+            const heroFilterGroup = document.getElementById('hero-filter-group');
+            const mobileHeroFilterGroup = document.getElementById('mobile-hero-filter-group');
+            const isHeroWardrobe = state.activeCategory === 'hero-wardrobe';
 
-    const result = parseUserData(input);
-    if (result.success) {
-        showToast("Success!", result.message, "success");
-        closeModal("upload-modal");
-        document.getElementById("clear-data-btn").style.display = "block";
-        updateUI();
-    } else {
-        showToast("Invalid JSON", result.message, "error");
-    }
-}
+            if (heroFilterGroup) {
+                heroFilterGroup.style.display = isHeroWardrobe ? 'block' : 'none';
+            }
+            if (mobileHeroFilterGroup) {
+                mobileHeroFilterGroup.style.display = isHeroWardrobe ? 'block' : 'none';
+            }
+        }
 
-function handleDataClear() {
-    state.userOwnedCodes = new Set();
-    Object.keys(state.allItems).forEach(categoryId => {
-        state.allItems[categoryId] = state.allItems[categoryId].map(i => ({ ...i, owned: false }));
-    });
-    state.items = state.items.map(i => ({ ...i, owned: false }));
-    state.hasUserData = false;
-    sessionStorage.removeItem('userCollectionData');
-    document.getElementById("clear-data-btn").style.display = "none";
-    updateUI();
-    showToast("Cleared", "Your data has been reset.", "success");
-}
+        // ============================================
+        // EVENT HANDLING
+        // ============================================
+        function handleDataUpload() {
+            const input = document.getElementById("json-input").value.trim();
+            if (!input) {
+                showToast("Error", "Please paste your JSON!", "error");
+                return;
+            }
 
-function handleExportCollection() {
-    const ownedItems = state.allItems['cosmetic-compendium'].filter(item => item.owned);
-    const exportData = {
-        ownedCodes: Array.from(state.userOwnedCodes),
-        ownedItems: ownedItems.map(item => ({
-            code: item.code,
-            name: item.name,
-            type: item.type
-        }))
-    };
+            const result = parseUserData(input);
+            if (result.success) {
+                showToast("Success!", result.message, "success");
+                closeModal("upload-modal");
+                document.getElementById("clear-data-btn").style.display = "block";
+                updateUI();
+            } else {
+                showToast("Invalid JSON", result.message, "error");
+            }
+        }
 
-    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'village_vault_collection.json';
-    a.click();
-    URL.revokeObjectURL(url);
+        function handleDataClear() {
+            state.userOwnedCodes = new Set();
+            Object.keys(state.allItems).forEach(categoryId => {
+                state.allItems[categoryId] = state.allItems[categoryId].map(i => ({ ...i, owned: false }));
+            });
+            state.items = state.items.map(i => ({ ...i, owned: false }));
+            state.hasUserData = false;
+            sessionStorage.removeItem('userCollectionData');
+            document.getElementById("clear-data-btn").style.display = "none";
+            updateUI();
+            showToast("Cleared", "Your data has been reset.", "success");
+        }
 
-    showToast("Exported", "Your collection has been downloaded.", "success");
-}
+        function handleExportCollection() {
+            const ownedItems = state.allItems['cosmetic-compendium'].filter(item => item.owned);
+            const exportData = {
+                ownedCodes: Array.from(state.userOwnedCodes),
+                ownedItems: ownedItems.map(item => ({
+                    code: item.code,
+                    name: item.name,
+                    type: item.type
+                }))
+            };
 
-function attachTypeFilterListeners() {
-    const typeFilterButtons = document.querySelectorAll('[data-type-filter]:not([disabled])');
-    typeFilterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const type = btn.getAttribute('data-type-filter');
-            const parentGroup = btn.closest('.filter-options');
-            parentGroup.querySelectorAll('[data-type-filter]').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            filterByType(type);
-        });
-    });
-}
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'village_vault_collection.json';
+            a.click();
+            URL.revokeObjectURL(url);
 
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'flex';
-    }
-}
+            showToast("Exported", "Your collection has been downloaded.", "success");
+        }
 
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.style.display = 'none';
-    }
-}
+        function attachTypeFilterListeners() {
+            const typeFilterButtons = document.querySelectorAll('[data-type-filter]:not([disabled])');
+            typeFilterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const type = btn.getAttribute('data-type-filter');
+                    const parentGroup = btn.closest('.filter-options');
+                    parentGroup.querySelectorAll('[data-type-filter]').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    filterByType(type);
+                });
+            });
+        }
 
-function showToast(title, message, type = "success") {
-    const container = document.getElementById("toast-container");
-    if (!container) return;
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'flex';
+            }
+        }
 
-    const toast = document.createElement("div");
-    toast.className = `toast toast-${type}`;
-    toast.innerHTML = `
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        function showToast(title, message, type = "success") {
+            const container = document.getElementById("toast-container");
+            if (!container) return;
+
+            const toast = document.createElement("div");
+            toast.className = `toast toast-${type}`;
+            toast.innerHTML = `
         <div class="toast-content">
             <div class="toast-title">${title}</div>
             <div class="toast-message">${message}</div>
         </div>
     `;
-    
-    container.appendChild(toast);
-    
-    setTimeout(() => {
-        toast.classList.add("toast-fade-out");
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
-}
 
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
+            container.appendChild(toast);
 
-// ============================================
-// INITIALIZE APP
-// ============================================
-document.addEventListener("DOMContentLoaded", async () => {
-    console.log("Loading JSON data...");
-    await loadAllMasterData();
-    
-    const userCollectionData = sessionStorage.getItem('userCollectionData');
-    
-    if (userCollectionData) {
-        try {
-            const result = parseUserData(userCollectionData);
-            if (result.success) {
-                document.getElementById("clear-data-btn").style.display = "block";
-            }
-            console.log("Loaded collection data from session:", result);
-        } catch (err) {
-            console.error("Error loading session collection data:", err);
+            setTimeout(() => {
+                toast.classList.add("toast-fade-out");
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
         }
-    }
-    
-    updateUI();
 
-    // Category Tab Switching
-    const categoryTabs = document.querySelectorAll('.category-tab');
-    categoryTabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            const categoryId = tab.getAttribute('data-category');
-            
-            categoryTabs.forEach(t => {
-                t.classList.remove('active');
-                t.setAttribute('aria-current', 'false');
-            });
-            tab.classList.add('active');
-            tab.setAttribute('aria-current', 'true');
-            
-            switchCategory(categoryId);
-        });
-    });
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
 
-    // Search
-    const searchInput = document.getElementById("search-input");
-    const debouncedUpdateFromSearch = debounce(() => updateUI(), 300);
-    if (searchInput) {
-        searchInput.addEventListener("input", e => {
-            state.searchQuery = e.target.value;
-            debouncedUpdateFromSearch();
-        });
-    }
+        // ============================================
+        // INITIALIZE APP
+        // ============================================
+        document.addEventListener("DOMContentLoaded", async () => {
+            console.log("Loading JSON data...");
+            await loadAllMasterData();
 
-    // Sort
-    const sortSelect = document.getElementById("sort-select");
-    if (sortSelect) {
-        sortSelect.addEventListener("change", e => {
-            state.sortBy = e.target.value;
+            const userCollectionData = sessionStorage.getItem('userCollectionData');
+
+            if (userCollectionData) {
+                try {
+                    const result = parseUserData(userCollectionData);
+                    if (result.success) {
+                        document.getElementById("clear-data-btn").style.display = "block";
+                    }
+                    console.log("Loaded collection data from session:", result);
+                } catch (err) {
+                    console.error("Error loading session collection data:", err);
+                }
+            }
+
             updateUI();
-        });
-    }
 
-    // Type filters
-    attachTypeFilterListeners();
+            // Category Tab Switching
+            const categoryTabs = document.querySelectorAll('.category-tab');
+            categoryTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const categoryId = tab.getAttribute('data-category');
 
-    // Ownership filters
-    const ownershipCheckboxes = document.querySelectorAll('.ownership-filter');
-    ownershipCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', e => {
-            const ownership = e.target.value;
-            
-            ownershipCheckboxes.forEach(cb => {
-                if (cb !== e.target) {
-                    cb.checked = false;
+                    categoryTabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-current', 'false');
+                    });
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-current', 'true');
+
+                    switchCategory(categoryId);
+                });
+            });
+
+            // Search
+            const searchInput = document.getElementById("search-input");
+            const debouncedUpdateFromSearch = debounce(() => updateUI(), 300);
+            if (searchInput) {
+                searchInput.addEventListener("input", e => {
+                    state.searchQuery = e.target.value;
+                    debouncedUpdateFromSearch();
+                });
+            }
+
+            // Sort
+            const sortSelect = document.getElementById("sort-select");
+            if (sortSelect) {
+                sortSelect.addEventListener("change", e => {
+                    state.sortBy = e.target.value;
+                    updateUI();
+                });
+            }
+
+            // Type filters
+            attachTypeFilterListeners();
+
+            // Ownership filters
+            const ownershipCheckboxes = document.querySelectorAll('.ownership-filter');
+            ownershipCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', e => {
+                    const ownership = e.target.value;
+
+                    ownershipCheckboxes.forEach(cb => {
+                        if (cb !== e.target) {
+                            cb.checked = false;
+                        }
+                    });
+
+                    filterByOwnership(ownership);
+                });
+            });
+
+            // Hero filters
+            const heroFilterCheckboxes = document.querySelectorAll('.hero-filter');
+            heroFilterCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', e => {
+                    const heroId = e.target.value;
+                    filterByHero(heroId);
+                    const mobileCheckbox = document.querySelector(`.mobile-hero-filter[value="${heroId}"]`);
+                    if (mobileCheckbox) {
+                        mobileCheckbox.checked = checkbox.checked;
+                    }
+                });
+            });
+
+            // Mobile Hero filters
+            const mobileHeroFilterCheckboxes = document.querySelectorAll('.mobile-hero-filter');
+            mobileHeroFilterCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', e => {
+                    const heroId = e.target.value;
+                    filterByHero(heroId);
+                    const desktopCheckbox = document.querySelector(`.hero-filter[value="${heroId}"]`);
+                    if (desktopCheckbox) {
+                        desktopCheckbox.checked = checkbox.checked;
+                    }
+                });
+            });
+
+            // Upload / Clear
+            const uploadBtn = document.getElementById("upload-btn");
+            if (uploadBtn) {
+                uploadBtn.addEventListener("click", () => openModal("upload-modal"));
+            }
+
+            const analyzeBtn = document.getElementById("analyze-btn");
+            if (analyzeBtn) {
+                analyzeBtn.addEventListener("click", handleDataUpload);
+            }
+
+            const clearDataBtn = document.getElementById("clear-data-btn");
+            if (clearDataBtn) {
+                clearDataBtn.addEventListener("click", handleDataClear);
+            }
+
+            const exportBtn = document.getElementById("export-btn");
+            if (exportBtn) {
+                exportBtn.addEventListener("click", handleExportCollection);
+            }
+
+            // Modal close buttons
+            document.querySelectorAll(".modal-close-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const modal = btn.closest(".modal");
+                    if (modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            });
+
+            // Modal overlay close
+            document.querySelectorAll(".modal-overlay").forEach(overlay => {
+                overlay.addEventListener("click", () => {
+                    const modal = overlay.closest(".modal");
+                    if (modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            });
+
+            // Cancel buttons
+            document.querySelectorAll(".modal-cancel-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const modal = btn.closest(".modal");
+                    if (modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            });
+
+            // Mobile filter button
+            const mobileFilterBtn = document.getElementById("mobile-filter-btn");
+            if (mobileFilterBtn) {
+                mobileFilterBtn.addEventListener("click", () => openModal("filter-modal"));
+            }
+
+            // Mobile ownership filters
+            document.querySelectorAll(".mobile-ownership-filter").forEach(checkbox => {
+                checkbox.addEventListener("change", () => {
+                    const ownership = checkbox.value;
+
+                    document.querySelectorAll(".mobile-ownership-filter").forEach(cb => {
+                        if (cb !== checkbox) {
+                            cb.checked = false;
+                        }
+                    });
+
+                    filterByOwnership(ownership);
+                });
+            });
+
+            // Apply filters button (mobile)
+            const applyFiltersBtn = document.getElementById("apply-filters-btn");
+            if (applyFiltersBtn) {
+                applyFiltersBtn.addEventListener("click", () => {
+                    closeModal("filter-modal");
+                });
+            }
+
+            // Sync mobile search
+            const mobileSearchInput = document.getElementById("mobile-search-input");
+            if (mobileSearchInput) {
+                mobileSearchInput.addEventListener("input", e => {
+                    state.searchQuery = e.target.value;
+                    const desktopSearch = document.getElementById("search-input");
+                    if (desktopSearch) {
+                        desktopSearch.value = e.target.value;
+                    }
+                    updateUI();
+                });
+            }
+
+            // Sync mobile sort
+            const mobileSortSelect = document.getElementById("mobile-sort-select");
+            if (mobileSortSelect) {
+                mobileSortSelect.addEventListener("change", e => {
+                    state.sortBy = e.target.value;
+                    const desktopSort = document.getElementById("sort-select");
+                    if (desktopSort) {
+                        desktopSort.value = e.target.value;
+                    }
+                    updateUI();
+                });
+            }
+
+            // Modal Management
+            let currentModal = null;
+
+            function showItemDetailModal(item) {
+                // Create modal if it doesn't exist
+                let modal = document.getElementById('item-detail-modal');
+                if (!modal) {
+                    modal = document.createElement('div');
+                    modal.id = 'item-detail-modal';
+                    modal.className = 'item-detail-modal';
+                    document.body.appendChild(modal);
+                }
+
+                // Build modal content
+                const modalHTML = `
+                <div class="item-detail-content">
+                    <button class="item-detail-close" onclick="closeItemDetailModal()">×</button>
+                    <div class="item-detail-header">
+                        <div class="item-detail-image">
+                            <img src="${item.image}" alt="${item.name}" loading="lazy">
+                        </div>
+                        <div class="item-detail-title-section">
+                            <h2 class="item-detail-title">${item.name}</h2>
+                            <div class="item-detail-category">${item.category}</div>
+                            ${state.hasUserData ? `
+                                <div class="item-status-badge ${item.owned ? 'owned' : 'missing'}">
+                                    ${item.owned ? '✓ Owned' : '✕ Missing'}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                    <div class="item-detail-body">
+                        <div class="item-detail-section">
+                            <div class="item-detail-label">Description</div>
+                            <div class="item-detail-value">${item.description || 'No description available.'}</div>
+                        </div>
+                        <div class="item-detail-section">
+                            <div class="item-detail-label">Released</div>
+                            <div class="item-detail-value">${item.released || 'Unknown'}</div>
+                        </div>
+                        <div class="item-detail-section">
+                            <div class="item-detail-label">How to Obtain</div>
+                            <div class="item-detail-value">${item.availability || 'Unknown'}</div>
+                        </div>
+                        ${item.heroName ? `
+                            <div class="item-detail-section">
+                                <div class="item-detail-label">Hero</div>
+                                <div class="item-detail-value">${item.heroName}</div>
+                            </div>
+                        ` : ''}
+                        <div class="item-detail-section">
+                            <div class="item-detail-label">Rarity</div>
+                            <div class="item-detail-value" style="text-transform: capitalize;">${item.rarity || 'Common'}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+                modal.innerHTML = modalHTML;
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                window.currentModal = modal;
+
+                // Close on overlay click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeItemDetailModal();
+                    }
+                });
+            }
+
+            function closeItemDetailModal() {
+                const modal = document.getElementById('item-detail-modal');
+                if (!modal) return;
+
+                const content = modal.querySelector('.item-detail-content');
+                if (content) {
+                    content.classList.add('closing');
+                    setTimeout(() => {
+                        modal.classList.remove('show');
+                        document.body.style.overflow = '';
+                        window.currentModal = null;
+                    }, 300);
+                }
+            }
+
+            // Make functions globally accessible
+            window.showItemDetailModal = showItemDetailModal;
+            window.closeItemDetailModal = closeItemDetailModal;
+
+            // Keyboard Navigation
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape') {
+                    if (window.currentModal) {
+                        window.closeItemDetailModal();
+                    }
                 }
             });
-            
-            filterByOwnership(ownership);
         });
-    });
-
-    // Hero filters
-    const heroFilterCheckboxes = document.querySelectorAll('.hero-filter');
-    heroFilterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', e => {
-            const heroId = e.target.value;
-            filterByHero(heroId);
-            const mobileCheckbox = document.querySelector(`.mobile-hero-filter[value="${heroId}"]`);
-            if (mobileCheckbox) {
-                mobileCheckbox.checked = checkbox.checked;
-            }
-        });
-    });
-
-    // Mobile Hero filters
-    const mobileHeroFilterCheckboxes = document.querySelectorAll('.mobile-hero-filter');
-    mobileHeroFilterCheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', e => {
-            const heroId = e.target.value;
-            filterByHero(heroId);
-            const desktopCheckbox = document.querySelector(`.hero-filter[value="${heroId}"]`);
-            if (desktopCheckbox) {
-                desktopCheckbox.checked = checkbox.checked;
-            }
-        });
-    });
-
-    // Upload / Clear
-    const uploadBtn = document.getElementById("upload-btn");
-    if (uploadBtn) {
-        uploadBtn.addEventListener("click", () => openModal("upload-modal"));
-    }
-    
-    const analyzeBtn = document.getElementById("analyze-btn");
-    if (analyzeBtn) {
-        analyzeBtn.addEventListener("click", handleDataUpload);
-    }
-    
-    const clearDataBtn = document.getElementById("clear-data-btn");
-    if (clearDataBtn) {
-        clearDataBtn.addEventListener("click", handleDataClear);
-    }
-
-    const exportBtn = document.getElementById("export-btn");
-    if (exportBtn) {
-        exportBtn.addEventListener("click", handleExportCollection);
-    }
-
-    // Modal close buttons
-    document.querySelectorAll(".modal-close-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const modal = btn.closest(".modal");
-            if (modal) {
-                modal.style.display = "none";
-            }
-        });
-    });
-
-    // Modal overlay close
-    document.querySelectorAll(".modal-overlay").forEach(overlay => {
-        overlay.addEventListener("click", () => {
-            const modal = overlay.closest(".modal");
-            if (modal) {
-                modal.style.display = "none";
-            }
-        });
-    });
-
-    // Cancel buttons
-    document.querySelectorAll(".modal-cancel-btn").forEach(btn => {
-        btn.addEventListener("click", () => {
-            const modal = btn.closest(".modal");
-            if (modal) {
-                modal.style.display = "none";
-            }
-        });
-    });
-
-    // Mobile filter button
-    const mobileFilterBtn = document.getElementById("mobile-filter-btn");
-    if (mobileFilterBtn) {
-        mobileFilterBtn.addEventListener("click", () => openModal("filter-modal"));
-    }
-
-    // Mobile ownership filters
-    document.querySelectorAll(".mobile-ownership-filter").forEach(checkbox => {
-        checkbox.addEventListener("change", () => {
-            const ownership = checkbox.value;
-            
-            document.querySelectorAll(".mobile-ownership-filter").forEach(cb => {
-                if (cb !== checkbox) {
-                    cb.checked = false;
-                }
-            });
-            
-            filterByOwnership(ownership);
-        });
-    });
-
-    // Apply filters button (mobile)
-    const applyFiltersBtn = document.getElementById("apply-filters-btn");
-    if (applyFiltersBtn) {
-        applyFiltersBtn.addEventListener("click", () => {
-            closeModal("filter-modal");
-        });
-    }
-
-    // Sync mobile search
-    const mobileSearchInput = document.getElementById("mobile-search-input");
-    if (mobileSearchInput) {
-        mobileSearchInput.addEventListener("input", e => {
-            state.searchQuery = e.target.value;
-            const desktopSearch = document.getElementById("search-input");
-            if (desktopSearch) {
-                desktopSearch.value = e.target.value;
-            }
-            updateUI();
-        });
-    }
-
-    // Sync mobile sort
-    const mobileSortSelect = document.getElementById("mobile-sort-select");
-    if (mobileSortSelect) {
-        mobileSortSelect.addEventListener("change", e => {
-            state.sortBy = e.target.value;
-            const desktopSort = document.getElementById("sort-select");
-            if (desktopSort) {
-                desktopSort.value = e.target.value;
-            }
-            updateUI();
-        });
-    }
-
-    // Keyboard Navigation for Cards
-    document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') {
-            document.querySelectorAll('.item-card.flipped').forEach(card => {
-                card.classList.remove('flipped');
-            });
-        }
-    });
-});
     </script>
 </body>
+
 </html>
