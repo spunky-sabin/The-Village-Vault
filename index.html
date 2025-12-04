@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>The Village Vault | Clash of Clans Item Tracker & Skin Encyclopedia</title>
 
-    <meta name="description" 
-          content="Track your Clash of Clans hero skins, decorations, and cosmetic items. The Village Vault lets you browse every cosmetic, track missing skins, and explore the full in-game asset index.">
+    <meta name="description"
+        content="Track your Clash of Clans hero skins, decorations, and cosmetic items. The Village Vault lets you browse every cosmetic, track missing skins, and explore the full in-game asset index.">
 
-    <meta name="keywords" 
-          content="Clash of Clans, CoC skins, Clash of Clans cosmetics, hero skins, CoC decorations, item tracker, Clash of Clans collection tracker, Village Vault, in-game assets">
+    <meta name="keywords"
+        content="Clash of Clans, CoC skins, Clash of Clans cosmetics, hero skins, CoC decorations, item tracker, Clash of Clans collection tracker, Village Vault, in-game assets">
 
     <link rel="canonical" href="https://your-domain.com/">
 
     <!-- Open Graph -->
     <meta property="og:title" content="The Village Vault | Clash of Clans Item Tracker">
-    <meta property="og:description" content="Browse all Clash of Clans skins and cosmetics. Track your collection and find missing items.">
+    <meta property="og:description"
+        content="Browse all Clash of Clans skins and cosmetics. Track your collection and find missing items.">
     <meta property="og:image" content="https://your-domain.com/src/assets/logo.png">
     <meta property="og:url" content="https://your-domain.com/">
     <meta property="og:type" content="website">
@@ -54,16 +56,31 @@
       ]
     }
     </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5062214479421683"
+        crossorigin="anonymous"></script>
 
     <style>
         /* =============== BASE & VARIABLES =============== */
-        *, *::before, *::after { box-sizing: border-box; }
-        html, body { margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
         body.hero-page {
             background: hsl(210, 30%, 8%);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #fff;
         }
+
         :root {
             --gold: #FFD700;
             --gold-light: #FFE680;
@@ -80,12 +97,13 @@
             justify-content: center;
             padding: 2rem 1rem;
             background: linear-gradient(135deg,
-                hsla(210, 30%, 8%, 1) 0%,
-                hsla(210, 25%, 12%, 0.8) 50%,
-                hsla(210, 30%, 8%, 1) 100%);
+                    hsla(210, 30%, 8%, 1) 0%,
+                    hsla(210, 25%, 12%, 0.8) 50%,
+                    hsla(210, 30%, 8%, 1) 100%);
             text-align: center;
             overflow: hidden;
         }
+
         .hero-section::before {
             content: '';
             position: absolute;
@@ -117,9 +135,17 @@
             animation: float 4s ease-in-out infinite;
             margin: 0 auto 1rem;
         }
+
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         /* =============== TYPOGRAPHY =============== */
@@ -128,16 +154,18 @@
             font-weight: 900;
             letter-spacing: 0.15em;
             color: var(--foreground);
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5), 0 0 30px hsla(45, 100%, 60%, 0.3);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 30px hsla(45, 100%, 60%, 0.3);
             line-height: 1.2;
             margin: 0;
         }
+
         .hero-title .highlight {
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .hero-subtitle {
             font-size: clamp(1.2rem, 3.5vw, 2rem);
             color: hsl(210, 15%, 85%);
@@ -145,6 +173,7 @@
             letter-spacing: 0.05em;
             line-height: 1.6;
         }
+
         .hero-description {
             font-size: clamp(0.9rem, 2.5vw, 1.3rem);
             color: hsl(210, 15%, 80%);
@@ -164,16 +193,29 @@
             opacity: 0;
             animation: fadeInUp 0.6s ease-out forwards;
         }
-        .feature-item:nth-child(1) { animation-delay: 0.2s; }
-        .feature-item:nth-child(2) { animation-delay: 0.4s; }
-        .feature-item:nth-child(3) { animation-delay: 0.6s; }
-        .feature-item:nth-child(4) { animation-delay: 0.8s; }
+
+        .feature-item:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-item:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .feature-item:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .feature-item:nth-child(4) {
+            animation-delay: 0.8s;
+        }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -219,6 +261,7 @@
             flex-wrap: wrap;
             justify-content: center;
         }
+
         .hero-btn {
             padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 3vw, 3rem);
             font-size: clamp(0.95rem, 2vw, 1.1rem);
@@ -234,15 +277,29 @@
             white-space: nowrap;
             text-decoration: none;
         }
+
         .hero-btn-primary {
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
             color: #000;
             border-color: var(--gold);
             box-shadow: 0 4px 15px hsla(45, 100%, 60%, 0.3);
         }
-        .hero-btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px hsla(45, 100%, 60%, 0.5); }
-        .hero-btn-secondary { background: transparent; color: var(--gold); border-color: var(--gold); }
-        .hero-btn-secondary:hover { background: hsla(45, 100%, 60%, 0.15); transform: translateY(-3px); }
+
+        .hero-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px hsla(45, 100%, 60%, 0.5);
+        }
+
+        .hero-btn-secondary {
+            background: transparent;
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .hero-btn-secondary:hover {
+            background: hsla(45, 100%, 60%, 0.15);
+            transform: translateY(-3px);
+        }
 
         /* =============== STATS =============== */
         .stats-section {
@@ -257,6 +314,7 @@
             max-width: 800px;
             width: 100%;
         }
+
         .stat-number {
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 900;
@@ -264,6 +322,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .stat-label {
             font-size: clamp(0.85rem, 2vw, 1rem);
             color: hsl(210, 15%, 75%);
@@ -274,84 +333,151 @@
 
         /* =============== RESPONSIVE =============== */
         @media (max-width: 768px) {
-            .hero-container { padding: 1.5rem 1rem; }
-            .hero-title { font-size: clamp(2rem, 6vw, 3rem); }
-            .stats-section { grid-template-columns: repeat(2, 1fr); }
+            .hero-container {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-title {
+                font-size: clamp(2rem, 6vw, 3rem);
+            }
+
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
         @media (max-width: 480px) {
-            .hero-title { font-size: clamp(1.8rem, 6.5vw, 2.5rem); }
-            .stats-section { grid-template-columns: 1fr; }
+            .hero-title {
+                font-size: clamp(1.8rem, 6.5vw, 2.5rem);
+            }
+
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
         }
+
         @media (max-width: 340px) {
-            .hero-container { padding: 1.2rem 0.8rem; gap: 1.5rem; }
-            .hero-logo { width: clamp(60px, 20vw, 90px) !important; height: clamp(60px, 20vw, 90px) !important; }
-            .hero-title { font-size: clamp(1.5rem, 8vw, 2.2rem) !important; letter-spacing: 0.08em; }
-            .hero-subtitle { font-size: clamp(1rem, 4.5vw, 1.3rem); }
-            .hero-description { font-size: 0.9rem; padding: 0 0.5rem; }
+            .hero-container {
+                padding: 1.2rem 0.8rem;
+                gap: 1.5rem;
+            }
+
+            .hero-logo {
+                width: clamp(60px, 20vw, 90px) !important;
+                height: clamp(60px, 20vw, 90px) !important;
+            }
+
+            .hero-title {
+                font-size: clamp(1.5rem, 8vw, 2.2rem) !important;
+                letter-spacing: 0.08em;
+            }
+
+            .hero-subtitle {
+                font-size: clamp(1rem, 4.5vw, 1.3rem);
+            }
+
+            .hero-description {
+                font-size: 0.9rem;
+                padding: 0 0.5rem;
+            }
 
             .feature-item {
                 flex-direction: column;
                 text-align: center;
                 gap: 0.8rem;
             }
+
             .hero-buttons {
                 flex-direction: column;
                 width: 100%;
                 padding: 0 1rem;
             }
+
             .hero-btn {
                 width: 100%;
                 max-width: 280px;
                 justify-content: center;
                 padding: 0.9rem 1.2rem;
             }
-            .stats-section { padding: 1.4rem 1rem; gap: 1.2rem; }
+
+            .stats-section {
+                padding: 1.4rem 1rem;
+                gap: 1.2rem;
+            }
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after { animation-duration: 0.01ms !important; transition: none !important; }
-            .hero-logo, .feature-item, .feature-check svg { animation: none !important; }
-            .feature-check svg { stroke-dashoffset: 0; }
-            .feature-item { opacity: 1; transform: none; }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                transition: none !important;
+            }
+
+            .hero-logo,
+            .feature-item,
+            .feature-check svg {
+                animation: none !important;
+            }
+
+            .feature-check svg {
+                stroke-dashoffset: 0;
+            }
+
+            .feature-item {
+                opacity: 1;
+                transform: none;
+            }
         }
     </style>
 </head>
+
 <body class="hero-page">
     <section class="hero-section">
         <div class="hero-container">
-            <img src="src/assets/logo.png" alt="The Village Vault Logo" class="hero-logo" onerror="this.style.display='none'">
+            <img src="src/assets/logo.png" alt="The Village Vault Logo" class="hero-logo"
+                onerror="this.style.display='none'">
 
             <h1 class="hero-title">THE VILLAGE <span class="highlight">VAULT</span></h1>
 
             <!-- Updated SEO-friendly text -->
             <p class="hero-subtitle">Your Clash of Clans Cosmetic Item Tracker</p>
             <p class="hero-description">
-                Explore every Clash of Clans hero skin, decoration, and cosmetic item. 
+                Explore every Clash of Clans hero skin, decoration, and cosmetic item.
                 Track what you own, discover what you're missing, and browse the full in-game cosmetic index.
             </p>
 
             <div class="hero-features">
                 <div class="feature-item">
                     <div class="feature-check" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><polyline points="4,12 9,17 20,6"></polyline></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="4,12 9,17 20,6"></polyline>
+                        </svg>
                     </div>
                     <span>Browse all hero skins, decorations, and cosmetics</span>
                 </div>
                 <div class="feature-item">
                     <div class="feature-check" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><polyline points="4,12 9,17 20,6"></polyline></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="4,12 9,17 20,6"></polyline>
+                        </svg>
                     </div>
                     <span>Track your collection and find missing items</span>
                 </div>
                 <div class="feature-item">
                     <div class="feature-check" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><polyline points="4,12 9,17 20,6"></polyline></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="4,12 9,17 20,6"></polyline>
+                        </svg>
                     </div>
                     <span>Advanced filtering and powerful search</span>
                 </div>
                 <div class="feature-item">
                     <div class="feature-check" aria-hidden="true">
-                        <svg viewBox="0 0 24 24"><polyline points="4,12 9,17 20,6"></polyline></svg>
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="4,12 9,17 20,6"></polyline>
+                        </svg>
                     </div>
                     <span>Organize by category or view everything at once</span>
                 </div>
@@ -361,20 +487,33 @@
                 <button class="hero-btn hero-btn-primary" onclick="window.location.href='index-main.html'">
                     Browse All Cosmetics →
                 </button>
-                <button class="hero-btn hero-btn-secondary" onclick="document.querySelector('.stats-section').scrollIntoView({behavior: 'smooth'})">
+                <button class="hero-btn hero-btn-secondary"
+                    onclick="document.querySelector('.stats-section').scrollIntoView({behavior: 'smooth'})">
                     Learn More ↓
                 </button>
             </div>
 
             <div class="stats-section">
-                <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Categories</div></div>
-                <div class="stat-item"><div class="stat-number">1000+</div><div class="stat-label">Items</div></div>
-                <div class="stat-item"><div class="stat-number">5</div><div class="stat-label">Item Types</div></div>
-                <div class="stat-item"><div class="stat-number">∞</div><div class="stat-label">Possibilities</div></div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Categories</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">Items</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Item Types</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Possibilities</div>
+                </div>
             </div>
         </div>
     </section>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5062214479421683"
-     crossorigin="anonymous"></script>
+
 </body>
+
 </html>
