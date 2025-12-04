@@ -936,6 +936,7 @@
                 showToast("Success!", result.message, "success");
                 closeModal("upload-modal");
                 document.getElementById("clear-data-btn").style.display = "block";
+                document.getElementById("welcome-banner").style.display = "none";
                 updateUI();
             } else {
                 showToast("Invalid JSON", result.message, "error");
@@ -951,6 +952,7 @@
             state.hasUserData = false;
             sessionStorage.removeItem('userCollectionData');
             document.getElementById("clear-data-btn").style.display = "none";
+            document.getElementById("welcome-banner").style.display = "block";
             updateUI();
             showToast("Cleared", "Your data has been reset.", "success");
         }
@@ -1051,6 +1053,7 @@
                     const result = parseUserData(userCollectionData);
                     if (result.success) {
                         document.getElementById("clear-data-btn").style.display = "block";
+                        document.getElementById("welcome-banner").style.display = "none";
                     }
                     console.log("Loaded collection data from session:", result);
                 } catch (err) {
