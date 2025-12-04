@@ -4,11 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Village Vault</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="src/assets/favicon.ico">
+    
+    <!-- SEO-Optimized Title & Meta -->
+    <title>The Village Vault - Clash of Clans Collection Tracker | Hero Skins, Sceneries, Decorations & Obstacles</title>
+    <meta name="description" content="Free Clash of Clans collection tracker. Paste your game JSON to track hero skins, sceneries, decorations, obstacles and see your progress instantly.">
+    <meta name="keywords" content="clash of clans tracker, coc collection tracker, hero skins tracker, sceneries tracker, decorations tracker, obstacles tracker, clash of clans json paste, village vault">
+    <meta name="author" content="The Village Vault">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Sharing -->
     <meta property="og:title" content="The Village Vault - Clash of Clans Collection Tracker">
-    <meta property="og:description" content="Track your hero skins, sceneries, decorations, and obstacles!">
+    <meta property="og:description" content="Track every hero skin, scenery, decoration & obstacle in Clash of Clans by pasting your JSON data. Free & instant!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="src/assets/logo.png">
+    <meta property="og:image:alt" content="The Village Vault Logo">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Village Vault - Clash of Clans Collection Tracker">
+    <meta name="twitter:description" content="Paste your CoC JSON to track hero skins, sceneries, decorations & obstacles.">
+    <meta name="twitter:image" content="src/assets/logo.png">
+
+    <!-- Favicon & Styles -->
+    <link rel="icon" href="src/assets/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "The Village Vault",
+        "description": "Free web tool to track Clash of Clans hero skins, sceneries, decorations, and obstacles by pasting JSON data.",
+        "url": "https://yourdomain.com",
+        "applicationCategory": "Game",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0" },
+        "featureList": ["Hero Skins Tracker", "Sceneries Tracker", "Decorations & Obstacles", "JSON Import", "Progress Stats"]
+    }
+    </script>
 </head>
 
 <body>
@@ -17,7 +51,7 @@
         <header class="header">
             <div class="header-content">
                 <div class="header-inner">
-                    <img src="src/assets/logo.png" alt="The Village Vault Logo" class="header-logo"
+                    <img src="src/assets/logo.png" alt="The Village Vault - Clash of Clans Collection Tracker" class="header-logo"
                         onerror="this.style.display='none'">
                     <div class="header-text">
                         <h1 class="header-title">THE VILLAGE VAULT</h1>
@@ -445,7 +479,6 @@
                     return null;
                 }
 
-                // Normalize the name for comparison
                 const normalizedName = itemName.toLowerCase().trim();
 
                 if (itemType === 'decoration' && itemDetailsSafe.decorations) {
@@ -485,7 +518,6 @@
                         }
                     }
                 } else if (itemType === 'scenery' && itemDetailsSafe.sceneries) {
-                    // Properly handle itemDetails.sceneries.all_sceneries structure
                     let sceneryArray = [];
                     if (Array.isArray(itemDetailsSafe.sceneries)) {
                         sceneryArray = itemDetailsSafe.sceneries;
@@ -701,7 +733,7 @@
                 state.selectedHeroes = [];
             }
 
-            state.selectedHeroes = []; // Reset hero filters
+            state.selectedHeroes = []; 
             state.selectedTypes = [];
             updateTypeFilterUI(categoryId);
             state.searchQuery = '';
@@ -804,7 +836,7 @@
 
             const ownershipBadge = state.hasUserData ? `
         <div class="item-status-badge ${item.owned ? 'owned' : 'missing'}">
-            ${item.owned ? '✓ Owned' : '✕ Missing'}
+            ${item.owned ? 'Owned' : 'Missing'}
         </div>
     ` : '';
 
@@ -832,8 +864,6 @@
             container.appendChild(card);
             return container;
         }
-
-
 
         function renderItems() {
             const list = document.getElementById("items-grid");
@@ -1250,11 +1280,10 @@
                 });
             }
 
-            // Modal Management
+            // Item Detail Modal
             let currentModal = null;
 
             function showItemDetailModal(item) {
-                // Create modal if it doesn't exist
                 let modal = document.getElementById('item-detail-modal');
                 if (!modal) {
                     modal = document.createElement('div');
@@ -1263,7 +1292,6 @@
                     document.body.appendChild(modal);
                 }
 
-                // Build modal content
                 const modalHTML = `
                 <div class="item-detail-content">
                     <button class="item-detail-close" onclick="closeItemDetailModal()">×</button>
@@ -1276,7 +1304,7 @@
                             <div class="item-detail-category">${item.category}</div>
                             ${state.hasUserData ? `
                                 <div class="item-status-badge ${item.owned ? 'owned' : 'missing'}">
-                                    ${item.owned ? '✓ Owned' : '✕ Missing'}
+                                    ${item.owned ? 'Owned' : 'Missing'}
                                 </div>
                             ` : ''}
                         </div>
@@ -1313,7 +1341,6 @@
                 document.body.style.overflow = 'hidden';
                 window.currentModal = modal;
 
-                // Close on overlay click
                 modal.addEventListener('click', (e) => {
                     if (e.target === modal) {
                         closeItemDetailModal();
@@ -1336,11 +1363,9 @@
                 }
             }
 
-            // Make functions globally accessible
             window.showItemDetailModal = showItemDetailModal;
             window.closeItemDetailModal = closeItemDetailModal;
 
-            // Keyboard Navigation
             document.addEventListener('keydown', e => {
                 if (e.key === 'Escape') {
                     if (window.currentModal) {
@@ -1351,5 +1376,4 @@
         });
     </script>
 </body>
-
 </html>

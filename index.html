@@ -3,7 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Village Vault - The Ultimate Encyclopedia of In-Game Assets</title>
+
+    <title>The Village Vault | Clash of Clans Item Tracker & Skin Encyclopedia</title>
+
+    <meta name="description" 
+          content="Track your Clash of Clans hero skins, decorations, and cosmetic items. The Village Vault lets you browse every cosmetic, track missing skins, and explore the full in-game asset index.">
+
+    <meta name="keywords" 
+          content="Clash of Clans, CoC skins, Clash of Clans cosmetics, hero skins, CoC decorations, item tracker, Clash of Clans collection tracker, Village Vault, in-game assets">
+
+    <link rel="canonical" href="https://your-domain.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="The Village Vault | Clash of Clans Item Tracker">
+    <meta property="og:description" content="Browse all Clash of Clans skins and cosmetics. Track your collection and find missing items.">
+    <meta property="og:image" content="https://your-domain.com/src/assets/logo.png">
+    <meta property="og:url" content="https://your-domain.com/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Village Vault | Clash of Clans Item Tracker">
+    <meta name="twitter:description" content="Browse and track every Clash of Clans cosmetic item.">
+    <meta name="twitter:image" content="https://your-domain.com/src/assets/logo.png">
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "The Village Vault",
+      "url": "https://your-domain.com",
+      "description": "A Clash of Clans item tracker and cosmetic encyclopedia featuring hero skins, decorations, and collectible in-game assets.",
+      "applicationCategory": "GameUtility",
+      "operatingSystem": "All",
+      "creator": {
+        "@type": "Person",
+        "name": "Sabin Adhikari"
+      },
+      "about": {
+        "@type": "VideoGame",
+        "name": "Clash of Clans"
+      },
+      "featureList": [
+        "Hero skin database",
+        "Decoration catalog",
+        "Cosmetic tracking",
+        "Advanced filters",
+        "Collection progress"
+      ]
+    }
+    </script>
+
     <style>
         /* =============== BASE & VARIABLES =============== */
         *, *::before, *::after { box-sizing: border-box; }
@@ -238,7 +289,6 @@
             .hero-subtitle { font-size: clamp(1rem, 4.5vw, 1.3rem); }
             .hero-description { font-size: 0.9rem; padding: 0 0.5rem; }
 
-            /* Force vertical stacking + perfect centering on tiny screens */
             .feature-item {
                 flex-direction: column;
                 text-align: center;
@@ -258,7 +308,6 @@
             .stats-section { padding: 1.4rem 1rem; gap: 1.2rem; }
         }
 
-        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation-duration: 0.01ms !important; transition: none !important; }
             .hero-logo, .feature-item, .feature-check svg { animation: none !important; }
@@ -273,42 +322,36 @@
             <img src="src/assets/logo.png" alt="The Village Vault Logo" class="hero-logo" onerror="this.style.display='none'">
 
             <h1 class="hero-title">THE VILLAGE <span class="highlight">VAULT</span></h1>
-            <p class="hero-subtitle">The Ultimate Encyclopedia of In-Game Assets.</p>
+
+            <!-- Updated SEO-friendly text -->
+            <p class="hero-subtitle">Your Clash of Clans Cosmetic Item Tracker</p>
             <p class="hero-description">
-                Discover, track, and explore every cosmetic item in your favorite game. 
-                From hero skins to decorations, we've got everything catalogued and ready for you.
+                Explore every Clash of Clans hero skin, decoration, and cosmetic item. 
+                Track what you own, discover what you're missing, and browse the full in-game cosmetic index.
             </p>
 
             <div class="hero-features">
                 <div class="feature-item">
                     <div class="feature-check" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="4,12 9,17 20,6"></polyline>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><polyline points="4,12 9,17 20,6"></polyline></svg>
                     </div>
                     <span>Browse all hero skins, decorations, and cosmetics</span>
                 </div>
                 <div class="feature-item">
                     <div class="feature-check" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="4,12 9,17 20,6"></polyline>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><polyline points="4,12 9,17 20,6"></polyline></svg>
                     </div>
                     <span>Track your collection and find missing items</span>
                 </div>
                 <div class="feature-item">
                     <div class="feature-check" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="4,12 9,17 20,6"></polyline>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><polyline points="4,12 9,17 20,6"></polyline></svg>
                     </div>
                     <span>Advanced filtering and powerful search</span>
                 </div>
                 <div class="feature-item">
                     <div class="feature-check" aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <polyline points="4,12 9,17 20,6"></polyline>
-                        </svg>
+                        <svg viewBox="0 0 24 24"><polyline points="4,12 9,17 20,6"></polyline></svg>
                     </div>
                     <span>Organize by category or view everything at once</span>
                 </div>
