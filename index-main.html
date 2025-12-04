@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Village Vault</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="src/assets/favicon.ico">
+    <meta property="og:title" content="The Village Vault - Clash of Clans Collection Tracker">
+    <meta property="og:description" content="Track your hero skins, sceneries, decorations, and obstacles!">
 </head>
 <body>
     <div id="root">
@@ -24,28 +27,28 @@
         <!-- Category Tabs -->
         <nav class="category-nav">
             <div class="category-tabs-container">
-                <button class="category-tab active" data-category="cosmetic-compendium">
+                <button class="category-tab active" data-category="cosmetic-compendium" aria-current="true">
                     <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
                     </svg>
                     <span class="category-label">COSMETIC COMPENDIUM</span>
                     <span class="category-label-short">COMPENDIUM</span>
                 </button>
-                <button class="category-tab" data-category="hero-wardrobe">
+                <button class="category-tab" data-category="hero-wardrobe" aria-current="false">
                     <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                     </svg>
                     <span class="category-label">HERO'S WARDROBE</span>
                     <span class="category-label-short">WARDROBE</span>
                 </button>
-                <button class="category-tab" data-category="home-village-decor">
+                <button class="category-tab" data-category="home-village-decor" aria-current="false">
                     <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
                     </svg>
                     <span class="category-label">HOME VILLAGE DECOR</span>
                     <span class="category-label-short">DECOR</span>
                 </button>
-                <button class="category-tab" data-category="sceneries">
+                <button class="category-tab" data-category="sceneries" aria-current="false">
                     <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                     </svg>
@@ -168,10 +171,17 @@
                                     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
                                 </svg>
                             </button>
+                            <button id="export-btn" class="btn btn-secondary">Export My Collection</button>
                         </div>
                         <div id="welcome-banner" class="welcome-banner">
                             <h3>Welcome to The Village Vault!</h3>
                             <p>Upload your collection data to start tracking your treasures and unlock special features.</p>
+                        </div>
+                        <div id="global-progress" class="progress-tracker global" style="display:none; margin-bottom: 1rem;">
+                            <strong>Overall Collection: <span id="global-owned">0</span>/<span id="global-total">0</span> (<span id="global-pct">0</span>%)</strong>
+                            <div class="progress-bar" style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
+                                <div class="progress-fill" style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 0.3s ease;"></div>
+                            </div>
                         </div>
                         <div id="progress-tracker" class="progress-tracker" style="display: none;"></div>
                     </div>
@@ -381,6 +391,10 @@
         <div id="toast-container" class="toast-container"></div>
     </div>
 
+    <div id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading The Village Vault...</p>
+    </div>
 
     <script>
 // ============================================
@@ -423,20 +437,21 @@ async function loadAllMasterData() {
     const itemDetails = await loadJSON("src/data-json/item-details.json");
     
     itemDetailsDatabase = itemDetails || {};
+    const itemDetailsSafe = itemDetails || {};
 
     function findItemDetails(itemName, itemType) {
-        if (!itemDetails || !itemName) {
+        if (!itemDetailsSafe || !itemName) {
             return null;
         }
         
         // Normalize the name for comparison
         const normalizedName = itemName.toLowerCase().trim();
         
-        if (itemType === 'decoration' && itemDetails.decorations) {
+        if (itemType === 'decoration' && itemDetailsSafe.decorations) {
             const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
             for (const cat of categories) {
-                if (itemDetails.decorations[cat]) {
-                    const found = itemDetails.decorations[cat].find(d => 
+                if (itemDetailsSafe.decorations[cat]) {
+                    const found = itemDetailsSafe.decorations[cat].find(d => 
                         d.name.toLowerCase().trim() === normalizedName
                     );
                     if (found) {
@@ -444,11 +459,11 @@ async function loadAllMasterData() {
                     }
                 }
             }
-        } else if (itemType === 'obstacle' && itemDetails.obstacles) {
+        } else if (itemType === 'obstacle' && itemDetailsSafe.obstacles) {
             const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
             for (const cat of categories) {
-                if (itemDetails.obstacles[cat]) {
-                    const found = itemDetails.obstacles[cat].find(o => 
+                if (itemDetailsSafe.obstacles[cat]) {
+                    const found = itemDetailsSafe.obstacles[cat].find(o => 
                         o.name.toLowerCase().trim() === normalizedName
                     );
                     if (found) {
@@ -456,11 +471,11 @@ async function loadAllMasterData() {
                     }
                 }
             }
-        } else if (itemType === 'heroskin' && itemDetails.hero_skins) {
+        } else if (itemType === 'heroskin' && itemDetailsSafe.hero_skins) {
             const heroes = ['barbarian_king', 'archer_queen', 'grand_warden', 'royal_champion', 'minion_prince'];
             for (const hero of heroes) {
-                if (itemDetails.hero_skins[hero]) {
-                    const found = itemDetails.hero_skins[hero].find(s => 
+                if (itemDetailsSafe.hero_skins[hero]) {
+                    const found = itemDetailsSafe.hero_skins[hero].find(s => 
                         s.name.toLowerCase().trim() === normalizedName
                     );
                     if (found) {
@@ -468,13 +483,13 @@ async function loadAllMasterData() {
                     }
                 }
             }
-        } else if (itemType === 'scenery' && itemDetails.sceneries) {
+        } else if (itemType === 'scenery' && itemDetailsSafe.sceneries) {
             // Properly handle itemDetails.sceneries.all_sceneries structure
             let sceneryArray = [];
-            if (Array.isArray(itemDetails.sceneries)) {
-                sceneryArray = itemDetails.sceneries;
-            } else if (itemDetails.sceneries.all_sceneries && Array.isArray(itemDetails.sceneries.all_sceneries)) {
-                sceneryArray = itemDetails.sceneries.all_sceneries;
+            if (Array.isArray(itemDetailsSafe.sceneries)) {
+                sceneryArray = itemDetailsSafe.sceneries;
+            } else if (itemDetailsSafe.sceneries.all_sceneries && Array.isArray(itemDetailsSafe.sceneries.all_sceneries)) {
+                sceneryArray = itemDetailsSafe.sceneries.all_sceneries;
             }
             
             const found = sceneryArray.find(s => 
@@ -547,12 +562,17 @@ async function loadAllMasterData() {
         });
     }
 
-    const formattedSceneries = sceneries && sceneries.sceneries ? sceneries.sceneries.map(item => {
-        const details = findItemDetails(item.name, 'scenery');
+    const rawSceneries = sceneries && (
+        Array.isArray(sceneries) ? sceneries :
+        sceneries.sceneries || sceneries.all_sceneries || []
+    );
+
+    const formattedSceneries = rawSceneries.map(item => {
+        const details = findItemDetails(item.name || item.Name, 'scenery');
         return {
-            code: String(item.Code),
-            name: item.name || "Unknown Scenery",
-            image: item.image || "",
+            code: String(item.Code || item.code),
+            name: item.name || item.Name || "Unknown Scenery",
+            image: item.image || item.image_path || "",
             rarity: item.rarity || "common",
             category: "Scenery",
             type: "scenery",
@@ -561,7 +581,7 @@ async function loadAllMasterData() {
             released: details?.released || "Unknown",
             availability: details?.availability || "Available in shop"
         };
-    }) : [];
+    });
 
     const formattedClanCapital = [];
 
@@ -574,7 +594,7 @@ async function loadAllMasterData() {
             ...formattedClanCapital
         ],
         'hero-wardrobe': formattedHeroSkins,
-        'home-village-decor': [...formattedDecorations, ...formattedObstacles, ...formattedSceneries],
+        'home-village-decor': [...formattedDecorations, ...formattedObstacles],
         'sceneries': formattedSceneries
     };
 
@@ -585,6 +605,9 @@ async function loadAllMasterData() {
         'Home Village Decor': state.allItems['home-village-decor'].length,
         'Sceneries': state.allItems['sceneries'].length
     });
+
+    document.getElementById("loading-screen")?.classList.add("fade-out");
+    setTimeout(() => document.getElementById("loading-screen")?.remove(), 600);
 }
 
 // ============================================
@@ -677,6 +700,7 @@ function switchCategory(categoryId) {
         state.selectedHeroes = [];
     }
     
+    state.selectedHeroes = []; // Reset hero filters
     state.selectedTypes = [];
     updateTypeFilterUI(categoryId);
     state.searchQuery = '';
@@ -705,8 +729,7 @@ function updateTypeFilterUI(categoryId) {
         'home-village-decor': [
             { value: 'all', label: 'All Items' },
             { value: 'decoration', label: 'Decorations' },
-            { value: 'obstacle', label: 'Obstacles' },
-            { value: 'scenery', label: 'Sceneries' }
+            { value: 'obstacle', label: 'Obstacles' }
         ]
     };
 
@@ -752,7 +775,7 @@ function getFilteredItems() {
     switch (state.sortBy) {
         case "oldest": filtered.sort((a, b) => a.code - b.code); break;
         case "name-asc": filtered.sort((a, b) => a.name.localeCompare(b.name)); break;
-        case "name-desc": filtered.sort((a, b) => b.name.localeCompare(a.name)); break;
+        case "name-desc": filtered.sort((a, b) => b.name.localeCompare(b.name)); break;
         case "newest":
         default: filtered.sort((a, b) => b.code - a.code);
     }
@@ -835,12 +858,38 @@ function createItemCard(item) {
     
     card.addEventListener('click', (e) => {
         if (!e.target.closest('.item-close-btn')) {
+            const isFlippingToBack = !card.classList.contains('flipped');
             card.classList.toggle('flipped');
+            if (isFlippingToBack) {
+                setTimeout(() => fitTextToCard(card), 600); // Adjust 600 to match your CSS transition duration in ms
+            }
         }
     });
     
     container.appendChild(card);
     return container;
+}
+
+function fitTextToCard(card) {
+    const back = card.querySelector('.item-card-back');
+    const details = card.querySelector('.item-details');
+    if (!details) return;
+
+    back.style.overflowY = 'hidden';
+
+    // Reset to initial font size
+    details.style.fontSize = ''; // Remove inline to use CSS default
+
+    // Force reflow
+    details.offsetHeight;
+
+    let fontSize = parseFloat(getComputedStyle(details).fontSize);
+
+    while (details.scrollHeight > back.clientHeight && fontSize > 8) {
+        fontSize -= 0.5;
+        details.style.fontSize = `${fontSize}px`;
+        details.offsetHeight; // Reflow
+    }
 }
 
 function renderItems() {
@@ -895,9 +944,27 @@ function updateProgressTracker() {
     `;
 }
 
+function updateGlobalProgress() {
+    if (!state.hasUserData) {
+        document.getElementById("global-progress").style.display = "none";
+        return;
+    }
+    const all = Object.values(state.allItems).flat();
+    const owned = all.filter(i => i.owned).length;
+    const total = all.length;
+    const pct = total > 0 ? Math.round((owned / total) * 100) : 0;
+
+    document.getElementById("global-progress").style.display = "block";
+    document.getElementById("global-owned").textContent = owned;
+    document.getElementById("global-total").textContent = total;
+    document.getElementById("global-pct").textContent = pct;
+    document.querySelector("#global-progress .progress-fill").style.width = pct + "%";
+}
+
 function updateUI() {
     renderItems();
     updateProgressTracker();
+    updateGlobalProgress();
     
     const heroFilterGroup = document.getElementById('hero-filter-group');
     const mobileHeroFilterGroup = document.getElementById('mobile-hero-filter-group');
@@ -943,6 +1010,28 @@ function handleDataClear() {
     document.getElementById("clear-data-btn").style.display = "none";
     updateUI();
     showToast("Cleared", "Your data has been reset.", "success");
+}
+
+function handleExportCollection() {
+    const ownedItems = state.allItems['cosmetic-compendium'].filter(item => item.owned);
+    const exportData = {
+        ownedCodes: Array.from(state.userOwnedCodes),
+        ownedItems: ownedItems.map(item => ({
+            code: item.code,
+            name: item.name,
+            type: item.type
+        }))
+    };
+
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'village_vault_collection.json';
+    a.click();
+    URL.revokeObjectURL(url);
+
+    showToast("Exported", "Your collection has been downloaded.", "success");
 }
 
 function attachTypeFilterListeners() {
@@ -993,6 +1082,18 @@ function showToast(title, message, type = "success") {
     }, 3000);
 }
 
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
 // ============================================
 // INITIALIZE APP
 // ============================================
@@ -1022,8 +1123,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         tab.addEventListener('click', () => {
             const categoryId = tab.getAttribute('data-category');
             
-            categoryTabs.forEach(t => t.classList.remove('active'));
+            categoryTabs.forEach(t => {
+                t.classList.remove('active');
+                t.setAttribute('aria-current', 'false');
+            });
             tab.classList.add('active');
+            tab.setAttribute('aria-current', 'true');
             
             switchCategory(categoryId);
         });
@@ -1031,10 +1136,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // Search
     const searchInput = document.getElementById("search-input");
+    const debouncedUpdateFromSearch = debounce(() => updateUI(), 300);
     if (searchInput) {
         searchInput.addEventListener("input", e => {
             state.searchQuery = e.target.value;
-            updateUI();
+            debouncedUpdateFromSearch();
         });
     }
 
@@ -1106,6 +1212,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const clearDataBtn = document.getElementById("clear-data-btn");
     if (clearDataBtn) {
         clearDataBtn.addEventListener("click", handleDataClear);
+    }
+
+    const exportBtn = document.getElementById("export-btn");
+    if (exportBtn) {
+        exportBtn.addEventListener("click", handleExportCollection);
     }
 
     // Modal close buttons
@@ -1192,6 +1303,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             updateUI();
         });
     }
+
+    // Keyboard Navigation for Cards
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            document.querySelectorAll('.item-card.flipped').forEach(card => {
+                card.classList.remove('flipped');
+            });
+        }
+    });
 });
     </script>
 </body>

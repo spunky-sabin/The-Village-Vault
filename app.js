@@ -218,7 +218,7 @@ async function loadAllMasterData() {
     state.allItems = {
         'cosmetic-compendium': [...formattedDecorations, ...formattedObstacles, ...formattedHeroSkins, ...formattedSceneries, ...formattedClanCapital],
         'hero-wardrobe': formattedHeroSkins,
-        'home-village-decor': [...formattedDecorations, ...formattedObstacles, ...formattedSceneries],
+        'home-village-decor': [...formattedDecorations, ...formattedObstacles],
         'clan-hall-aesthetics': formattedClanCapital
     };
 
@@ -350,8 +350,8 @@ function updateTypeFilterUI(categoryId) {
         'home-village-decor': [
             { value: 'all', label: 'All Items' },
             { value: 'decoration', label: 'Decorations' },
-            { value: 'obstacle', label: 'Obstacles' },
-            { value: 'scenery', label: 'Sceneries' }
+            { value: 'obstacle', label: 'Obstacles' }
+            
         ]
     };
 
