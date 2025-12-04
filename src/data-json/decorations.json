@@ -982,5 +982,13 @@
     "TID": "TID_DECO_COSMIC_BOOK_OF_SPELLS",
     "name": "Cursed Tome",
     "image": "images/decorations/Cursed_Tome.webp"
+  },
+  {
+    "SN": 124,
+    "Name": "Electro Skull",
+    "Code": "18000187",
+    "TID": "TID_COMM_DECO_EDRAGSKULL",
+    "name": "Electro Skull",
+    "image": "images/decorations/Electro_Skull.webp"
   }
 ]
