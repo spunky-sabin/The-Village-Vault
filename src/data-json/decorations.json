@@ -990,5 +990,13 @@
     "TID": "TID_COMM_DECO_EDRAGSKULL",
     "name": "Electro Skull",
     "image": "images/decorations/Electro_Skull.webp"
+  },
+  {
+    "SN": 125,
+    "Name": "Crafted Statue",
+    "Code": "18000200",
+    "TID": "TID_PRESTIGE_DECO_CRAFTED_DEFENCES",
+    "name": "Crafted Statue",
+    "image": "images/decorations/Crafted_Statue.webp"
   }
 ]
