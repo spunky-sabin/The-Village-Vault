@@ -1030,5 +1030,29 @@
     "TID": "TID_DECORATION_ANCIENT_BARBARIAN_STATUE",
     "name": "Ancient Barbarian Statue",
     "image": "images/decorations/Old_Barbarian_Statue_B.webp"
+  },
+  {
+    "SN": 131,
+    "Name": "Frozen Stone",
+    "Code": "18000204",
+    "TID": "TID_OBSTACLE_FROZEN_STONE",
+    "name": "Frozen Stone",
+    "image": "images/decorations/Frozen_Stone.webp"
+  },
+  {
+    "SN": 132,
+    "Name": "Wolf Statue",
+    "Code": "18000203",
+    "TID": "TID_SUPERDECO_WOLF_STATUE",
+    "name": "Hungry Hound",
+    "image": "images/decorations/Hungry_Hound.webp"
+  },
+  {
+    "SN": 133,
+    "Name": "Smokey Stove",
+    "Code": "18000205",
+    "TID": "TID_DECO_SMOKY_STOVE",
+    "name": "Smokey Stove",
+    "image": "images/decorations/Smokey_Stove.webp"
   }
 ]

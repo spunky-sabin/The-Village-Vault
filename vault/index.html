@@ -20,7 +20,7 @@
     <meta property="og:description"
         content="Track every hero skin, scenery, decoration & obstacle in Clash of Clans by pasting your JSON data. Free & instant!">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="src/assets/logo.png">
+    <meta property="og:image" content="../src/assets/logo.png">
     <meta property="og:image:alt" content="The Village Vault Logo">
 
     <!-- Twitter Card -->
@@ -28,11 +28,11 @@
     <meta name="twitter:title" content="The Village Vault - Clash of Clans Collection Tracker">
     <meta name="twitter:description"
         content="Paste your CoC JSON to track hero skins, sceneries, decorations & obstacles.">
-    <meta name="twitter:image" content="src/assets/logo.png">
+    <meta name="twitter:image" content="../src/assets/logo.png">
 
     <!-- Favicon & Styles -->
-    <link rel="icon" href="src/assets/favicon.ico">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="../../src/assets/favicon.ico">
+    <link rel="stylesheet" href="../styles.css">
 
     <!-- Structured Data for Google -->
     <script type="application/ld+json">
@@ -58,7 +58,7 @@
         <header class="header">
             <div class="header-content">
                 <div class="header-inner">
-                    <img src="src/assets/logo.png" alt="The Village Vault - Clash of Clans Collection Tracker"
+                    <img src="../src/assets/logo.png" alt="The Village Vault - Clash of Clans Collection Tracker"
                         class="header-logo" onerror="this.style.display='none'">
                     <div class="header-text">
                         <h1 class="header-title">THE VILLAGE VAULT</h1>
@@ -74,7 +74,7 @@
                 <button class="category-tab active" data-category="cosmetic-compendium" aria-current="true">
                     <svg class="category-icon" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
-                    </svg>
+                    </svg> 
                     <span class="category-label">COSMETIC COMPENDIUM</span>
                     <span class="category-label-short">COMPENDIUM</span>
                 </button>
@@ -471,12 +471,20 @@
             }
         }
 
+        // Helper function to fix image paths for vault folder structure
+        function fixImagePath(imagePath) {
+            if (imagePath && (imagePath.startsWith('src/') || imagePath.startsWith('images/'))) {
+                return '../' + imagePath;
+            }
+            return imagePath || '';
+        }
+
         async function loadAllMasterData() {
-            const decorations = await loadJSON("src/data-json/decorations.json");
-            const obstacles = await loadJSON("src/data-json/obstacles.json");
-            const heroesData = await loadJSON("src/data-json/heros.json");
-            const sceneries = await loadJSON("src/data-json/sceneries.json");
-            const itemDetails = await loadJSON("src/data-json/item-details.json");
+            const decorations = await loadJSON("../src/data-json/decorations.json");
+            const obstacles = await loadJSON("../src/data-json/obstacles.json");
+            const heroesData = await loadJSON("../src/data-json/heros.json");
+            const sceneries = await loadJSON("../src/data-json/sceneries.json");
+            const itemDetails = await loadJSON("../src/data-json/item-details.json");
 
             itemDetailsDatabase = itemDetails || {};
             const itemDetailsSafe = itemDetails || {};
@@ -489,31 +497,21 @@
                 const normalizedName = itemName.toLowerCase().trim();
 
                 if (itemType === 'decoration' && itemDetailsSafe.decorations) {
-                    const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
-                    for (const cat of categories) {
-                        if (itemDetailsSafe.decorations[cat]) {
-                            const found = itemDetailsSafe.decorations[cat].find(d =>
-                                d.name.toLowerCase().trim() === normalizedName
-                            );
-                            if (found) {
-                                return found;
-                            }
-                        }
+                    if (itemDetailsSafe.decorations.all_decorations) {
+                        const found = itemDetailsSafe.decorations.all_decorations.find(d =>
+                            d.name.toLowerCase().trim() === normalizedName
+                        );
+                        if (found) return found;
                     }
                 } else if (itemType === 'obstacle' && itemDetailsSafe.obstacles) {
-                    const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
-                    for (const cat of categories) {
-                        if (itemDetailsSafe.obstacles[cat]) {
-                            const found = itemDetailsSafe.obstacles[cat].find(o =>
-                                o.name.toLowerCase().trim() === normalizedName
-                            );
-                            if (found) {
-                                return found;
-                            }
-                        }
+                    if (itemDetailsSafe.obstacles.all_obstacles) {
+                        const found = itemDetailsSafe.obstacles.all_obstacles.find(o =>
+                            o.name.toLowerCase().trim() === normalizedName
+                        );
+                        if (found) return found;
                     }
                 } else if (itemType === 'heroskin' && itemDetailsSafe.hero_skins) {
-                    const heroes = ['barbarian_king', 'archer_queen', 'grand_warden', 'royal_champion', 'minion_prince'];
+                    const heroes = ['barbarian_king', 'archer_queen', 'grand_warden', 'royal_champion', 'minion_prince', 'battle_machine', 'flying_machine'];
                     for (const hero of heroes) {
                         if (itemDetailsSafe.hero_skins[hero]) {
                             const found = itemDetailsSafe.hero_skins[hero].find(s =>
@@ -525,18 +523,13 @@
                         }
                     }
                 } else if (itemType === 'scenery' && itemDetailsSafe.sceneries) {
-                    let sceneryArray = [];
-                    if (Array.isArray(itemDetailsSafe.sceneries)) {
-                        sceneryArray = itemDetailsSafe.sceneries;
-                    } else if (itemDetailsSafe.sceneries.all_sceneries && Array.isArray(itemDetailsSafe.sceneries.all_sceneries)) {
-                        sceneryArray = itemDetailsSafe.sceneries.all_sceneries;
-                    }
-
-                    const found = sceneryArray.find(s =>
-                        s.name && s.name.toLowerCase().trim() === normalizedName
-                    );
-                    if (found) {
-                        return found;
+                    if (itemDetailsSafe.sceneries.all_sceneries) {
+                        const found = itemDetailsSafe.sceneries.all_sceneries.find(s =>
+                            s.name && s.name.toLowerCase().trim() === normalizedName
+                        );
+                        if (found) {
+                            return found;
+                        }
                     }
                 }
 
@@ -548,7 +541,7 @@
                 return {
                     code: String(item.Code),
                     name: item.name || "Unknown Decoration",
-                    image: item.image || "",
+                    image: fixImagePath(item.image),
                     rarity: item.rarity || "common",
                     category: "Decoration",
                     type: "decoration",
@@ -564,7 +557,7 @@
                 return {
                     code: String(item.Code),
                     name: item.name || "Unknown Obstacle",
-                    image: item.image || "",
+                    image: fixImagePath(item.image),
                     rarity: item.rarity || "common",
                     category: "Obstacle",
                     type: "obstacle",
@@ -586,7 +579,7 @@
                             formattedHeroSkins.push({
                                 code: String(skin.code),
                                 name: skin.skin_name || "Unknown Skin",
-                                image: skin.image_path || "",
+                                image: fixImagePath(skin.image_path),
                                 rarity: details?.rarity || skin.rarity || "common",
                                 category: "Hero Skin",
                                 heroName: hero.name,
@@ -612,7 +605,7 @@
                 return {
                     code: String(item.Code || item.code),
                     name: item.name || item.Name || "Unknown Scenery",
-                    image: item.image || item.image_path || "",
+                    image: fixImagePath(item.image || item.image_path),
                     rarity: item.rarity || "common",
                     category: "Scenery",
                     type: "scenery",

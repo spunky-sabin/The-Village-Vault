@@ -103,8 +103,11 @@ function formatItem(item, type, category, heroName = null, heroId = null, detail
     const name = item.name || item.skin_name || "Unknown Item";
     const code = String(item.Code || item.code);
 
-    // Get image path - no modification needed for root version
+    // Get image path and prepend ../ if it starts with src/ (for vault folder structure)
     let imagePath = item.image || item.image_path || "";
+    if (imagePath && imagePath.startsWith('src/')) {
+        imagePath = '../' + imagePath;
+    }
 
     return {
         code,
@@ -169,21 +172,27 @@ async function loadAllMasterData() {
         const normalizedName = itemName.toLowerCase().trim();
 
         if (itemType === 'decoration' && itemDetails.decorations) {
-            if (itemDetails.decorations.all_decorations) {
-                const found = itemDetails.decorations.all_decorations.find(d =>
-                    d.name.toLowerCase().trim() === normalizedName
-                );
-                if (found) return found;
+            const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
+            for (const cat of categories) {
+                if (itemDetails.decorations[cat]) {
+                    const found = itemDetails.decorations[cat].find(d =>
+                        d.name.toLowerCase().trim() === normalizedName
+                    );
+                    if (found) return found;
+                }
             }
         } else if (itemType === 'obstacle' && itemDetails.obstacles) {
-            if (itemDetails.obstacles.all_obstacles) {
-                const found = itemDetails.obstacles.all_obstacles.find(o =>
-                    o.name.toLowerCase().trim() === normalizedName
-                );
-                if (found) return found;
+            const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
+            for (const cat of categories) {
+                if (itemDetails.obstacles[cat]) {
+                    const found = itemDetails.obstacles[cat].find(o =>
+                        o.name.toLowerCase().trim() === normalizedName
+                    );
+                    if (found) return found;
+                }
             }
         } else if (itemType === 'heroskin' && itemDetails.hero_skins) {
-            const heroes = ['barbarian_king', 'archer_queen', 'grand_warden', 'royal_champion', 'minion_prince', 'battle_machine', 'flying_machine'];
+            const heroes = ['barbarian_king', 'archer_queen', 'grand_warden', 'royal_champion', 'minion_prince'];
             for (const hero of heroes) {
                 if (itemDetails.hero_skins[hero]) {
                     const found = itemDetails.hero_skins[hero].find(s =>
@@ -193,12 +202,18 @@ async function loadAllMasterData() {
                 }
             }
         } else if (itemType === 'scenery' && itemDetails.sceneries) {
-            if (itemDetails.sceneries.all_sceneries) {
-                const found = itemDetails.sceneries.all_sceneries.find(s =>
-                    s.name && s.name.toLowerCase().trim() === normalizedName
-                );
-                if (found) return found;
+            // FIXED: Properly handle itemDetails.sceneries.all_sceneries structure
+            let sceneryArray = [];
+            if (Array.isArray(itemDetails.sceneries)) {
+                sceneryArray = itemDetails.sceneries;
+            } else if (itemDetails.sceneries.all_sceneries && Array.isArray(itemDetails.sceneries.all_sceneries)) {
+                sceneryArray = itemDetails.sceneries.all_sceneries;
             }
+
+            const found = sceneryArray.find(s =>
+                s.name && s.name.toLowerCase().trim() === normalizedName
+            );
+            if (found) return found;
         }
 
         return null;

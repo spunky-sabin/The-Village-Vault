@@ -1,141 +1,1489 @@
 {
-  "heros": {
-    "barbarian_king": {
-      "name": "Barbarian King",
-      "skins": [
-        {
-          "name": "Skeleton King",
-          "description": "A Halloween-themed skeletonized king carrying a tombstone sword. Features unique animations where arms fall off while holding sword.",
-          "released": "October 2019",
-          "availability": "Gold Pass (October 2019 Season) - Later available for 1,500 Gems (October 2020)",
-          "category": "Hero Skin",
-          "rarity": "Gold",
-          "code": "52000005"
-        },
-        {
-          "name": "Gladiator King",
-          "description": "The standard Gladiator skin for the Barbarian King.",
-          "released": "Unknown",
-          "availability": "unknown",
-          "category": "Hero Skin",
-          "rarity": "Epic",
-          "code": "52000001"
-        }
-      ]
-    },
-    "archer_queen": {
-      "name": "Archer Queen",
-      "skins": [
-        {
-          "name": "Ice Queen",
-          "description": "A frozen-themed queen with icy effects and animations.",
-          "released": "November 2019",
-          "availability": "Gold Pass (November 2019) - Available for 1,500 Gems (December 2020)",
-          "category": "Hero Skin",
-          "rarity": "Gold",
-          "code": "52000015"
-        }
-      ]
-    },
-    "minion_prince": {
-      "name": "Minion Prince",
-      "skins": [
-        {
-          "name": "Nightmare Prince",
-          "description": "Dark noir-era styled prince from Cosmic Curse season, swapping playful flair for sharp black-and-white aesthetics.",
-          "released": "October 2024",
-          "availability": "Cosmic Curse Season special offer (October 5-31, 2024) - Features Meteor Staff Equipment",
-          "category": "Hero Skin",
-          "rarity": "Gold",
-          "code": "52000259"
-        }
-      ]
-    },
-    "royal_champion": {
-      "name": "Royal Champion",
-      "skins": [
-        {
-          "name": "Winter Champion",
-          "description": "Festive winter-themed champion with snowy effects.",
-          "released": "December 2020",
-          "availability": "Gold Pass (December 2020 Season)",
-          "category": "Gold Pass Skin",
-          "rarity": "Gold",
-          "code": "52000029"
-        }
-      ]
-    }
-  },
-  "decorations": {
-    "all_decorations": [
+  "hero_skins": {
+    "barbarian_king": [
       {
-        "name": "Barbarian Statue",
-        "description": "A proud statue of the classic Barbarian, one of Clash's most iconic troops. Shows your appreciation for the basics.",
-        "released": "2012",
-        "availability": "Permanently available in Shop for Gold",
-        "category": "Permanent Shop Decoration",
-        "code": "18000000"
+        "name": "Gladiator King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "April 2019",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
       },
       {
-        "name": "Ancient Barbarian Statue",
-        "description": "A stone statue depicting a fierce barbarian warrior from ancient times.",
-        "released": "2012",
-        "availability": "Permanently available in Shop for Gold",
-        "category": "Permanent Shop Decoration",
-        "code": "8000041"
+        "name": "P.E.K.K.A King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "June 2019",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
       },
       {
-        "name": "Dragon Statue",
-        "description": "An imposing statue of a dragon. When tapped by visiting players, it breathes fire and roars.",
-        "released": "2012",
-        "availability": "Permanently available in Shop for Gold",
-        "category": "Permanent Shop Decoration",
-        "code": "18000057"
+        "name": "Skeleton King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "October 2019",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Jolly King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "December 2019",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Primal King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "February 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Clockwork King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "May 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Party King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "August 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Champion King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "October 2020",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Pirate King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "November 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Warrior King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "February 2021",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Rogue King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "March 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Fierce King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "June 2021",
+        "availability": "$3.99 USD",
+        "rarity": "standard"
+      },
+      {
+        "name": "Jungle King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "July 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Beat King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "August 2021",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Golem King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "November 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Ice King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "December 2021",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Lunar King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "January 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Shadow King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "April 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Summer King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "June 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Pixel King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "August 2022",
+        "availability": "$4.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Clash Fest King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "September 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Magic King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "October 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Beast King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "February 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Painter King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "March 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Dark Ages King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "May 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "League King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "June 2023",
+        "availability": "2,000 CWL Medals",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Goblin King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "July 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Future King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "August 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Chess King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "September 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Ghost King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "October 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Gingerbread King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "December 2023",
+        "availability": "4,650 Medals",
+        "rarity": "legendary"
+      },
+      {
+        "name": "King of the North",
+        "description": "A special skin for the Barbarian King.",
+        "released": "January 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Dragon King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "February 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Space King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "March 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Egypt King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "April 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "King Haaland",
+        "description": "A special skin for the Barbarian King.",
+        "released": "May 2024",
+        "availability": "Collaboration - Not available for re-purchase",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Football King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "May 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Super Squad King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "May 2024",
+        "availability": "Collaboration - Not available for re-purchase",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Wild West King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "June 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Clash Games King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "July 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Anime King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "August 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Barbarian Orc",
+        "description": "A special skin for the Barbarian King.",
+        "released": "September 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Dark Minion King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "October 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Judgment King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "November 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Robo King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "December 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Fire King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "January 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Snake King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "February 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Combat King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "March 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "King Cody",
+        "description": "A special skin for the Barbarian King.",
+        "released": "April 2025",
+        "availability": "Collaboration - Not available for re-purchase",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Samurai King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "May 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Barbarian Butcher",
+        "description": "A special skin for the Barbarian King.",
+        "released": "June 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Renegade King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "July 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Clash-A-Rama King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "August 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Jelly King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "September 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Berserker King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "October 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Bruiser King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "November 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Awakened King",
+        "description": "A special skin for the Barbarian King.",
+        "released": "December 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
       }
-    ]
-  },
-  "obstacles": {
-    "all_obstacles": [
+    ],
+    "archer_queen": [
       {
-        "name": "Clashmas Tree (2012)",
-        "description": "The original Christmas tree from Clash's launch year. Features a unique design different from later years.",
-        "released": "December 2012",
-        "availability": "Spawned naturally during Clashmas 2012 - No longer available",
-        "category": "Special Seasonal Obstacle",
-        "code": "8000021",
-        "rarity": "rare"
+        "name": "Gladiator Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "May 2019",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
       },
       {
-        "name": "Halloween Tombstone",
-        "description": "A spooky tombstone with eerie effects and sounds when touched.",
-        "released": "October 2017",
-        "availability": "Spawned naturally during Halloween",
-        "category": "Halloween Obstacle",
-        "code": "8000031",
-        "rarity": "rare"
+        "name": "Valkyrie Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "July 2019",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Autumn Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "September 2019",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Ice Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "November 2019",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Warrior Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "January 2020",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Primal Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "March 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Clockwork Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "June 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Pirate Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "September 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Rogue Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "February 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Jungle Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "June 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Party Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "August 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Champion Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "November 2021",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Shadow Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "January 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Miner Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "May 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Summer Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "July 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Pixel Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "August 2022",
+        "availability": "$4.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Spooky Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "October 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Magic Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "October 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Jolly Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "December 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Lunar Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "January 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Heart Hunter Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "February 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Painter Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "March 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Dark Ages Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "April 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Goblin Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "June 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "League Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "June 2023",
+        "availability": "2,000 CWL Medals",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Future Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "August 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Chess Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "September 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Ghost Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "October 2023",
+        "availability": "4,650 Medals",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Gingerbread Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "December 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Queen of the North",
+        "description": "A special skin for the Archer Queen.",
+        "released": "January 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Dragon Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "February 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Space Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "March 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Egypt Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "April 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Football Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "May 2024",
+        "availability": "4,650 Medals",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Wild West Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "June 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Clash Games Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "July 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Anime Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "August 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Archer Satyr",
+        "description": "A special skin for the Archer Queen.",
+        "released": "September 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Dark Minion Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "October 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Justice Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "November 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Puppet Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "December 2024",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Fire Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "January 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Snake Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "February 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Quickfire Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "March 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "The RoyalEST",
+        "description": "A special skin for the Archer Queen.",
+        "released": "April 2025",
+        "availability": "Collaboration - Not available for re-purchase",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Brutality Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "April 2025",
+        "availability": "Collaboration - Not available for re-purchase",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Kyudo Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "May 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Queen Fatale",
+        "description": "A special skin for the Archer Queen.",
+        "released": "June 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Renegade Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "July 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Clash-A-Rama Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "August 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "P.E.Q.Q.A Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "September 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Archer Hunter",
+        "description": "A special skin for the Archer Queen.",
+        "released": "October 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Fury Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "November 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Blizzard Queen",
+        "description": "A special skin for the Archer Queen.",
+        "released": "December 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
       }
-    ]
+    ],
+    "grand_warden": [
+      {
+        "name": "Party Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "August 2019",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Primal Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "January 2020",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Clockwork Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "April 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Gladiator Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "July 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Pirate Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "October 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Warden of the North",
+        "description": "A special skin for the Grand Warden.",
+        "released": "January 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Jungle Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "May 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Warden Master",
+        "description": "A special skin for the Grand Warden.",
+        "released": "October 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Jolly Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "December 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Warrior Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "February 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Shadow Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "April 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Summer Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "June 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Pixel Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "August 2022",
+        "availability": "$4.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Champion Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "September 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Magic Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "October 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Painter Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "March 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Dark Ages Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "April 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Goblin Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "June 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "League Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "June 2023",
+        "availability": "2,000 CWL Medals",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Future Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "August 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Ghost Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "October 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Gingerbread Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "December 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Dragon Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "February 2024",
+        "availability": "4,650 Medals",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Space Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "March 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Egypt Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "April 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Football Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "May 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Wild West Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "June 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Anime Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "August 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Grand Dwarf",
+        "description": "A special skin for the Grand Warden.",
+        "released": "September 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Dark Minion Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "October 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Grand Judge",
+        "description": "A special skin for the Grand Warden.",
+        "released": "November 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Ice Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "January 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Snake Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "February 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Jetpack Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "March 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Darkness Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "April 2025",
+        "availability": "Collaboration - Not available for re-purchase",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Grand Monk",
+        "description": "A special skin for the Grand Warden.",
+        "released": "May 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Grand Godfather",
+        "description": "A special skin for the Grand Warden.",
+        "released": "June 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Grand Doctor",
+        "description": "A special skin for the Grand Warden.",
+        "released": "July 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Clash-A-Rama Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "August 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Ivan Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "September 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Eternal Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "October 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Shaman Warden",
+        "description": "A special skin for the Grand Warden.",
+        "released": "November 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Grand Warlock",
+        "description": "A special skin for the Grand Warden.",
+        "released": "December 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      }
+    ],
+    "royal_champion": [
+      {
+        "name": "Winter Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "December 2020",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Rogue Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "April 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Jungle Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "April 2021",
+        "availability": "$3.99 USD",
+        "rarity": "standard"
+      },
+      {
+        "name": "Gladiator Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "September 2021",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Shadow Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "March 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Primal Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "March 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Summer Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "June 2022",
+        "availability": "$3.99 USD",
+        "rarity": "standard"
+      },
+      {
+        "name": "Party Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "August 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Pixel Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "August 2022",
+        "availability": "$4.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Magic Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "October 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Pirate Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "November 2022",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Jolly Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "December 2022",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Warrior Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "January 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Painter Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "March 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Dark Ages Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "May 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "League Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "June 2023",
+        "availability": "2,000 CWL Medals",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Goblin Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "July 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Future Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "August 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Ghost Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "October 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Champions' Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "November 2023",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Gingerbread Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "December 2023",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Dragon Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "February 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Space Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "March 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Egypt Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "April 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Football Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "May 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Wild West Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "June 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Anime Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "August 2024",
+        "availability": "1,500 Gems",
+        "rarity": "gold"
+      },
+      {
+        "name": "Paladin Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "September 2024",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Ice Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "January 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Snake Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "February 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Sniper Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "March 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Royal Ninja",
+        "description": "A special skin for the Royal Champion.",
+        "released": "May 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Showtime Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "June 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Royal Officer",
+        "description": "A special skin for the Royal Champion.",
+        "released": "July 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Clash-A-Rama Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "August 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Yeti Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "September 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Cursed Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "October 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Nomad Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "November 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Explorer Champion",
+        "description": "A special skin for the Royal Champion.",
+        "released": "December 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      }
+    ],
+    "minion_prince": [
+      {
+        "name": "Snake Prince",
+        "description": "A special skin for the Minion Prince.",
+        "released": "February 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Minion General",
+        "description": "A special skin for the Minion Prince.",
+        "released": "March 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Prince Mysterio",
+        "description": "A special skin for the Minion Prince.",
+        "released": "April 2025",
+        "availability": "Collaboration - Not available for re-purchase",
+        "rarity": "gold"
+      },
+      {
+        "name": "Cyclone Prince",
+        "description": "A special skin for the Minion Prince.",
+        "released": "May 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Minion Cop",
+        "description": "A special skin for the Minion Prince.",
+        "released": "June 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Minion Inventor",
+        "description": "A special skin for the Minion Prince.",
+        "released": "July 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Clash-A-Rama Prince",
+        "description": "A special skin for the Minion Prince.",
+        "released": "August 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Lava Prince",
+        "description": "A special skin for the Minion Prince.",
+        "released": "September 2025",
+        "availability": "Gold Pass",
+        "rarity": "gold"
+      },
+      {
+        "name": "Nightmare Prince",
+        "description": "A special skin for the Minion Prince.",
+        "released": "October 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Armored Prince",
+        "description": "A special skin for the Minion Prince.",
+        "released": "November 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      },
+      {
+        "name": "Frost Prince",
+        "description": "A special skin for the Minion Prince.",
+        "released": "December 2025",
+        "availability": "$9.99 USD",
+        "rarity": "legendary"
+      }
+    ],
+    "battle_machine": [
+      {
+        "name": "Armored Machine",
+        "description": "A special skin for the Battle Machine.",
+        "released": "May 2023",
+        "availability": "$3.99 USD",
+        "rarity": "standard"
+      },
+      {
+        "name": "Battle Machine of the North",
+        "description": "A special skin for the Battle Machine.",
+        "released": "January 2024",
+        "availability": "$7.99 USD",
+        "rarity": "standard"
+      },
+      {
+        "name": "Steampunk Copter",
+        "description": "A special skin for the Battle Machine.",
+        "released": "July 2024",
+        "availability": "$3.99 USD",
+        "rarity": "standard"
+      },
+      {
+        "name": "Boat Copter",
+        "description": "A special skin for the Battle Machine.",
+        "released": "December 2024",
+        "availability": "$3.99 USD",
+        "rarity": "standard"
+      },
+      {
+        "name": "Steampunk Machine",
+        "description": "A special skin for the Battle Machine.",
+        "released": "December 2024",
+        "availability": "$3.99 USD",
+        "rarity": "standard"
+      }
+    ],
+    "flying_machine": []
   },
   "sceneries": {
-    "all_sceneries": [
-      {
-        "name": "Cosmic Scenery",
-        "description": "A meteoroid that drifted peacefully across the cosmos until transformed by Eternal Warden into a doom deliverer. Features space and meteor themes.",
-        "released": "October 3, 2024",
-        "availability": "Cosmic Curse Season (October 3-31, 2024)",
-        "category": "Seasonal Scenery",
-        "code": "",
-        "rarity": "legendery"
-      },
-      {
-        "name": "Dark Days Scenery",
-        "description": "Transforms village into a moody black-and-white cityscape with dark alleys and flickering lights. Complete noir film aesthetic.",
-        "released": "June 2025",
-        "availability": "Dark Days Season Gold Pass",
-        "category": "Seasonal Scenery",
-        "rarity": "Epic",
-        "code": ""
-      }
-    ]
+    "all_sceneries": []
+  },
+  "decorations": {
+    "all_decorations": []
+  },
+  "obstacles": {
+    "all_obstacles": []
   }
 }
