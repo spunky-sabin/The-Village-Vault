@@ -1119,29 +1119,31 @@
       },
       {
         "name": "Grand Dwarf",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A gold skin for the Grand Warden themed after Tabletop Role-Playing Games (TTRPG). Also known as 'RPG Warden' - appearing as a fantasy dwarf character with a mystical D&D-inspired design. This skin was originally planned to be removed from the Gold Pass but was reinstated after community backlash.",
         "released": "September 2024",
-        "availability": "1,500 Gems",
-        "rarity": "gold"
+        "availability": "Gold Pass (2,601 Points) - Currently not available for re-purchase",
+        "rarity": "gold",
+        "code": "52000131"
       },
       {
         "name": "Dark Minion Warden",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after Halloween. Also known as 'Clashoween Warden' - the Warden appears as a master of dark magic after practicing dark arts. He casts his dark magical staff to bring doom to opponents' bases.",
         "released": "October 2024",
         "availability": "$9.99 USD",
         "rarity": "legendary",
-        "code": "52000150"
+        "code": "52000230"
       },
       {
         "name": "Grand Judge",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after the Town Hall 17 'Deliver Justice' season. Also known as 'Justice Warden' - he appears as a noble judge with an elixir-colored crystal staff and a flying ball-shaped owl companion, presenting hope and order. The skin features elaborate design and stunning animations fitting the justice theme.",
         "released": "November 2024",
         "availability": "$9.99 USD",
-        "rarity": "legendary"
+        "rarity": "legendary",
+        "code": "52000231"
       },
       {
         "name": "Ice Warden",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after the Fire and Ice season. This master of frosty magic is wrapped in frost and brings the power of ice to the battlefield, adding a fresh winter twist with glacial looks for magical attacks.",
         "released": "January 2025",
         "availability": "$9.99 USD",
         "rarity": "legendary",
@@ -1149,15 +1151,15 @@
       },
       {
         "name": "Snake Warden",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A gold skin for the Grand Warden themed after the Lunar New Year 2025 (Year of the Snake). The Warden wears a blue robe with golden details and wields a wooden staff with green magic. The most unique feature is a large green snake with a golden head wrapped around his shoulders, giving him a mystical nature wizard appearance.",
         "released": "February 2025",
-        "availability": "Gold Pass",
+        "availability": "Gold Pass - Currently not available for re-purchase",
         "rarity": "gold",
         "code": "52000233"
       },
       {
         "name": "Jetpack Warden",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after a futuristic military/tech season. The Warden receives a futuristic, neon-infused look dressed in a stylish blue and pink coat with glowing accents. He sports vibrant sunglasses and a matching beard. Instead of his usual staff, he wields a rocket launcher and is equipped with a jetpack.",
         "released": "March 2025",
         "availability": "$9.99 USD",
         "rarity": "legendary",
@@ -1165,7 +1167,7 @@
       },
       {
         "name": "Darkness Warden",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after WWE wrestler The Undertaker as part of the ClashaMania collaboration season. The Warden holds a scythe with a bone handle and golden urn, embodying the dark mystique of The Undertaker character.",
         "released": "April 2025",
         "availability": "Collaboration - Not available for re-purchase",
         "rarity": "legendary",
@@ -1173,10 +1175,11 @@
       },
       {
         "name": "Grand Monk",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after Japanese culture and monks. Part of the Japan-themed season with traditional Japanese aesthetic and design elements.",
         "released": "May 2025",
         "availability": "$9.99 USD",
-        "rarity": "legendary"
+        "rarity": "legendary",
+        "code": "52000236"
       },
       {
         "name": "Grand Godfather",
@@ -1187,15 +1190,15 @@
       },
       {
         "name": "Grand Doctor",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A gold skin for the Grand Warden themed after the CyberClash season. This cybernetic redesign transforms the Warden into a futuristic robotic doctor. His head is encased in a glass dome, connected to a robotic body equipped with mechanical claw arms and a glowing green medical shield. A floating camera drone device hovers beside him. Described by fans as 'Doc Oc meets spider-bot' with a 'mad scientist in space' vibe.",
         "released": "July 2025",
-        "availability": "Gold Pass",
+        "availability": "Gold Pass - Currently not available for re-purchase",
         "rarity": "gold",
         "code": "52000238"
       },
       {
         "name": "Clash-A-Rama Warden",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after the Clash-A-Rama animated series for the game's 13th anniversary. The skin gives the Warden an exaggerated, cartoonish animation style matching the Clash-A-Rama show's signature humor and aesthetic.",
         "released": "August 2025",
         "availability": "$9.99 USD",
         "rarity": "legendary",
@@ -1203,7 +1206,7 @@
       },
       {
         "name": "Ivan Warden",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after the Mash-A-Rama season. Ivan is a mashup between the Grand Warden and a Dragon from the Clash-A-Rama animated series. The skin features the question: 'Was he a Warden who turned Dragon, or a Dragon who turned Warden?' He appears as a fire-breathing hero combining both Warden and Dragon characteristics.",
         "released": "September 2025",
         "availability": "$9.99 USD",
         "rarity": "legendary",
@@ -1211,7 +1214,7 @@
       },
       {
         "name": "Eternal Warden",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after the Cosmic Curse Halloween season. The Warden holds a black magic book and his face is transformed into a skeleton face, creating a scary, interdimensional menace appearance. This dark cosmic skin fits the Clash-O-Ween otherworldly theme.",
         "released": "October 2025",
         "availability": "$9.99 USD",
         "rarity": "legendary",
@@ -1219,7 +1222,7 @@
       },
       {
         "name": "Shaman Warden",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A legendary skin for the Grand Warden themed after the post-apocalyptic Wastelands season. The Warden appears as a mystical shaman who has mastered survival magic, wielding ancient power that's barely holding the world together. His look screams survival in the wasteland ruins.",
         "released": "November 2025",
         "availability": "$9.99 USD",
         "rarity": "legendary",
@@ -1227,9 +1230,9 @@
       },
       {
         "name": "Grand Warlock",
-        "description": "A special skin for the Grand Warden.",
+        "description": "A gold skin for the Grand Warden themed after the Frost Age winter season. This mystical ice-powered version features glowing frost energy and ancient magic dripping off his staff, with an owl perched on his wand. Described as easily one of the best-looking Warden skins ever released, fitting the frozen winter aesthetic perfectly.",
         "released": "December 2025",
-        "availability": "Gold Pass",
+        "availability": "Gold Pass - Currently available",
         "rarity": "gold",
         "code": "52000243"
       }
