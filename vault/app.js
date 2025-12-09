@@ -825,8 +825,8 @@ function renderDetailView(item) {
     const typeBadgeText = getTypeBadgeText(item.type, item.category);
 
     const ownershipBadge = state.hasUserData ? `
-        <div class="detail-status-badge ${item.owned ? 'owned' : 'missing'}">
-            ${item.owned ? '✓ Owned' : '✕ Missing'}
+        <div class="detail-status-badge ${item.owned ? 'owned' : 'missing'}" title="${item.owned ? 'Owned' : 'Missing'}">
+            ${item.owned ? '✓' : '✕'}
         </div>
     ` : '';
 
