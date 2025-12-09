@@ -739,28 +739,45 @@ svg {
     background: hsla(0, 84.2%, 60.2%, 0.1);
 }
 
-.btn-mobile-filter {
+.btn-mobile-filter,
+.btn-mobile-filter-ownership {
     width: 100%;
     background: var(--secondary);
     color: var(--foreground);
     border: 1px solid var(--border);
-    gap: 0.5rem;
+    margin-right: 5px;
 }
 
-.btn-mobile-filter:hover {
+.btn-mobile-filter:hover,
+.btn-mobile-filter-ownership:hover {
     background: hsla(45, 100%, 60%, 0.1);
+}
+
+.btn-mobile-filter-ownership.active {
+    background: hsla(45, 100%, 60%, 0.15);
+    color: var(--gold);
+    font-weight: 600;
+    border-color: var(--gold);
 }
 
 .btn-mobile-filter svg {
     width: 1rem;
     height: 1rem;
 }
+.mobile-filter-buttons{
+    display: flex;
+    width: 100%;
+    background: var(--secondary);
+    color: var(--foreground);
+    border: 1px solid var(--border);
+    gap: 1rem;
+}
 
 /* ============================================
    MOBILE FILTER SECTION
    ============================================ */
 .mobile-filter-section {
-    display: block;
+    display: flex;
     margin-bottom: 1rem;
 }
 
@@ -926,13 +943,12 @@ svg {
 .item-card {
     position: relative;
     background: var(--card);
-    border: 2px solid var(--border);
-    border-radius: 0.75rem;
-    overflow: visible;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
-    /* ensure image on top, info below */
     align-items: stretch;
     height: auto;
     width: 100%;
@@ -940,11 +956,7 @@ svg {
     transform-style: preserve-3d;
     will-change: transform;
     min-width: 0;
-    /* important to prevent content from forcing card wider */
-
-    /* prevent text from overlaying image by default */
     text-align: left;
-    /* left keeps long titles readable — change to center if you prefer */
     word-break: break-word;
 }
 
@@ -954,7 +966,7 @@ svg {
 
 .item-card:hover:not(.flipped) {
     transform: translateY(-0.25rem);
-    box-shadow: 0 10px 30px -10px hsla(45, 100%, 60%, 0.4);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Front and back faces */
@@ -977,7 +989,7 @@ svg {
     left: 0;
     transform: rotateY(180deg);
     background: linear-gradient(135deg, hsl(210, 25%, 15%), hsl(210, 25%, 12%));
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     padding: 1rem;
     overflow-y: auto;
     overflow-x: hidden;
@@ -1000,48 +1012,16 @@ svg {
     border-color: var(--purple);
 }
 
-/* Gold Pass skins - golden gradient glow */
+/* Gold Pass skins - no card glow, badge will glow instead */
 .item-card.rarity-gold {
-    border-color: var(--gold);
-    border-width: 2px;
-    box-shadow:
-        0 0 20px hsla(45, 100%, 60%, 0.4),
-        0 0 40px hsla(45, 100%, 60%, 0.2),
-        inset 0 0 20px hsla(45, 100%, 60%, 0.05);
-    background: linear-gradient(135deg,
-            hsla(45, 100%, 60%, 0.05) 0%,
-            transparent 50%,
-            hsla(48, 100%, 70%, 0.05) 100%);
+    border-color: var(--border);
+    border-width: 1px;
 }
 
-.item-card.rarity-gold:hover:not(.flipped) {
-    box-shadow:
-        0 0 30px hsla(45, 100%, 60%, 0.6),
-        0 0 50px hsla(45, 100%, 60%, 0.3),
-        0 10px 30px -10px hsla(45, 100%, 60%, 0.5),
-        inset 0 0 30px hsla(45, 100%, 60%, 0.1);
-}
-
-/* Legendary skins - pinkish/magenta gradient glow */
+/* Legendary skins - no card glow, badge will glow instead */
 .item-card.rarity-legendary {
-    border-color: hsl(320, 85%, 60%);
-    border-width: 2px;
-    box-shadow:
-        0 0 20px hsla(320, 85%, 60%, 0.4),
-        0 0 40px hsla(320, 85%, 60%, 0.2),
-        inset 0 0 20px hsla(320, 85%, 60%, 0.05);
-    background: linear-gradient(135deg,
-            hsla(320, 85%, 60%, 0.05) 0%,
-            transparent 50%,
-            hsla(280, 85%, 65%, 0.05) 100%);
-}
-
-.item-card.rarity-legendary:hover:not(.flipped) {
-    box-shadow:
-        0 0 30px hsla(320, 85%, 60%, 0.6),
-        0 0 50px hsla(320, 85%, 60%, 0.3),
-        0 10px 30px -10px hsla(320, 85%, 60%, 0.5),
-        inset 0 0 30px hsla(320, 85%, 60%, 0.1);
+    border-color: var(--border);
+    border-width: 1px;
 }
 
 .item-card.grayscale .item-image {
@@ -1105,10 +1085,12 @@ svg {
 /* Make the small type badge text tiny */
 .item-type-badge {
     font-size: 0.45rem !important;
-    padding: 2px 4px !important;
-    top: 3px !important;
-    right: 3px !important;
-    opacity: 0.9;
+    padding: 3px 6px !important;
+    top: 4px !important;
+    right: 4px !important;
+    opacity: 0.95;
+    border-radius: 0.25rem !important;
+    font-weight: 600 !important;
 }
 
 /* Make the category below the name smaller too */
@@ -1141,6 +1123,22 @@ svg {
     color: white;
 }
 
+/* Gold rarity type badge glow */
+.item-card.rarity-gold .item-type-badge {
+    background: var(--gold);
+    color: var(--background);
+    box-shadow: 0 0 12px hsla(45, 100%, 60%, 0.8), 0 0 24px hsla(45, 100%, 60%, 0.4);
+    font-weight: 700;
+}
+
+/* Legendary rarity type badge glow */
+.item-card.rarity-legendary .item-type-badge {
+    background: hsl(320, 85%, 60%);
+    color: white;
+    box-shadow: 0 0 12px hsla(320, 85%, 60%, 0.8), 0 0 24px hsla(320, 85%, 60%, 0.4);
+    font-weight: 700;
+}
+
 .item-type-badge.scenery {
     background: rgba(34, 197, 94, 0.9);
     color: white;
@@ -1149,6 +1147,12 @@ svg {
 .item-type-badge.clan {
     background: rgba(14, 165, 233, 0.9);
     color: white;
+}
+
+.item-type-badge.unknown {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--background);
+    font-weight: 600;
 }
 
 /* Item image container */
@@ -1225,17 +1229,17 @@ svg {
 /* Item info */
 /* CHANGE: make item-info occupy its own space below the image; clamp text so it cannot overflow and cover image */
 .item-info {
-    padding: 0.4rem;
+    padding: 0.5rem;
     border-top: 1px solid var(--border);
     background: hsla(210, 25%, 12%, 0.8);
-    backdrop-filter: blur(4px);
-    /* keep info below image and not stretch beyond card */
-    flex: 0 0 auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    min-height: 3rem;
+    max-height: 3.5rem;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 0.15rem;
-    min-height: 0;
-    z-index: 4;
 }
 
 /* small adjustments for tiny screens */
@@ -1260,34 +1264,34 @@ svg {
 /* TITLE: clamp to 2 lines so it doesn't push/cover image */
 .item-info h3 {
     font-weight: 600;
-    font-size: 0.65rem;
+    font-size: 0.68rem;
     color: var(--foreground);
+    line-height: 1.25;
+    margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     line-clamp: 2;
-    /* clamp to 2 lines */
-    line-height: 1.05;
-    max-height: calc(1.05em * 2);
-    margin: 0;
+    word-break: break-word;
+    min-height: 1.35rem;
+    max-height: 2.5rem;
+    flex-shrink: 0;
 }
 
-/* DESCRIPTION / META: clamp to 2 lines as well, smaller font */
+/* DESCRIPTION / META: clamp to 1 line for cleaner look */
 .item-info p {
-    font-size: 0.55rem;
+    font-size: 0.56rem;
     color: var(--muted-foreground);
     margin: 0;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    line-clamp: 2;
-    /* clamp to 2 lines */
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
     overflow: hidden;
     text-overflow: ellipsis;
-    line-height: 1.05;
-    max-height: calc(1.05em * 2);
+    line-height: 1.2;
+    flex-shrink: 0;
 }
 
 /* For very tiny devices, reduce text size slightly so 5 items can fit */

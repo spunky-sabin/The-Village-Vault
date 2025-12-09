@@ -6,6 +6,7 @@
 
 // ============================================
 // STATE MANAGEMENT
+// Global in-memory state for items, filters, and view options
 // ============================================
 const state = {
     allItems: {},
@@ -26,6 +27,7 @@ const state = {
 // ============================================
 let imageObserver = null;
 
+// Debounce helper to delay execution until user stops typing/scrolling
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -38,7 +40,7 @@ function debounce(func, wait) {
     };
 }
 
-// Initialize Intersection Observer for lazy loading images
+// Initialize IntersectionObserver used to lazy-load grid images
 function initImageObserver() {
     if ('IntersectionObserver' in window) {
         imageObserver = new IntersectionObserver((entries) => {
@@ -62,9 +64,13 @@ function initImageObserver() {
     }
 }
 
+// Load a JSON file from the data-json folder (or a full path if given)
+// Use root-relative paths so it works from both / and /vault/
 async function loadJSON(url) {
     try {
-        const fullPath = url.startsWith('src/') ? url : `src/data-json/${url}`;
+        const fullPath = url.startsWith('/') || url.startsWith('http')
+            ? url
+            : `/src/data-json/${url}`;
         const res = await fetch(fullPath);
         if (!res.ok) throw new Error("HTTP Error " + res.status);
         return await res.json();
@@ -74,7 +80,7 @@ async function loadJSON(url) {
     }
 }
 
-// Generate URL-safe slug from item name
+// Generate a URL-friendly slug from an item name (fallback to code)
 function generateSlug(name, code = '') {
     if (!name) return 'unknown';
 
@@ -98,22 +104,22 @@ function generateSlug(name, code = '') {
     return slug;
 }
 
-// Generic item formatter
+// Normalize raw data for any item type into a common object shape
 function formatItem(item, type, category, heroName = null, heroId = null, details = null) {
     const name = item.name || item.skin_name || "Unknown Item";
     const code = String(item.Code || item.code);
 
-    // Get image path and prepend ../ if it starts with src/ (for vault folder structure)
+    // Normalize image path to root-relative if it starts with src/ or images/
     let imagePath = item.image || item.image_path || "";
-    if (imagePath && imagePath.startsWith('src/')) {
-        imagePath = '../' + imagePath;
+    if (imagePath && (imagePath.startsWith('src/') || imagePath.startsWith('images/'))) {
+        imagePath = '/' + imagePath;
     }
 
     return {
         code,
         name,
         image: imagePath,
-        rarity: details?.rarity || item.rarity || "common",
+        rarity: details?.rarity || item.rarity || "unknown",
         category,
         type,
         owned: false,
@@ -126,8 +132,8 @@ function formatItem(item, type, category, heroName = null, heroId = null, detail
     };
 }
 
-// Preload images with better error handling and timeout
-async function preloadImages(items, maxImages = 20) {
+// Preload a subset of item images to make the initial grid feel snappier
+async function preloadImages(items, maxImages = 100) {
     const itemsToPreload = items.slice(0, maxImages);
 
     const promises = itemsToPreload.map(item => {
@@ -149,6 +155,8 @@ async function preloadImages(items, maxImages = 20) {
     return Promise.all(promises);
 }
 
+// Load all master data (decorations, obstacles, heroes, sceneries, details)
+// and populate state.allItems + initial state.items
 async function loadAllMasterData() {
     const [decorations, obstacles, heroesData, sceneries, itemDetails] = await Promise.all([
         loadJSON("decorations.json"),
@@ -164,11 +172,61 @@ async function loadAllMasterData() {
         results[4] || {}
     ]);
 
-    function findItemDetails(itemName, itemType) {
-        if (!itemDetails || !itemName) {
+    function findItemDetails(itemName, itemType, itemCode = null) {
+        if (!itemDetails) {
             return null;
         }
 
+        // If code is provided, match by code first (more reliable)
+        if (itemCode) {
+            const codeStr = String(itemCode);
+            
+            if (itemType === 'heroskin' && itemDetails.hero_skins) {
+                for (const hero in itemDetails.hero_skins) {
+                    if (Array.isArray(itemDetails.hero_skins[hero])) {
+                        const found = itemDetails.hero_skins[hero].find(s =>
+                            String(s.code) === codeStr
+                        );
+                        if (found) return found;
+                    }
+                }
+            } else if (itemType === 'decoration' && itemDetails.decorations) {
+                const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
+                for (const cat of categories) {
+                    if (itemDetails.decorations[cat]) {
+                        const found = itemDetails.decorations[cat].find(d =>
+                            String(d.code) === codeStr
+                        );
+                        if (found) return found;
+                    }
+                }
+            } else if (itemType === 'obstacle' && itemDetails.obstacles) {
+                const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
+                for (const cat of categories) {
+                    if (itemDetails.obstacles[cat]) {
+                        const found = itemDetails.obstacles[cat].find(o =>
+                            String(o.code) === codeStr
+                        );
+                        if (found) return found;
+                    }
+                }
+            } else if (itemType === 'scenery' && itemDetails.sceneries) {
+                let sceneryArray = [];
+                if (Array.isArray(itemDetails.sceneries)) {
+                    sceneryArray = itemDetails.sceneries;
+                } else if (itemDetails.sceneries.all_sceneries && Array.isArray(itemDetails.sceneries.all_sceneries)) {
+                    sceneryArray = itemDetails.sceneries.all_sceneries;
+                }
+                const found = sceneryArray.find(s =>
+                    String(s.code) === codeStr
+                );
+                if (found) return found;
+            }
+        }
+
+        // Fallback to name matching if code not provided or not found
+        if (!itemName) return null;
+        
         const normalizedName = itemName.toLowerCase().trim();
 
         if (itemType === 'decoration' && itemDetails.decorations) {
@@ -192,9 +250,8 @@ async function loadAllMasterData() {
                 }
             }
         } else if (itemType === 'heroskin' && itemDetails.hero_skins) {
-            const heroes = ['barbarian_king', 'archer_queen', 'grand_warden', 'royal_champion', 'minion_prince'];
-            for (const hero of heroes) {
-                if (itemDetails.hero_skins[hero]) {
+            for (const hero in itemDetails.hero_skins) {
+                if (Array.isArray(itemDetails.hero_skins[hero])) {
                     const found = itemDetails.hero_skins[hero].find(s =>
                         s.name.toLowerCase().trim() === normalizedName
                     );
@@ -202,14 +259,12 @@ async function loadAllMasterData() {
                 }
             }
         } else if (itemType === 'scenery' && itemDetails.sceneries) {
-            // FIXED: Properly handle itemDetails.sceneries.all_sceneries structure
             let sceneryArray = [];
             if (Array.isArray(itemDetails.sceneries)) {
                 sceneryArray = itemDetails.sceneries;
             } else if (itemDetails.sceneries.all_sceneries && Array.isArray(itemDetails.sceneries.all_sceneries)) {
                 sceneryArray = itemDetails.sceneries.all_sceneries;
             }
-
             const found = sceneryArray.find(s =>
                 s.name && s.name.toLowerCase().trim() === normalizedName
             );
@@ -229,7 +284,7 @@ async function loadAllMasterData() {
         return formatItem(item, "obstacle", "Obstacle", null, null, details);
     }) || [];
 
-    const formattedSceneries = sceneries.sceneries?.map(item => {
+    const formattedSceneries = sceneries?.sceneries?.map(item => {
         const details = findItemDetails(item.name, 'scenery');
         return formatItem(item, "scenery", "Scenery", null, null, details);
     }) || [];
@@ -242,7 +297,7 @@ async function loadAllMasterData() {
             if (hero.skins && Array.isArray(hero.skins)) {
                 const heroId = hero.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
                 hero.skins.forEach(skin => {
-                    const details = findItemDetails(skin.skin_name, 'heroskin');
+                    const details = findItemDetails(skin.skin_name, 'heroskin', skin.code);
                     formattedHeroSkins.push(formatItem(skin, "heroskin", "Hero Skin", hero.name, heroId, details));
                 });
             }
@@ -253,16 +308,26 @@ async function loadAllMasterData() {
         'cosmetic-compendium': [...formattedDecorations, ...formattedObstacles, ...formattedHeroSkins, ...formattedSceneries, ...formattedClanCapital],
         'hero-wardrobe': formattedHeroSkins,
         'home-village-decor': [...formattedDecorations, ...formattedObstacles],
+        'sceneries': formattedSceneries,
         'clan-hall-aesthetics': formattedClanCapital
     };
 
     state.items = state.allItems['cosmetic-compendium'];
+
+    console.log("Master data loaded:", {
+        decorations: formattedDecorations.length,
+        obstacles: formattedObstacles.length,
+        heroSkins: formattedHeroSkins.length,
+        sceneries: formattedSceneries.length,
+        clanCapital: formattedClanCapital.length
+    });
 
     await preloadImages(state.items, 50);
 }
 
 // ============================================
 // JSON PARSER
+// Pull all numeric "codes" from an arbitrary JSON structure
 // ============================================
 function extractCodesFromJSON(obj) {
     const codes = new Set();
@@ -291,6 +356,7 @@ function extractCodesFromJSON(obj) {
     return [...codes];
 }
 
+// Parse pasted user JSON, derive owned item codes and mark items as owned
 function parseUserData(jsonString) {
     try {
         const parsed = JSON.parse(jsonString);
@@ -321,9 +387,10 @@ function parseUserData(jsonString) {
 
 // ============================================
 // URL ROUTING SYSTEM
+// Keeps item detail views in sync with clean /vault/... URLs
 // ============================================
 const Router = {
-    // Map item type to URL prefix
+    // Map item type to URL prefix used in paths
     typeToPrefix: {
         'heroskin': 'skins',
         'scenery': 'sceneries',
@@ -332,7 +399,7 @@ const Router = {
         'clan': 'clan-items'
     },
 
-    // Reverse map for URL prefix to type
+    // Reverse map from URL prefix back to internal type
     prefixToType: {
         'skins': 'heroskin',
         'sceneries': 'scenery',
@@ -341,7 +408,7 @@ const Router = {
         'clan-items': 'clan'
     },
 
-    // Navigate to an item by updating URL and showing detail view
+    // Push a new URL for an item and render its detail overlay
     navigateToItem(item) {
         const prefix = this.typeToPrefix[item.type] || 'items';
         const url = `/vault/${prefix}/${item.slug}`;
@@ -356,14 +423,14 @@ const Router = {
         renderDetailView(item);
     },
 
-    // Navigate back to main grid view
+    // Navigate back to the grid view and restore title
     navigateToGrid() {
         history.pushState({}, '', '/vault/');
         document.title = 'The Village Vault | Clash of Clans Item Tracker';
         hideDetailView();
     },
 
-    // Parse current URL to extract type and slug
+    // Parse current /vault/... URL into { type, slug }
     parseCurrentURL() {
         const path = window.location.pathname;
         const match = path.match(/\/vault\/(skins|sceneries|obstacles|decorations|clan-items)\/([^/]+)/);
@@ -378,7 +445,7 @@ const Router = {
         return null;
     },
 
-    // Find item by type and slug
+    // Find a specific item by its type + slug across all categories
     findItemBySlug(type, slug) {
         // Search through all items in all categories
         for (const categoryId in state.allItems) {
@@ -389,7 +456,7 @@ const Router = {
         return null;
     },
 
-    // Handle browser back/forward navigation
+    // Restore either grid or item detail when user uses back/forward
     handlePopState(event) {
         if (event.state && event.state.item) {
             // User navigated to an item
@@ -402,7 +469,7 @@ const Router = {
         }
     },
 
-    // Initialize routing on page load
+    // Initialize routing once data is ready
     init() {
         // Check if URL contains an item route
         const urlData = this.parseCurrentURL();
@@ -426,6 +493,7 @@ const Router = {
 
 // ============================================
 // FILTERING & SORTING
+// Helpers to update state.* filter fields and derive filtered lists
 // ============================================
 function filterByType(type) {
     if (type === 'all') {
@@ -436,6 +504,7 @@ function filterByType(type) {
     updateUI();
 }
 
+// Toggle a hero in the selectedHeroes filter list
 function filterByHero(heroId) {
     if (state.selectedHeroes.includes(heroId)) {
         state.selectedHeroes = state.selectedHeroes.filter(h => h !== heroId);
@@ -445,6 +514,7 @@ function filterByHero(heroId) {
     updateUI();
 }
 
+// Change active top-level category (tabs) and reset relevant filters
 function switchCategory(categoryId) {
     state.activeCategory = categoryId;
     state.items = state.allItems[categoryId] || [];
@@ -467,6 +537,7 @@ function switchCategory(categoryId) {
     updateUI();
 }
 
+// Rebuild the type filter buttons for the current category (desktop + mobile)
 function updateTypeFilterUI(categoryId) {
     const typeFilterOptions = document.getElementById('type-filter-options');
     const mobileTypeFilterOptions = document.getElementById('mobile-type-filter-options');
@@ -505,6 +576,7 @@ function updateTypeFilterUI(categoryId) {
     attachTypeFilterListeners();
 }
 
+// Toggle ownership filter between owned / missing / all
 function filterByOwnership(ownership) {
     if (state.selectedOwnership.includes(ownership)) {
         state.selectedOwnership = [];
@@ -514,6 +586,7 @@ function filterByOwnership(ownership) {
     updateUI();
 }
 
+// Apply search, type, hero, ownership filters and sorting to current items
 function getFilteredItems() {
     let filtered = state.items.filter(item => {
         const matchSearch = item.name.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
@@ -538,13 +611,16 @@ function getFilteredItems() {
         case "name-asc": filtered.sort((a, b) => a.name.localeCompare(b.name)); break;
         case "name-desc": filtered.sort((a, b) => b.name.localeCompare(a.name)); break;
         case "newest":
-        default: filtered.sort((a, b) => b.code - b.code);
+        default: filtered.sort((a, b) => b.code - a.code);
     }
     return filtered;
 }
 
+
+
 // ============================================
 // RENDERING UI
+// Build item cards and progress components based on current state
 // ============================================
 const TYPE_LABELS = {
     'decoration': 'Decoration',
@@ -558,6 +634,7 @@ function getTypeBadgeText(type, category) {
     return TYPE_LABELS[type] || category;
 }
 
+// Create a single item card DOM node (front + back) with routing hooks
 function createItemCard(item) {
     const container = document.createElement("div");
     container.className = "item-card-container";
@@ -581,11 +658,10 @@ function createItemCard(item) {
                 ${typeBadgeText}
             </div>
             <div class="item-image-container">
-                <img src="" data-src="${item.image}" class="item-image" loading="lazy" alt="${item.name}" width="100%" height="auto" style="display: block;">
+                <img src="${item.image}" class="item-image" loading="lazy" alt="${item.name}" width="100%" height="auto" style="display: block;">
             </div>
             <div class="item-info">
                 <h3>${item.name}</h3>
-                <p>${item.category}</p>
             </div>
         </div>
     `;
@@ -622,11 +698,6 @@ function createItemCard(item) {
                         <div class="item-details-value">${item.heroName}</div>
                     </div>
                 ` : ''}
-                
-                <div class="item-details-section">
-                    <div class="item-details-label">Item Code</div>
-                    <div class="item-details-value">${item.code}</div>
-                </div>
             </div>
         </div>
     `;
@@ -634,11 +705,12 @@ function createItemCard(item) {
     card.innerHTML = frontHTML + backHTML;
 
     const imgEl = card.querySelector('.item-image');
-    if (imageObserver && imgEl) {
-        imageObserver.observe(imgEl);
-    } else if (imgEl && !imageObserver) {
-        imgEl.src = imgEl.dataset.src;
+    if (imgEl) {
         imgEl.onload = () => imgEl.classList.add('loaded');
+        imgEl.onerror = () => {
+            console.warn('Image failed to load:', imgEl.src);
+            imgEl.style.opacity = '0.5';
+        };
     }
 
     // Add data attribute for slug
@@ -656,6 +728,7 @@ function createItemCard(item) {
     return container;
 }
 
+// Render the main grid with infinite scroll (auto-load on scroll)
 function renderItems() {
     const list = document.getElementById("items-grid");
     const msg = document.getElementById("no-items-message");
@@ -677,23 +750,30 @@ function renderItems() {
     visibleItems.forEach(i => fragment.appendChild(createItemCard(i)));
     list.appendChild(fragment);
 
+    // Add sentinel element at the end for infinite scroll detection
     if (items.length > state.visibleLimit) {
-        const loadMoreContainer = document.createElement('div');
-        loadMoreContainer.className = "item-card-container";
-        loadMoreContainer.innerHTML = `
-            <button id="load-more-btn" class="btn btn-secondary" style="width: 100%; padding: 1rem; cursor: pointer;">
-                Load More (${items.length - state.visibleLimit} remaining)
-            </button>
-        `;
-        list.appendChild(loadMoreContainer);
+        const sentinel = document.createElement('div');
+        sentinel.id = "scroll-sentinel";
+        sentinel.style.height = "1px";
+        list.appendChild(sentinel);
 
-        document.getElementById('load-more-btn').addEventListener('click', () => {
-            state.visibleLimit += 50;
-            renderItems();
-        });
+        // Observe sentinel for infinite scroll
+        if ('IntersectionObserver' in window) {
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        state.visibleLimit += 50;
+                        renderItems();
+                    }
+                });
+            }, { rootMargin: '200px' });
+
+            scrollObserver.observe(sentinel);
+        }
     }
 }
 
+// Update the per-category progress bar above the grid
 function updateProgressTracker() {
     const el = document.getElementById("progress-tracker");
     if (!state.hasUserData) {
@@ -729,6 +809,7 @@ function updateProgressTracker() {
 
 // ============================================
 // DETAIL VIEW RENDERING
+// Full-screen overlay with rich details for a single item
 // ============================================
 function renderDetailView(item) {
     // Get or create detail view container
@@ -792,11 +873,6 @@ function renderDetailView(item) {
                             <span class="detail-meta-label">Availability</span>
                             <span class="detail-meta-value">${item.availability || 'Unknown'}</span>
                         </div>
-                        
-                        <div class="detail-meta-item">
-                            <span class="detail-meta-label">Item Code</span>
-                            <span class="detail-meta-value code">${item.code}</span>
-                        </div>
                     </div>
                     
                     <div class="detail-description">
@@ -827,6 +903,7 @@ function renderDetailView(item) {
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
 }
 
+// Hide the detail overlay and restore page scroll
 function hideDetailView() {
     const detailView = document.getElementById('item-detail-view');
     if (detailView) {
@@ -835,6 +912,7 @@ function hideDetailView() {
     }
 }
 
+// Copy the current item URL from the detail view to the clipboard
 function copyShareURL() {
     const input = document.getElementById('share-url-input');
     if (input) {
@@ -851,6 +929,7 @@ function copyShareURL() {
 }
 
 
+// Re-render grid, progress, and hero filter visibility after any state change
 function updateUI() {
     renderItems();
     updateProgressTracker();
@@ -869,7 +948,9 @@ function updateUI() {
 
 // ============================================
 // EVENT HANDLING
+// Upload / clear actions and DOM wiring helpers
 // ============================================
+// Handle JSON paste submission from the upload modal
 function handleDataUpload() {
     const input = document.getElementById("json-input").value.trim();
     if (!input) {
@@ -888,6 +969,7 @@ function handleDataUpload() {
     }
 }
 
+// Clear user-owned data and reset all items to unowned
 function handleDataClear() {
     state.userOwnedCodes = new Set();
     Object.keys(state.allItems).forEach(categoryId => {
@@ -901,6 +983,7 @@ function handleDataClear() {
     showToast("Cleared", "Your data has been reset.");
 }
 
+// Attach click handlers to all type filter buttons (desktop + mobile)
 function attachTypeFilterListeners() {
     const typeFilterButtons = document.querySelectorAll('[data-type-filter]:not([disabled])');
     typeFilterButtons.forEach(btn => {
@@ -916,7 +999,9 @@ function attachTypeFilterListeners() {
 
 // ============================================
 // UTILITY FUNCTIONS (Modals & Notifications)
+// Helpers for opening modals and showing toasts
 // ============================================
+// Show a modal by id
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -924,6 +1009,7 @@ function openModal(modalId) {
     }
 }
 
+// Hide a modal by id
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -931,6 +1017,7 @@ function closeModal(modalId) {
     }
 }
 
+// Show a temporary toast notification in the bottom container
 function showToast(title, message, type = "success") {
     const container = document.getElementById("toast-container");
     if (!container) return;
@@ -954,6 +1041,7 @@ function showToast(title, message, type = "success") {
 
 // ============================================
 // INITIALIZE APP
+// Wire up DOM events, load data, and restore any saved session state
 // ============================================
 document.addEventListener("DOMContentLoaded", async () => {
     initImageObserver();
@@ -1013,6 +1101,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     ownershipCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', e => {
             const ownership = e.target.value;
+
+            // If trying to filter by owned/missing without user data, prompt for JSON
+            if (ownership !== 'all' && !state.hasUserData) {
+                e.target.checked = false;
+                showToast("No Data", "Please paste your JSON file first to use ownership filters", "error");
+                openModal("upload-modal");
+                return;
+            }
+
             ownershipCheckboxes.forEach(cb => {
                 if (cb !== e.target) cb.checked = false;
             });
@@ -1084,22 +1181,40 @@ document.addEventListener("DOMContentLoaded", async () => {
         mobileFilterBtn.addEventListener("click", () => openModal("filter-modal"));
     }
 
-    document.querySelectorAll(".mobile-ownership-filter").forEach(checkbox => {
-        checkbox.addEventListener("change", () => {
-            const ownership = checkbox.value;
-            document.querySelectorAll(".mobile-ownership-filter").forEach(cb => {
-                if (cb !== checkbox) cb.checked = false;
-            });
-            filterByOwnership(ownership);
-        });
-    });
-
     const applyFiltersBtn = document.getElementById("apply-filters-btn");
     if (applyFiltersBtn) {
         applyFiltersBtn.addEventListener("click", () => {
             closeModal("filter-modal");
         });
     }
+
+    // Mobile quick ownership buttons
+    document.querySelectorAll('.btn-mobile-filter-ownership').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const ownership = btn.dataset.ownership;
+
+            // If trying to filter by owned/missing without user data, prompt for JSON
+            if (ownership !== 'all' && !state.hasUserData) {
+                showToast("No Data", "Please paste your JSON file first to use ownership filters", "error");
+                openModal("upload-modal");
+                return;
+            }
+
+            state.selectedOwnership = ownership === 'all' ? [] : [ownership];
+
+            // Make buttons mutually exclusive (add/remove active class)
+            document.querySelectorAll('.btn-mobile-filter-ownership').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Sync with modal checkboxes if open
+            document.querySelectorAll('.mobile-ownership-filter').forEach(cb => {
+                cb.checked = (ownership !== 'all' && cb.value === ownership);
+            });
+
+            updateUI();
+        });
+    });
+
 
     const mobileSearchInput = document.getElementById("mobile-search-input");
     if (mobileSearchInput) {
@@ -1122,4 +1237,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             updateUI();
         });
     }
-});
+
+}
+);
