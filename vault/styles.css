@@ -1571,9 +1571,9 @@ svg {
    TOAST NOTIFICATIONS
    ============================================ */
 .toast-container {
-    position: fixed;
-    bottom: 1rem;
-    right: 1rem;
+    position: fixed !important;
+    top: 1rem !important;
+    left: 1rem !important;
     z-index: 2000;
     display: flex;
     flex-direction: column;
@@ -1637,12 +1637,30 @@ svg {
 
 .toast-success {
     border-color: var(--green);
-    background: hsla(142, 76%, 47%, 0.1);
+    background: hsla(142, 76%, 47%, 0.15);
+}
+
+.toast-success .toast-title {
+    color: var(--green);
+    font-weight: 700;
+}
+
+.toast-success .toast-message {
+    color: var(--foreground);
 }
 
 .toast-error {
     border-color: var(--red);
-    background: hsla(0, 84.2%, 60.2%, 0.1);
+    background: hsl(0, 84.2%, 60.2%);
+}
+
+.toast-error .toast-title {
+    color: white;
+    font-weight: 700;
+}
+
+.toast-error .toast-message {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* ============================================

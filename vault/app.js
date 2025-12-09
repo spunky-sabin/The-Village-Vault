@@ -985,25 +985,86 @@ function handleDataClear() {
 
 // Handle paste from clipboard and analyze directly
 async function handlePasteFromClipboard() {
+    // Try modern clipboard API first (works on mobile with HTTPS)
+    if (navigator.clipboard && navigator.clipboard.readText) {
+        try {
+            // Request clipboard permission explicitly for mobile
+            if (navigator.permissions && navigator.permissions.query) {
+                const permission = await navigator.permissions.query({ name: 'clipboard-read' });
+                if (permission.state === 'denied') {
+                    throw new Error('Clipboard permission denied');
+                }
+            }
+
+            const clipboardText = await navigator.clipboard.readText();
+            if (!clipboardText.trim()) {
+                showToast("Error", "Clipboard is empty!", "error");
+                return;
+            }
+
+            const result = parseUserData(clipboardText);
+            if (result.success) {
+                showToast("Success!", result.message);
+                document.getElementById("clear-data-btn").style.display = "block";
+                updateUI();
+            } else {
+                showToast("Invalid JSON", result.message, "error");
+            }
+            return;
+        } catch (err) {
+            console.error("Clipboard API error:", err);
+            // Continue to fallback methods
+        }
+    }
+
+    // Fallback 1: Try to trigger paste event on a hidden input
     try {
-        const clipboardText = await navigator.clipboard.readText();
-        if (!clipboardText.trim()) {
-            showToast("Error", "Clipboard is empty!", "error");
+        const hiddenInput = document.createElement('input');
+        hiddenInput.style.position = 'absolute';
+        hiddenInput.style.left = '-9999px';
+        hiddenInput.style.top = '-9999px';
+        document.body.appendChild(hiddenInput);
+        hiddenInput.focus();
+        
+        // Trigger paste event
+        const pasteEvent = new ClipboardEvent('paste', {
+            clipboardData: new DataTransfer()
+        });
+        
+        // Try to get clipboard data through execCommand (legacy method)
+        const pasted = document.execCommand('paste');
+        if (pasted && hiddenInput.value) {
+            const clipboardText = hiddenInput.value;
+            document.body.removeChild(hiddenInput);
+            
+            const result = parseUserData(clipboardText);
+            if (result.success) {
+                showToast("Success!", result.message);
+                document.getElementById("clear-data-btn").style.display = "block";
+                updateUI();
+            } else {
+                showToast("Invalid JSON", result.message, "error");
+            }
             return;
         }
-
-        const result = parseUserData(clipboardText);
-        if (result.success) {
-            showToast("Success!", result.message);
-            document.getElementById("clear-data-btn").style.display = "block";
-            updateUI();
-        } else {
-            showToast("Invalid JSON", result.message, "error");
-        }
+        document.body.removeChild(hiddenInput);
     } catch (err) {
-        console.error("Clipboard error:", err);
-        showToast("Error", "Unable to access clipboard. Please use the Upload button instead.", "error");
+        console.error("Legacy paste error:", err);
     }
+
+    // Fallback 2: Open modal with focus and mobile-specific instructions
+    openModal("upload-modal");
+    setTimeout(() => {
+        const textarea = document.getElementById("json-input");
+        if (textarea) {
+            textarea.focus();
+            // On mobile, try to trigger the virtual keyboard
+            if (navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
+                textarea.click();
+            }
+            showToast("Info", "Tap and hold in the text area, then select 'Paste'", "error");
+        }
+    }, 100);
 }
 
 // Attach click handlers to all type filter buttons (desktop + mobile)
