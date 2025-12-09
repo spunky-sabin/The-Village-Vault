@@ -983,6 +983,29 @@ function handleDataClear() {
     showToast("Cleared", "Your data has been reset.");
 }
 
+// Handle paste from clipboard and analyze directly
+async function handlePasteFromClipboard() {
+    try {
+        const clipboardText = await navigator.clipboard.readText();
+        if (!clipboardText.trim()) {
+            showToast("Error", "Clipboard is empty!", "error");
+            return;
+        }
+
+        const result = parseUserData(clipboardText);
+        if (result.success) {
+            showToast("Success!", result.message);
+            document.getElementById("clear-data-btn").style.display = "block";
+            updateUI();
+        } else {
+            showToast("Invalid JSON", result.message, "error");
+        }
+    } catch (err) {
+        console.error("Clipboard error:", err);
+        showToast("Error", "Unable to access clipboard. Please use the Upload button instead.", "error");
+    }
+}
+
 // Attach click handlers to all type filter buttons (desktop + mobile)
 function attachTypeFilterListeners() {
     const typeFilterButtons = document.querySelectorAll('[data-type-filter]:not([disabled])');
@@ -1141,6 +1164,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (uploadBtn) {
         uploadBtn.setAttribute('aria-label', 'Upload your collection data');
         uploadBtn.addEventListener("click", () => openModal("upload-modal"));
+    }
+
+    const pasteBtn = document.getElementById("paste-btn");
+    if (pasteBtn) {
+        pasteBtn.setAttribute('aria-label', 'Paste your collection data from clipboard');
+        pasteBtn.addEventListener("click", handlePasteFromClipboard);
     }
 
     const analyzeBtn = document.getElementById("analyze-btn");
