@@ -997,6 +997,8 @@ async function handlePasteFromClipboard() {
                 throw new Error('HTTPS required for clipboard access');
             }
             
+            let clipboardText = '';
+            
             // Request clipboard permission explicitly for mobile
             if (navigator.permissions && navigator.permissions.query) {
                 const permission = await navigator.permissions.query({ name: 'clipboard-read' });
@@ -1005,33 +1007,66 @@ async function handlePasteFromClipboard() {
                 }
                 if (permission.state === 'prompt') {
                     showToast("Permission Required", "Please allow clipboard access when prompted", "error");
-                    const clipboardText = await navigator.clipboard.readText();
-                    if (!clipboardText.trim()) {
-                        showToast("Error", "Clipboard is empty!", "error");
-                        return;
-                    }
+                    clipboardText = await navigator.clipboard.readText();
                 } else {
-                    const clipboardText = await navigator.clipboard.readText();
-                    if (!clipboardText.trim()) {
-                        showToast("Error", "Clipboard is empty!", "error");
-                        return;
-                    }
+                    clipboardText = await navigator.clipboard.readText();
                 }
             } else {
-                const clipboardText = await navigator.clipboard.readText();
-                if (!clipboardText.trim()) {
-                    showToast("Error", "Clipboard is empty!", "error");
+                clipboardText = await navigator.clipboard.readText();
+            }
+            
+            // Ninja-inspired flexible parsing
+            if (!clipboardText.trim()) {
+                showToast("Error", "Clipboard is empty!", "error");
+                return;
+            }
+            
+            // Check if it looks like JSON (Ninja-style validation)
+            if (!clipboardText.trim().startsWith('{') && !clipboardText.trim().startsWith('[')) {
+                // Manual prompt fallback like Ninja
+                const manualInput = prompt('Raw JSON not detected - paste your collection data manually:');
+                if (manualInput) {
+                    clipboardText = manualInput;
+                } else {
+                    showToast("Error", "No data provided", "error");
                     return;
                 }
             }
+            
+            // Try to clean up common clipboard issues (Ninja-style resilience)
+            let cleanedText = clipboardText.trim();
+            
+            // Remove common clipboard artifacts
+            cleanedText = cleanedText.replace(/[\u200B-\u200D\uFEFF]/g, ''); // Remove zero-width chars
+            cleanedText = cleanedText.replace(/^[^{[]*\s*/, ''); // Remove leading non-JSON
+            cleanedText = cleanedText.replace(/\s*[^}\]]*$/, ''); // Remove trailing non-JSON
+            
+            // Try to extract JSON if embedded in other text
+            const jsonMatch = cleanedText.match(/(\{[\s\S]*\})|(\[[\s\S]*\])/);
+            if (jsonMatch) {
+                cleanedText = jsonMatch[0];
+            }
 
-            const result = parseUserData(clipboardText);
+            const result = parseUserData(cleanedText);
             if (result.success) {
                 showToast("Success!", result.message);
                 document.getElementById("clear-data-btn").style.display = "block";
                 updateUI();
             } else {
-                showToast("Invalid JSON", result.message, "error");
+                // Fallback to manual prompt like Ninja
+                const manualInput = prompt('Invalid JSON detected - paste your collection data manually:');
+                if (manualInput) {
+                    const retryResult = parseUserData(manualInput);
+                    if (retryResult.success) {
+                        showToast("Success!", retryResult.message);
+                        document.getElementById("clear-data-btn").style.display = "block";
+                        updateUI();
+                    } else {
+                        showToast("Invalid JSON", retryResult.message, "error");
+                    }
+                } else {
+                    showToast("Invalid JSON", result.message, "error");
+                }
             }
             return;
         } catch (err) {
