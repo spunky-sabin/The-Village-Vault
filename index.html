@@ -319,9 +319,11 @@
             font-size: clamp(2rem, 5vw, 3rem);
             font-weight: 900;
             background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            -webkit-background-clip: text;
+            background-clip: text;            /* the “normal” property */
+            -webkit-background-clip: text;    /* Safari clinging to life */
             -webkit-text-fill-color: transparent;
-        }
+}
+
 
         .stat-label {
             font-size: clamp(0.85rem, 2vw, 1rem);
