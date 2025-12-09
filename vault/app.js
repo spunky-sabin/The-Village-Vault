@@ -994,7 +994,13 @@ async function handlePasteFromClipboard() {
         try {
             // Check if we're in a secure context (required for clipboard API)
             if (!isSecureContext) {
-                throw new Error('HTTPS required for clipboard access');
+                if (isMobile) {
+                    showToast("Mobile HTTPS Required", "Automatic paste requires HTTPS. Please use manual paste.", "error");
+                } else {
+                    showToast("HTTPS Required", "Automatic paste requires secure connection. Please use manual paste.", "error");
+                }
+                // Continue to fallback methods instead of throwing error
+                return;
             }
             
             let clipboardText = '';
