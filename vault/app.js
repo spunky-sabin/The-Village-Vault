@@ -985,21 +985,44 @@ function handleDataClear() {
 
 // Handle paste from clipboard and analyze directly
 async function handlePasteFromClipboard() {
+    // Detect mobile device
+    const isMobile = navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i);
+    const isSecureContext = location.protocol === 'https:' || location.hostname === 'localhost';
+    
     // Try modern clipboard API first (works on mobile with HTTPS)
     if (navigator.clipboard && navigator.clipboard.readText) {
         try {
+            // Check if we're in a secure context (required for clipboard API)
+            if (!isSecureContext) {
+                throw new Error('HTTPS required for clipboard access');
+            }
+            
             // Request clipboard permission explicitly for mobile
             if (navigator.permissions && navigator.permissions.query) {
                 const permission = await navigator.permissions.query({ name: 'clipboard-read' });
                 if (permission.state === 'denied') {
-                    throw new Error('Clipboard permission denied');
+                    throw new Error('Clipboard permission denied by user');
                 }
-            }
-
-            const clipboardText = await navigator.clipboard.readText();
-            if (!clipboardText.trim()) {
-                showToast("Error", "Clipboard is empty!", "error");
-                return;
+                if (permission.state === 'prompt') {
+                    showToast("Permission Required", "Please allow clipboard access when prompted", "error");
+                    const clipboardText = await navigator.clipboard.readText();
+                    if (!clipboardText.trim()) {
+                        showToast("Error", "Clipboard is empty!", "error");
+                        return;
+                    }
+                } else {
+                    const clipboardText = await navigator.clipboard.readText();
+                    if (!clipboardText.trim()) {
+                        showToast("Error", "Clipboard is empty!", "error");
+                        return;
+                    }
+                }
+            } else {
+                const clipboardText = await navigator.clipboard.readText();
+                if (!clipboardText.trim()) {
+                    showToast("Error", "Clipboard is empty!", "error");
+                    return;
+                }
             }
 
             const result = parseUserData(clipboardText);
@@ -1013,8 +1036,25 @@ async function handlePasteFromClipboard() {
             return;
         } catch (err) {
             console.error("Clipboard API error:", err);
+            
+            // Provide specific mobile error messages
+            if (isMobile) {
+                if (err.message.includes('HTTPS required')) {
+                    showToast("Mobile Error", "HTTPS required for automatic paste. Please use manual paste.", "error");
+                } else if (err.message.includes('permission denied')) {
+                    showToast("Mobile Error", "Clipboard access denied. Please use manual paste.", "error");
+                } else if (err.message.includes('NotAllowedError')) {
+                    showToast("Mobile Error", "Clipboard access not allowed. Please use manual paste.", "error");
+                } else {
+                    showToast("Mobile Error", "Clipboard not accessible. Please use manual paste.", "error");
+                }
+            } else {
+                showToast("Clipboard Error", "Unable to access clipboard. Please use manual paste.", "error");
+            }
             // Continue to fallback methods
         }
+    } else if (isMobile) {
+        showToast("Mobile Error", "Clipboard API not supported. Please use manual paste.", "error");
     }
 
     // Fallback 1: Try to trigger paste event on a hidden input
@@ -1025,11 +1065,6 @@ async function handlePasteFromClipboard() {
         hiddenInput.style.top = '-9999px';
         document.body.appendChild(hiddenInput);
         hiddenInput.focus();
-        
-        // Trigger paste event
-        const pasteEvent = new ClipboardEvent('paste', {
-            clipboardData: new DataTransfer()
-        });
         
         // Try to get clipboard data through execCommand (legacy method)
         const pasted = document.execCommand('paste');
@@ -1050,6 +1085,9 @@ async function handlePasteFromClipboard() {
         document.body.removeChild(hiddenInput);
     } catch (err) {
         console.error("Legacy paste error:", err);
+        if (isMobile) {
+            showToast("Mobile Error", "Legacy paste method failed. Please use manual paste.", "error");
+        }
     }
 
     // Fallback 2: Open modal with focus and mobile-specific instructions
@@ -1059,10 +1097,12 @@ async function handlePasteFromClipboard() {
         if (textarea) {
             textarea.focus();
             // On mobile, try to trigger the virtual keyboard
-            if (navigator.userAgent.match(/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) {
+            if (isMobile) {
                 textarea.click();
+                showToast("Mobile Instructions", "Tap and hold in the text area, then select 'Paste'", "error");
+            } else {
+                showToast("Instructions", "Please paste your data in the text area below", "error");
             }
-            showToast("Info", "Tap and hold in the text area, then select 'Paste'", "error");
         }
     }, 100);
 }
