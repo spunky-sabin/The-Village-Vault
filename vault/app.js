@@ -670,7 +670,7 @@ function createItemCard(item) {
         <div class="item-card-back">
             <button class="item-close-btn" aria-label="Close details" onclick="event.stopPropagation(); this.closest('.item-card').classList.remove('flipped');">×</button>
             <div class="item-details">
-                ${state.hasUserData && !item.owned ? '<div class="missing-indicator">Missing</div>' : ''}
+                ${state.hasUserData && !item.owned ? '<div class="missing-indicator">✕</div>' : ''}
                 <h3>${item.name}</h3>
                 
                 <div class="item-details-section">
@@ -895,7 +895,7 @@ function renderDetailView(item) {
                         </div>
                     </div>
                 </div>
-                ${state.hasUserData && !item.owned ? '<div class="missing-indicator">Missing</div>' : ''}
+                ${state.hasUserData && !item.owned ? '<div class="missing-indicator">✕</div>' : ''}
             </div>
         </div>
     `;
