@@ -1409,5 +1409,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         });
     }
 
+    // Hide loading screen after everything is loaded
+    const loadingScreen = document.getElementById("loading-screen");
+    if (loadingScreen) {
+        loadingScreen.style.display = "none";
+    }
+
 }
+
 );
