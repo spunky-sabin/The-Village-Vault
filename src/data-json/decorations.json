@@ -1054,5 +1054,13 @@
     "TID": "TID_DECO_SMOKY_STOVE",
     "name": "Smokey Stove",
     "image": "images/decorations/Smokey_Stove.webp"
+  },
+  {
+    "SN": 134,
+    "Name": "Eagle Monument",
+    "Code": "18000092",
+    "TID": "TID_DECO_COMMUNITY_EAGLEHEAD",
+    "name": "Eagle Monument",
+    "image": "images/decorations/Eagle_Monument.webp"
   }
 ]
