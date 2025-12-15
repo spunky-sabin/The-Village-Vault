@@ -1062,5 +1062,13 @@
     "TID": "TID_DECO_COMMUNITY_EAGLEHEAD",
     "name": "Eagle Monument",
     "image": "images/decorations/Eagle_Monument.webp"
+  },
+  {
+    "SN": 135,
+    "Name": "Brawny Battleaxe",
+    "Code": "18000199",
+    "TID": "TID_EVENT_DECO_FLEX_AXE",
+    "name": "Brawny Battleaxe",
+    "image": "images/decorations/Brawny_Battleaxe.webp"
   }
 ]
