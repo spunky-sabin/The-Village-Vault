@@ -9,7 +9,9 @@ const state = {
     selectedOwnership: [],
     selectedTypes: [],
     sortBy: 'newest',
-    visibleLimit: 50
+    visibleLimit: 50,
+    communityRarity: {},  // { itemCode: { percentage, count, label } }
+    hasCommunityData: false
 };
 
 // ============================================
@@ -624,6 +626,53 @@ function getTypeBadgeText(type, category) {
     return TYPE_LABELS[type] || category;
 }
 
+// Get community rarity badge HTML for an item
+function getCommunityRarityBadge(itemCode) {
+    if (!state.hasCommunityData || !state.communityRarity[itemCode]) {
+        return '';
+    }
+
+    const rarity = state.communityRarity[itemCode];
+    const labelClass = rarity.label.toLowerCase().replace(' ', '-');
+
+    return `
+        <div class="community-rarity-badge ${labelClass}" title="${rarity.percentage}% of collectors own this">
+            <span class="rarity-label">${rarity.label}</span>
+            <span class="rarity-percent">${rarity.percentage}%</span>
+        </div>
+    `;
+}
+
+// Get community stats HTML for detail view
+function getCommunityStatsSection(itemCode) {
+    if (!state.hasCommunityData || !state.communityRarity[itemCode]) {
+        return '';
+    }
+
+    const rarity = state.communityRarity[itemCode];
+    const labelClass = rarity.label.toLowerCase().replace(' ', '-');
+
+    return `
+        <div class="detail-community-stats">
+            <h3>Community Stats</h3>
+            <div class="community-stats-grid">
+                <div class="stat-item">
+                    <span class="stat-label">Ownership</span>
+                    <span class="stat-value">${rarity.percentage}%</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total Owners</span>
+                    <span class="stat-value">${rarity.count}</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Rarity Tier</span>
+                    <span class="stat-value rarity-tier ${labelClass}">${rarity.label}</span>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
 // Create a single item card DOM node (front + back) with routing hooks
 function createItemCard(item) {
     const container = document.createElement("div");
@@ -641,6 +690,8 @@ function createItemCard(item) {
         </div>
     ` : '';
 
+    const communityBadge = getCommunityRarityBadge(item.code);
+
     const frontHTML = `
         <div class="item-card-front">
             ${ownershipBadge}
@@ -652,6 +703,7 @@ function createItemCard(item) {
             </div>
             <div class="item-info">
                 <h3>${item.name}</h3>
+                ${communityBadge}
             </div>
         </div>
     `;
@@ -873,6 +925,8 @@ function renderDetailView(item) {
                         <p>${item.description || 'No description available.'}</p>
                     </div>
                     
+                    ${getCommunityStatsSection(item.code)}
+                    
                     <div class="detail-url-share">
                         <label>Share this item:</label>
                         <div class="url-copy-container">
@@ -979,7 +1033,10 @@ async function handleDataUpload() {
                 console.log("Database Sync Success:", data);
                 if (data.rarityData) {
                     console.log("Rarity Data received:", data.rarityData);
-                    // potentially store rarityData in state to display later
+                    state.communityRarity = data.rarityData;
+                    state.hasCommunityData = true;
+                    updateUI(); // Re-render to show community stats
+                    showToast("Community Stats", `Synced with ${data.totalUsers} collectors!`);
                 }
             } else {
                 console.warn("Database Sync Failed:", response.status);

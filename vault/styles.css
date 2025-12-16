@@ -2359,3 +2359,152 @@ svg {
         justify-content: center;
     }
 }
+
+/* ============================================
+   COMMUNITY RARITY BADGES
+   ============================================ */
+.community-rarity-badge {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.25rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.55rem;
+    font-weight: 600;
+    margin-top: 0.2rem;
+    background: hsla(0, 0%, 50%, 0.2);
+    border: 1px solid hsla(0, 0%, 50%, 0.3);
+}
+
+.community-rarity-badge .rarity-label {
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.community-rarity-badge .rarity-percent {
+    font-weight: 700;
+}
+
+/* Rarity tier colors */
+.community-rarity-badge.legendary {
+    background: hsla(280, 85%, 50%, 0.25);
+    border-color: hsl(280, 85%, 50%);
+    color: hsl(280, 85%, 70%);
+}
+
+.community-rarity-badge.ultra-rare {
+    background: hsla(320, 85%, 50%, 0.25);
+    border-color: hsl(320, 85%, 50%);
+    color: hsl(320, 85%, 70%);
+}
+
+.community-rarity-badge.very-rare {
+    background: hsla(200, 85%, 50%, 0.25);
+    border-color: hsl(200, 85%, 50%);
+    color: hsl(200, 85%, 70%);
+}
+
+.community-rarity-badge.rare {
+    background: hsla(142, 76%, 47%, 0.25);
+    border-color: var(--green);
+    color: hsl(142, 76%, 60%);
+}
+
+.community-rarity-badge.common {
+    background: hsla(0, 0%, 60%, 0.15);
+    border-color: hsla(0, 0%, 60%, 0.4);
+    color: hsl(0, 0%, 70%);
+}
+
+/* ============================================
+   COMMUNITY STATS SECTION (Detail View)
+   ============================================ */
+.detail-community-stats {
+    padding: 1rem;
+    background: hsla(280, 85%, 50%, 0.05);
+    border: 1px solid hsla(280, 85%, 50%, 0.2);
+    border-radius: 0.75rem;
+    margin-top: 1rem;
+}
+
+.detail-community-stats h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.detail-community-stats h3::before {
+    content: "📊";
+}
+
+.community-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .community-stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detail-community-stats .stat-item {
+    background: var(--secondary);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    text-align: center;
+}
+
+.detail-community-stats .stat-label {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.detail-community-stats .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+/* Rarity tier badge in detail view */
+.rarity-tier {
+    font-size: 1rem !important;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+}
+
+.rarity-tier.legendary {
+    background: hsla(280, 85%, 50%, 0.2);
+    color: hsl(280, 85%, 65%);
+}
+
+.rarity-tier.ultra-rare {
+    background: hsla(320, 85%, 50%, 0.2);
+    color: hsl(320, 85%, 65%);
+}
+
+.rarity-tier.very-rare {
+    background: hsla(200, 85%, 50%, 0.2);
+    color: hsl(200, 85%, 65%);
+}
+
+.rarity-tier.rare {
+    background: hsla(142, 76%, 47%, 0.2);
+    color: var(--green);
+}
+
+.rarity-tier.common {
+    background: hsla(0, 0%, 60%, 0.15);
+    color: hsl(0, 0%, 70%);
+}
