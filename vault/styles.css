@@ -1170,19 +1170,34 @@ svg {
 }
 
 /* Community Rarity Badge (Corner Style) */
+/* Community Rarity Badge (Corner Style) */
 .community-rarity-badge {
     position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
-    padding: 0.15rem 0.4rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 700;
+    bottom: 0.3rem;
+    right: 0.3rem;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-size: 0.65rem;
+    /* Tiny text */
+    font-weight: 800;
+    /* Extra bold for readability at small size */
+    line-height: 1;
     color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     z-index: 10;
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    letter-spacing: -0.02em;
+}
+
+/* Mobile adjustments to keep it tiny but visible */
+@media (max-width: 768px) {
+    .community-rarity-badge {
+        font-size: 0.6rem;
+        bottom: 0.25rem;
+        right: 0.25rem;
+        padding: 1px 3px;
+    }
 }
 
 .community-rarity-badge.legendary {
