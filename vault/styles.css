@@ -83,16 +83,7 @@ svg {
 }
 
 .header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 25%;
-    width: 24rem;
-    height: 24rem;
-    background: hsla(45, 100%, 60%, 0.2);
-    border-radius: 50%;
-    filter: blur(3rem);
-    opacity: 0.2;
+    display: none;
 }
 
 .header::after {
@@ -1098,48 +1089,16 @@ svg {
     border-color: var(--purple);
 }
 
-/* Gold Pass skins - golden gradient glow */
+/* Gold Pass skins */
 .item-card.rarity-gold {
     border-color: var(--gold);
     border-width: 2px;
-    box-shadow:
-        0 0 20px hsla(45, 100%, 60%, 0.4),
-        0 0 40px hsla(45, 100%, 60%, 0.2),
-        inset 0 0 20px hsla(45, 100%, 60%, 0.05);
-    background: linear-gradient(135deg,
-            hsla(45, 100%, 60%, 0.05) 0%,
-            transparent 50%,
-            hsla(48, 100%, 70%, 0.05) 100%);
 }
 
-.item-card.rarity-gold:hover:not(.flipped) {
-    box-shadow:
-        0 0 30px hsla(45, 100%, 60%, 0.6),
-        0 0 50px hsla(45, 100%, 60%, 0.3),
-        0 10px 30px -10px hsla(45, 100%, 60%, 0.5),
-        inset 0 0 30px hsla(45, 100%, 60%, 0.1);
-}
-
-/* Legendary skins - pinkish/magenta gradient glow */
+/* Legendary skins */
 .item-card.rarity-legendary {
     border-color: hsl(320, 85%, 60%);
     border-width: 2px;
-    box-shadow:
-        0 0 20px hsla(320, 85%, 60%, 0.4),
-        0 0 40px hsla(320, 85%, 60%, 0.2),
-        inset 0 0 20px hsla(320, 85%, 60%, 0.05);
-    background: linear-gradient(135deg,
-            hsla(320, 85%, 60%, 0.05) 0%,
-            transparent 50%,
-            hsla(280, 85%, 65%, 0.05) 100%);
-}
-
-.item-card.rarity-legendary:hover:not(.flipped) {
-    box-shadow:
-        0 0 30px hsla(320, 85%, 60%, 0.6),
-        0 0 50px hsla(320, 85%, 60%, 0.3),
-        0 10px 30px -10px hsla(320, 85%, 60%, 0.5),
-        inset 0 0 30px hsla(320, 85%, 60%, 0.1);
 }
 
 .item-card.grayscale .item-image {
@@ -2139,24 +2098,16 @@ svg {
     background: hsla(271, 81%, 56%, 0.05);
 }
 
-/* Gold Pass skins - golden glow for detail view */
+/* Gold Pass skins - detail view */
 .detail-image-container.rarity-gold {
     border-color: var(--gold);
-    background: hsla(45, 100%, 60%, 0.08);
-    box-shadow:
-        0 0 30px hsla(45, 100%, 60%, 0.3),
-        0 0 50px hsla(45, 100%, 60%, 0.15),
-        inset 0 0 30px hsla(45, 100%, 60%, 0.08);
+    background: hsla(45, 100%, 60%, 0.05);
 }
 
-/* Legendary skins - pinkish glow for detail view */
+/* Legendary skins - detail view */
 .detail-image-container.rarity-legendary {
     border-color: hsl(320, 85%, 60%);
-    background: hsla(320, 85%, 60%, 0.08);
-    box-shadow:
-        0 0 30px hsla(320, 85%, 60%, 0.3),
-        0 0 50px hsla(320, 85%, 60%, 0.15),
-        inset 0 0 30px hsla(320, 85%, 60%, 0.08);
+    background: hsla(320, 85%, 60%, 0.05);
 }
 
 .detail-status-badge {

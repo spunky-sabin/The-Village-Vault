@@ -1054,5 +1054,21 @@
     "TID": "TID_DECO_SMOKY_STOVE",
     "name": "Smokey Stove",
     "image": "images/decorations/Smokey_Stove.webp"
+  },
+  {
+    "SN": 134,
+    "Name": "Eagle Monument",
+    "Code": "18000192",
+    "TID": "TID_DECO_COMMUNITY_EAGLEHEAD",
+    "name": "Eagle Monument",
+    "image": "images/decorations/Eagle_Monument.webp"
+  },
+  {
+    "SN": 135,
+    "Name": "Brawny Battleaxe",
+    "Code": "18000199",
+    "TID": "TID_EVENT_DECO_FLEX_AXE",
+    "name": "Brawny Battleaxe",
+    "image": "images/decorations/Brawny_Battleaxe.webp"
   }
 ]
