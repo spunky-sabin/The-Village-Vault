@@ -6,10 +6,15 @@ export const config = {
 
 export default async function handler(request) {
   try {
-    // Create Users Table
+    // Drop existing tables to recreate with correct types
+    // (Only needed first time after schema change)
+    await sql`DROP TABLE IF EXISTS ownership`;
+    await sql`DROP TABLE IF EXISTS users`;
+
+    // Create Users Table with VARCHAR for flexible client IDs
     await sql`
       CREATE TABLE IF NOT EXISTS users (
-        client_id UUID PRIMARY KEY,
+        client_id VARCHAR(64) PRIMARY KEY,
         last_updated TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
       )
     `;
@@ -17,7 +22,7 @@ export default async function handler(request) {
     // Create Ownership Table
     await sql`
       CREATE TABLE IF NOT EXISTS ownership (
-        client_id UUID REFERENCES users(client_id) ON DELETE CASCADE,
+        client_id VARCHAR(64) REFERENCES users(client_id) ON DELETE CASCADE,
         item_code VARCHAR(255) NOT NULL,
         PRIMARY KEY (client_id, item_code)
       )
