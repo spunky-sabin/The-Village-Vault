@@ -1163,7 +1163,14 @@ async function handleDataUpload() {
 
             console.log("Syncing data for client:", clientId);
 
-            const ownedArray = Array.from(state.userOwnedCodes);
+            // Collect all valid known codes from our master data
+            const validCodes = new Set();
+            Object.values(state.allItems).forEach(list => {
+                list.forEach(item => validCodes.add(String(item.code)));
+            });
+
+            // Filter user codes to ONLY include those that match our app's items
+            const ownedArray = Array.from(state.userOwnedCodes).filter(code => validCodes.has(code));
 
             // Send to API (fire and forget or wait, here we wait to log result)
             const response = await fetch('/api/analyze', {
