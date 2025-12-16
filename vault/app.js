@@ -843,7 +843,18 @@ function updateProgressTracker() {
     const total = categoryItems.length;
     const pct = total > 0 ? Math.round((owned / total) * 100) : 0;
 
-    el.style.display = "block";
+    if (el) {
+        el.style.display = "block";
+        el.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                <span style="font-size: 0.9rem; font-weight: 600;">${owned}/${total} items collected</span>
+                <span style="font-size: 1.1rem; font-weight: 700; color: var(--gold);">${pct}%</span>
+            </div>
+            <div class="progress-bar" style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
+                <div class="progress-fill" style="width: ${pct}%; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 0.3s ease;"></div>
+            </div>
+        `;
+    }
     el.innerHTML = `
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
             <span style="font-size: 0.9rem; font-weight: 600;">${owned}/${total} items collected</span>
