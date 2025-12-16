@@ -1071,10 +1071,16 @@ function openAnalyticsModal() {
         communitySection.style.display = 'block';
 
         // Count items by rarity tier
+        // Count items by rarity tier (ONLY for items the user owns)
         const rarityCounts = { 'Legendary': 0, 'Ultra Rare': 0, 'Very Rare': 0, 'Rare': 0, 'Common': 0 };
-        Object.values(state.communityRarity).forEach(item => {
-            if (rarityCounts.hasOwnProperty(item.label)) {
-                rarityCounts[item.label]++;
+
+        // Match community data with user owned codes
+        Object.keys(state.communityRarity).forEach(itemCode => {
+            if (state.userOwnedCodes.has(itemCode)) {
+                const itemData = state.communityRarity[itemCode];
+                if (rarityCounts.hasOwnProperty(itemData.label)) {
+                    rarityCounts[itemData.label]++;
+                }
             }
         });
 
