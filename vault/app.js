@@ -11,7 +11,8 @@ const state = {
     sortBy: 'newest',
     visibleLimit: 50,
     communityRarity: {},  // { itemCode: { percentage, count, label } }
-    hasCommunityData: false
+    hasCommunityData: false,
+    totalCollectors: 0
 };
 
 // ============================================
@@ -819,6 +820,10 @@ function renderItems() {
 // Update the per-category progress bar above the grid
 function updateProgressTracker() {
     const el = document.getElementById("progress-tracker");
+
+    // Skip if element doesn't exist (replaced by analytics modal)
+    if (!el) return;
+
     if (!state.hasUserData) {
         el.style.display = "none";
         return;
@@ -976,6 +981,124 @@ function copyShareURL() {
     }
 }
 
+// Open and populate the analytics modal
+function openAnalyticsModal() {
+    // Calculate global stats
+    const allItemsList = Object.values(state.allItems).flat();
+    const totalItems = allItemsList.length;
+    const ownedItems = allItemsList.filter(item => state.userOwnedCodes.has(item.code)).length;
+    const percentage = totalItems > 0 ? Math.round((ownedItems / totalItems) * 100) : 0;
+
+    // Calculate category stats
+    const categories = {
+        'heroskin': { label: 'Hero Skins', total: 0, owned: 0 },
+        'scenery': { label: 'Sceneries', total: 0, owned: 0 },
+        'decoration': { label: 'Decorations', total: 0, owned: 0 },
+        'obstacle': { label: 'Obstacles', total: 0, owned: 0 },
+        'clan': { label: 'Clan House', total: 0, owned: 0 }
+    };
+
+    allItemsList.forEach(item => {
+        if (categories[item.type]) {
+            categories[item.type].total++;
+            if (state.userOwnedCodes.has(item.code)) {
+                categories[item.type].owned++;
+            }
+        }
+    });
+
+    // Generate Category Breakdown HTML
+    let categoryHTML = '<div class="category-breakdown" style="margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem;">';
+    Object.values(categories).forEach(cat => {
+        if (cat.total > 0) {
+            const catPct = Math.round((cat.owned / cat.total) * 100);
+            categoryHTML += `
+                <div class="rarity-row" style="background: var(--card); border-left: 3px solid var(--primary);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="rarity-name">${cat.label}</span>
+                    </div>
+                    <div style="text-align: right;">
+                        <div class="rarity-count" style="color: var(--foreground);">${cat.owned}/${cat.total}</div>
+                        <div style="font-size: 0.75rem; color: var(--muted-foreground);">${catPct}%</div>
+                    </div>
+                </div>
+            `;
+        }
+    });
+    categoryHTML += '</div>';
+
+    // Populate collection stats
+    const collectionStats = document.getElementById('collection-stats');
+    collectionStats.innerHTML = `
+        <div class="stat-card">
+            <div class="stat-number">${ownedItems}</div>
+            <div class="stat-label">Owned</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">${totalItems - ownedItems}</div>
+            <div class="stat-label">Missing</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">${totalItems}</div>
+            <div class="stat-label">Total Items</div>
+        </div>
+        <div class="stat-card highlight">
+            <div class="stat-number">${percentage}%</div>
+            <div class="stat-label">Complete</div>
+        </div>
+        <div style="grid-column: 1 / -1;">
+            <h4 style="margin: 0.5rem 0; color: var(--muted-foreground); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">Category Breakdown</h4>
+            ${categoryHTML}
+        </div>
+    `;
+
+    // Populate community stats if available
+    const communitySection = document.getElementById('community-section');
+    const rarityBreakdown = document.getElementById('rarity-breakdown');
+
+    if (state.hasCommunityData && Object.keys(state.communityRarity).length > 0) {
+        communitySection.style.display = 'block';
+
+        // Count items by rarity tier
+        const rarityCounts = { 'Legendary': 0, 'Ultra Rare': 0, 'Very Rare': 0, 'Rare': 0, 'Common': 0 };
+        Object.values(state.communityRarity).forEach(item => {
+            if (rarityCounts.hasOwnProperty(item.label)) {
+                rarityCounts[item.label]++;
+            }
+        });
+
+        rarityBreakdown.innerHTML = `
+            <div class="rarity-row legendary">
+                <span class="rarity-name">🟣 Legendary (&lt;1%)</span>
+                <span class="rarity-count">${rarityCounts['Legendary']} items</span>
+            </div>
+            <div class="rarity-row ultra-rare">
+                <span class="rarity-name">🩷 Ultra Rare (&lt;5%)</span>
+                <span class="rarity-count">${rarityCounts['Ultra Rare']} items</span>
+            </div>
+            <div class="rarity-row very-rare">
+                <span class="rarity-name">🔵 Very Rare (&lt;15%)</span>
+                <span class="rarity-count">${rarityCounts['Very Rare']} items</span>
+            </div>
+            <div class="rarity-row rare">
+                <span class="rarity-name">🟢 Rare (&lt;30%)</span>
+                <span class="rarity-count">${rarityCounts['Rare']} items</span>
+            </div>
+            <div class="rarity-row common">
+                <span class="rarity-name">⚪ Common (≥30%)</span>
+                <span class="rarity-count">${rarityCounts['Common']} items</span>
+            </div>
+        `;
+
+        // Update collector count
+        document.getElementById('total-collectors').textContent = state.totalCollectors || '?';
+    } else {
+        communitySection.style.display = 'none';
+    }
+
+    openModal('analytics-modal');
+}
+
 
 // Re-render grid, progress, and hero filter visibility after any state change
 function updateUI() {
@@ -991,6 +1114,12 @@ function updateUI() {
     }
     if (mobileHeroFilterGroup) {
         mobileHeroFilterGroup.style.display = isHeroWardrobe ? 'block' : 'none';
+    }
+
+    // Show analytics button if user has data
+    const analyticsBtn = document.getElementById('analytics-btn');
+    if (analyticsBtn) {
+        analyticsBtn.style.display = state.hasUserData ? 'inline-flex' : 'none';
     }
 }
 
@@ -1035,6 +1164,7 @@ async function handleDataUpload() {
                     console.log("Rarity Data received:", data.rarityData);
                     state.communityRarity = data.rarityData;
                     state.hasCommunityData = true;
+                    state.totalCollectors = data.totalUsers || 0;
                     updateUI(); // Re-render to show community stats
                     showToast("Community Stats", `Synced with ${data.totalUsers} collectors!`);
                 }
@@ -1410,6 +1540,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const analyzeBtn = document.getElementById("analyze-btn");
     if (analyzeBtn) {
         analyzeBtn.addEventListener("click", handleDataUpload);
+    }
+
+    const analyticsBtn = document.getElementById("analytics-btn");
+    if (analyticsBtn) {
+        analyticsBtn.addEventListener("click", openAnalyticsModal);
     }
 
     const clearDataBtn = document.getElementById("clear-data-btn");

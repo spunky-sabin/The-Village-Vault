@@ -220,18 +220,16 @@
                             <p>Upload your collection data to start tracking your treasures and unlock special features.
                             </p>
                         </div>
-                        <div id="global-progress" class="progress-tracker global"
-                            style="display:none; margin-bottom: 1rem;">
-                            <strong>Overall Collection: <span id="global-owned">0</span>/<span
-                                    id="global-total">0</span> (<span id="global-pct">0</span>%)</strong>
-                            <div class="progress-bar"
-                                style="height: 8px; background: var(--border); border-radius: 4px; overflow: hidden;">
-                                <div class="progress-fill"
-                                    style="width: 0%; height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); transition: width 0.3s ease;">
-                                </div>
-                            </div>
-                        </div>
-                        <div id="progress-tracker" class="progress-tracker" style="display: none;"></div>
+                        <button id="analytics-btn" class="btn btn-analytics" style="display: none;">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 3v18h18"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg>
+                            <span>View Analytics</span>
+                        </button>
                     </div>
 
                     <!-- Mobile Filter Button -->
@@ -433,6 +431,47 @@
                 <div class="modal-actions">
                     <button class="btn btn-secondary modal-cancel-btn" style="flex: 1;">Cancel</button>
                     <button id="apply-filters-btn" class="btn btn-primary" style="flex: 1;">Apply</button>
+                </div>
+            </div>
+        </div>
+        <!-- Analytics Modal -->
+        <div id="analytics-modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content analytics-modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">
+                        <svg class="modal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v18h18"></path>
+                            <path d="M18 17V9"></path>
+                            <path d="M13 17V5"></path>
+                            <path d="M8 17v-3"></path>
+                        </svg>
+                        Collection Analytics
+                    </h2>
+                    <button class="modal-close-btn">&times;</button>
+                </div>
+
+                <div id="analytics-content" class="analytics-content">
+                    <!-- Collection Progress Section -->
+                    <div class="analytics-section">
+                        <h3>Your Collection</h3>
+                        <div class="analytics-stats-grid" id="collection-stats">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Community Stats Section -->
+                    <div class="analytics-section" id="community-section" style="display: none;">
+                        <h3>Community Rarity</h3>
+                        <p class="analytics-subtitle">Based on <span id="total-collectors">0</span> collectors</p>
+                        <div class="rarity-breakdown" id="rarity-breakdown">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-actions">
+                    <button class="btn btn-secondary modal-close-btn" style="flex: 1;">Close</button>
                 </div>
             </div>
         </div>

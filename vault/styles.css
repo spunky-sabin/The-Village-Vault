@@ -1022,13 +1022,34 @@ svg {
     box-shadow: 0 10px 30px -10px hsla(45, 100%, 60%, 0.4);
 }
 
+/* Strictly hide the opposing face to prevent bleed-through/ghosting */
+.item-card.flipped .item-card-front {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.item-card:not(.flipped) .item-card-back {
+    visibility: hidden;
+    opacity: 0;
+}
+
 /* Front and back faces */
+/* Front and back faces - fix backface visibility artifacts */
 .item-card-front,
 .item-card-back {
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* Safari fix */
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    transform: translateZ(0);
+    /* Force hardware acceleration */
+}
+
+.item-card.flipped .item-card-back {
+    z-index: 5;
+    /* Ensure back is on top when flipped */
 }
 
 .item-card-front {
@@ -1071,9 +1092,11 @@ svg {
 }
 
 /* Adjust item details to account for the missing indicator */
+/* Adjust item details to account for the missing indicator and close button */
 .item-card-back .item-details {
     position: relative;
-    padding: 0.5rem 1rem 2rem; /* Extra bottom padding for the indicator */
+    padding: 3rem 1rem 2rem;
+    /* Extra bottom padding for the indicator */
 }
 
 /* Rarity border colors */
@@ -1109,8 +1132,10 @@ svg {
 /* Status badges */
 .item-status-badge {
     position: absolute;
-    top: 0.3rem;  /* Position from top */
-    right: 0.3rem; /* Position from right */
+    top: 0.3rem;
+    /* Position from top */
+    right: 0.3rem;
+    /* Position from right */
     z-index: 10;
     display: flex;
     align-items: center;
@@ -2507,4 +2532,138 @@ svg {
 .rarity-tier.common {
     background: hsla(0, 0%, 60%, 0.15);
     color: hsl(0, 0%, 70%);
+}
+
+/* ============================================
+   ANALYTICS BUTTON & MODAL
+   ============================================ */
+.btn-analytics {
+    background: linear-gradient(135deg, hsl(280, 70%, 50%), hsl(320, 70%, 50%));
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-analytics:hover {
+    box-shadow: 0 4px 20px hsla(280, 70%, 50%, 0.4);
+    transform: translateY(-2px);
+}
+
+.analytics-modal-content {
+    max-width: 500px;
+    width: 100%;
+}
+
+.analytics-content {
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.analytics-section {
+    margin-bottom: 1.5rem;
+}
+
+.analytics-section h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--foreground);
+    margin-bottom: 0.75rem;
+}
+
+.analytics-subtitle {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    margin-bottom: 0.75rem;
+}
+
+.analytics-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+}
+
+.stat-card {
+    background: var(--secondary);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.stat-card.highlight {
+    background: linear-gradient(135deg, hsla(45, 100%, 60%, 0.15), hsla(45, 100%, 60%, 0.08));
+    border-color: var(--gold);
+}
+
+.stat-card .stat-number {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.stat-card.highlight .stat-number {
+    color: var(--gold);
+}
+
+.stat-card .stat-label {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 0.25rem;
+}
+
+/* Rarity breakdown rows */
+.rarity-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.rarity-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    background: var(--secondary);
+    border: 1px solid var(--border);
+}
+
+.rarity-row.legendary {
+    border-left: 3px solid hsl(280, 85%, 50%);
+    background: hsla(280, 85%, 50%, 0.08);
+}
+
+.rarity-row.ultra-rare {
+    border-left: 3px solid hsl(320, 85%, 50%);
+    background: hsla(320, 85%, 50%, 0.08);
+}
+
+.rarity-row.very-rare {
+    border-left: 3px solid hsl(200, 85%, 50%);
+    background: hsla(200, 85%, 50%, 0.08);
+}
+
+.rarity-row.rare {
+    border-left: 3px solid var(--green);
+    background: hsla(142, 76%, 47%, 0.08);
+}
+
+.rarity-row.common {
+    border-left: 3px solid hsl(0, 0%, 50%);
+    background: hsla(0, 0%, 50%, 0.08);
+}
+
+.rarity-name {
+    font-weight: 500;
+    color: var(--foreground);
+}
+
+.rarity-count {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+    font-weight: 600;
 }
