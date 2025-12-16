@@ -1,4 +1,4 @@
-import { sql } from '@vercel/postgres';
+import { Client } from '@vercel/postgres';
 
 export const config = {
     runtime: 'edge',
@@ -12,7 +12,13 @@ export default async function handler(request) {
         });
     }
 
+    const client = new Client({
+        connectionString: process.env.POSTGRES_URL || process.env.DATABASE_URL,
+    });
+
     try {
+        await client.connect();
+
         const { clientId, ownedCodes } = await request.json();
 
         if (!clientId || !Array.isArray(ownedCodes)) {
@@ -23,11 +29,11 @@ export default async function handler(request) {
         }
 
         // 1. Upsert User (update last_updated)
-        await sql`
-      INSERT INTO users (client_id, last_updated)
-      VALUES (${clientId}, NOW())
-      ON CONFLICT (client_id) DO UPDATE SET last_updated = NOW();
-    `;
+        await client.query(`
+            INSERT INTO users (client_id, last_updated)
+            VALUES ($1, NOW())
+            ON CONFLICT (client_id) DO UPDATE SET last_updated = NOW()
+        `, [clientId]);
 
         // 2. Update Ownership
         // First, delete existing entries for this user to handle items they might have removed (less likely in CoC, but good for sync)
@@ -40,7 +46,7 @@ export default async function handler(request) {
         // This ensures if they un-owned something (unlikely) it's reflected, 
         // but more importantly avoids "already exists" errors without checking every single one.
 
-        await sql`DELETE FROM ownership WHERE client_id = ${clientId};`;
+        await client.query('DELETE FROM ownership WHERE client_id = $1', [clientId]);
 
         if (ownedCodes.length > 0) {
             // Bulk insert is tricky with tagged templates in generic generic libraries, 
@@ -68,32 +74,32 @@ export default async function handler(request) {
                 });
 
                 const query = `
-          INSERT INTO ownership (client_id, item_code) 
-          VALUES ${placeholders.join(', ')}
-          ON CONFLICT DO NOTHING
-        `;
+                    INSERT INTO ownership (client_id, item_code) 
+                    VALUES ${placeholders.join(', ')}
+                    ON CONFLICT DO NOTHING
+                `;
 
                 // executing raw query with array of values
-                await sql.query(query, values);
+                await client.query(query, values);
             }
         }
 
         // 3. Calculate Rarity Stats
         // We want the % of users who own each item.
         // Total users count
-        const { rows: userCountRows } = await sql`SELECT COUNT(*) as count FROM users;`;
-        const totalUsers = parseInt(userCountRows[0].count) || 1;
+        const userCountResult = await client.query('SELECT COUNT(*) as count FROM users');
+        const totalUsers = parseInt(userCountResult.rows[0].count) || 1;
 
         // Item ownership counts
         // We only need counts for items that exist in our database.
-        const { rows: distinctItems } = await sql`
-      SELECT item_code, COUNT(client_id) as owned_count
-      FROM ownership
-      GROUP BY item_code;
-    `;
+        const distinctItemsResult = await client.query(`
+            SELECT item_code, COUNT(client_id) as owned_count
+            FROM ownership
+            GROUP BY item_code
+        `);
 
         const rarityData = {};
-        distinctItems.forEach(row => {
+        distinctItemsResult.rows.forEach(row => {
             const percentage = (parseInt(row.owned_count) / totalUsers) * 100;
             let label = 'Common';
             if (percentage < 1) label = 'Legendary';
@@ -123,5 +129,7 @@ export default async function handler(request) {
             status: 500,
             headers: { 'Content-Type': 'application/json' },
         });
+    } finally {
+        await client.end();
     }
 }
