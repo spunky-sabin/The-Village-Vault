@@ -6,27 +6,17 @@ export const config = {
 
 export default async function handler(request) {
   try {
-    // Create Users Table with VARCHAR for flexible client IDs
+    // Create Users Table with JSONB for owned items
     await sql`
       CREATE TABLE IF NOT EXISTS users (
         client_id VARCHAR(64) PRIMARY KEY,
+        owned_items JSONB DEFAULT '[]'::jsonb,
         last_updated TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
       )
     `;
 
-    // Create Ownership Table
-    await sql`
-      CREATE TABLE IF NOT EXISTS ownership (
-        client_id VARCHAR(64) REFERENCES users(client_id) ON DELETE CASCADE,
-        item_code VARCHAR(255) NOT NULL,
-        PRIMARY KEY (client_id, item_code)
-      )
-    `;
-
-    // Create Index for faster stats
-    await sql`
-      CREATE INDEX IF NOT EXISTS idx_ownership_item_code ON ownership(item_code)
-    `;
+    // Drop old normalized table if it exists (Migration)
+    await sql`DROP TABLE IF EXISTS ownership`;
 
     return new Response(JSON.stringify({ message: 'Database tables created successfully' }), {
       status: 200,

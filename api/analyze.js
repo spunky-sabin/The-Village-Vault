@@ -22,45 +22,31 @@ export default async function handler(request) {
             });
         }
 
-        // 1. Upsert User
-        await sql`
-      INSERT INTO users (client_id, last_updated)
-      VALUES (${clientId}, NOW())
-      ON CONFLICT (client_id) DO UPDATE SET last_updated = NOW()
-    `;
-
-        // 2. Update Ownership
-        // Delete old ownership for this user
-        await sql`DELETE FROM ownership WHERE client_id = ${clientId}`;
-
-        // Insert new ownership in chunks with parallel execution
+        // 1. Update User Data (Single Row)
+        // Store the entire array of owned codes as a JSONB column
+        // This replaces the old "ownership" table logic
         const uniqueCodes = [...new Set(ownedCodes)];
-        const chunkSize = 100; // Larger chunks for fewer round-trips
+        const jsonPayload = JSON.stringify(uniqueCodes);
 
-        for (let i = 0; i < uniqueCodes.length; i += chunkSize) {
-            const chunk = uniqueCodes.slice(i, i + chunkSize);
+        await sql`
+            INSERT INTO users (client_id, owned_items, last_updated)
+            VALUES (${clientId}, ${jsonPayload}::jsonb, NOW())
+            ON CONFLICT (client_id) 
+            DO UPDATE SET 
+                owned_items = ${jsonPayload}::jsonb,
+                last_updated = NOW()
+        `;
 
-            // Run all inserts in this chunk in parallel
-            await Promise.all(
-                chunk.map(code =>
-                    sql`
-                        INSERT INTO ownership (client_id, item_code)
-                        VALUES (${clientId}, ${code})
-                        ON CONFLICT DO NOTHING
-                    `
-                )
-            );
-        }
-
-        // 3. Calculate rarity
+        // 2. Calculate Rarity Stats
+        // "Explode" the JSON arrays from all users to count global item ownership
         const totalUsersResult = await sql`SELECT COUNT(*) AS count FROM users`;
         const totalUsers = parseInt(totalUsersResult.rows[0].count) || 1;
 
         const ownershipResult = await sql`
-      SELECT item_code, COUNT(client_id) AS owned_count
-      FROM ownership
-      GROUP BY item_code
-    `;
+            SELECT item_code, COUNT(*) as owned_count
+            FROM users, jsonb_array_elements_text(owned_items) as item_code
+            GROUP BY item_code
+        `;
 
         const rarityData = {};
         ownershipResult.rows.forEach(row => {
