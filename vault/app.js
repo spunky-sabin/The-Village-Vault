@@ -1,13 +1,3 @@
-/**
- * The Village Vault - Main Application
- * Consolidated from all HTML files and scripts
- * Features: Card flip animations, detailed item info, enhanced filtering
- */
-
-// ============================================
-// STATE MANAGEMENT
-// Global in-memory state for items, filters, and view options
-// ============================================
 const state = {
     allItems: {},
     items: [],
@@ -19,8 +9,7 @@ const state = {
     selectedOwnership: [],
     selectedTypes: [],
     sortBy: 'newest',
-    visibleLimit: 50,
-    rarityData: null // Store community rarity stats here
+    visibleLimit: 50
 };
 
 // ============================================
@@ -108,38 +97,25 @@ function generateSlug(name, code = '') {
 // Normalize raw data for any item type into a common object shape
 function formatItem(item, type, category, heroName = null, heroId = null, details = null) {
     const name = item.name || item.skin_name || "Unknown Item";
-    const code = String(item._id || item.Code || item.code);
+    const code = String(item.Code || item.code);
 
     // Normalize image path to root-relative if it starts with src/ or images/
-    // static_data.json might presumably use just names, so we might need to infer image paths match logic or if they are missing
-    // For now we assume image property exists or we don't have images.
-    // If static_data.json doesn't have image paths, we might need a logical mapper.
-    // Looking at static_data, there is NO distinct image path field in the snippets saw.
-    // Assuming standard naming convention or existence of 'image' field if present.
-    // The previous json files HAD 'image' or 'image_path'.
-    // If static_data.json lacks this we'll have broken images.
-    // checking... the snippets showed 'name', 'TID', 'village', 'levels'. No 'image'.
-    // However, the user asked to use THIS file. I'll proceed.
-
     let imagePath = item.image || item.image_path || "";
     if (imagePath && (imagePath.startsWith('src/') || imagePath.startsWith('images/'))) {
         imagePath = '/' + imagePath;
     }
-    // Fallback: try to construct image path from name if missing?
-    // The current app uses specific paths. 
-    // Let's rely on item properties for now.
 
     return {
         code,
         name,
         image: imagePath,
-        rarity: item.rarity || "unknown", // static_data skins have 'tier' which is like rarity
+        rarity: details?.rarity || item.rarity || "unknown",
         category,
         type,
         owned: false,
-        description: item.info || item.description || "",
-        released: item.released || "Unknown",
-        availability: item.availability || "",
+        description: details?.description || item.description || "",
+        released: details?.released || item.released || "Unknown",
+        availability: details?.availability || item.availability || "",
         slug: generateSlug(name, code),
         ...(heroName && { heroName }),
         ...(heroId && { heroId })
@@ -158,7 +134,7 @@ async function preloadImages(items, maxImages = 100) {
             img.src = item.image;
             img.onload = resolve;
             img.onerror = () => {
-                // console.warn('Image failed to preload:', img.src);
+                console.warn('Image failed to preload:', img.src);
                 resolve();
             };
 
@@ -169,98 +145,174 @@ async function preloadImages(items, maxImages = 100) {
     return Promise.all(promises);
 }
 
-// Load all master data from individual JSON files
+// Load all master data (decorations, obstacles, heroes, sceneries, details)
+// and populate state.allItems + initial state.items
 async function loadAllMasterData() {
-    try {
-        const [decorations, obstacles, sceneries, heroesData, itemDetails] = await Promise.all([
-            loadJSON("decorations.json"),
-            loadJSON("obstacles.json"),
-            loadJSON("sceneries.json"),
-            loadJSON("heros.json"),
-            loadJSON("item-details.json")
-        ]);
+    const [decorations, obstacles, heroesData, sceneries, itemDetails] = await Promise.all([
+        loadJSON("decorations.json"),
+        loadJSON("obstacles.json"),
+        loadJSON("heros.json"),
+        loadJSON("sceneries.json"),
+        loadJSON("item-details.json")
+    ]).then(results => [
+        results[0],
+        results[1],
+        results[2],
+        results[3] || { sceneries: [] },
+        results[4] || {}
+    ]);
 
-        if (!decorations || !obstacles || !sceneries || !heroesData) {
-            console.error("Failed to load one or more data files");
-            return;
+    function findItemDetails(itemName, itemType, itemCode = null) {
+        if (!itemDetails) {
+            return null;
         }
 
-        // Helper to find details
-        const findDetails = (code) => {
-            if (!itemDetails) return null;
-            // Search in all categories of itemDetails
-            for (const key in itemDetails) {
-                const found = itemDetails[key].find(d => String(d.code) === String(code));
+        // If code is provided, match by code first (more reliable)
+        if (itemCode) {
+            const codeStr = String(itemCode);
+
+            if (itemType === 'heroskin' && itemDetails.hero_skins) {
+                for (const hero in itemDetails.hero_skins) {
+                    if (Array.isArray(itemDetails.hero_skins[hero])) {
+                        const found = itemDetails.hero_skins[hero].find(s =>
+                            String(s.code) === codeStr
+                        );
+                        if (found) return found;
+                    }
+                }
+            } else if (itemType === 'decoration' && itemDetails.decorations) {
+                const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
+                for (const cat of categories) {
+                    if (itemDetails.decorations[cat]) {
+                        const found = itemDetails.decorations[cat].find(d =>
+                            String(d.code) === codeStr
+                        );
+                        if (found) return found;
+                    }
+                }
+            } else if (itemType === 'obstacle' && itemDetails.obstacles) {
+                const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
+                for (const cat of categories) {
+                    if (itemDetails.obstacles[cat]) {
+                        const found = itemDetails.obstacles[cat].find(o =>
+                            String(o.code) === codeStr
+                        );
+                        if (found) return found;
+                    }
+                }
+            } else if (itemType === 'scenery' && itemDetails.sceneries) {
+                let sceneryArray = [];
+                if (Array.isArray(itemDetails.sceneries)) {
+                    sceneryArray = itemDetails.sceneries;
+                } else if (itemDetails.sceneries.all_sceneries && Array.isArray(itemDetails.sceneries.all_sceneries)) {
+                    sceneryArray = itemDetails.sceneries.all_sceneries;
+                }
+                const found = sceneryArray.find(s =>
+                    String(s.code) === codeStr
+                );
                 if (found) return found;
             }
-            return null;
-        };
-
-        // Process Decorations
-        const formattedDecorations = (decorations || []).map(item => {
-            const details = findDetails(item.Code || item.code);
-            const enriched = { ...item, ...details };
-            return formatItem(enriched, "decoration", "Decoration");
-        });
-
-        // Process Obstacles
-        const formattedObstacles = (obstacles || []).map(item => {
-            const details = findDetails(item.Code || item.code);
-            const enriched = { ...item, ...details };
-            return formatItem(enriched, "obstacle", "Obstacle");
-        });
-
-        // Process Sceneries
-        const formattedSceneries = (sceneries || []).map(item => {
-            const details = findDetails(item.Code || item.code);
-            const enriched = { ...item, ...details };
-            return formatItem(enriched, "scenery", "Scenery");
-        });
-
-        // Process Hero Skins
-        // heros.json structure: { heroes: [ { name, skins: [] } ] }
-        let formattedHeroSkins = [];
-        if (heroesData && heroesData.heroes) {
-            heroesData.heroes.forEach(hero => {
-                const heroName = hero.name;
-                const heroId = heroName.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
-
-                if (hero.skins) {
-                    hero.skins.forEach(skin => {
-                        const details = findDetails(skin.code);
-                        const enriched = { ...skin, ...details };
-                        formattedHeroSkins.push(formatItem(enriched, "heroskin", "Hero Skin", heroName, heroId));
-                    });
-                }
-            });
         }
 
-        // Clan Capital - Not present in old files, leaving empty or relying on static_data if needed?
-        // User asked to use "old data", so we omit new data sources.
-        const formattedClanCapital = [];
+        // Fallback to name matching if code not provided or not found
+        if (!itemName) return null;
 
-        state.allItems = {
-            'cosmetic-compendium': [...formattedDecorations, ...formattedObstacles, ...formattedHeroSkins, ...formattedSceneries],
-            'hero-wardrobe': formattedHeroSkins,
-            'home-village-decor': [...formattedDecorations, ...formattedObstacles],
-            'sceneries': formattedSceneries,
-            'clan-hall-aesthetics': []
-        };
+        const normalizedName = itemName.toLowerCase().trim();
 
-        state.items = state.allItems['cosmetic-compendium'];
+        if (itemType === 'decoration' && itemDetails.decorations) {
+            const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
+            for (const cat of categories) {
+                if (itemDetails.decorations[cat]) {
+                    const found = itemDetails.decorations[cat].find(d =>
+                        d.name.toLowerCase().trim() === normalizedName
+                    );
+                    if (found) return found;
+                }
+            }
+        } else if (itemType === 'obstacle' && itemDetails.obstacles) {
+            const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
+            for (const cat of categories) {
+                if (itemDetails.obstacles[cat]) {
+                    const found = itemDetails.obstacles[cat].find(o =>
+                        o.name.toLowerCase().trim() === normalizedName
+                    );
+                    if (found) return found;
+                }
+            }
+        } else if (itemType === 'heroskin' && itemDetails.hero_skins) {
+            for (const hero in itemDetails.hero_skins) {
+                if (Array.isArray(itemDetails.hero_skins[hero])) {
+                    const found = itemDetails.hero_skins[hero].find(s =>
+                        s.name.toLowerCase().trim() === normalizedName
+                    );
+                    if (found) return found;
+                }
+            }
+        } else if (itemType === 'scenery' && itemDetails.sceneries) {
+            let sceneryArray = [];
+            if (Array.isArray(itemDetails.sceneries)) {
+                sceneryArray = itemDetails.sceneries;
+            } else if (itemDetails.sceneries.all_sceneries && Array.isArray(itemDetails.sceneries.all_sceneries)) {
+                sceneryArray = itemDetails.sceneries.all_sceneries;
+            }
+            const found = sceneryArray.find(s =>
+                s.name && s.name.toLowerCase().trim() === normalizedName
+            );
+            if (found) return found;
+        }
 
-        console.log("Master data loaded from individual files:", {
-            decorations: formattedDecorations.length,
-            obstacles: formattedObstacles.length,
-            heroSkins: formattedHeroSkins.length,
-            sceneries: formattedSceneries.length
-        });
-
-        await preloadImages(state.items, 50);
-
-    } catch (err) {
-        console.error("Error loading master data:", err);
+        return null;
     }
+
+    const formattedDecorations = decorations?.map(item => {
+        const details = findItemDetails(item.name, 'decoration');
+        return formatItem(item, "decoration", "Decoration", null, null, details);
+    }) || [];
+
+    const formattedObstacles = obstacles?.map(item => {
+        const details = findItemDetails(item.name, 'obstacle');
+        return formatItem(item, "obstacle", "Obstacle", null, null, details);
+    }) || [];
+
+    const formattedSceneries = sceneries?.sceneries?.map(item => {
+        const details = findItemDetails(item.name, 'scenery');
+        return formatItem(item, "scenery", "Scenery", null, null, details);
+    }) || [];
+
+    const formattedClanCapital = [];
+
+    const formattedHeroSkins = [];
+    if (heroesData?.heroes) {
+        heroesData.heroes.forEach(hero => {
+            if (hero.skins && Array.isArray(hero.skins)) {
+                const heroId = hero.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+                hero.skins.forEach(skin => {
+                    const details = findItemDetails(skin.skin_name, 'heroskin', skin.code);
+                    formattedHeroSkins.push(formatItem(skin, "heroskin", "Hero Skin", hero.name, heroId, details));
+                });
+            }
+        });
+    }
+
+    state.allItems = {
+        'cosmetic-compendium': [...formattedDecorations, ...formattedObstacles, ...formattedHeroSkins, ...formattedSceneries, ...formattedClanCapital],
+        'hero-wardrobe': formattedHeroSkins,
+        'home-village-decor': [...formattedDecorations, ...formattedObstacles],
+        'sceneries': formattedSceneries,
+        'clan-hall-aesthetics': formattedClanCapital
+    };
+
+    state.items = state.allItems['cosmetic-compendium'];
+
+    console.log("Master data loaded:", {
+        decorations: formattedDecorations.length,
+        obstacles: formattedObstacles.length,
+        heroSkins: formattedHeroSkins.length,
+        sceneries: formattedSceneries.length,
+        clanCapital: formattedClanCapital.length
+    });
+
+    await preloadImages(state.items, 50);
 }
 
 // ============================================
@@ -316,97 +368,11 @@ function parseUserData(jsonString) {
         }));
 
         state.hasUserData = true;
-
-        // Trigger background analysis
-        analyzeCollection(codes);
-
         return { success: true, message: `Matched ${codes.length} unique codes.` };
     } catch (err) {
         console.error("Parse error:", err);
         return { success: false, message: "Invalid JSON. Check formatting." };
     }
-}
-
-// ============================================
-// ANALYTICS & RARITY
-// ============================================
-
-function getClientId() {
-    let id = localStorage.getItem('village_vault_id');
-    if (!id) {
-        // Simple UUID fallback if crypto.randomUUID is not available
-        if (typeof crypto !== 'undefined' && crypto.randomUUID) {
-            id = crypto.randomUUID();
-        } else {
-            id = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-                var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-                return v.toString(16);
-            });
-        }
-        localStorage.setItem('village_vault_id', id);
-    }
-    return id;
-}
-
-async function analyzeCollection(ownedCodes) {
-    try {
-        const clientId = getClientId();
-        const res = await fetch('/api/analyze', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ clientId, ownedCodes })
-        });
-
-        if (!res.ok) throw new Error("Analysis failed");
-
-        const data = await res.json();
-        if (data.rarityData) {
-            state.rarityData = data.rarityData;
-
-            // Enrich items with community rarity
-            Object.keys(state.allItems).forEach(cat => {
-                state.allItems[cat].forEach(item => {
-                    const r = state.rarityData[item.code];
-                    if (r) {
-                        item.communityRarity = r;
-                    }
-                });
-            });
-
-            // Update UI to show new badges
-            updateUI();
-            showToast("Rarity data updated from community stats!");
-        }
-    } catch (err) {
-        console.error("Analytics error:", err);
-        // Fail silently or show minor toast
-    }
-}
-
-function showToast(msg) {
-    const container = document.getElementById('toast-container');
-    if (!container) return;
-
-    const toast = document.createElement('div');
-    toast.className = 'toast';
-    toast.textContent = msg;
-    container.appendChild(toast);
-
-    // Add toast styles if missing (simple fallback)
-    toast.style.cssText = `
-        background: #333;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 8px;
-        margin-top: 10px;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        animation: fadeIn 0.3s ease;
-    `;
-
-    setTimeout(() => {
-        toast.style.opacity = '0';
-        setTimeout(() => toast.remove(), 300);
-    }, 3000);
 }
 
 // ============================================
@@ -686,11 +652,6 @@ function createItemCard(item) {
             </div>
             <div class="item-info">
                 <h3>${item.name}</h3>
-                ${item.communityRarity ? `
-                <div class="community-rarity-tag" style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">
-                    ${item.communityRarity.label} (${item.communityRarity.percentage}%)
-                </div>
-                ` : ''}
             </div>
         </div>
     `;
@@ -854,6 +815,8 @@ function renderDetailView(item) {
     const typeBadgeText = getTypeBadgeText(item.type, item.category);
 
     const ownershipBadge = state.hasUserData ? `
+        <div class="detail-status-badge ${item.owned ? 'owned' : 'missing'}">
+            ${item.owned ? '✓ Owned' : '✕ Missing'}
         <div class="detail-status-badge ${item.owned ? 'owned' : 'missing'}" title="${item.owned ? 'Owned' : 'Missing'}">
             ${item.owned ? '✓' : '✕'}
         </div>
@@ -890,15 +853,9 @@ function renderDetailView(item) {
                         ` : ''}
                         
                         <div class="detail-meta-item">
+                            <span class="detail-meta-label">Rarity</span>
                             <span class="detail-meta-value rarity-${item.rarity}">${item.rarity}</span>
                         </div>
-
-                        ${item.communityRarity ? `
-                        <div class="detail-meta-item">
-                            <span class="detail-meta-label">Community Rarity</span>
-                            <span class="detail-meta-value" style="color: var(--gold);">${item.communityRarity.label} (${item.communityRarity.percentage}%)</span>
-                        </div>
-                        ` : ''}
                         
                         <div class="detail-meta-item">
                             <span class="detail-meta-label">Released</span>
@@ -988,7 +945,7 @@ function updateUI() {
 // Upload / clear actions and DOM wiring helpers
 // ============================================
 // Handle JSON paste submission from the upload modal
-function handleDataUpload() {
+async function handleDataUpload() {
     const input = document.getElementById("json-input").value.trim();
     if (!input) {
         showToast("Error", "Please paste your JSON!", "error");
@@ -1001,9 +958,51 @@ function handleDataUpload() {
         closeModal("upload-modal");
         document.getElementById("clear-data-btn").style.display = "block";
         updateUI();
+
+        // --- NEW: SYNC TO DATABASE ---
+        try {
+            const clientId = getOrCreateClientId();
+            const ownedArray = Array.from(state.userOwnedCodes);
+
+            // Send to API (fire and forget or wait, here we wait to log result)
+            const response = await fetch('/api/analyze', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    clientId: clientId,
+                    ownedCodes: ownedArray
+                })
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log("Database Sync Success:", data);
+                if (data.rarityData) {
+                    console.log("Rarity Data received:", data.rarityData);
+                    // potentially store rarityData in state to display later
+                }
+            } else {
+                console.warn("Database Sync Failed:", response.status);
+            }
+        } catch (err) {
+            console.error("Database Error:", err);
+        }
+        // -----------------------------
+
     } else {
         showToast("Invalid JSON", result.message, "error");
     }
+}
+
+// Helper to get or create a unique client ID for this browser
+function getOrCreateClientId() {
+    let id = localStorage.getItem('village_vault_client_id');
+    if (!id) {
+        // Simple random ID generation
+        id = 'client_' + Math.random().toString(36).substr(2, 9) + '_' + Date.now();
+        localStorage.setItem('village_vault_client_id', id);
+    }
+    return id;
 }
 
 // Clear user-owned data and reset all items to unowned
@@ -1452,6 +1451,4 @@ document.addEventListener("DOMContentLoaded", async () => {
         loadingScreen.style.display = "none";
     }
 
-}
-
-);
+});
