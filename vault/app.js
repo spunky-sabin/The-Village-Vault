@@ -371,7 +371,15 @@ function parseUserData(jsonString) {
         }));
 
         state.hasUserData = true;
-        return { success: true, message: `Matched ${codes.length} unique codes.` };
+
+        // Extract player tag if available
+        const playerTag = parsed.tag || (parsed.player && parsed.player.tag) || null;
+
+        return {
+            success: true,
+            message: `Matched ${codes.length} unique codes.`,
+            playerTag: playerTag
+        };
     } catch (err) {
         console.error("Parse error:", err);
         return { success: false, message: "Invalid JSON. Check formatting." };
@@ -1147,7 +1155,14 @@ async function handleDataUpload() {
 
         // --- NEW: SYNC TO DATABASE ---
         try {
-            const clientId = getOrCreateClientId();
+            // Use player tag from JSON if available, otherwise fallback to browser ID
+            let clientId = result.playerTag ? result.playerTag.replace('#', '') : getOrCreateClientId();
+
+            // Ensure we have a valid ID
+            if (!clientId) clientId = 'unknown_user_' + Date.now();
+
+            console.log("Syncing data for client:", clientId);
+
             const ownedArray = Array.from(state.userOwnedCodes);
 
             // Send to API (fire and forget or wait, here we wait to log result)
