@@ -6,11 +6,6 @@ export const config = {
 
 export default async function handler(request) {
   try {
-    // Drop existing tables to recreate with correct types
-    // (Only needed first time after schema change)
-    await sql`DROP TABLE IF EXISTS ownership`;
-    await sql`DROP TABLE IF EXISTS users`;
-
     // Create Users Table with VARCHAR for flexible client IDs
     await sql`
       CREATE TABLE IF NOT EXISTS users (
