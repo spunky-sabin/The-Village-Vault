@@ -40,14 +40,19 @@ export default async function handler(request) {
         for (let i = 0; i < uniqueCodes.length; i += chunkSize) {
             const chunk = uniqueCodes.slice(i, i + chunkSize);
 
-            // Dynamically build VALUES with sql interpolation
-            const inserts = chunk.map(code => sql`(${clientId}, ${code})`);
-            await sql`INSERT INTO ownership (client_id, item_code) VALUES ${sql.join(inserts, ', ')} ON CONFLICT DO NOTHING`;
+            // Insert each item individually (sql.join is not available in @vercel/postgres)
+            for (const code of chunk) {
+                await sql`
+                    INSERT INTO ownership (client_id, item_code)
+                    VALUES (${clientId}, ${code})
+                    ON CONFLICT DO NOTHING
+                `;
+            }
         }
 
         // 3. Calculate rarity
         const totalUsersResult = await sql`SELECT COUNT(*) AS count FROM users`;
-        const totalUsers = parseInt(totalUsersResult[0].count) || 1;
+        const totalUsers = parseInt(totalUsersResult.rows[0].count) || 1;
 
         const ownershipResult = await sql`
       SELECT item_code, COUNT(client_id) AS owned_count
@@ -56,7 +61,7 @@ export default async function handler(request) {
     `;
 
         const rarityData = {};
-        ownershipResult.forEach(row => {
+        ownershipResult.rows.forEach(row => {
             const percentage = (parseInt(row.owned_count) / totalUsers) * 100;
             let label = 'Common';
             if (percentage < 1) label = 'Legendary';
