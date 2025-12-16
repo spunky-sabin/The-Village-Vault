@@ -33,21 +33,23 @@ export default async function handler(request) {
         // Delete old ownership for this user
         await sql`DELETE FROM ownership WHERE client_id = ${clientId}`;
 
-        // Insert new ownership in chunks to avoid large queries
+        // Insert new ownership in chunks with parallel execution
         const uniqueCodes = [...new Set(ownedCodes)];
-        const chunkSize = 50;
+        const chunkSize = 100; // Larger chunks for fewer round-trips
 
         for (let i = 0; i < uniqueCodes.length; i += chunkSize) {
             const chunk = uniqueCodes.slice(i, i + chunkSize);
 
-            // Insert each item individually (sql.join is not available in @vercel/postgres)
-            for (const code of chunk) {
-                await sql`
-                    INSERT INTO ownership (client_id, item_code)
-                    VALUES (${clientId}, ${code})
-                    ON CONFLICT DO NOTHING
-                `;
-            }
+            // Run all inserts in this chunk in parallel
+            await Promise.all(
+                chunk.map(code =>
+                    sql`
+                        INSERT INTO ownership (client_id, item_code)
+                        VALUES (${clientId}, ${code})
+                        ON CONFLICT DO NOTHING
+                    `
+                )
+            );
         }
 
         // 3. Calculate rarity
