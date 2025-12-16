@@ -1169,6 +1169,45 @@ svg {
     color: var(--primary-foreground);
 }
 
+/* Community Rarity Badge (Corner Style) */
+.community-rarity-badge {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.community-rarity-badge.legendary {
+    background: linear-gradient(135deg, #9C27B0, #673AB7);
+    box-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
+}
+
+.community-rarity-badge.ultra-rare {
+    background: linear-gradient(135deg, #E91E63, #C2185B);
+}
+
+.community-rarity-badge.very-rare {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+}
+
+.community-rarity-badge.rare {
+    background: linear-gradient(135deg, #4CAF50, #388E3C);
+}
+
+.community-rarity-badge.common {
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--muted-foreground);
+    border: 1px solid var(--border);
+}
+
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .item-status-badge {

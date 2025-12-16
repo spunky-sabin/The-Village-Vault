@@ -646,8 +646,7 @@ function getCommunityRarityBadge(itemCode) {
 
     return `
         <div class="community-rarity-badge ${labelClass}" title="${rarity.percentage}% of collectors own this">
-            <span class="rarity-label">${rarity.label}</span>
-            <span class="rarity-percent">${rarity.percentage}%</span>
+            ${rarity.percentage}%
         </div>
     `;
 }
@@ -709,10 +708,10 @@ function createItemCard(item) {
             </div>
             <div class="item-image-container">
                 <img src="${item.image}" class="item-image" loading="lazy" alt="${item.name}" width="100%" height="auto" style="display: block;">
+                ${communityBadge}
             </div>
             <div class="item-info">
                 <h3>${item.name}</h3>
-                ${communityBadge}
             </div>
         </div>
     `;
