@@ -1144,6 +1144,54 @@ function updateUI() {
 // Upload / clear actions and DOM wiring helpers
 // ============================================
 // Handle JSON paste submission from the upload modal
+async function syncUserDataToDatabase(playerTag) {
+    try {
+        // Use player tag from JSON if available, otherwise fallback to browser ID
+        let clientId = playerTag ? playerTag.replace('#', '') : getOrCreateClientId();
+
+        // Ensure we have a valid ID
+        if (!clientId) clientId = 'unknown_user_' + Date.now();
+
+        console.log("Syncing data for client:", clientId);
+
+        // Collect all valid known codes from our master data
+        const validCodes = new Set();
+        Object.values(state.allItems).forEach(list => {
+            list.forEach(item => validCodes.add(String(item.code)));
+        });
+
+        // Filter user codes to ONLY include those that match our app's items
+        const ownedArray = Array.from(state.userOwnedCodes).filter(code => validCodes.has(code));
+
+        // Send to API (fire and forget or wait, here we wait to log result)
+        const response = await fetch('/api/analyze', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                clientId: clientId,
+                ownedCodes: ownedArray
+            })
+        });
+
+        if (response.ok) {
+            const data = await response.json();
+            console.log("Database Sync Success:", data);
+            if (data.rarityData) {
+                console.log("Rarity Data received:", data.rarityData);
+                state.communityRarity = data.rarityData;
+                state.hasCommunityData = true;
+                state.totalCollectors = data.totalUsers || 0;
+                updateUI(); // Re-render to show community stats
+                showToast("Community Stats", `Synced with ${data.totalUsers} collectors!`);
+            }
+        } else {
+            console.warn("Database Sync Failed:", response.status);
+        }
+    } catch (err) {
+        console.error("Database Error:", err);
+    }
+}
+
 async function handleDataUpload() {
     const input = document.getElementById("json-input").value.trim();
     if (!input) {
@@ -1158,52 +1206,9 @@ async function handleDataUpload() {
         document.getElementById("clear-data-btn").style.display = "block";
         updateUI();
 
+
         // --- NEW: SYNC TO DATABASE ---
-        try {
-            // Use player tag from JSON if available, otherwise fallback to browser ID
-            let clientId = result.playerTag ? result.playerTag.replace('#', '') : getOrCreateClientId();
-
-            // Ensure we have a valid ID
-            if (!clientId) clientId = 'unknown_user_' + Date.now();
-
-            console.log("Syncing data for client:", clientId);
-
-            // Collect all valid known codes from our master data
-            const validCodes = new Set();
-            Object.values(state.allItems).forEach(list => {
-                list.forEach(item => validCodes.add(String(item.code)));
-            });
-
-            // Filter user codes to ONLY include those that match our app's items
-            const ownedArray = Array.from(state.userOwnedCodes).filter(code => validCodes.has(code));
-
-            // Send to API (fire and forget or wait, here we wait to log result)
-            const response = await fetch('/api/analyze', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    clientId: clientId,
-                    ownedCodes: ownedArray
-                })
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                console.log("Database Sync Success:", data);
-                if (data.rarityData) {
-                    console.log("Rarity Data received:", data.rarityData);
-                    state.communityRarity = data.rarityData;
-                    state.hasCommunityData = true;
-                    state.totalCollectors = data.totalUsers || 0;
-                    updateUI(); // Re-render to show community stats
-                    showToast("Community Stats", `Synced with ${data.totalUsers} collectors!`);
-                }
-            } else {
-                console.warn("Database Sync Failed:", response.status);
-            }
-        } catch (err) {
-            console.error("Database Error:", err);
-        }
+        await syncUserDataToDatabase(result.playerTag);
         // -----------------------------
 
     } else {
@@ -1311,6 +1316,7 @@ async function handlePasteFromClipboard() {
                 showToast("Success!", result.message);
                 document.getElementById("clear-data-btn").style.display = "block";
                 updateUI();
+                await syncUserDataToDatabase(result.playerTag);
             } else {
                 // Fallback to manual prompt like Ninja
                 const manualInput = prompt('Invalid JSON detected - paste your collection data manually:');
@@ -1320,6 +1326,7 @@ async function handlePasteFromClipboard() {
                         showToast("Success!", retryResult.message);
                         document.getElementById("clear-data-btn").style.display = "block";
                         updateUI();
+                        await syncUserDataToDatabase(retryResult.playerTag);
                     } else {
                         showToast("Invalid JSON", retryResult.message, "error");
                     }
@@ -1371,6 +1378,7 @@ async function handlePasteFromClipboard() {
                 showToast("Success!", result.message);
                 document.getElementById("clear-data-btn").style.display = "block";
                 updateUI();
+                await syncUserDataToDatabase(result.playerTag);
             } else {
                 showToast("Invalid JSON", result.message, "error");
             }
