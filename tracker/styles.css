@@ -3036,19 +3036,25 @@ svg {
     .top-nav {
         height: auto;
         padding: 0.5rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .nav-list {
-        flex-direction: column;
+        flex-direction: row;
+        display: flex;
         height: auto;
-        gap: 0;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .nav-item {
         height: auto;
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
+        width: auto;
+        flex-direction: row;
+        align-items: center;
     }
 
     .nav-item>a,
@@ -3265,3 +3271,11 @@ svg {
     padding: 0.5rem;
     border-radius: 4px;
 }
+/* Safeguard/Force Mobile Styles at the end to override any issues */
+@media (max-width: 1023px) {
+    .sidebar {
+    }
+    .mobile-filter-section {
+    }
+}
+

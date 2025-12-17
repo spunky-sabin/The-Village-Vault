@@ -530,10 +530,10 @@ function switchCategory(categoryId) {
     // Show Grid, Hide Overview
     if (overviewContainer) overviewContainer.style.display = 'none';
     if (itemsGrid) itemsGrid.style.display = 'grid';
-    if (sidebar) sidebar.style.display = 'block';
-    if (desktopControls) desktopControls.style.display = 'flex';
+    if (sidebar) sidebar.style.display = '';
+    if (desktopControls) desktopControls.style.display = '';
     // Mobile filter section display depends on screen size, usually handled by CSS media queries or default to flex/block
-    if (mobileFilterSection) mobileFilterSection.style.display = 'flex';
+    if (mobileFilterSection) mobileFilterSection.style.display = '';
     if (msg) msg.style.display = 'none'; // Ensure message is hidden when showing grid
 
     state.items = state.allItems[categoryId] || [];
