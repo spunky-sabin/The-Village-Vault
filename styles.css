@@ -2721,3 +2721,547 @@ svg {
     color: var(--muted-foreground);
     font-weight: 600;
 }
+
+/* ============================================
+   OVERVIEW PAGE STYLES
+   ============================================ */
+.overview-container {
+    padding: 1rem 0;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: fadeIn 0.5s ease;
+}
+
+.overview-hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, hsla(210, 25%, 15%, 0.5), hsla(210, 25%, 20%, 0.5));
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.overview-hero h2 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.overview-subtitle {
+    font-size: 1.1rem;
+    color: var(--muted-foreground);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.overview-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    align-items: center;
+    background: hsla(210, 25%, 12%, 0.3);
+    padding: 2rem;
+    border-radius: 1rem;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.overview-section:hover {
+    background: hsla(210, 25%, 15%, 0.4);
+    border-color: var(--border);
+    transform: translateY(-5px);
+}
+
+@media (min-width: 768px) {
+    .overview-section {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .overview-section.reverse {
+        flex-direction: row-reverse;
+    }
+}
+
+.overview-text {
+    flex: 1;
+}
+
+.overview-text h3 {
+    font-size: 1.75rem;
+    color: var(--foreground);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.overview-text h3 .icon {
+    font-size: 2rem;
+}
+
+.overview-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--muted-foreground);
+    margin-bottom: 1rem;
+}
+
+.overview-text p strong {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.overview-image-wrapper {
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overview-img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+    max-height: 250px;
+}
+
+.overview-section:hover .overview-img {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.overview-section.reverse:hover .overview-img {
+    transform: scale(1.05) rotate(-2deg);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   MAIN NAVIGATION
+   ============================================ */
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--muted-foreground);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--gold);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+    }
+}
+
+/* ============================================
+   TOP NAVIGATION (DROPDOWN EXTENSION)
+   ============================================ */
+.top-nav {
+    background: var(--card);
+    /* Or a darker shade for the top bar */
+    border-bottom: 1px solid var(--border);
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1000;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    /* Center the links */
+    align-items: center;
+    height: 3.5rem;
+    /* Fixed height for top bar */
+}
+
+.nav-item {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item>a,
+.nav-item>span {
+    color: var(--muted-foreground);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0 0.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.nav-item:hover>a,
+.nav-item:hover>span,
+.nav-item>a:hover,
+.nav-item>a.active {
+    color: var(--gold);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 0 0 0.5rem 0.5rem;
+    /* Rounded bottom corners */
+    min-width: 200px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 0;
+    z-index: 1001;
+}
+
+.nav-item:hover>.dropdown-menu {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+.dropdown-menu li {
+    position: relative;
+}
+
+/* Dropdown Links */
+.dropdown-menu a,
+.dropdown-menu span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* For submenu arrows */
+    padding: 0.75rem 1.5rem;
+    color: var(--foreground);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s ease, color 0.2s ease;
+    cursor: pointer;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu li:hover>span {
+    background: hsla(210, 20%, 20%, 0.5);
+    color: var(--gold);
+}
+
+/* Nested Dropdown (Submenu) */
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    border-radius: 0.5rem;
+    margin-left: 5px;
+    /* Slight gap */
+}
+
+.dropdown-menu li:hover>.dropdown-menu {
+    display: block;
+}
+
+/* Submenu Indicator */
+.dropdown-submenu>span::after,
+.dropdown-submenu>a::after {
+    content: '›';
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+
+    /* Simple mobile stacked fallback for now, complex mobile menu requires JS/Checkboxes */
+    .top-nav {
+        height: auto;
+        padding: 0.5rem 0;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        height: auto;
+        gap: 0;
+    }
+
+    .nav-item {
+        height: auto;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-item>a,
+    .nav-item>span {
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        display: none;
+        /* Keep hidden by default */
+    }
+
+    .nav-item:hover>.dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-submenu>.dropdown-menu {
+        position: static;
+        margin-left: 1rem;
+        border-left: 1px solid var(--border);
+    }
+}
+
+/* ============================================
+   WIKI GALLERY TABLE STYLES
+   ============================================ */
+.wiki-gallery-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 2rem;
+    background: var(--card);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.wiki-gallery-table th,
+.wiki-gallery-table td {
+    border: none;
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+.wiki-gallery-table th {
+    background: var(--secondary);
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+.wiki-gallery-table td img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease;
+}
+
+.wiki-gallery-table td img:hover {
+    transform: scale(1.1);
+}
+
+.wiki-gallery-table tr:last-child td {
+    border-bottom: none;
+}
+
+.wiki-gallery-table tr:hover td {
+    background: hsla(210, 30%, 15%, 0.5);
+}
+
+@media (max-width: 600px) {
+
+    .wiki-gallery-table th,
+    .wiki-gallery-table td {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+    }
+
+    .wiki-gallery-table th:first-child,
+    .wiki-gallery-table td:first-child {
+        width: 50px;
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
+    }
+
+    .wiki-gallery-table td img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .code-cell {
+        font-size: 0.75rem;
+        padding: 0.2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .wiki-gallery-table {
+        table-layout: fixed;
+        /* Force fixed column widths */
+        width: 100%;
+        display: table;
+        /* Ensure table display */
+    }
+
+    .wiki-gallery-table th,
+    .wiki-gallery-table td {
+        padding: 0.15rem;
+        font-size: 0.7rem;
+        word-wrap: break-word;
+        /* Allow long words to break */
+        overflow-wrap: break-word;
+    }
+
+    /* Column 1: Image - Fixed 40px */
+    .wiki-gallery-table th:nth-child(1),
+    .wiki-gallery-table td:nth-child(1) {
+        width: 40px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+        padding: 0;
+    }
+
+    /* Column 2: Code - Fixed 55px */
+    .wiki-gallery-table th:nth-child(2),
+    .wiki-gallery-table td:nth-child(2) {
+        width: 55px !important;
+        min-width: 55px !important;
+        max-width: 55px !important;
+        padding: 0;
+    }
+
+    /* Column 3: Name - Auto/Compact */
+    .wiki-gallery-table th:nth-child(3),
+    .wiki-gallery-table td:nth-child(3) {
+        /* Let it take natural space but squeeze if needed */
+        width: 25%;
+    }
+
+    /* Column 4: Turn off description or make it very small if strictly needed? 
+       No, just let it fill rest. 
+    */
+
+    .wiki-gallery-table td img {
+        width: 35px;
+        height: 35px;
+        margin: 0 auto;
+    }
+
+    .code-cell {
+        font-size: 0.6rem !important;
+        padding: 0 !important;
+        word-break: break-all;
+    }
+}
+
+@media (max-width: 375px) {
+
+    /* Hide Description Column (4th) */
+    .wiki-gallery-table th:nth-child(4),
+    .wiki-gallery-table td:nth-child(4) {
+        display: none;
+    }
+
+    /* Give more space to Name since Description is gone */
+    .wiki-gallery-table th:nth-child(3),
+    .wiki-gallery-table td:nth-child(3) {
+        width: auto;
+        /* Allow it to fill remaining space */
+    }
+}
+
+/* ============================================
+   FOOTER STYLES
+   ============================================ */
+.wiki-footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted-foreground);
+    background: var(--card);
+}
+
+.wiki-footer a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.wiki-footer a:hover {
+    color: var(--gold-light);
+    text-decoration: underline;
+}
+
+.code-cell {
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: var(--muted-foreground);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem;
+    border-radius: 4px;
+}

@@ -518,6 +518,24 @@ function filterByHero(heroId) {
 // Change active top-level category (tabs) and reset relevant filters
 function switchCategory(categoryId) {
     state.activeCategory = categoryId;
+
+    // UI Elements
+    const overviewContainer = document.getElementById('overview-container');
+    const itemsGrid = document.getElementById('items-grid');
+    const sidebar = document.querySelector('.sidebar');
+    const desktopControls = document.querySelector('.desktop-controls');
+    const mobileFilterSection = document.querySelector('.mobile-filter-section');
+    const msg = document.getElementById("no-items-message");
+
+    // Show Grid, Hide Overview
+    if (overviewContainer) overviewContainer.style.display = 'none';
+    if (itemsGrid) itemsGrid.style.display = 'grid';
+    if (sidebar) sidebar.style.display = 'block';
+    if (desktopControls) desktopControls.style.display = 'flex';
+    // Mobile filter section display depends on screen size, usually handled by CSS media queries or default to flex/block
+    if (mobileFilterSection) mobileFilterSection.style.display = 'flex';
+    if (msg) msg.style.display = 'none'; // Ensure message is hidden when showing grid
+
     state.items = state.allItems[categoryId] || [];
     state.visibleLimit = 50;
 
