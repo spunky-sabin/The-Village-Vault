@@ -240,27 +240,20 @@
     <!-- Top Level Navigation -->
     <nav class="top-nav">
         <ul class="nav-list">
-            <li class="nav-item dropdown">
-                <a class="active" href="../index.html">Home</a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-submenu">
-                        <span>Home Village</span>
-                        <ul class="dropdown-menu">
-                            <li><a href="#obstacles">Obstacles</a></li>
-                            <li><a href="#decorations">Decorations</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <span>Builder Base</span>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Obstacles (Soon)</a></li>
-                            <li><a href="#">Decorations (Soon)</a></li>
-                        </ul>
-                    </li>
-                </ul>
+            <li class="nav-item">
+                <a class="active" href="index.html">Home</a>
             </li>
             <li class="nav-item"><a href="tracker/index.html">Tracker</a></li>
-
+        </ul>
+    </nav>
+    <nav class="sub-nav">
+        <ul class="nav-list sub-nav-list">
+            <li class="nav-item sub-nav-item">
+                <a href="#decorations">Decorations</a>
+            </li>
+            <li class="nav-item sub-nav-item">
+                <a href="#obstacles">Obstacles</a>
+            </li>
         </ul>
     </nav>
     <!-- Header (Branding only now) -->
@@ -276,6 +269,81 @@
     </header>
     <!-- Wiki Content -->
     <div class="wiki-container">
+        <!-- About Article -->
+        <article class="wiki-article" id="about">
+            <div class="wiki-header">
+                <span class="wiki-icon">🛡️</span>
+                <h2 class="wiki-title">What is Clash of Clans Vault?</h2>
+            </div>
+            <div class="wiki-content">
+                <p>
+                    <strong>Clash of Clans Vault</strong> is a free progress-tracking tool designed for Clash of Clans
+                    players who want a clear overview of their in-game collections and upgrade progress. It helps you
+                    visualize and organize data such as hero skins, decorations, sceneries, obstacles, and other
+                    collectible items in one place.
+                </p>
+                <p>
+                    Instead of manually tracking progress or relying on screenshots, this tool allows players to analyze
+                    their collection data and see what they own, what is missing, and how far they have progressed
+                    overall. The goal is to provide a simple, transparent, and privacy-focused way to understand your
+                    Clash of Clans account progression.
+                </p>
+
+                <h3>What Can You Track?</h3>
+                <p>Using Clash of Clans Vault, players can view and track:</p>
+                <ul>
+                    <li>Decorations and special event items</li>
+                    <li>Hero skins and cosmetic collections</li>
+                    <li>Obstacles and limited-time objects</li>
+                    <li>Sceneries and visual customizations</li>
+                    <li>Overall collection completion progress</li>
+                </ul>
+                <p>All calculations are based on parsed game data and structured progression logic, giving players a
+                    consistent and easy-to-understand overview of their account.</p>
+
+                <h3>How Does It Work?</h3>
+                <p>
+                    The tool works by processing exported game data in JSON format. Once the data is loaded, Clash of
+                    Clans Vault analyzes it locally and presents progress information in a readable and organized
+                    layout.
+                </p>
+                <p>
+                    You do not need to create an account, sign in, or connect to external services. The tool is designed
+                    to be lightweight, fast, and accessible directly from your browser.
+                </p>
+
+                <h3>Is Pasting JSON Data Safe?</h3>
+                <p><strong>Yes. Pasting JSON data into Clash of Clans Vault is safe.</strong></p>
+                <ul>
+                    <li>Your data is processed locally in your browser</li>
+                    <li>The data is not uploaded, stored, or sent to any server</li>
+                    <li>No personal information, login credentials, or account identifiers are required</li>
+                    <li>The site does not save or share your data with third parties</li>
+                </ul>
+                <p>
+                    The JSON file is only used temporarily to calculate and display progress while the page is open.
+                    Once you close or refresh the page, the data is gone. This design ensures full user privacy and
+                    control.
+                </p>
+                <p>
+                    If you are ever unsure, you can review the site’s source code or use the tool offline after loading
+                    it once.
+                </p>
+
+                <h3>Why Use Clash of Clans Vault?</h3>
+                <p>
+                    Clash of Clans Vault is built for players who care about long-term progression, collection
+                    completion, and organization. Whether you are a casual player or a completionist, the tool helps you
+                    understand your account at a deeper level without compromising privacy or requiring unnecessary
+                    permissions.
+                </p>
+                <p>
+                    The project is community-focused and aims to grow with feedback from players who want accurate and
+                    transparent progress tracking.
+                </p>
+            </div>
+        </article>
+
         <!-- Decoration Article -->
         <article class="wiki-article" id="decorations">
             <div class="wiki-header">
