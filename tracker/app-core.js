@@ -712,11 +712,11 @@ function openAnalyticsModal() {
             }
         });
         rarityBreakdown.innerHTML = `
-            <div class="rarity-row legendary"><span class="rarity-name">🟣 Legendary (&lt;1%)</span><span class="rarity-count">${rarityCounts['Legendary']} items</span></div>
-            <div class="rarity-row ultra-rare"><span class="rarity-name">🩷 Ultra Rare (&lt;5%)</span><span class="rarity-count">${rarityCounts['Ultra Rare']} items</span></div>
-            <div class="rarity-row very-rare"><span class="rarity-name">🔵 Very Rare (&lt;15%)</span><span class="rarity-count">${rarityCounts['Very Rare']} items</span></div>
-            <div class="rarity-row rare"><span class="rarity-name">🟢 Rare (&lt;30%)</span><span class="rarity-count">${rarityCounts['Rare']} items</span></div>
-            <div class="rarity-row common"><span class="rarity-name">⚪ Common (≥30%)</span><span class="rarity-count">${rarityCounts['Common']} items</span></div>`;
+            <div class="rarity-row legendary"><span class="rarity-name">Legendary (&lt;1%)</span><span class="rarity-count">${rarityCounts['Legendary']} items</span></div>
+            <div class="rarity-row ultra-rare"><span class="rarity-name">Ultra Rare (&lt;5%)</span><span class="rarity-count">${rarityCounts['Ultra Rare']} items</span></div>
+            <div class="rarity-row very-rare"><span class="rarity-name">Very Rare (&lt;15%)</span><span class="rarity-count">${rarityCounts['Very Rare']} items</span></div>
+            <div class="rarity-row rare"><span class="rarity-name">Rare (&lt;30%)</span><span class="rarity-count">${rarityCounts['Rare']} items</span></div>
+            <div class="rarity-row common"><span class="rarity-name">Common (≥30%)</span><span class="rarity-count">${rarityCounts['Common']} items</span></div>`;
         const totalCollectorsEl = document.getElementById('total-collectors');
         if (totalCollectorsEl) totalCollectorsEl.textContent = state.totalCollectors || '?';
     } else if (communitySection) {
