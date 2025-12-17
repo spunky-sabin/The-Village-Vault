@@ -1,1 +1,3 @@
-google.com, pub-5062214479421683, DIRECT, f08c47fec0942fa0
+<?php
+header('Location: https://srv.adstxtmanager.com/19390/YOUR_DOMAIN.com', true, 301);
+exit;
