@@ -1,0 +1,56 @@
+/* Sceneries Page Styles */
+
+.category-intro {
+    background: linear-gradient(135deg, hsla(174, 77%, 47%, 0.1), hsla(210, 30%, 20%, 0.1));
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 1rem;
+}
+
+.intro-content {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+.intro-content h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+}
+
+.intro-content p {
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.intro-links {
+    margin-top: 1rem;
+}
+
+.intro-links a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.intro-links a:hover {
+    color: var(--gold-light);
+    text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+    .category-intro {
+        padding: 2rem 1.5rem;
+    }
+
+    .intro-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .intro-content p {
+        font-size: 1rem;
+    }
+}

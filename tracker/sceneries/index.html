@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO-Optimized Title & Meta -->
+    <title>Village Sceneries Collection - The Village Vault | Clash of Clans Tracker</title>
+    <meta name="google-adsense-account" content="ca-pub-5062214479421683">
+    <meta name="description"
+        content="Browse and track all Clash of Clans village sceneries. See which sceneries you own and discover rare backgrounds for your village.">
+    <meta name="keywords"
+        content="clash of clans sceneries, coc scenery tracker, village backgrounds, rare sceneries, coc backgrounds, winter scenery, autumn scenery">
+    <meta name="author" content="The Village Vault">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Village Sceneries Collection - The Village Vault">
+    <meta property="og:description" content="Browse and track all Clash of Clans village sceneries and backgrounds.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/images/favicon_io/android-chrome-512x512.png">
+    <meta property="og:image:alt" content="The Village Vault Logo">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Village Sceneries - The Village Vault">
+    <meta name="twitter:description" content="Track your Clash of Clans scenery collection.">
+    <meta name="twitter:image" content="/src/assets/logo.png">
+
+    <!-- Favicon & Styles -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon_io/site.webmanifest">
+    <link rel="icon" href="/images/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "The Village Vault - Sceneries",
+        "description": "Track all Clash of Clans village sceneries and backgrounds.",
+        "url": "https://clashofclansvault.win/tracker/sceneries/",
+        "applicationCategory": "Game",
+        "operatingSystem": "Web",
+        "offers": { "@type": "Offer", "price": "0" },
+        "featureList": ["Scenery Tracker", "Village Backgrounds", "Seasonal Sceneries", "Limited Edition Sceneries"]
+    }
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5062214479421683"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- Top Level Navigation -->
+        <nav class="top-nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/index.html">Home</a></li>
+                <li class="nav-item"><a href="/tracker/" class="active">Tracker</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header (Branding) -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-inner">
+                    <div class="header-text">
+                        <h1 class="header-title">VILLAGE SCENERIES</h1>
+                        <p class="header-subtitle">Transform Your Village Background</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Category Sub-Navigation -->
+        <nav class="category-nav">
+            <div class="category-tabs-container">
+                <a href="/tracker/compendium/" class="category-tab">
+                    <span class="category-label">COSMETIC COMPENDIUM</span>
+                    <span class="category-label-short">COMPENDIUM</span>
+                </a>
+                <a href="/tracker/wardrobe/" class="category-tab">
+                    <span class="category-label">HERO'S WARDROBE</span>
+                    <span class="category-label-short">WARDROBE</span>
+                </a>
+                <a href="/tracker/decorations/" class="category-tab">
+                    <span class="category-label">VILLAGE DECORATIONS</span>
+                    <span class="category-label-short">DECORATIONS</span>
+                </a>
+                <a href="/tracker/sceneries/" class="category-tab active" aria-current="page">
+                    <span class="category-label">SCENERIES</span>
+                    <span class="category-label-short">SCENERIES</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Category Description -->
+        <section class="category-intro">
+            <div class="intro-content">
+                <h2>Village Sceneries</h2>
+                <p>Sceneries completely transform the look and feel of your village! From seasonal winter wonderlands to
+                    tropical beaches and epic battle themes, each scenery brings a unique atmosphere to your Clash
+                    experience. Sceneries are available through the Gold Pass, special offers, and seasonal events.</p>
+                <p class="intro-links">Looking for more cosmetics? Check out <a href="/tracker/wardrobe/">Hero Skins</a>
+                    or <a href="/tracker/decorations/">Decorations & Obstacles</a>.</p>
+            </div>
+        </section>
+
+        <div class="main-container">
+            <!-- Sidebar Filter (Desktop) -->
+            <aside class="sidebar">
+                <div class="sidebar-content">
+                    <h2 class="sidebar-title">Filter Sceneries</h2>
+
+                    <!-- Search -->
+                    <div class="search-container">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="search-input" class="search-input" placeholder="Search sceneries...">
+                    </div>
+
+                    <!-- Item Type Filter (Hidden - only sceneries on this page) -->
+                    <div class="filter-group" id="type-filter-group" style="display: none;">
+                        <div class="filter-options filter-buttons" id="type-filter-options"></div>
+                    </div>
+
+                    <!-- Hero Filter (Hidden - not applicable) -->
+                    <div class="filter-group" id="hero-filter-group" style="display: none;"></div>
+
+                    <!-- Ownership Filter -->
+                    <div class="filter-group">
+                        <h3 class="filter-title">Ownership</h3>
+                        <div class="filter-options">
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="owned" class="ownership-filter">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Owned</span>
+                            </label>
+                            <label class="filter-checkbox">
+                                <input type="checkbox" value="missing" class="ownership-filter">
+                                <span class="checkbox-custom"></span>
+                                <span class="checkbox-label">Missing</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="content-container">
+                    <div class="upload-section">
+                        <div class="upload-controls">
+                            <button id="upload-btn" class="btn btn-primary">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17 8 12 3 7 8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <span>Upload Json</span>
+                            </button>
+                            <button id="paste-btn" class="btn btn-primary btn-compact">
+                                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2">
+                                    </path>
+                                    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                                </svg>
+                                <span>Paste</span>
+                            </button>
+                            <button id="clear-data-btn" class="btn btn-icon-small" style="display: none;">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="welcome-banner" class="welcome-banner">
+                            <h3>Track Your Sceneries!</h3>
+                            <p>Upload your collection data to see which village backgrounds you've collected.</p>
+                        </div>
+                        <button id="analytics-btn" class="btn btn-analytics" style="display: none;">
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M3 3v18h18"></path>
+                                <path d="M18 17V9"></path>
+                                <path d="M13 17V5"></path>
+                                <path d="M8 17v-3"></path>
+                            </svg>
+                            <span>View Analytics</span>
+                        </button>
+                    </div>
+
+                    <div class="mobile-filter-section">
+                        <button id="mobile-filter-btn" class="btn btn-mobile-filter">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 0 1-.659 1.591l-5.432 5.432a2.25 2.25 0 0 0-.659 1.591v2.927a2.25 2.25 0 0 1-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 0 0-.659-1.591L3.659 7.409A2.25 2.25 0 0 1 3 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0 1 12 3Z" />
+                            </svg>
+                        </button>
+                        <button class="btn btn-mobile-filter-ownership active" data-ownership="all">All</button>
+                        <button class="btn btn-mobile-filter-ownership" data-ownership="owned">Owned</button>
+                        <button class="btn btn-mobile-filter-ownership" data-ownership="missing">Missing</button>
+                    </div>
+                    <div class="desktop-controls">
+                        <div class="items-count">Showing <span id="items-count">0</span> items</div>
+                        <div class="sort-container">
+                            <label for="sort-select" class="sort-label">Sort By:</label>
+                            <select id="sort-select" class="sort-select">
+                                <option value="newest">Newest First</option>
+                                <option value="oldest">Oldest First</option>
+                                <option value="name-asc">Name A-Z</option>
+                                <option value="name-desc">Name Z-A</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="items-grid" id="items-grid"></div>
+                    <div id="no-items-message" class="no-items-message" style="display: none;">
+                        <p class="no-items-title">No items found</p>
+                        <p class="no-items-subtitle">Try adjusting your filters</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Modals -->
+        <div id="upload-modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title"><svg class="modal-icon" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>Upload Your Collection Data</h2>
+                    <button class="modal-close-btn">&times;</button>
+                </div>
+                <p class="modal-description">Paste your game's JSON data below to track your collection progress.</p>
+                <div class="modal-instructions">
+                    <h4>How to get your data:</h4>
+                    <ol>
+                        <li>Open your game's data export feature</li>
+                        <li>Copy the entire JSON data output</li>
+                        <li>Paste it into the text area below</li>
+                        <li>Click "Analyze Collection"</li>
+                    </ol>
+                </div>
+                <div class="modal-form"><label class="textarea-label">JSON Data</label><textarea id="json-input"
+                        class="json-textarea" placeholder='Paste your JSON data here...'></textarea></div>
+                <div class="modal-actions"><button class="btn btn-secondary modal-cancel-btn">Cancel</button><button
+                        id="analyze-btn" class="btn btn-primary"><svg class="btn-icon" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" />
+                        </svg><span>Analyze Collection</span></button></div>
+            </div>
+        </div>
+
+        <div id="filter-modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title">Filter & Sort</h2><button class="modal-close-btn">&times;</button>
+                </div>
+                <div class="modal-form">
+                    <div class="search-container"><svg class="search-icon" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg><input type="text" id="mobile-search-input" class="search-input"
+                            placeholder="Search sceneries..."></div>
+                    <div class="filter-group" id="mobile-type-filter-group" style="display: none;">
+                        <div class="filter-options filter-buttons" id="mobile-type-filter-options"></div>
+                    </div>
+                    <div class="filter-group" id="mobile-hero-filter-group" style="display: none;"></div>
+                    <div class="filter-group">
+                        <h3 class="filter-title">Ownership</h3>
+                        <div class="filter-options"><label class="filter-checkbox"><input type="checkbox" value="owned"
+                                    class="mobile-ownership-filter"><span class="checkbox-custom"></span><span
+                                    class="checkbox-label">Owned</span></label><label class="filter-checkbox"><input
+                                    type="checkbox" value="missing" class="mobile-ownership-filter"><span
+                                    class="checkbox-custom"></span><span class="checkbox-label">Missing</span></label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h3 class="filter-title">Sort By</h3><select id="mobile-sort-select" class="sort-select">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="name-asc">Name A-Z</option>
+                            <option value="name-desc">Name Z-A</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-actions"><button class="btn btn-secondary modal-cancel-btn"
+                        style="flex: 1;">Cancel</button><button id="apply-filters-btn" class="btn btn-primary"
+                        style="flex: 1;">Apply</button></div>
+            </div>
+        </div>
+
+        <div id="analytics-modal" class="modal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content analytics-modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title"><svg class="modal-icon" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v18h18"></path>
+                            <path d="M18 17V9"></path>
+                            <path d="M13 17V5"></path>
+                            <path d="M8 17v-3"></path>
+                        </svg>Collection Analytics</h2><button class="modal-close-btn">&times;</button>
+                </div>
+                <div id="analytics-content" class="analytics-content">
+                    <div class="analytics-section">
+                        <h3>Your Collection</h3>
+                        <div class="analytics-stats-grid" id="collection-stats"></div>
+                    </div>
+                    <div class="analytics-section" id="community-section" style="display: none;">
+                        <h3>Community Rarity</h3>
+                        <p class="analytics-subtitle">Based on <span id="total-collectors">0</span> collectors</p>
+                        <div class="rarity-breakdown" id="rarity-breakdown"></div>
+                    </div>
+                </div>
+                <div class="modal-actions"><button class="btn btn-secondary modal-close-btn"
+                        style="flex: 1;">Close</button></div>
+            </div>
+        </div>
+
+        <div id="toast-container" class="toast-container"></div>
+        <footer class="wiki-footer">
+            <p>&copy; 2025 The Village Vault. Not affiliated with Supercell.</p>
+            <p><a href="/index.html#about">About</a> | <a href="/privacy.html">Privacy Policy</a> | <a
+                    href="mailto:clashofclanscollections@gmail.com">Contact</a></p>
+        </footer>
+    </div>
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading Sceneries...</p>
+    </div>
+    <script src="../app-core.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
