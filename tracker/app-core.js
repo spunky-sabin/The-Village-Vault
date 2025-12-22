@@ -17,6 +17,7 @@ const state = {
     selectedHeroes: [],
     selectedOwnership: [],
     selectedTypes: [],
+    selectedRarity: [], // Community rarity filter: 'legendary', 'ultra-rare', 'very-rare', 'rare', 'common'
     sortBy: 'newest',
     visibleLimit: 50,
     communityRarity: {},
@@ -280,7 +281,7 @@ function parseUserData(jsonString) {
         const parsed = JSON.parse(jsonString);
         const codes = extractCodesFromJSON(parsed);
         state.userOwnedCodes = new Set(codes);
-        sessionStorage.setItem('userCollectionData', jsonString);
+        localStorage.setItem('userCollectionData', jsonString);
         Object.keys(state.allItems).forEach(categoryId => {
             state.allItems[categoryId] = state.allItems[categoryId].map(item => ({
                 ...item,
@@ -395,6 +396,30 @@ function filterByOwnership(ownership) {
     updateUI();
 }
 
+function filterByRarity(rarity) {
+    if (state.selectedRarity.includes(rarity)) {
+        state.selectedRarity = state.selectedRarity.filter(r => r !== rarity);
+    } else {
+        state.selectedRarity = [...state.selectedRarity, rarity];
+    }
+    updateUI();
+}
+
+// Helper function to get community rarity label for an item
+function getItemCommunityRarityLabel(itemCode) {
+    if (!state.hasCommunityData || !state.communityRarity[itemCode]) return null;
+    return state.communityRarity[itemCode].label;
+}
+
+// Map display labels to filter values
+const RARITY_LABEL_MAP = {
+    'Legendary': 'legendary',
+    'Ultra Rare': 'ultra-rare',
+    'Very Rare': 'very-rare',
+    'Rare': 'rare',
+    'Common': 'common'
+};
+
 function getFilteredItems() {
     let filtered = state.items.filter(item => {
         const matchSearch = item.name.toLowerCase().includes(state.searchQuery.toLowerCase()) ||
@@ -406,7 +431,21 @@ function getFilteredItems() {
         const matchOwnership = state.selectedOwnership.length === 0 ||
             (state.selectedOwnership.includes("owned") && item.owned) ||
             (state.selectedOwnership.includes("missing") && !item.owned);
-        return matchSearch && matchType && matchHero && matchOwnership;
+
+        // Community rarity filter
+        let matchRarity = true;
+        if (state.selectedRarity.length > 0 && state.hasCommunityData) {
+            const itemRarityLabel = getItemCommunityRarityLabel(item.code);
+            if (itemRarityLabel) {
+                const itemRarityValue = RARITY_LABEL_MAP[itemRarityLabel];
+                matchRarity = state.selectedRarity.includes(itemRarityValue);
+            } else {
+                // Item has no community data, don't show if filtering by rarity
+                matchRarity = false;
+            }
+        }
+
+        return matchSearch && matchType && matchHero && matchOwnership && matchRarity;
     });
     switch (state.sortBy) {
         case "oldest": filtered.sort((a, b) => a.code - b.code); break;
@@ -705,18 +744,54 @@ function openAnalyticsModal() {
     if (state.hasCommunityData && Object.keys(state.communityRarity).length > 0 && communitySection && rarityBreakdown) {
         communitySection.style.display = 'block';
         const rarityCounts = { 'Legendary': 0, 'Ultra Rare': 0, 'Very Rare': 0, 'Rare': 0, 'Common': 0 };
+        // Store which items belong to each rarity tier (for the user's owned items)
+        const rarityItems = { 'Legendary': [], 'Ultra Rare': [], 'Very Rare': [], 'Rare': [], 'Common': [] };
         Object.keys(state.communityRarity).forEach(itemCode => {
             if (state.userOwnedCodes.has(itemCode)) {
                 const itemData = state.communityRarity[itemCode];
-                if (rarityCounts.hasOwnProperty(itemData.label)) rarityCounts[itemData.label]++;
+                if (rarityCounts.hasOwnProperty(itemData.label)) {
+                    rarityCounts[itemData.label]++;
+                    rarityItems[itemData.label].push(itemCode);
+                }
             }
         });
+
+        // Create clickable rarity rows
         rarityBreakdown.innerHTML = `
-            <div class="rarity-row legendary"><span class="rarity-name">Legendary (&lt;1%)</span><span class="rarity-count">${rarityCounts['Legendary']} items</span></div>
-            <div class="rarity-row ultra-rare"><span class="rarity-name">Ultra Rare (&lt;5%)</span><span class="rarity-count">${rarityCounts['Ultra Rare']} items</span></div>
-            <div class="rarity-row very-rare"><span class="rarity-name">Very Rare (&lt;15%)</span><span class="rarity-count">${rarityCounts['Very Rare']} items</span></div>
-            <div class="rarity-row rare"><span class="rarity-name">Rare (&lt;30%)</span><span class="rarity-count">${rarityCounts['Rare']} items</span></div>
-            <div class="rarity-row common"><span class="rarity-name">Common (≥30%)</span><span class="rarity-count">${rarityCounts['Common']} items</span></div>`;
+            <div class="rarity-row legendary clickable" data-rarity="legendary" title="Click to view your ${rarityCounts['Legendary']} Legendary items"><span class="rarity-name">Legendary (&lt;1%)</span><span class="rarity-count">${rarityCounts['Legendary']} items</span></div>
+            <div class="rarity-row ultra-rare clickable" data-rarity="ultra-rare" title="Click to view your ${rarityCounts['Ultra Rare']} Ultra Rare items"><span class="rarity-name">Ultra Rare (&lt;5%)</span><span class="rarity-count">${rarityCounts['Ultra Rare']} items</span></div>
+            <div class="rarity-row very-rare clickable" data-rarity="very-rare" title="Click to view your ${rarityCounts['Very Rare']} Very Rare items"><span class="rarity-name">Very Rare (&lt;15%)</span><span class="rarity-count">${rarityCounts['Very Rare']} items</span></div>
+            <div class="rarity-row rare clickable" data-rarity="rare" title="Click to view your ${rarityCounts['Rare']} Rare items"><span class="rarity-name">Rare (&lt;30%)</span><span class="rarity-count">${rarityCounts['Rare']} items</span></div>
+            <div class="rarity-row common clickable" data-rarity="common" title="Click to view your ${rarityCounts['Common']} Common items"><span class="rarity-name">Common (≥30%)</span><span class="rarity-count">${rarityCounts['Common']} items</span></div>`;
+
+        // Add click handlers to rarity rows
+        rarityBreakdown.querySelectorAll('.rarity-row.clickable').forEach(row => {
+            row.addEventListener('click', () => {
+                const rarityValue = row.dataset.rarity;
+                // Set filters to show only owned items of this rarity
+                state.selectedOwnership = ['owned'];
+                state.selectedRarity = [rarityValue];
+                // Update ownership filter checkboxes
+                document.querySelectorAll('.ownership-filter').forEach(cb => {
+                    cb.checked = cb.value === 'owned';
+                });
+                document.querySelectorAll('.btn-mobile-filter-ownership').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.ownership === 'owned');
+                });
+                // Update rarity filter checkboxes
+                document.querySelectorAll('.rarity-filter').forEach(cb => {
+                    cb.checked = cb.value === rarityValue;
+                });
+                document.querySelectorAll('.mobile-rarity-filter').forEach(cb => {
+                    cb.checked = cb.value === rarityValue;
+                });
+                // Close modal and update UI
+                closeModal('analytics-modal');
+                updateUI();
+                showToast("Filter Applied", `Showing your ${row.querySelector('.rarity-name').textContent.split(' (')[0]} items`);
+            });
+        });
+
         const totalCollectorsEl = document.getElementById('total-collectors');
         if (totalCollectorsEl) totalCollectorsEl.textContent = state.totalCollectors || '?';
     } else if (communitySection) {
@@ -758,6 +833,14 @@ async function syncUserDataToDatabase(playerTag) {
                 state.communityRarity = data.rarityData;
                 state.hasCommunityData = true;
                 state.totalCollectors = data.totalUsers || 0;
+                // Save community data to localStorage for cross-page persistence
+                localStorage.setItem('communityRarityData', JSON.stringify(data.rarityData));
+                localStorage.setItem('totalCollectors', String(data.totalUsers || 0));
+                // Show rarity filter now that we have community data
+                const rarityFilterGroup = document.getElementById('rarity-filter-group');
+                const mobileRarityFilterGroup = document.getElementById('mobile-rarity-filter-group');
+                if (rarityFilterGroup) rarityFilterGroup.style.display = 'block';
+                if (mobileRarityFilterGroup) mobileRarityFilterGroup.style.display = 'block';
                 updateUI();
                 showToast("Community Stats", `Synced with ${data.totalUsers} collectors!`);
             }
@@ -801,8 +884,19 @@ function handleDataClear() {
     });
     state.items = state.items.map(i => ({ ...i, owned: false }));
     state.hasUserData = false;
-    sessionStorage.removeItem('userCollectionData');
+    state.hasCommunityData = false;
+    state.communityRarity = {};
+    state.totalCollectors = 0;
+    state.selectedRarity = [];
+    localStorage.removeItem('userCollectionData');
+    localStorage.removeItem('communityRarityData');
+    localStorage.removeItem('totalCollectors');
     document.getElementById("clear-data-btn").style.display = "none";
+    // Hide rarity filter when no community data
+    const rarityFilterGroup = document.getElementById('rarity-filter-group');
+    const mobileRarityFilterGroup = document.getElementById('mobile-rarity-filter-group');
+    if (rarityFilterGroup) rarityFilterGroup.style.display = 'none';
+    if (mobileRarityFilterGroup) mobileRarityFilterGroup.style.display = 'none';
     updateUI();
     showToast("Cleared", "Your data has been reset.");
 }
@@ -892,7 +986,8 @@ async function initializePage(categoryId) {
 
     state.items = state.allItems[categoryId] || [];
 
-    const userCollectionData = sessionStorage.getItem('userCollectionData');
+    // Load user collection data from localStorage (persists across pages)
+    const userCollectionData = localStorage.getItem('userCollectionData');
     if (userCollectionData) {
         try {
             const parsed = JSON.parse(userCollectionData);
@@ -902,7 +997,25 @@ async function initializePage(categoryId) {
                 if (clearBtn) clearBtn.style.display = "block";
             }
         } catch (err) {
-            console.error("Error loading session collection data:", err);
+            console.error("Error loading stored collection data:", err);
+        }
+    }
+
+    // Load community rarity data from localStorage (persists across pages)
+    const storedCommunityData = localStorage.getItem('communityRarityData');
+    const storedTotalCollectors = localStorage.getItem('totalCollectors');
+    if (storedCommunityData) {
+        try {
+            state.communityRarity = JSON.parse(storedCommunityData);
+            state.hasCommunityData = true;
+            state.totalCollectors = parseInt(storedTotalCollectors) || 0;
+            // Show rarity filter if we have community data
+            const rarityFilterGroup = document.getElementById('rarity-filter-group');
+            const mobileRarityFilterGroup = document.getElementById('mobile-rarity-filter-group');
+            if (rarityFilterGroup) rarityFilterGroup.style.display = 'block';
+            if (mobileRarityFilterGroup) mobileRarityFilterGroup.style.display = 'block';
+        } catch (err) {
+            console.error("Error loading stored community data:", err);
         }
     }
 
@@ -967,6 +1080,40 @@ function setupCommonEventListeners() {
             const heroId = e.target.value;
             filterByHero(heroId);
             const desktopCheckbox = document.querySelector(`.hero-filter[value="${heroId}"]`);
+            if (desktopCheckbox) desktopCheckbox.checked = checkbox.checked;
+        });
+    });
+
+    // Rarity filter checkboxes (desktop)
+    const rarityFilterCheckboxes = document.querySelectorAll('.rarity-filter');
+    rarityFilterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', e => {
+            const rarity = e.target.value;
+            if (!state.hasCommunityData) {
+                e.target.checked = false;
+                showToast("No Community Data", "Community rarity data is not available yet", "error");
+                return;
+            }
+            filterByRarity(rarity);
+            // Sync with mobile
+            const mobileCheckbox = document.querySelector(`.mobile-rarity-filter[value="${rarity}"]`);
+            if (mobileCheckbox) mobileCheckbox.checked = checkbox.checked;
+        });
+    });
+
+    // Rarity filter checkboxes (mobile)
+    const mobileRarityFilterCheckboxes = document.querySelectorAll('.mobile-rarity-filter');
+    mobileRarityFilterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', e => {
+            const rarity = e.target.value;
+            if (!state.hasCommunityData) {
+                e.target.checked = false;
+                showToast("No Community Data", "Community rarity data is not available yet", "error");
+                return;
+            }
+            filterByRarity(rarity);
+            // Sync with desktop
+            const desktopCheckbox = document.querySelector(`.rarity-filter[value="${rarity}"]`);
             if (desktopCheckbox) desktopCheckbox.checked = checkbox.checked;
         });
     });

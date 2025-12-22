@@ -426,6 +426,13 @@
       "Code": "60000080",
       "TID": "TID_SCENERY_WASTELANDS",
       "image": "src/assets/sceneries/11_Wastelands_25_Scenery.webp"
+    },
+    {
+      "SN": 77,
+      "name": "Frostage Scenery",
+      "Code": "60000081",
+      "TID": "TID_SCENERY_FROSTAGE",
+      "image": "src/assets/sceneries/12_FrostAge_25_Scenery.webp"
     }
   ]
 }
