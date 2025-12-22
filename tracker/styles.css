@@ -1289,11 +1289,12 @@ svg {
 /* Item type badge */
 /* Make the small type badge text tiny */
 .item-type-badge {
-    font-size: 0.45rem !important;
-    padding: 2px 4px !important;
+    font-size: 0.50rem !important;
+    padding: 2px 7px !important;
     top: 3px !important;
     right: 3px !important;
-    opacity: 0.9;
+    justify-content: left;
+    display: flex;
 }
 
 /* Make the category below the name smaller too */
