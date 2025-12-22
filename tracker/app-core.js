@@ -810,6 +810,9 @@ function updateUI() {
     if (mobileHeroFilterGroup) mobileHeroFilterGroup.style.display = isHeroWardrobe ? 'block' : 'none';
     const analyticsBtn = document.getElementById('analytics-btn');
     if (analyticsBtn) analyticsBtn.style.display = state.hasUserData ? 'inline-flex' : 'none';
+
+    const welcomeBanner = document.getElementById('welcome-banner');
+    if (welcomeBanner) welcomeBanner.style.display = state.hasUserData ? 'none' : 'block';
 }
 
 // ============================================

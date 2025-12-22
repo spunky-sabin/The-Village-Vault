@@ -1048,6 +1048,8 @@ svg {
     box-sizing: border-box;
     transform: translateZ(0);
     /* Force hardware acceleration */
+    border-radius: 0.75rem;
+    overflow: hidden;
 }
 
 .item-card.flipped .item-card-back {
@@ -1125,6 +1127,43 @@ svg {
 .item-card.rarity-legendary {
     border-color: hsl(320, 85%, 60%);
     border-width: 2px;
+}
+
+/* SPECIAL: Hero Skins move the "glow" to the badge, remove from card border */
+.item-card.type-heroskin.rarity-gold,
+.item-card.type-heroskin.rarity-legendary {
+    border-color: var(--border);
+    border-width: 2px;
+    box-shadow: none;
+}
+
+/* Hero Skin Badge Styles by Rarity */
+/* Gold Pass */
+.item-card.type-heroskin.rarity-gold .item-type-badge.heroskin {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    color: #000;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-shadow: none;
+}
+
+/* Legendary */
+.item-card.type-heroskin.rarity-legendary .item-type-badge.heroskin {
+    background: #e600e6;
+    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Standard/Common */
+.item-card.type-heroskin.rarity-common .item-type-badge.heroskin,
+.item-card.type-heroskin.rarity-standard .item-type-badge.heroskin {
+    background: #000;
+    color: var(--secondary-foreground);
+    border: 1px solid var(--border);
+    box-shadow: none;
 }
 
 .item-card.grayscale .item-image {
