@@ -7,8 +7,9 @@
     <title>Privacy Policy - The Village Vault</title>
     <meta content="Privacy Policy for The Village Vault. Learn how we handle your data." name="description" />
     <meta content="noindex" name="robots" />
-    <link href="styles.css" rel="stylesheet" />
-    <!-- Reusing main styles for consistency -->
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Exo+2:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link href="global.css" rel="stylesheet" />
     <style>
         .privacy-container {
             max-width: 800px;
@@ -17,8 +18,8 @@
         }
 
         .privacy-content {
-            background: var(--card);
-            border: 1px solid var(--border);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: 1rem;
             padding: 2.5rem;
             margin-top: 2rem;
@@ -27,21 +28,21 @@
 
         .privacy-content h1 {
             font-size: 2.5rem;
-            color: var(--gold);
+            color: var(--accent-gold);
             margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 1rem;
         }
 
         .privacy-content h2 {
             font-size: 1.5rem;
-            color: var(--foreground);
+            color: var(--text-main);
             margin-top: 2rem;
             margin-bottom: 1rem;
         }
 
         .privacy-content p {
-            color: var(--muted-foreground);
+            color: var(--text-muted);
             line-height: 1.8;
             margin-bottom: 1rem;
         }
@@ -49,7 +50,7 @@
         .privacy-content ul {
             list-style: disc;
             padding-left: 1.5rem;
-            color: var(--muted-foreground);
+            color: var(--text-muted);
             margin-bottom: 1rem;
         }
 
@@ -61,7 +62,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            color: var(--primary);
+            color: var(--accent-blue);
             text-decoration: none;
             font-weight: 600;
             margin-bottom: 1rem;
@@ -75,13 +76,16 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="top-nav">
-        <ul class="nav-list">
-            <li class="nav-item">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="nav-item"><a href="tracker/index.html">Tracker</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="clashicons/logomain.png" alt="Clash of Clans Vault" class="logo-image" style="height: 60px;">
+        </div>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/tracker/">Tracker</a>
+            <a href="/wiki/">Wiki</a>
+            <a href="/privacy.html" class="active">Privacy Policy</a>
+        </div>
     </nav>
 
     <div class="privacy-container">

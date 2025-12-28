@@ -1,0 +1,30 @@
+{
+  "season": "Frost Age",
+  "skins": [
+    {
+      "name": "Frost King",
+      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Frost+King"
+    },
+    {
+      "name": "Blizzard Queen",
+      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Blizzard+Queen"
+    },
+    {
+      "name": "Ice Warden",
+      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Ice+Warden"
+    },
+    {
+      "name": "Glacial Champion",
+      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Glacial+Champion"
+    },
+    {
+      "name": "Yetimite King",
+      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Yetimite+King"
+    }
+  ],
+  "scenery": {
+    "name": "Frost Age Scenery",
+    "image": "clashicons/12_FrostAge_25_Scenery.webp"
+  },
+  "decorations": []
+}
