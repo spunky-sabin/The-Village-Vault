@@ -48,24 +48,24 @@ class EventsManager {
             throw new Error('Events configuration is empty');
         }
 
-        if (!this.eventsConfig.repeating_events && !this.eventsConfig.one_time_events) {
-            throw new Error('Configuration must have repeating_events or one_time_events');
+        if (!this.eventsConfig.repeating_events && !this.eventsConfig.non_repeating_events) {
+            throw new Error('Configuration must have repeating_events or non_repeating_events');
         }
 
         // Validate repeating events
         if (this.eventsConfig.repeating_events) {
             this.eventsConfig.repeating_events.forEach((event, index) => {
-                if (!event.title || !event.modifier || !event.baseDate || event.durationDays === undefined) {
+                if (!event.title) {
                     throw new Error(`Invalid repeating event at index ${index}`);
                 }
             });
         }
 
-        // Validate one-time events
-        if (this.eventsConfig.one_time_events) {
-            this.eventsConfig.one_time_events.forEach((event, index) => {
-                if (!event.title || !event.start || !event.end) {
-                    throw new Error(`Invalid one-time event at index ${index}`);
+        // Validate non-repeating events
+        if (this.eventsConfig.non_repeating_events) {
+            this.eventsConfig.non_repeating_events.forEach((event, index) => {
+                if (!event.title) {
+                    throw new Error(`Invalid non-repeating event at index ${index}`);
                 }
             });
         }
@@ -266,65 +266,59 @@ class EventsManager {
 
         const activeEvents = [];
 
-        // Process repeating events
-        if (this.eventsConfig.repeating_events) {
-            this.eventsConfig.repeating_events.forEach(event => {
+        // Helper function to process an event array
+        const processEventArray = (eventArray, arrayName) => {
+            if (!eventArray) return;
+
+            eventArray.forEach(event => {
                 if (event.active === false) return;
 
                 try {
-                    const { start, end } = this.calculateRepeatingEventDates(event, currentDate);
+                    let start, end;
+
+                    // Determine how to calculate dates based on ignoreDate flag
+                    if (event.ignoreDate && event.baseDate && event.modifier !== undefined && event.durationDays !== undefined) {
+                        // Use repeating event logic
+                        const dates = this.calculateRepeatingEventDates(event, currentDate);
+                        start = dates.start;
+                        end = dates.end;
+                    } else if (event.start && event.end) {
+                        // Use explicit dates
+                        start = new Date(event.start);
+                        end = new Date(event.end);
+                    } else {
+                        console.warn(`Event "${event.title}" in ${arrayName} missing required date fields`);
+                        return;
+                    }
 
                     // Check if event is currently active
-                    if (currentDate >= start && currentDate < end) {
+                    const isActive = (currentDate >= start && currentDate < end);
+
+                    if (isActive) {
                         const countdown = this.calculateCountdown(end, currentDate);
                         activeEvents.push({
                             title: event.title,
                             icon: event.icon,
                             image: event.image || null,
                             description: event.description || '',
-                            type: 'repeating',
+                            type: event.type || (event.modifier ? 'repeating' : 'one-time'),
                             modifier: event.modifier,
                             start: start,
                             end: end,
                             countdown: countdown,
-                            countdownText: this.formatCountdown(countdown)
+                            countdownText: this.formatCountdown(countdown),
+                            ignoreDate: event.ignoreDate || false
                         });
                     }
                 } catch (error) {
-                    console.error(`Error processing repeating event "${event.title}":`, error);
+                    console.error(`Error processing event "${event.title}" from ${arrayName}:`, error);
                 }
             });
-        }
+        };
 
-        // Process one-time events
-        if (this.eventsConfig.one_time_events) {
-            this.eventsConfig.one_time_events.forEach(event => {
-                if (event.active === false) return;
-
-                try {
-                    const start = new Date(event.start);
-                    const end = new Date(event.end);
-
-                    // Check if event is currently active
-                    if (currentDate >= start && currentDate < end) {
-                        const countdown = this.calculateCountdown(end, currentDate);
-                        activeEvents.push({
-                            title: event.title,
-                            icon: event.icon,
-                            image: event.image || null,
-                            description: event.description || '',
-                            type: 'one-time',
-                            start: start,
-                            end: end,
-                            countdown: countdown,
-                            countdownText: this.formatCountdown(countdown)
-                        });
-                    }
-                } catch (error) {
-                    console.error(`Error processing one-time event "${event.title}":`, error);
-                }
-            });
-        }
+        // Process both repeating and non-repeating events
+        processEventArray(this.eventsConfig.repeating_events, 'repeating_events');
+        processEventArray(this.eventsConfig.non_repeating_events, 'non_repeating_events');
 
         // Sort by end time (events ending soonest first)
         activeEvents.sort((a, b) => a.countdown.totalMs - b.countdown.totalMs);
@@ -352,22 +346,39 @@ class EventsManager {
         const endDate = new Date(currentDate);
         endDate.setDate(endDate.getDate() + daysAhead);
 
-        // Process repeating events
-        if (this.eventsConfig.repeating_events) {
-            this.eventsConfig.repeating_events.forEach(event => {
+        // Helper function to process an event array
+        const processEventArray = (eventArray, arrayName) => {
+            if (!eventArray) return;
+
+            eventArray.forEach(event => {
                 if (event.active === false) return;
 
                 try {
-                    const { start, end } = this.calculateRepeatingEventDates(event, currentDate);
+                    let start, end;
 
-                    // Check if event falls within the upcoming period
-                    if (start < endDate) {
+                    // Determine how to calculate dates based on ignoreDate flag
+                    if (event.ignoreDate && event.baseDate && event.modifier !== undefined && event.durationDays !== undefined) {
+                        // Use repeating event logic
+                        const dates = this.calculateRepeatingEventDates(event, currentDate);
+                        start = dates.start;
+                        end = dates.end;
+                    } else if (event.start && event.end) {
+                        // Use explicit dates
+                        start = new Date(event.start);
+                        end = new Date(event.end);
+                    } else {
+                        console.warn(`Event "${event.title}" in ${arrayName} missing required date fields`);
+                        return;
+                    }
+
+                    // Check if event falls within the upcoming period and hasn't ended yet
+                    if (start < endDate && end > currentDate) {
                         upcomingEvents.push({
                             title: event.title,
                             icon: event.icon,
                             image: event.image || null,
                             description: event.description || '',
-                            type: 'repeating',
+                            type: event.type || (event.modifier ? 'repeating' : 'one-time'),
                             modifier: event.modifier,
                             start: start,
                             end: end,
@@ -375,38 +386,14 @@ class EventsManager {
                         });
                     }
                 } catch (error) {
-                    console.error(`Error processing repeating event "${event.title}":`, error);
+                    console.error(`Error processing event "${event.title}" from ${arrayName}:`, error);
                 }
             });
-        }
+        };
 
-        // Process one-time events
-        if (this.eventsConfig.one_time_events) {
-            this.eventsConfig.one_time_events.forEach(event => {
-                if (event.active === false) return;
-
-                try {
-                    const start = new Date(event.start);
-                    const end = new Date(event.end);
-
-                    // Check if event falls within the upcoming period
-                    if (start < endDate && end > currentDate) {
-                        upcomingEvents.push({
-                            title: event.title,
-                            icon: event.icon,
-                            image: event.image || null,
-                            description: event.description || '',
-                            type: 'one-time',
-                            start: start,
-                            end: end,
-                            isActive: currentDate >= start && currentDate < end
-                        });
-                    }
-                } catch (error) {
-                    console.error(`Error processing one-time event "${event.title}":`, error);
-                }
-            });
-        }
+        // Process both repeating and non-repeating events
+        processEventArray(this.eventsConfig.repeating_events, 'repeating_events');
+        processEventArray(this.eventsConfig.non_repeating_events, 'non_repeating_events');
 
         // Sort by start time
         upcomingEvents.sort((a, b) => a.start.getTime() - b.start.getTime());
@@ -431,61 +418,53 @@ class EventsManager {
         const monthStart = new Date(Date.UTC(year, month, 1, 0, 0, 0));
         const monthEnd = new Date(Date.UTC(year, month + 1, 0, 23, 59, 59));
 
-        // Process repeating events
-        if (this.eventsConfig.repeating_events) {
-            this.eventsConfig.repeating_events.forEach(event => {
+        // Helper to process list
+        const processList = (list) => {
+            if (!list) return;
+            list.forEach(event => {
                 if (event.active === false) return;
-
                 try {
-                    if (event.modifier === 'monthly') {
-                        // Monthly events - calculate once for the month
-                        const { start, end } = this.calculateRepeatingEventDates(event, monthStart);
-
-                        if (end > monthStart && start <= monthEnd) {
-                            // Add START marker
-                            const startDay = start.getUTCDate();
-                            if (start >= monthStart) {
-                                calendarEntries.push({
-                                    date: startDay,
-                                    fullDate: new Date(start),
-                                    title: event.title,
-                                    icon: event.icon,
-                                    type: 'repeating',
-                                    isStart: true,
-                                    isEnd: false
-                                });
-                            }
-
-                            // Add END marker
-                            const endDay = end.getUTCDate();
-                            if (end <= monthEnd) {
-                                calendarEntries.push({
-                                    date: endDay,
-                                    fullDate: new Date(end),
-                                    title: event.title,
-                                    icon: event.icon,
-                                    type: 'repeating',
-                                    isStart: false,
-                                    isEnd: true
-                                });
-                            }
+                    let start, end;
+                    if (event.ignoreDate && (event.baseDate && (event.modifier || event.durationDays !== undefined))) {
+                        const dates = this.calculateRepeatingEventDates(event, monthStart);
+                        start = dates.start;
+                        end = dates.end;
+                    } else if (event.start && event.end) {
+                        start = new Date(event.start);
+                        end = new Date(event.end);
+                    } else {
+                        // Fallback
+                        if (event.baseDate) {
+                            const dates = this.calculateRepeatingEventDates(event, monthStart);
+                            start = dates.start;
+                            end = dates.end;
+                        } else {
+                            return; // Can't calculate
                         }
-                    } else if (event.modifier === 'weekly') {
-                        // Weekly events - need to find ALL occurrences in the month
+                    }
+
+                    // Check overlap (weekly logic handles itself inside calculate, 
+                    // but for simplified view we just use the calculated start/end).
+                    // Actually, for "Monthly" view we might need to be smarter about Weekly recurrences.
+                    // The old logic handled 'weekly' correctly by looping.
+                    // Since I unified the logic, `calculateRepeatingEventDates` only returns ONE occurrence closest to ref date.
+                    // This breaks the calendar view for Weekly events (shows only one).
+                    // Fixing this for Calendar View specifically:
+
+                    if (event.modifier === 'weekly' && event.ignoreDate) {
+                        // Weekly loop logic from old code
                         let searchDate = new Date(monthStart);
-
-                        // Search through the entire month
                         while (searchDate <= monthEnd) {
-                            const { start, end } = this.calculateRepeatingEventDates(event, searchDate);
+                            const dates = this.calculateRepeatingEventDates(event, searchDate);
+                            const s = dates.start;
+                            const e = dates.end;
 
-                            // Check if this occurrence overlaps with our month
-                            if (end > monthStart && start <= monthEnd) {
-                                // Add START marker
-                                const startDay = start.getUTCDate();
-                                if (start >= monthStart && start <= monthEnd) {
+                            if (e > monthStart && s <= monthEnd) {
+                                // Add Start
+                                if (s >= monthStart && s <= monthEnd) {
                                     calendarEntries.push({
-                                        date: startDay,
-                                        fullDate: new Date(start),
+                                        date: s.getUTCDate(),
+                                        fullDate: new Date(s),
                                         title: event.title,
                                         icon: event.icon,
                                         type: 'repeating',
@@ -493,13 +472,11 @@ class EventsManager {
                                         isEnd: false
                                     });
                                 }
-
-                                // Add END marker
-                                const endDay = end.getUTCDate();
-                                if (end >= monthStart && end <= monthEnd) {
+                                // Add End
+                                if (e >= monthStart && e <= monthEnd) {
                                     calendarEntries.push({
-                                        date: endDay,
-                                        fullDate: new Date(end),
+                                        date: e.getUTCDate(),
+                                        fullDate: new Date(e),
                                         title: event.title,
                                         icon: event.icon,
                                         type: 'repeating',
@@ -508,61 +485,43 @@ class EventsManager {
                                     });
                                 }
                             }
-
-                            // Move search forward by 7 days to find next weekly occurrence
                             searchDate.setUTCDate(searchDate.getUTCDate() + 7);
                         }
-                    }
-                } catch (error) {
-                    console.error(`Error processing repeating event "${event.title}" for calendar:`, error);
-                }
-            });
-        }
-
-        // Process one-time events
-        if (this.eventsConfig.one_time_events) {
-            this.eventsConfig.one_time_events.forEach(event => {
-                if (event.active === false) return;
-
-                try {
-                    const start = new Date(event.start);
-                    const end = new Date(event.end);
-
-                    // Check if event overlaps with our month
-                    if (end > monthStart && start <= monthEnd) {
-                        // Add START marker
-                        const startDay = start.getUTCDate();
-                        if (start >= monthStart && start <= monthEnd) {
-                            calendarEntries.push({
-                                date: startDay,
-                                fullDate: new Date(start),
-                                title: event.title,
-                                icon: event.icon,
-                                type: 'one-time',
-                                isStart: true,
-                                isEnd: false
-                            });
-                        }
-
-                        // Add END marker
-                        const endDay = end.getUTCDate();
-                        if (end >= monthStart && end <= monthEnd) {
-                            calendarEntries.push({
-                                date: endDay,
-                                fullDate: new Date(end),
-                                title: event.title,
-                                icon: event.icon,
-                                type: 'one-time',
-                                isStart: false,
-                                isEnd: true
-                            });
+                    } else {
+                        // Monthly or fixed or one-time
+                        if (end > monthStart && start <= monthEnd) {
+                            if (start >= monthStart && start <= monthEnd) {
+                                calendarEntries.push({
+                                    date: start.getUTCDate(),
+                                    fullDate: new Date(start),
+                                    title: event.title,
+                                    icon: event.icon,
+                                    type: event.type || 'repeating',
+                                    isStart: true,
+                                    isEnd: false
+                                });
+                            }
+                            if (end >= monthStart && end <= monthEnd) {
+                                calendarEntries.push({
+                                    date: end.getUTCDate(),
+                                    fullDate: new Date(end),
+                                    title: event.title,
+                                    icon: event.icon,
+                                    type: event.type || 'repeating',
+                                    isStart: false,
+                                    isEnd: true
+                                });
+                            }
                         }
                     }
                 } catch (error) {
-                    console.error(`Error processing one-time event "${event.title}" for calendar:`, error);
+                    console.error(`Error processing event "${event.title}" for calendar:`, error);
                 }
             });
-        }
+        };
+
+        processList(this.eventsConfig.repeating_events);
+        processList(this.eventsConfig.non_repeating_events);
 
         return calendarEntries;
     }

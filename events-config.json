@@ -7,16 +7,10 @@
             "durationDays": 31,
             "description": "Season challenges and rewards available",
             "active": true,
-            "image": "clashicons/Icon_HV_Gold_Pass.png"
-        },
-        {
-            "title": "Clan War League",
-            "baseDate": "01",
-            "modifier": "monthly",
-            "durationDays": 8,
-            "description": "Compete in league wars for medals",
-            "active": true,
-            "image": "clashicons/Icon_HV_CWL_Champion_3.png"
+            "ignoreDate": true,
+            "image": "clashicons/Icon_HV_Gold_Pass.png",
+            "start": "2025-12-01T08:00:00Z",
+            "end": "2026-01-01T08:00:00Z"
         },
         {
             "title": "Raid Weekend",
@@ -25,16 +19,10 @@
             "durationDays": 3,
             "description": "Capital Raid Weekend battles",
             "active": true,
-            "image": "clashicons/Icon_HV_Raid_Medal.png"
-        },
-        {
-            "title": "Clan Games",
-            "baseDate": "22",
-            "modifier": "monthly",
-            "durationDays": 6,
-            "description": "Complete challenges for rewards",
-            "active": true,
-            "image": "clashicons/clangames.webp"
+            "ignoreDate": true,
+            "image": "clashicons/Icon_HV_Raid_Medal.png",
+            "start": "2025-12-26T08:00:00Z",
+            "end": "2025-12-29T08:00:00Z"
         },
         {
             "title": "Trader Refresh",
@@ -43,25 +31,34 @@
             "durationDays": 0,
             "description": "New deals available from the Trader",
             "active": true,
-            "image": "clashicons/Villager_HV_Trader_2.png"
+            "ignoreDate": true,
+            "image": "clashicons/Villager_HV_Trader_2.png",
+            "start": "2025-12-30T08:00:00Z",
+            "end": "2025-12-30T08:00:00Z"
+        },
+        {
+            "title": "Clan Games",
+            "baseDate": "22",
+            "modifier": "monthly",
+            "durationDays": 6,
+            "description": "Complete challenges for rewards",
+            "active": true,
+            "ignoreDate": true,
+            "image": "clashicons/clangames.webp",
+            "start": "2026-01-22T08:00:00Z",
+            "end": "2026-01-28T08:00:00Z"
         }
     ],
-    "one_time_events": [
-        {
-            "title": "Meltdown Mayhem",
-            "icon": "medal",
-            "start": "2025-12-12T08:00:00Z",
-            "end": "2025-12-30T08:00:00Z",
-            "description": "Collect Sleepy Mites from Gold Storages to exchange it for some cool Rewards",
-            "active": true
-        },
+    "non_repeating_events": [
         {
             "title": "1 Gem Boosts",
             "icon": "gem",
             "start": "2026-01-15T08:00:00Z",
             "end": "2026-01-20T08:00:00Z",
             "description": "All training and building boosts cost 1 gem",
-            "active": false
+            "active": false,
+            "type": "one-time",
+            "ignoreDate": false
         },
         {
             "title": "Builder Boost",
@@ -69,7 +66,31 @@
             "start": "2026-01-25T08:00:00Z",
             "end": "2026-01-28T08:00:00Z",
             "description": "Reduced building times for all upgrades",
-            "active": false
+            "active": false,
+            "type": "one-time",
+            "ignoreDate": false
+        },
+        {
+            "title": "Meltdown Mayhem",
+            "icon": "medal",
+            "start": "2025-12-12T08:00:00Z",
+            "end": "2025-12-30T08:00:00Z",
+            "description": "Collect Sleepy Mites for Rewards",
+            "active": true,
+            "type": "one-time",
+            "ignoreDate": false
+        },
+        {
+            "title": "Clan War League",
+            "baseDate": "01",
+            "modifier": "monthly",
+            "durationDays": 8,
+            "description": "Compete in league wars for medals",
+            "active": true,
+            "ignoreDate": false,
+            "image": "clashicons/Icon_HV_CWL_Champion_3.png",
+            "start": "2026-01-01T08:00:00Z",
+            "end": "2026-01-09T08:00:00Z"
         }
     ]
 }

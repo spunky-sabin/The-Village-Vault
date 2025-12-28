@@ -154,12 +154,53 @@
 
         .preview-image {
             width: 100%;
-            height: 150px;
+            height: 200px;
             background-color: var(--bg-card);
             border-radius: 8px;
             margin-bottom: 1rem;
-            background-size: cover;
+            background-size: contain;
             background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* --- DECORATIONS & OBSTACLES GRID --- */
+        .decorations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+
+        .decoration-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 0.5rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .decoration-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-gold);
+        }
+
+        .decoration-image {
+            width: 100%;
+            height: 80px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            margin-bottom: 0.5rem;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .decoration-name {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.2;
         }
 
         /* --- CALENDAR & EVENTS --- */
@@ -350,6 +391,52 @@
             transform: translateX(5px);
         }
 
+        /* --- EVENTS SIDEBAR (Active & Upcoming) --- */
+        .events-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding-top: 2rem;
+        }
+
+        .active-events-box,
+        .upcoming-events-box {
+            background-color: var(--bg-panel);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .active-events-box h2,
+        .upcoming-events-box h2 {
+            font-size: 1.5rem;
+            /* Match section title size if needed, or keep default */
+        }
+
+        .upcoming-event-item {
+            display: flex;
+            align-items: center;
+            padding: 0.8rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 0.5rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            transition: all 0.2s;
+            opacity: 0.8;
+            /* Slightly dimmed for upcoming */
+        }
+
+        .upcoming-event-item:hover {
+            opacity: 1;
+            background-color: rgba(0, 255, 100, 0.1);
+            /* Greenish tint for upcoming */
+            transform: translateX(5px);
+        }
+
+        .upcoming-event-item:last-child {
+            border-bottom: none;
+        }
+
         .event-icon {
             font-size: 1.5rem;
             color: var(--accent-gold);
@@ -384,6 +471,65 @@
             padding: 2rem;
             color: var(--text-muted);
             font-style: italic;
+        }
+
+        /* --- TRADER REFRESH NOTIFICATION --- */
+        .trader-notification {
+            background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(0, 168, 255, 0.1));
+            border: 2px solid var(--accent-gold);
+            border-radius: 8px;
+            padding: 0.8rem 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .trader-notification.hidden {
+            display: none;
+        }
+
+        .trader-notification .trader-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .trader-notification-text {
+            flex: 1;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .trader-notification-text .trader-time {
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 0 8px rgba(255, 204, 0, 0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trader-notification {
+                padding: 0.6rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .trader-notification .trader-icon {
+                width: 24px;
+                height: 24px;
+            }
         }
 
         /* --- EXTRA FEATURES --- */
@@ -490,6 +636,19 @@
             .skin-image {
                 height: 160px;
             }
+
+            .decorations-grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 0.4rem;
+            }
+
+            .decoration-image {
+                height: 55px;
+            }
+
+            .decoration-name {
+                font-size: 0.6rem;
+            }
         }
 
 
@@ -550,6 +709,19 @@
                 min-width: 30px;
                 max-width: 30px;
                 height: 30px;
+            }
+
+            .decorations-grid {
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                gap: 0.5rem;
+            }
+
+            .decoration-image {
+                height: 60px;
+            }
+
+            .decoration-name {
+                font-size: 0.65rem;
             }
         }
 
@@ -617,6 +789,28 @@
                 grid-template-columns: 2.5fr 1fr;
             }
         }
+
+        /* Calendar Image */
+        .calendar-image-container {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: var(--bg-card);
+        }
+
+        .calendar-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .calendar-image-container {
+                min-height: 200px;
+            }
+        }
     </style>
 </head>
 
@@ -658,17 +852,32 @@
         <section class="events-container">
             <div class="calendar-box">
                 <h2 class="section-title">Season Calendar</h2>
-                <div class="calendar-header">
-                    <div class="calendar-month" id="calendarMonth">Loading...</div>
-                </div>
-                <div class="calendar-grid" id="calendarGrid">
-                    <!-- Calendar will be generated here -->
+                <div class="calendar-image-container">
+                    <img id="calendarImage" src="" alt="Season Calendar" class="calendar-image">
                 </div>
             </div>
-            <div class="active-events-box">
-                <h2 class="section-title">Active Events</h2>
-                <div id="activeEventsContainer">
-                    <!-- Active events will be rendered here -->
+
+            <div class="events-sidebar">
+                <div class="active-events-box">
+                    <!-- Trader Refresh Notification -->
+                    <div id="traderNotification" class="trader-notification hidden">
+                        <img src="clashicons/Villager_HV_Trader_2.png" alt="Trader" class="trader-icon">
+                        <div class="trader-notification-text">
+                            The trader refreshes in <span class="trader-time" id="traderTime">--</span>
+                        </div>
+                    </div>
+
+                    <h2 class="section-title">Active Events</h2>
+                    <div id="activeEventsContainer">
+                        <!-- Active events will be rendered here -->
+                    </div>
+                </div>
+
+                <div class="upcoming-events-box">
+                    <h2 class="section-title">Upcoming Events</h2>
+                    <div id="upcomingEventsContainer">
+                        <!-- Upcoming events will be rendered here -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -685,9 +894,8 @@
                 <h3>This Season's Scenery</h3>
                 <div class="preview-image" id="sceneryImage"></div>
                 <h4 id="sceneryName" style="margin-bottom: 0.5rem;">Loading...</h4>
-                <p style="color: var(--text-muted); margin-bottom: 1rem;">Transform your village into a frozen tundra.
+                <p style="color: var(--text-muted);">Transform your village into a frozen tundra.
                 </p>
-                <a href="#" class="view-3d-btn">View Details</a>
             </div>
             <div class="content-box">
                 <h3>Season Decorations & Obstacles</h3>
@@ -763,13 +971,19 @@
                 renderSkins();
                 renderScenery();
                 renderDecorations();
-                renderCalendar();
+                renderCalendarImage();
+                renderTraderNotification();
                 renderActiveEvents();
+                renderUpcomingEvents();
                 startCountdownTimer();
 
-                // Update active events every second
+                // Update active events and trader notification every second
                 setInterval(() => {
                     renderActiveEvents();
+                    renderTraderNotification();
+                    // Optional: Update upcoming events periodically too, but less frequent is fine. 
+                    // For now, static load is okay, but if user sits on page for days it might drift.
+                    // Let's just leave it on page load for now as per minimal change.
                 }, 1000);
 
                 console.log('Page initialized successfully');
@@ -852,139 +1066,12 @@
         // ========================================================================
         // CALENDAR RENDERING
         // ========================================================================
-        function renderCalendar() {
-            const year = currentDisplayMonth.getFullYear();
-            const month = currentDisplayMonth.getMonth();
-
-            // Update month display
-            const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
-                'July', 'August', 'September', 'October', 'November', 'December'];
-            document.getElementById('calendarMonth').textContent = `${monthNames[month]} ${year}`;
-
-            const grid = document.getElementById('calendarGrid');
-            grid.innerHTML = '';
-
-            // Add day headers
-            const dayHeaders = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            dayHeaders.forEach(day => {
-                const header = document.createElement('div');
-                header.className = 'calendar-day-header';
-                header.textContent = day;
-                grid.appendChild(header);
-            });
-
-            // Get calendar events for this month
-            const calendarEvents = eventsManager.getCalendarForMonth(year, month);
-
-            // Get first day of month and number of days
-            const firstDay = new Date(year, month, 1).getDay();
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-            const today = new Date();
-
-            // Add empty cells for days before month starts
-            for (let i = 0; i < firstDay; i++) {
-                const emptyDay = document.createElement('div');
-                emptyDay.className = 'calendar-day empty';
-                grid.appendChild(emptyDay);
-            }
-
-            // Add days of the month
-            for (let day = 1; day <= daysInMonth; day++) {
-                const dayElement = document.createElement('div');
-                dayElement.className = 'calendar-day';
-
-                // Check if today
-                if (today.getDate() === day && today.getMonth() === month && today.getFullYear() === year) {
-                    dayElement.classList.add('today');
-                }
-
-                // Day number
-                const dayNumber = document.createElement('div');
-                dayNumber.className = 'day-number';
-                dayNumber.textContent = day;
-                dayElement.appendChild(dayNumber);
-
-                // Check for events on this day
-                const dayEvents = calendarEvents.filter(e => e.date === day);
-
-                if (dayEvents.length > 0) {
-                    dayElement.classList.add('has-event');
-
-                    const eventsContainer = document.createElement('div');
-                    eventsContainer.className = 'day-events';
-
-                    // Group events by title to detect instant events (same day start/end)
-                    const eventMap = new Map();
-                    dayEvents.forEach(event => {
-                        if (!eventMap.has(event.title)) {
-                            eventMap.set(event.title, { event, hasStart: false, hasEnd: false });
-                        }
-                        const entry = eventMap.get(event.title);
-                        if (event.isStart) entry.hasStart = true;
-                        if (event.isEnd) entry.hasEnd = true;
-                    });
-
-                    // Convert to array and show first 3 events max
-                    const uniqueEvents = Array.from(eventMap.values()).slice(0, 3);
-
-                    uniqueEvents.forEach(({ event, hasStart, hasEnd }) => {
-                        const eventMarker = document.createElement('div');
-                        eventMarker.className = 'day-event-marker';
-
-                        // Truncate long event names
-                        let displayName = event.title;
-                        if (displayName.length > 12) {
-                            displayName = displayName.substring(0, 11) + '…';
-                        }
-
-                        // Decide which image/icon to use
-                        let iconHtml = '';
-                        let eventImage = event.image;
-                        let eventIcon = event.icon;
-
-                        // Try to find image from config if not present in the calendar event object
-                        if (!eventImage && eventsManager.eventsConfig?.repeating_events) {
-                            const configEvent = eventsManager.eventsConfig.repeating_events.find(
-                                e => e.title === event.title
-                            );
-                            if (configEvent) {
-                                if (configEvent.image) eventImage = configEvent.image;
-                                if (configEvent.icon) eventIcon = configEvent.icon;
-                            }
-                        }
-
-                        if (eventImage) {
-                            iconHtml = `<img src="${eventImage}" alt="icon" class="event-marker-icon">`;
-                        } else if (eventIcon) {
-                            // Keep using FA icon if no image provided
-                            iconHtml = `<i class="${eventIcon}"></i>`;
-                        }
-
-                        // Check if this is an instant event (both start and end on same day)
-                        const isInstantEvent = hasStart && hasEnd;
-
-                        if (isInstantEvent) {
-                            // Instant event - just show the name
-                            eventMarker.classList.add('event-instant');
-                            eventMarker.innerHTML = `${iconHtml}<span class="event-text">${displayName}</span>`;
-                            eventMarker.title = event.title;
-                        } else if (event.isStart) {
-                            eventMarker.classList.add('event-start');
-                            eventMarker.innerHTML = `${iconHtml}<span class="event-text">${displayName}</span>`;
-                            eventMarker.title = `${event.title} starts`;
-                        } else if (event.isEnd) {
-                            eventMarker.classList.add('event-end');
-                            eventMarker.innerHTML = `${iconHtml}<span class="event-text">${displayName}</span>`;
-                            eventMarker.title = `${event.title} ends`;
-                        }
-
-                        eventsContainer.appendChild(eventMarker);
-                    });
-
-                    dayElement.appendChild(eventsContainer);
-                }
-
-                grid.appendChild(dayElement);
+        function renderCalendarImage() {
+            const calendarImage = document.getElementById('calendarImage');
+            if (seasonData.calendar_image) {
+                calendarImage.src = seasonData.calendar_image;
+            } else {
+                calendarImage.alt = "No calendar available";
             }
         }
 
@@ -1040,7 +1127,6 @@
                 skinCard.innerHTML = `
                     <div class="skin-image" style="background-image: url('${skin.image}');"></div>
                     <h3 class="skin-name">${skin.name}</h3>
-                    <a href="#" class="view-3d-btn">View 3D</a>
                 `;
                 skinsGrid.appendChild(skinCard);
             });
@@ -1064,14 +1150,125 @@
             const container = document.getElementById('decorationsContainer');
             container.innerHTML = '';
 
+            // Create a grid container
+            const gridDiv = document.createElement('div');
+            gridDiv.className = 'decorations-grid';
+
             seasonData.decorations.forEach(item => {
-                const decorationDiv = document.createElement('div');
-                decorationDiv.style.cssText = 'margin-bottom: 0.5rem;';
-                decorationDiv.innerHTML = `
-                    <i class="fas fa-${item.icon}" style="color:var(--accent-blue); margin-right:5px;"></i>
-                    ${item.name} (${item.type === 'decoration' ? 'Decoration' : 'Obstacle'})
+                const decorationCard = document.createElement('div');
+                decorationCard.className = 'decoration-card';
+                decorationCard.innerHTML = `
+                    <div class="decoration-image" style="background-image: url('${item.image}');"></div>
+                    <div class="decoration-name">${item.name}</div>
                 `;
-                container.appendChild(decorationDiv);
+                gridDiv.appendChild(decorationCard);
+            });
+
+            container.appendChild(gridDiv);
+        }
+
+        // ========================================================================
+        // TRADER REFRESH NOTIFICATION
+        // ========================================================================
+        function renderTraderNotification() {
+            const notification = document.getElementById('traderNotification');
+            const timeElement = document.getElementById('traderTime');
+
+            if (!notification || !timeElement) return;
+
+            // Get upcoming events to find Trader Refresh
+            const upcomingEvents = eventsManager.getUpcomingEvents(new Date(), 30);
+            const traderEvent = upcomingEvents.find(event => event.title === 'Trader Refresh');
+
+            if (traderEvent) {
+                const now = new Date();
+                const diffMs = traderEvent.start.getTime() - now.getTime();
+
+                if (diffMs > 0) {
+                    const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+
+                    let timeString = '';
+                    if (days > 0) {
+                        timeString = `${days}d ${hours}h ${minutes}m`;
+                    } else if (hours > 0) {
+                        timeString = `${hours}h ${minutes}m`;
+                    } else {
+                        timeString = `${minutes}m`;
+                    }
+
+                    timeElement.textContent = timeString;
+                    notification.classList.remove('hidden');
+                } else {
+                    // Trader has already refreshed, hide notification
+                    notification.classList.add('hidden');
+                }
+            } else {
+                // No trader event found, hide notification
+                notification.classList.add('hidden');
+            }
+        }
+
+        // ========================================================================
+        // UPCOMING EVENTS
+        // ========================================================================
+        function renderUpcomingEvents() {
+            const container = document.getElementById('upcomingEventsContainer');
+            if (!container) return; // Guard clause in case element is missing
+
+            // Get upcoming events for next 30 days
+            const upcomingEvents = eventsManager.getUpcomingEvents(new Date(), 30);
+
+            if (upcomingEvents.length === 0) {
+                container.innerHTML = '<div class="no-events">No upcoming events in next 30 days</div>';
+                return;
+            }
+
+            container.innerHTML = '';
+
+            // Filter out Trader Refresh as it's shown in the notification banner
+            // Also filter out events that are currently active (already shown in Active Events)
+            const filteredEvents = upcomingEvents.filter(event => {
+                return event.title !== 'Trader Refresh' && !event.isActive;
+            });
+
+            if (filteredEvents.length === 0) {
+                container.innerHTML = '<div class="no-events">No upcoming events in next 30 days</div>';
+                return;
+            }
+
+            filteredEvents.forEach(event => {
+                const eventItem = document.createElement('div');
+                eventItem.className = 'upcoming-event-item';
+
+                // Determine icon/image to use
+                let iconHtml;
+                if (event.image) {
+                    iconHtml = `<div class="event-icon"><img src="${event.image}" alt="${event.title}"></div>`;
+                } else {
+                    iconHtml = `<i class="fas fa-${event.icon} event-icon"></i>`;
+                }
+
+                // Calculate format for "Starts in..."
+                const now = new Date();
+                const diffMs = event.start.getTime() - now.getTime();
+                const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diffMs % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                let timeString = "";
+                if (days > 0) timeString = `${days}d ${hours}h`;
+                else timeString = `${hours}h`;
+
+                eventItem.innerHTML = `
+                    ${iconHtml}
+                    <div class="event-details">
+                        <h4>${event.title}</h4>
+                        <p style="color: var(--accent-gold); font-size: 0.8rem;">Starts in ${timeString}</p>
+                        <p style="font-size: 0.7rem; color: var(--text-muted);">${event.start.toLocaleDateString()}</p>
+                    </div>
+                `;
+                container.appendChild(eventItem);
             });
         }
 

@@ -1,30 +1,40 @@
 {
   "season": "Frost Age",
+  "calendar_image": "https://yt3.ggpht.com/tgmgTy9ZgFy9tv5lCXUV1tRBlBCcOEmbQK_xedqJpT27Glmo1tHCuo64pNCcYQaA17p9fUtEu1pkbw=s640-c-fcrop64=1,00000000ffffffff-rw-nd-v1",
   "skins": [
     {
-      "name": "Frost King",
-      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Frost+King"
+      "name": "Awakened King",
+      "image": "src/assets/heroskin/BarbarianKing_FrostAge_f50_3k.webp"
     },
     {
       "name": "Blizzard Queen",
-      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Blizzard+Queen"
+      "image": "src/assets/heroskin/ArcherQueen_FrostAge_f90_3k_noGroundShadow.webp"
     },
     {
-      "name": "Ice Warden",
-      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Ice+Warden"
+      "name": "Grand Warlock",
+      "image": "src/assets/heroskin/GrandWarden_FrostAge_f50_3k.webp"
     },
     {
       "name": "Glacial Champion",
-      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Glacial+Champion"
+      "image": "src/assets/heroskin/RoyalChampion_FrostAge_f15_3k_noGroundshadows.webp"
     },
     {
-      "name": "Yetimite King",
-      "image": "https://via.placeholder.com/200x250/1c212d/00a8ff?text=Yetimite+King"
+      "name": "Frost Prince",
+      "image": "src/assets/heroskin/MinionPrince_FrostAge_f60_3k.webp"
     }
   ],
   "scenery": {
     "name": "Frost Age Scenery",
-    "image": "clashicons/12_FrostAge_25_Scenery.webp"
+    "image": "src/assets/sceneries/12_FrostAge_25_Scenery.webp"
   },
-  "decorations": []
+  "decorations": [
+    {
+      "name": "2025 Christmas Tree",
+      "image": "images/obs/Clashmas_Tree_2025.webp"
+    },
+    {
+      "name": "Brawny Battleaxe",
+      "image": "images/decorations/Brawny_Battleaxe.webp"
+    }
+  ]
 }
