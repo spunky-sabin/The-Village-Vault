@@ -1,1074 +1,1476 @@
 [
   {
     "SN": 1,
-    "Name": "Mighty Statue",
-    "Code": "18000000",
-    "TID": "TID_DECORATION_BARBARIAN_STATUE",
-    "name": "Mighty Statue",
-    "image": "images/decorations/Decoration_HV_Mighty_Statue.webp"
-  },
-  {
-    "SN": 2,
-    "Name": "Torch",
     "Code": "18000001",
     "TID": "TID_DECORATION_TORCH",
     "name": "Torch",
-    "image": "images/decorations/torch.webp"
+    "image": "images/decorations/torch.webp",
+    "description": "A burning torch that provides light and ambiance to the village.",
+    "released": "August 2012",
+    "availability": "Available in the Shop for 500 Elixir.",
+    "size": "2x2"
   },
   {
-    "SN": 3,
-    "Name": "White Flag",
+    "SN": 2,
     "Code": "18000003",
     "TID": "TID_DECORATION_WHITE_FLAG",
     "name": "White Flag",
-    "image": "images/decorations/Decoration_HV_White_Flag.webp"
+    "image": "images/decorations/Decoration_HV_White_Flag.webp",
+    "description": "A simple white flag on a wooden pole.",
+    "released": "August 2012",
+    "availability": "Available in the Shop for 5,000 Elixir.",
+    "size": "2x2"
   },
   {
-    "SN": 4,
-    "Name": "Skull Flag",
-    "Code": "18000004",
-    "TID": "TID_DECORATION_SKULL_FLAG",
-    "name": "Pirate Flag",
-    "image": "images/decorations/Decoration_HV_Pirate_Flag.webp"
-  },
-  {
-    "SN": 5,
-    "Name": "Flower box 1",
+    "SN": 3,
     "Code": "18000005",
     "TID": "TID_DECORATION_FLOWERBOX1",
     "name": "Cornflower Bed",
-    "image": "images/decorations/Decoration_HV_Cornflower_Bed.webp"
+    "image": "images/decorations/Decoration_HV_Cornflower_Bed.webp",
+    "description": "A beautiful patch of blue cornflowers.",
+    "released": "August 2012",
+    "availability": "Available in the Shop for 5,000 Gold.",
+    "size": "2x2"
   },
   {
-    "SN": 6,
-    "Name": "Flower box 2",
+    "SN": 4,
     "Code": "18000006",
     "TID": "TID_DECORATION_FLOWERBOX2",
     "name": "Sunflower Bed",
-    "image": "images/decorations/Decoration_HV_Sunflower_Bed.webp"
+    "image": "images/decorations/Decoration_HV_Sunflower_Bed.webp",
+    "description": "A cheerful patch of bright yellow sunflowers.",
+    "released": "August 2012",
+    "availability": "Available in the Shop for 5,000 Gold.",
+    "size": "2x2"
+  },
+  {
+    "SN": 5,
+    "Code": "18000000",
+    "TID": "TID_DECORATION_BARBARIAN_STATUE",
+    "name": "Mighty Statue",
+    "image": "images/decorations/Decoration_HV_Mighty_Statue.webp",
+    "description": "A stone statue of a Barbarian King in a powerful pose.",
+    "released": "September 2012",
+    "availability": "Available in the Shop for 500 Gems.",
+    "size": "2x2"
+  },
+  {
+    "SN": 6,
+    "Code": "18000004",
+    "TID": "TID_DECORATION_SKULL_FLAG",
+    "name": "Pirate Flag",
+    "image": "images/decorations/Decoration_HV_Pirate_Flag.webp",
+    "description": "A black flag with a skull and crossbones.",
+    "released": "September 2012",
+    "availability": "Available in the Shop for 100,000 Elixir.",
+    "size": "2x2"
   },
   {
     "SN": 7,
-    "Name": "Windmeter",
     "Code": "18000007",
     "TID": "TID_DECORATION_WINDMETER",
     "name": "Weather Vane",
-    "image": "images/decorations/Decoration_HV_Weather_Vane.webp"
+    "image": "images/decorations/Decoration_HV_Weather_Vane.webp",
+    "description": "A decorative vane that spins with the wind.",
+    "released": "September 2012",
+    "availability": "Available in the Shop for 10,000 Gold.",
+    "size": "2x2"
   },
   {
     "SN": 8,
-    "Name": "Down Arrow Flag",
-    "Code": "18000008",
-    "TID": "TID_DECORATION_DOWNARROW_FLAG",
-    "name": "Rally Flag",
-    "image": "images/decorations/Decoration_HV_Rally_Flag.webp"
-  },
-  {
-    "SN": 9,
-    "Name": "Up Arrow Flag",
-    "Code": "18000009",
-    "TID": "TID_DECORATION_UPARROW_FLAG",
-    "name": "Point Flag",
-    "image": "images/decorations/Decoration_HV_Point_Flag.webp"
-  },
-  {
-    "SN": 10,
-    "Name": "Skull Altar",
-    "Code": "18000010",
-    "TID": "TID_DECORATION_SKULL_ALTAR",
-    "name": "Ancient Skull",
-    "image": "images/decorations/Decoration_HV_Ancient_Skull.webp"
-  },
-  {
-    "SN": 11,
-    "Name": "PEKKA Statue",
     "Code": "18000033",
     "TID": "TID_DECORATION_PEKKA_STATUE",
     "name": "Statue of P.E.K.K.A",
-    "image": "images/decorations/Decoration_HV_PEKKA_Statue.webp"
+    "image": "images/decorations/Decoration_HV_PEKKA_Statue.webp",
+    "description": "A grand stone statue of the mysterious P.E.K.K.A.",
+    "released": "September 2012",
+    "availability": "Available in the Shop for 1,000,000 Gold.",
+    "size": "2x2"
+  },
+  {
+    "SN": 9,
+    "Code": "18000008",
+    "TID": "TID_DECORATION_DOWNARROW_FLAG",
+    "name": "Rally Flag",
+    "image": "images/decorations/Decoration_HV_Rally_Flag.webp",
+    "description": "A red banner used to rally troops.",
+    "released": "April 2013",
+    "availability": "Available in the Shop for 25,000 Gold.",
+    "size": "2x2"
+  },
+  {
+    "SN": 10,
+    "Code": "18000009",
+    "TID": "TID_DECORATION_UPARROW_FLAG",
+    "name": "Point Flag",
+    "image": "images/decorations/Decoration_HV_Point_Flag.webp",
+    "description": "A blue banner used to designate points of interest.",
+    "released": "April 2013",
+    "availability": "Available in the Shop for 25,000 Gold.",
+    "size": "2x2"
+  },
+  {
+    "SN": 11,
+    "Code": "18000010",
+    "TID": "TID_DECORATION_SKULL_ALTAR",
+    "name": "Ancient Skull",
+    "image": "images/decorations/Decoration_HV_Ancient_Skull.webp",
+    "description": "A weathered skull of an unknown creature.",
+    "released": "September 2013",
+    "availability": "Available in the Shop for 500,000 Gold.",
+    "size": "2x2"
   },
   {
     "SN": 12,
-    "Name": "BK Statue",
-    "Code": "18000037",
-    "TID": "TID_DECORATION_BK_STATUE",
-    "name": "Mighty Hero Statue",
-    "image": "images/decorations/Decoration_HV_Barbarian_King_Statue.webp"
-  },
-  {
-    "SN": 13,
-    "Name": "Builder Statue",
     "Code": "18000046",
     "TID": "TID_DECORATION_BUILDER_STATUE",
     "name": "Builder Statue",
-    "image": "images/decorations/Decoration_HV_Builder_Statue.webp"
+    "image": "images/decorations/Decoration_HV_Builder_Statue.webp",
+    "description": "A tribute to the hardworking Builders of the village.",
+    "released": "May 2017",
+    "availability": "Builder Base exclusive or special event reward.",
+    "size": "2x2"
   },
   {
-    "SN": 14,
-    "Name": "Rex Calibur",
-    "Code": "18000047",
-    "TID": "TID_DECORATION_SWORD_IN_STONE",
-    "name": "The Champion Statue",
-    "image": "images/decorations/Decoration_HV_The_Champion_Statue.webp"
-  },
-  {
-    "SN": 15,
-    "Name": "League I Statue",
-    "Code": "18000048",
-    "TID": "TID_DECORATION_LEAGUE_I_STATUE",
-    "name": "The Master Statue",
-    "image": "images/decorations/Decoration_HV_The_Master_Statue.webp"
-  },
-  {
-    "SN": 16,
-    "Name": "League II Statue",
-    "Code": "18000049",
-    "TID": "TID_DECORATION_LEAGUE_II_STATUE",
-    "name": "The Contender Statue",
-    "image": "images/decorations/Decoration_HV_The_Contender_Statue.webp"
-  },
-  {
-    "SN": 17,
-    "Name": "League III Statue",
-    "Code": "18000050",
-    "TID": "TID_DECORATION_LEAGUE_III_STATUE",
-    "name": "The Challenger Statue",
-    "image": "images/decorations/Decoration_HV_The_Challenger_Statue.webp"
-  },
-  {
-    "SN": 18,
-    "Name": "Shield Statue",
-    "Code": "18000051",
-    "TID": "TID_DECORATION_WAR_SHIELD",
-    "name": "The Warrior Statue",
-    "image": "images/decorations/Decoration_HV_The_Warrior_Statue.webp"
-  },
-  {
-    "SN": 19,
-    "Name": "Golden Hog",
-    "Code": "18000052",
-    "TID": "TID_DECORATION_GOLDEN_HOG",
-    "name": "Golden Hog",
-    "image": "images/decorations/Decoration_HV_ Golden_Piggy_Bank.webp"
-  },
-  {
-    "SN": 20,
-    "Name": "Snowman",
-    "Code": "18000054",
-    "TID": "TID_DECORATION_SNOWMAN",
-    "name": "Snowman",
-    "image": "images/decorations/Decoration_HV_Snowman.webp"
-  },
-  {
-    "SN": 21,
-    "Name": "Snowman",
-    "Code": "18000055",
-    "TID": "TID_DECORATION_SNOWMAN",
-    "name": "Snowman",
-    "image": "images/decorations/Decoration_HV_Snowman.webp"
-  },
-  {
-    "SN": 22,
-    "Name": "Dragon Statue",
-    "Code": "18000057",
-    "TID": "TID_DECORATION_DRAGON_STATUE",
-    "name": "Dragon Statue",
-    "image": "images/decorations/Decoration_HV_Dragon_Statue.webp"
-  },
-  {
-    "SN": 23,
-    "Name": "Golden Goblin",
-    "Code": "18000058",
-    "TID": "TID_DECORATION_GOLDEN_GOBLIN",
-    "name": "Golden Poet",
-    "image": "images/decorations/Decoration_HV_Golden_Poet.webp"
-  },
-  {
-    "SN": 24,
-    "Name": "SuperTroopStatue",
-    "Code": "18000059",
-    "TID": "TID_DECORATION_SUPER_TROOP_STATUE",
-    "name": "Super Statue",
-    "image": "images/decorations/Decoration_HV_Super_Statue.webp"
-  },
-  {
-    "SN": 25,
-    "Name": "ShortFilmStatue",
-    "Code": "18000060",
-    "TID": "TID_DECORATION_SHORT_FILM_STATUE",
-    "name": "Storied Statue",
-    "image": "images/decorations/Decoration_HV_Storied_Statue.webp"
-  },
-  {
-    "SN": 26,
-    "Name": "SC 10Year Fountain",
-    "Code": "18000061",
-    "TID": "TID_DECORATION_10_YEAR_FOUNTAIN",
-    "name": "Anniversary Fountain",
-    "image": "images/decorations/Decoration_HV_Anniversary_Fountain.webp"
-  },
-  {
-    "SN": 27,
-    "Name": "Clockwork Statue",
-    "Code": "18000062",
-    "TID": "TID_DECORATION_CLOCKWORK_STATUE",
-    "name": "Clockwork Statue",
-    "image": "images/decorations/Decoration_HV_Clockwork_Statue.webp"
-  },
-  {
-    "SN": 28,
-    "Name": "8 Year Birthday Statue",
-    "Code": "18000063",
-    "TID": "TID_DECORATION_8YEAR_BIRTHDAY_STATUE",
-    "name": "A Piece of Birthday Cake",
-    "image": "images/decorations/Decoration_HV_A_Piece_Of_Birthday_Cake.webp"
-  },
-  {
-    "SN": 29,
-    "Name": "Pirate Deco",
-    "Code": "18000064",
-    "TID": "TID_DECORATION_PIRATE_ANCHOR",
-    "name": "Retired Anchor",
-    "image": "images/decorations/Decoration_HV_Anchor_Statue.webp"
-  },
-  {
-    "SN": 30,
-    "Name": "Logmas Deco",
-    "Code": "18000065",
-    "TID": "TID_DECO_LOGMAS_TREE",
-    "name": "Logmas Tree",
-    "image": "images/decorations/Decoration_HV_Logmas_Tree.webp"
-  },
-  {
-    "SN": 31,
-    "Name": "Golden Wall Breaker",
-    "Code": "18000066",
-    "TID": "TID_DECO_FIREWORK_FANBOY",
-    "name": "Firework Fanboy",
-    "image": "images/decorations/Decoration_HV_Firework_Fanboy.webp"
-  },
-  {
-    "SN": 32,
-    "Name": "Jungle Deco",
-    "Code": "18000067",
-    "TID": "TID_DECO_TH14_FOUNTAIN",
-    "name": "Flowing Fountain",
-    "image": "images/decorations/Decoration_HV_Flowing_Fountain.webp"
-  },
-  {
-    "SN": 33,
-    "Name": "9 Year Birthday Statue",
-    "Code": "18000068",
-    "TID": "TID_DECORATION_9YEAR_BIRTHDAY_STATUE",
-    "name": "Fiery Figure",
-    "image": "images/decorations/Decoration_HV_Fiery_Figure.webp"
-  },
-  {
-    "SN": 34,
-    "Name": "Fallen Wizard Statue",
-    "Code": "18000069",
-    "TID": "TID_WIZARD_STATUE",
-    "name": "Wizard Statue",
-    "image": "images/decorations/Decoration_HV_Wizard_Statue.webp"
-  },
-  {
-    "SN": 35,
-    "Name": "10 Year Birthday Statue",
-    "Code": "18000070",
-    "TID": "TID_DECORATION_10YEAR_BIRTHDAY_STATUE",
-    "name": "Goblin King Tribute",
-    "image": "images/decorations/Decoration_HV_Goblin_King_Tribute.webp"
-  },
-  {
-    "SN": 36,
-    "Name": "Clash Fest Statue",
-    "Code": "18000071",
-    "TID": "TID_DECORATION_CLASH_FEST_22_STATUE",
-    "name": "Eternal Flame",
-    "image": "images/decorations/Decoration_HV_Eternal_Flame.webp"
-  },
-  {
-    "SN": 37,
-    "Name": "Clashmas22 Deco",
-    "Code": "18000072",
-    "TID": "TID_DECORATION_CLASHMAS_22",
-    "name": "Clashmas Sleigh",
-    "image": "images/decorations/Decoration_HV_Clashmas_Sleigh.webp"
-  },
-  {
-    "SN": 38,
-    "Name": "LNY2023Statue",
-    "Code": "18000073",
-    "TID": "TID_STATUE_LNY_2023",
-    "name": "Magic Show Statue",
-    "image": "images/decorations/Decoration_HV_Magic_Show_Statue.webp"
-  },
-  {
-    "SN": 39,
-    "Name": "Baby Dragon Painted",
-    "Code": "18000074",
-    "TID": "TID_DECO_PAINTED_BABY_DRAGON",
-    "name": "Decorated Dragon Statue",
-    "image": "images/decorations/Decoration_HV_Decorated_Dragon_Statue.webp"
-  },
-  {
-    "SN": 40,
-    "Name": "Dark Ages Dragon_Statue",
-    "Code": "18000075",
-    "TID": "TID_DECO_DARK_AGES_DRAGON",
-    "name": "Dragon Trophy",
-    "image": "images/decorations/Decoration_HV_Dragon_Trophy_1.webp"
-  },
-  {
-    "SN": 41,
-    "Name": "Terry Statue",
-    "Code": "18000079",
-    "TID": "TID_BOOKS_OF_CLASH",
-    "name": "Books of Clash",
-    "image": "images/decorations/Decoration_HV_Books_of_Clash_Statue_active.webp"
-  },
-  {
-    "SN": 42,
-    "Name": "Goblin pit",
-    "Code": "18000089",
-    "TID": "TID_DECO_GOBLIN_CELLAR",
-    "name": "Goblin Cellar",
-    "image": "images/decorations/Decoration_HV_Goblin_Pit.webp"
-  },
-  {
-    "SN": 43,
-    "Name": "Goblin Dragon Statue",
-    "Code": "18000090",
-    "TID": "TID_DECO_GOBLIN_DRAGON_STATUE",
-    "name": "Goblin Dragon Statue",
-    "image": "images/decorations/Decoration_HV_Goblin_Dragon_Statue.webp"
-  },
-  {
-    "SN": 44,
-    "Name": "Halloween2023_coffin",
-    "Code": "18000096",
-    "TID": "TID_DECO_COFFIN",
-    "name": "Cosy Coffin",
-    "image": "images/decorations/Decoration_HV_Coffin.webp"
-  },
-  {
-    "SN": 45,
-    "Name": "hoggywise",
-    "Code": "18000097",
-    "TID": "TID_DECO_CLOWN",
-    "name": "Friendly Clown",
-    "image": "images/decorations/Decoration_HV_Hoggywise.webp"
-  },
-  {
-    "SN": 46,
-    "Name": "Halloween2023_dead_jakuzzi",
-    "Code": "18000098",
-    "TID": "TID_DECO_DEAD_JAKUZZI",
-    "name": "Spooky Spa",
-    "image": "images/decorations/Decoration_HV_Jacuzzi.webp"
-  },
-  {
-    "SN": 47,
-    "Name": "Halloween2023_scarecrow",
-    "Code": "18000099",
-    "TID": "TID_DECO_SCARECROW",
-    "name": "Pumpkin Scarecrow",
-    "image": "images/decorations/Decoration_HV_Axe_Pumpkin.webp"
-  },
-  {
-    "SN": 48,
-    "Name": "Halloween2023_completion_cauldron",
-    "Code": "18000100",
-    "TID": "TID_BUILDING_CLASHOWEEN_BUILDING",
-    "name": "Sour Elixir Cauldron",
-    "image": "images/decorations/Decoration_HV_Sour_Elixir_Cauldron.webp"
-  },
-  {
-    "SN": 49,
-    "Name": "World Finals23 Statue",
-    "Code": "18000101",
-    "TID": "TID_WORLD_FINALS_23_STATUE",
-    "name": "World Finals 23 Statue",
-    "image": "images/decorations/Decoration_HV_World_Finals_23_Statue.webp"
-  },
-  {
-    "SN": 50,
-    "Name": "Bath",
-    "Code": "18000103",
-    "TID": "TID_DECO_DUCK_POND",
-    "name": "Duck Bath",
-    "image": "images/decorations/Decoration_HV_Duck_Bath.webp"
-  },
-  {
-    "SN": 51,
-    "Name": "Hog Park",
-    "Code": "18000109",
-    "TID": "TID_DECO_HOG_PEN",
-    "name": "Hog Pen",
-    "image": "images/decorations/Decoration_HV_Hog_Pen.webp"
-  },
-  {
-    "SN": 52,
-    "Name": "ClashClam",
-    "Code": "18000114",
-    "TID": "TID_DECO_COZY_CLAM",
-    "name": "Cozy Clam",
-    "image": "images/decorations/Decoration_HV_Cozy_Clam.webp"
-  },
-  {
-    "SN": 53,
-    "Name": "ClashMas2023_dough_building",
-    "Code": "18000115",
-    "TID": "TID_DECO_GINGERBREAD_BUILDING",
-    "name": "Gingerbread Bakery",
-    "image": "images/decorations/Decroration_HV_Gingerbread_ Hub_2.webp"
-  },
-  {
-    "SN": 54,
-    "Name": "ClashMas2023_jinglebell",
-    "Code": "18000116",
-    "TID": "TID_DECO_JINGLEBELL",
-    "name": "Jingle Bell",
-    "image": "images/decorations/Decroration_HV_Jingle_Bell.webp"
-  },
-  {
-    "SN": 55,
-    "Name": "ClashMas2023_hogmaster",
-    "Code": "18000117",
-    "TID": "TID_DECO_HOGMASTER",
-    "name": "Barbarian Santa",
-    "image": "images/decorations/Decroration_HV_Barbarian_Santa.webp"
-  },
-  {
-    "SN": 56,
-    "Name": "ClashMas2023_sock",
-    "Code": "18000118",
-    "TID": "TID_DECO_SOCK",
-    "name": "Skeleton Sock",
-    "image": "images/decorations/Decroration_HV_Skeleton_Sock.webp"
-  },
-  {
-    "SN": 57,
-    "Name": "CNY_2023_anchor",
-    "Code": "18000119",
-    "TID": "TID_DECO_LNY24_ANCHOR",
-    "name": "Lucky Anchor",
-    "image": "images/decorations/Decoration_HV_Lucky_Anchor.webp"
-  },
-  {
-    "SN": 58,
-    "Name": "CNY_2023_Crab",
-    "Code": "18000120",
-    "TID": "TID_DECO_LNY24_CRAB",
-    "name": "Crab at home",
-    "image": "images/decorations/Decoration_HV_Crab_at_home_1.webp"
-  },
-  {
-    "SN": 59,
-    "Name": "CNY_2023_dragon",
-    "Code": "18000121",
-    "TID": "TID_DECO_LNY24_BABY_DRAGON",
-    "name": "Baby Dragon Statue",
-    "image": "images/decorations/Decoration_HV_Baby_Dragon_Statue.webp"
-  },
-  {
-    "SN": 60,
-    "Name": "LNY_2024_dragonpinata",
-    "Code": "18000122",
-    "TID": "TID_DECO_LNY24_DRAGON_PINATA",
-    "name": "Dragon Pinata",
-    "image": "images/decorations/Decoration_HV_Dragon_Pinata.webp"
-  },
-  {
-    "SN": 61,
-    "Name": "Space_2024_crater",
-    "Code": "18000123",
-    "TID": "TID_DECO_SPACE_2024_CRATER",
-    "name": "Clashy Crater",
-    "image": "images/decorations/Decoration_HV_Clashy_Crater.webp"
-  },
-  {
-    "SN": 62,
-    "Name": "Space_2024_globe",
-    "Code": "18000124",
-    "TID": "TID_DECO_SPACE_2024_GLOBE",
-    "name": "Stone Globe",
-    "image": "images/decorations/Decoration_HV_Stone_Globe.webp"
-  },
-  {
-    "SN": 63,
-    "Name": "Space_2024_goblin_statue",
-    "Code": "18000125",
-    "TID": "TID_DECO_SPACE_2024_GOBLIN_STATUE",
-    "name": "Goblin Explorer",
-    "image": "images/decorations/Decoration_HV_Goblin_Explorer.webp"
-  },
-  {
-    "SN": 64,
-    "Name": "babydragon_statue",
-    "Code": "18000126",
-    "TID": "TID_DECO_EGYPT_2024_BABYDRAGON",
-    "name": "Baby Ptah",
-    "image": "images/decorations/Baby_Ptah.webp"
-  },
-  {
-    "SN": 65,
-    "Name": "Egypt_2024_goblin",
-    "Code": "18000127",
-    "TID": "TID_DECO_EGYPT_2024_GOBLIN",
-    "name": "Goblin Pharaoh",
-    "image": "images/decorations/Goblin_Pharaoh.webp"
-  },
-  {
-    "SN": 66,
-    "Name": "Egypt_2024_hog",
-    "Code": "18000128",
-    "TID": "TID_DECO_EGYPT_2024_HOG",
-    "name": "Hog Sphinx",
-    "image": "images/decorations/Hog_Sphinx.webp"
-  },
-  {
-    "SN": 67,
-    "Name": "CW_gift_crownsword",
-    "Code": "18000129",
-    "TID": "TID_DECO_GIFT_2024_CROWNSWORD",
-    "name": "Crown Sword",
-    "image": "images/decorations/Crown_Sword.webp"
-  },
-  {
-    "SN": 68,
-    "Name": "Game Campaign",
-    "Code": "18000130",
-    "TID": "TID_DECO_GAME_CAMPAIGN",
-    "name": "Surprising Squad",
-    "image": "images/decorations/Surprising Squad.webp"
-  },
-  {
-    "SN": 69,
-    "Name": "clashball_goldenboot",
-    "Code": "18000131",
-    "TID": "TID_DECO_CLASHBALL_GOLDENBOOT",
-    "name": "Golden Boot",
-    "image": "images/decorations/Decoration_HV_Golden_Boot.webp"
-  },
-  {
-    "SN": 70,
-    "Name": "clashball_trophyball",
-    "Code": "18000132",
-    "TID": "TID_DECO_CLASHBALL_TROPHYBALL",
-    "name": "Bestest Ball",
-    "image": "images/decorations/Decoration_HV_Trophy_Ball.webp"
-  },
-  {
-    "SN": 71,
-    "Name": "clashball_statuecharacter",
-    "Code": "18000133",
-    "TID": "TID_DECO_CLASHBALL_STATUECHARACTER",
-    "name": "Haaland Statue",
-    "image": "images/decorations/Decoration_HV_Haaland_Statue.webp"
-  },
-  {
-    "SN": 72,
-    "Name": "clashball_trophycrown",
-    "Code": "18000134",
-    "TID": "TID_DECO_CLASHBALL_TROPHYCROWN",
-    "name": "Triumphant Trophy",
-    "image": "images/decorations/Decoration_HV_Trophy_Crown.webp"
-  },
-  {
-    "SN": 73,
-    "Name": "clashball_trophycup",
-    "Code": "18000135",
-    "TID": "TID_DECO_CLASHBALL_TROPHYCUP",
-    "name": "Celebration Cup",
-    "image": "images/decorations/Decoration_HV_Trophy_Cup.webp"
-  },
-  {
-    "SN": 74,
-    "Name": "clashball_trophybeverage",
-    "Code": "18000136",
-    "TID": "TID_DECO_CLASHBALL_TROPHYBEVERAGE",
-    "name": "Victory Milk",
-    "image": "images/decorations/Decoration_HV_Milk_Trophy.webp"
-  },
-  {
-    "SN": 75,
-    "Name": "WildWest_cactus",
-    "Code": "18000137",
-    "TID": "TID_DECO_WILDWEST_CACTUS",
-    "name": "Cactus Guy",
-    "image": "images/decorations/Cactus_Guy.webp"
-  },
-  {
-    "SN": 76,
-    "Name": "WildWest_skelly",
-    "Code": "18000138",
-    "TID": "TID_DECO_WILDWEST_SKELLY",
-    "name": "Cowboy Skeleton",
-    "image": "images/decorations/WildWest_Deco_Skelly_High.webp"
-  },
-  {
-    "SN": 77,
-    "Name": "WildWest_totem",
-    "Code": "18000139",
-    "TID": "TID_DECO_WILDWEST_TOTEM",
-    "name": "Dragon Totem",
-    "image": "images/decorations/WildWest_Deco_Totem_High.webp"
-  },
-  {
-    "SN": 78,
-    "Name": "Clashball2024_completion_deco_goal",
-    "Code": "18000140",
-    "TID": "TID_DECO_CLASHBALL_GOAL",
-    "name": "Football Camp",
-    "image": "images/decorations/Decoration_HV_Building_Goal_Ball.webp"
-  },
-  {
-    "SN": 79,
-    "Name": "Anime_FORTUNE_TELLER",
-    "Code": "18000141",
-    "TID": "TID_DECO_ANIME_FORTUNETELLER",
-    "name": "Wizard Vendor",
-    "image": "images/decorations/Decoration_HV_wizard_anime_event_building.webp"
-  },
-  {
-    "SN": 80,
-    "Name": "Anime_bonsaitree",
-    "Code": "18000143",
-    "TID": "TID_DECO_ANIME_BONSAI_TREE",
-    "name": "Cherry Bonsai",
-    "image": "images/decorations/Anime_CherryBonsaiTree.webp"
-  },
-  {
-    "SN": 81,
-    "Name": "Anime_chibi_archer",
-    "Code": "18000144",
-    "TID": "TID_DECO_ANIME_CHIBI_ARCHER",
-    "name": "Chibi Archer",
-    "image": "images/decorations/Anime_ChibiArcher.webp"
-  },
-  {
-    "SN": 82,
-    "Name": "Anime_giant_school_girl",
-    "Code": "18000145",
-    "TID": "TID_DECO_ANIME_GIANT_SCHOOL_GIRL",
-    "name": "Kawaii Giant",
-    "image": "images/decorations/Anime_SuperDeco_Giant_Schoolgirl.webp"
-  },
-  {
-    "SN": 83,
-    "Name": "SC_Store_brawlstars",
-    "Code": "18000147",
-    "TID": "TID_DECO_SC_BRAWLSTARS",
-    "name": "Brawl's Star",
-    "image": "images/decorations/Brawl's_Star.webp"
-  },
-  {
-    "SN": 84,
-    "Name": "SC_Store_gauntlet",
-    "Code": "18000148",
-    "TID": "TID_DECO_SC_GAUNTLET",
-    "name": "Gargantuan Gauntlet",
-    "image": "images/decorations/Gargantuan_Gauntlet.webp"
-  },
-  {
-    "SN": 85,
-    "Name": "SC_Store_royalebed",
-    "Code": "18000150",
-    "TID": "TID_DECO_SC_ROYALE_BED",
-    "name": "Sleepy King",
-    "image": "images/decorations/Sleepy_King.webp"
-  },
-  {
-    "SN": 86,
-    "Name": "ClashGames_firebowl",
-    "Code": "18000151",
-    "TID": "TID_DECO_CLASHGAMES_FIREBOWL",
-    "name": "Champion's Flame",
-    "image": "images/decorations/Decoration_ClashGames_Firebowl.webp"
-  },
-  {
-    "SN": 87,
-    "Name": "ClashGames_goblindive",
-    "Code": "18000152",
-    "TID": "TID_DECO_CLASHGAMES_GOBLINDIVE",
-    "name": "Goblin High Dive",
-    "image": "images/decorations/ClashGames_Deco_Diver.webp"
-  },
-  {
-    "SN": 88,
-    "Name": "ClashGames_archerfoot",
-    "Code": "18000153",
-    "TID": "TID_DECO_CLASHGAMES_ARCHERFOOT",
-    "name": "Foot Tribute",
-    "image": "images/decorations/Decoration_ClashGames_ArcherFoot.webp"
-  },
-  {
-    "SN": 89,
-    "Name": "TTRPG_treeportal",
-    "Code": "18000154",
-    "TID": "TID_DECO_TTRPG_TREEPORTAL",
-    "name": "Pretty Portal",
-    "image": "images/decorations/Pretty_Portal.webp"
-  },
-  {
-    "SN": 90,
-    "Name": "TTRPG_superdeco_d20",
-    "Code": "18000155",
-    "TID": "TID_DECO_TTRPG_SUPERDECO_D20",
-    "name": "Decision Dice",
-    "image": "images/decorations/TTRPG_SuperDeco_Dice_Roll.webp"
-  },
-  {
-    "SN": 91,
-    "Name": "Clashoween2024_completion_deco",
-    "Code": "18000157",
-    "TID": "TID_DECO_CLASHOWEEN_2024",
-    "name": "Hydra Headstone",
-    "image": "images/decorations/Hydra_Headstone.webp"
-  },
-  {
-    "SN": 92,
-    "Name": "Clashoween2024_prisonbox",
-    "Code": "18000158",
-    "TID": "TID_DECO_CLASHOWEEN_2024_PRISONBOX",
-    "name": "Jailbroken Box",
-    "image": "images/decorations/Obstacle_HV_Prison_Box.webp"
-  },
-  {
-    "SN": 93,
-    "Name": "Clashoween2024_superdeco_cauldron",
-    "Code": "18000159",
-    "TID": "TID_DECO_CLASHOWEEN_2024_SUPERDECO_CAULDRON",
-    "name": "Bubble Boil Cauldron",
-    "image": "images/decorations/Obstacle_HV_Cauldron_Smiling.webp"
-  },
-  {
-    "SN": 94,
-    "Name": "Superdeco_mochapot",
-    "Code": "18000160",
-    "TID": "TID_DECO_SUPERDECO_MOCHAPOT",
-    "name": "Abra-Cada-Brewer",
-    "image": "images/decorations/Abra-Cada-Brewer.webp"
-  },
-  {
-    "SN": 95,
-    "Name": "Festival_Lantern",
-    "Code": "18000161",
-    "TID": "TID_DECO_DIWALI_2024",
-    "name": "Festival Lantern",
-    "image": "images/decorations/Festival_Lantern.webp"
-  },
-  {
-    "SN": 96,
-    "Name": "Clashmas_2024_completion_deco",
-    "Code": "18000162",
-    "TID": "TID_DECO_CLASHMAS_2024",
-    "name": "Rocking Reindeer",
-    "image": "images/decorations/Rocking_Reindeer.webp"
-  },
-  {
-    "SN": 97,
-    "Name": "Clashmas_2024_choir",
-    "Code": "18000163",
-    "TID": "TID_DECO_CLASHMAS_2024_CHOIR",
-    "name": "Clockwork Choir",
-    "image": "images/decorations/Clashmas24_Choir.webp"
-  },
-  {
-    "SN": 98,
-    "Name": "Clashmas2024_superdeco_globe",
-    "Code": "18000164",
-    "TID": "TID_DECO_CLASHMAS_2024_SUPERDECO_GLOBE",
-    "name": "Snow Globe",
-    "image": "images/decorations/Clashmas24_SnowGlobe.webp"
-  },
-  {
-    "SN": 99,
-    "Name": "Clashmas_2024_Sack",
-    "Code": "18000165",
-    "TID": "TID_DECO_CLASHMAS_2024_SACK",
-    "name": "Gift Bag",
-    "image": "images/decorations/Gift_Bag.webp"
-  },
-  {
-    "SN": 100,
-    "Name": "Lny_2025_completion_deco",
-    "Code": "18000166",
-    "TID": "TID_DECO_LNY_2025",
-    "name": "Snake Shrine",
-    "image": "images/decorations/Snake_Shrine.webp"
-  },
-  {
-    "SN": 101,
-    "Name": "Lny_2025_monkstatue_deco",
-    "Code": "18000167",
-    "TID": "TID_DECO_LNY_2025_MONK",
-    "name": "Monk Statue",
-    "image": "images/decorations/LNY25_Monk_Statue_Marketing.webp"
-  },
-  {
-    "SN": 102,
-    "Name": "Fire_Ice_superdeco_sauna",
-    "Code": "18000168",
-    "TID": "TID_DECO_FIRE_ICE_SAUNA",
-    "name": "Cozy Sauna",
-    "image": "images/decorations/Fire&Ice_Sauna_Super_Deco.webp"
-  },
-  {
-    "SN": 103,
-    "Name": "Lny_2025_superdeco_fortunecookie",
-    "Code": "18000169",
-    "TID": "TID_DECO_LNY_2025_COOKIE",
-    "name": "Lucky Cookies",
-    "image": "images/decorations/LNY25_Fortune Cookie_SuperDeco.webp"
-  },
-  {
-    "SN": 104,
-    "Name": "Military_2025_super_deco_range",
-    "Code": "18000170",
-    "TID": "TID_DECO_MILITARY_2025_SUPERDECO_RANGE",
-    "name": "Shooting Range",
-    "image": "images/decorations/Shooting_Range.webp"
-  },
-  {
-    "SN": 105,
-    "Name": "April_2025_completion_deco",
-    "Code": "18000171",
-    "TID": "TID_DECO_APRIL_2025",
-    "name": "WWE Title",
-    "image": "images/decorations/Deco_WWE_Title.webp"
-  },
-  {
-    "SN": 106,
-    "Name": "April_2025_goblins_deco",
-    "Code": "18000172",
-    "TID": "TID_DECO_APRIL_GOBLINS_2025",
-    "name": "Rumbling Goblins",
-    "image": "images/decorations/apr25_hv_deco_goblin_marketing.webp"
-  },
-  {
-    "SN": 107,
-    "Name": "April_2025_coc_giant_deco",
-    "Code": "18000173",
-    "TID": "TID_DECO_COC_GIANT_2025",
-    "name": "Golden Giant",
-    "image": "images/decorations/Deco_Golden_Giant.webp"
-  },
-  {
-    "SN": 108,
-    "Name": "Deco_AQ_PouringStatue",
-    "Code": "18000174",
-    "TID": "TID_CREATOR_FOUNTAIN_DECO",
-    "name": "Creator Fountain",
-    "image": "images/decorations/Creator_Fountain.webp"
-  },
-  {
-    "SN": 109,
-    "Name": "April_2025_super_deco",
-    "Code": "18000175",
-    "TID": "TID_DECO_APRIL_2025_SUPERDECO",
-    "name": "Surprise Wheel",
-    "image": "images/decorations/SpinWheel Regular.webp"
-  },
-  {
-    "SN": 110,
-    "Name": "Japan_2025_deco",
-    "Code": "18000176",
-    "TID": "TID_DECO_JAPAN_2025",
-    "name": "Sacred Gate",
-    "image": "images/decorations/Sacred_Gate.webp"
-  },
-  {
-    "SN": 111,
-    "Name": "DarkDays_2025_super_deco",
-    "Code": "18000177",
-    "TID": "TID_DECO_DARKDAYS_2025_SUPERDECO",
-    "name": "Jingle Maker",
-    "image": "images/decorations/DarkDays_SuperDeco_Piano.webp"
-  },
-  {
-    "SN": 112,
-    "Name": "Darkdays_2025_completion_deco",
-    "Code": "18000178",
-    "TID": "TID_DECO_DARKDAYS_2025",
-    "name": "Looter Wagon",
-    "image": "images/decorations/Looter_Wagon.webp"
-  },
-  {
-    "SN": 113,
-    "Name": "Frozen Wizard",
-    "Code": "18000179",
-    "TID": "TID_DECO_CLASHARAMA_FROZEN_WIZARD_2025",
-    "name": "Frozen Wizard",
-    "image": "images/decorations/Frozen_Wizard.webp"
-  },
-  {
-    "SN": 114,
-    "Name": "clasharama_ep01_super_deco",
-    "Code": "18000180",
-    "TID": "TID_DECO_CLASHARAMA_EP01_SUPERDECO",
-    "name": "Clashy Carving",
-    "image": "images/decorations/Clashy_Carving.webp"
-  },
-  {
-    "SN": 115,
-    "Name": "Sketch Summoner",
-    "Code": "18000181",
-    "TID": "TID_DECO_CLASHARAMA_EP02_SUPERDECO_PAINT",
-    "name": "Sketch Summoner",
-    "image": "images/decorations/Sketch_Summoner.webp"
-  },
-  {
-    "SN": 116,
-    "Name": "CyberClash_superdeco_holoprojector",
-    "Code": "18000182",
-    "TID": "TID_DECO_CYBERCLASH_HOLOPROJECTOR",
-    "name": "Cyber Hologram",
-    "image": "images/decorations/CyberClash_SuperDeco_Holoprojector.webp"
-  },
-  {
-    "SN": 117,
-    "Name": "CLASHARAMA_SODASTAND_DECO",
-    "Code": "18000183",
-    "TID": "TID_DECO_CLASHARAMA_SODASTAND_2025",
-    "name": "Soda Stand",
-    "image": "images/decorations/Soda_Stand.webp"
-  },
-  {
-    "SN": 118,
-    "Name": "CLASHARAMA_TABLE_DECO",
-    "Code": "18000184",
-    "TID": "TID_DECO_CLASHARAMA_TABLE_2025",
-    "name": "Party Bench",
-    "image": "images/decorations/Party_Bench.webp"
-  },
-  {
-    "SN": 119,
-    "Name": "COMMUNITY_CROWN_AND_SWORD_DECO",
-    "Code": "18000185",
-    "TID": "TID_DECO_COMMUNITY_CROWN_AND_SWORD",
-    "name": "Justice Crown",
-    "image": "images/decorations/Justice_Crown.webp"
-  },
-  {
-    "SN": 120,
-    "Name": "Cosmic_Lantern_Deco",
-    "Code": "18000186",
-    "TID": "TTID_COSMICCURSE_DECO_LANTERN",
-    "name": "Cosmic Lantern",
-    "image": "images/decorations/Cosmic_Lantern.webp"
-  },
-  {
-    "SN": 121,
-    "Name": "Fortune_Printer",
-    "Code": "18000189",
-    "TID": "TID_DECO_DIWALI_RANGOLI_2024",
-    "name": "Fortune Printer",
-    "image": "images/decorations/Fortune_Printer.webp"
-  },
-  {
-    "SN": 122,
-    "Name": "Boombox",
-    "Code": "18000190",
-    "TID": "TID_DECO_COSMIC_BOOMBOX",
-    "name": "Boombox",
-    "image": "images/decorations/Boom_Box.webp"
-  },
-  {
-    "SN": 123,
-    "Name": "Cursed_Tome",
-    "Code": "18000191",
-    "TID": "TID_DECO_COSMIC_BOOK_OF_SPELLS",
-    "name": "Cursed Tome",
-    "image": "images/decorations/Cursed_Tome.webp"
-  },
-  {
-    "SN": 124,
-    "Name": "Electro Skull",
-    "Code": "18000187",
-    "TID": "TID_COMM_DECO_EDRAGSKULL",
-    "name": "Electro Skull",
-    "image": "images/decorations/Electro_Skull.webp"
-  },
-  {
-    "SN": 125,
-    "Name": "Crafted Statue",
-    "Code": "18000200",
-    "TID": "TID_PRESTIGE_DECO_CRAFTED_DEFENCES",
-    "name": "Crafted Statue",
-    "image": "images/decorations/Crafted_Statue.webp"
-  },
-  {
-    "SN": 126,
-    "Name": "Battle Machine Statue",
-    "Code": "18000056",
-    "TID": "TID_DECORATION_BATTLEMACHINE",
-    "name": "Battle Machine Statue",
-    "image": "images/decorations/Battle_Machine_Statue.webp"
-  },
-  {
-    "SN": 127,
-    "Name": "Master Builder's Return",
-    "Code": "18000080",
-    "TID": "TID_MASTER_BUILDER'S_RETURN",
-    "name": "Master Builder's Return",
-    "image": "images/decorations/Master_Builder_Return.webp"
-  },
-  {
-    "SN": 128,
-    "Name": "Archer Queen Statue",
-    "Code": "18000043",
-    "TID": "TID_DECORATION_ARCHER_QUEEN_STATUE",
-    "name": "Archer Queen Statue",
-    "image": "images/decorations/ArcherQueenStatue.webp"
-  },
-  {
-    "SN": 129,
-    "Name": "Ancient Barbarian Statue",
+    "SN": 13,
     "Code": "18000041",
     "TID": "TID_DECORATION_ANCIENT_BARBARIAN_STATUE",
     "name": "Ancient Barbarian Statue",
-    "image": "images/decorations/Old_Barbarian_Statue_B.webp"
+    "image": "images/decorations/Old_Barbarian_Statue_B.webp",
+    "description": "An old, weathered stone statue of a Barbarian.",
+    "released": "May 2017",
+    "availability": "Pre-spawned in the Builder Base.",
+    "size": "3x3"
   },
   {
-    "SN": 131,
-    "Name": "Frozen Stone",
+    "SN": 14,
+    "Code": "18000047",
+    "TID": "TID_DECORATION_SWORD_IN_STONE",
+    "name": "The Champion Statue",
+    "image": "images/decorations/Decoration_HV_The_Champion_Statue.webp",
+    "description": "A golden statue awarded for reaching the highest leagues.",
+    "released": "October 2018",
+    "availability": "Available in the League Shop for 2,000 League Medals.",
+    "size": "2x2"
+  },
+  {
+    "SN": 15,
+    "Code": "18000048",
+    "TID": "TID_DECORATION_LEAGUE_I_STATUE",
+    "name": "The Master Statue",
+    "image": "images/decorations/Decoration_HV_The_Master_Statue.webp",
+    "description": "A silver statue signifying mastery of battle.",
+    "released": "October 2018",
+    "availability": "Available in the League Shop for 1,000 League Medals.",
+    "size": "2x2"
+  },
+  {
+    "SN": 16,
+    "Code": "18000049",
+    "TID": "TID_DECORATION_LEAGUE_II_STATUE",
+    "name": "The Contender Statue",
+    "image": "images/decorations/Decoration_HV_The_Contender_Statue.webp",
+    "description": "A bronze statue for those rising through the ranks.",
+    "released": "October 2018",
+    "availability": "Available in the League Shop for 250 League Medals.",
+    "size": "2x2"
+  },
+  {
+    "SN": 17,
+    "Code": "18000050",
+    "TID": "TID_DECORATION_LEAGUE_III_STATUE",
+    "name": "The Challenger Statue",
+    "image": "images/decorations/Decoration_HV_The_Challenger_Statue.webp",
+    "description": "A stone statue representing a new challenger.",
+    "released": "October 2018",
+    "availability": "Available in the League Shop for 100 League Medals.",
+    "size": "2x2"
+  },
+  {
+    "SN": 18,
+    "Code": "18000054",
+    "TID": "TID_DECORATION_SNOWMAN",
+    "name": "Snowman",
+    "image": "images/decorations/Decoration_HV_Snowman.webp",
+    "description": "A festive snowman that won't melt in the sun.",
+    "released": "December 2018",
+    "availability": "Winter Season limited-time purchase.",
+    "size": "2x2"
+  },
+  {
+    "SN": 19,
+    "Code": "18000055",
+    "TID": "TID_DECORATION_SNOWMAN",
+    "name": "Snowman",
+    "image": "images/decorations/Decoration_HV_Snowman.webp",
+    "description": "A festive snowman that won't melt in the sun.",
+    "released": "December 2018",
+    "availability": "Winter Season limited-time purchase.",
+    "size": "2x2"
+  },
+  {
+    "SN": 20,
+    "Code": "18000075",
+    "TID": "TID_DECO_DARK_AGES_DRAGON",
+    "name": "Dragon Trophy",
+    "image": "images/decorations/Decoration_HV_Dragon_Trophy_1.webp",
+    "description": "A trophy awarded for dragon-themed challenges.",
+    "released": "December 2018",
+    "availability": "Limited-time event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 21,
+    "Code": "18000052",
+    "TID": "TID_DECORATION_GOLDEN_HOG",
+    "name": "Golden Hog",
+    "image": "images/decorations/Decoration_HV_ Golden_Piggy_Bank.webp",
+    "description": "A shiny golden statue of a Hog celebrating the Lunar New Year.",
+    "released": "January 2019",
+    "availability": "Year of the Hog limited-time purchase.",
+    "size": "2x2"
+  },
+  {
+    "SN": 22,
+    "Code": "18000057",
+    "TID": "TID_DECORATION_DRAGON_STATUE",
+    "name": "Dragon Statue",
+    "image": "images/decorations/Decoration_HV_Dragon_Statue.webp",
+    "description": "A magnificent statue of a red dragon.",
+    "released": "January 2019",
+    "availability": "Lunar New Year special offer.",
+    "size": "3x3"
+  },
+  {
+    "SN": 23,
+    "Code": "18000037",
+    "TID": "TID_DECORATION_BK_STATUE",
+    "name": "Mighty Hero Statue",
+    "image": "images/decorations/Decoration_HV_Barbarian_King_Statue.webp",
+    "description": "A majestic statue representing the glory of a champion.",
+    "released": "February 2019",
+    "availability": "Limited-time offer in the Shop.",
+    "size": "2x2"
+  },
+  {
+    "SN": 24,
+    "Code": "18000051",
+    "TID": "TID_DECORATION_WAR_SHIELD",
+    "name": "The Warrior Statue",
+    "image": "images/decorations/Decoration_HV_The_Warrior_Statue.webp",
+    "description": "A statue depicting a fierce warrior.",
+    "released": "February 2019",
+    "availability": "Special event offer or CWL reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 25,
+    "Code": "18000059",
+    "TID": "TID_DECORATION_SUPER_TROOP_STATUE",
+    "name": "Super Statue",
+    "image": "images/decorations/Decoration_HV_Super_Statue.webp",
+    "description": "A statue celebrating the introduction of Super Troops.",
+    "released": "March 2020",
+    "availability": "Special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 26,
+    "Code": "18000061",
+    "TID": "TID_DECORATION_10_YEAR_FOUNTAIN",
+    "name": "Anniversary Fountain",
+    "image": "images/decorations/Decoration_HV_Anniversary_Fountain.webp",
+    "description": "A celebratory fountain released for the 8th anniversary.",
+    "released": "May 2020",
+    "availability": "Limited-time event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 27,
+    "Code": "18000062",
+    "TID": "TID_DECORATION_CLOCKWORK_STATUE",
+    "name": "Clockwork Statue",
+    "image": "images/decorations/Decoration_HV_Clockwork_Statue.webp",
+    "description": "A mechanical statue part of the Clockwork skin set.",
+    "released": "May 2020",
+    "availability": "Season Pass or special offer.",
+    "size": "2x2"
+  },
+  {
+    "SN": 28,
+    "Code": "18000064",
+    "TID": "TID_DECORATION_PIRATE_ANCHOR",
+    "name": "Retired Anchor",
+    "image": "images/decorations/Decoration_HV_Anchor_Statue.webp",
+    "description": "An old, rusty anchor from a pirate's ship.",
+    "released": "July 2020",
+    "availability": "Summer/Pirate event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 29,
+    "Code": "18000063",
+    "TID": "TID_DECORATION_8YEAR_BIRTHDAY_STATUE",
+    "name": "A Piece of Birthday Cake",
+    "image": "images/decorations/Decoration_HV_A_Piece_Of_Birthday_Cake.webp",
+    "description": "A slice of cake to celebrate another year of Clash.",
+    "released": "August 2020",
+    "availability": "8th Anniversary event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 30,
+    "Code": "18000060",
+    "TID": "TID_DECORATION_SHORT_FILM_STATUE",
+    "name": "Storied Statue",
+    "image": "images/decorations/Decoration_HV_Storied_Statue.webp",
+    "description": "A statue that tells a tale of ancient battles.",
+    "released": "September 2020",
+    "availability": "Season Pass final reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 31,
+    "Code": "18000065",
+    "TID": "TID_DECO_LOGMAS_TREE",
+    "name": "Logmas Tree",
+    "image": "images/decorations/Decoration_HV_Logmas_Tree.webp",
+    "description": "A festive decoration inspired by the Logmas season.",
+    "released": "December 2020",
+    "availability": "Logmas event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 32,
+    "Code": "18000066",
+    "TID": "TID_DECO_FIREWORK_FANBOY",
+    "name": "Firework Fanboy",
+    "image": "images/decorations/Decoration_HV_Firework_Fanboy.webp",
+    "description": "A statue of a troop holding fireworks for the New Year.",
+    "released": "January 2021",
+    "availability": "Lunar New Year event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 33,
+    "Code": "18000058",
+    "TID": "TID_DECORATION_GOLDEN_GOBLIN",
+    "name": "Golden Poet",
+    "image": "images/decorations/Decoration_HV_Golden_Poet.webp",
+    "description": "A golden statue of a poet celebrating artistry.",
+    "released": "July 2021",
+    "availability": "Season Pass or special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 34,
+    "Code": "18000067",
+    "TID": "TID_DECO_TH14_FOUNTAIN",
+    "name": "Flowing Fountain",
+    "image": "images/decorations/Decoration_HV_Flowing_Fountain.webp",
+    "description": "A peaceful fountain with continuously flowing water.",
+    "released": "July 2021",
+    "availability": "Special event or Season Pass reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 35,
+    "Code": "18000068",
+    "TID": "TID_DECORATION_9YEAR_BIRTHDAY_STATUE",
+    "name": "Fiery Figure",
+    "image": "images/decorations/Decoration_HV_Fiery_Figure.webp",
+    "description": "A statue of a hero surrounded by flames.",
+    "released": "August 2021",
+    "availability": "9th Anniversary event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 36,
+    "Code": "18000072",
+    "TID": "TID_DECORATION_CLASHMAS_22",
+    "name": "Clashmas Sleigh",
+    "image": "images/decorations/Decoration_HV_Clashmas_Sleigh.webp",
+    "description": "Santa's sleigh, ready for a night of deliveries.",
+    "released": "December 2021",
+    "availability": "Clashmas event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 37,
+    "Code": "18000069",
+    "TID": "TID_WIZARD_STATUE",
+    "name": "Wizard Statue",
+    "image": "images/decorations/Decoration_HV_Wizard_Statue.webp",
+    "description": "A statue of a powerful Wizard casting a spell.",
+    "released": "May 2022",
+    "availability": "Season Pass final reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 38,
+    "Code": "18000070",
+    "TID": "TID_DECORATION_10YEAR_BIRTHDAY_STATUE",
+    "name": "Goblin King Tribute",
+    "image": "images/decorations/Decoration_HV_Goblin_King_Tribute.webp",
+    "description": "A statue honoring the legendary Goblin King.",
+    "released": "August 2022",
+    "availability": "10th Anniversary event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 39,
+    "Code": "18000071",
+    "TID": "TID_DECORATION_CLASH_FEST_22_STATUE",
+    "name": "Eternal Flame",
+    "image": "images/decorations/Decoration_HV_Eternal_Flame.webp",
+    "description": "A torch with a flame that never goes out.",
+    "released": "September 2022",
+    "availability": "Gold Pass final reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 40,
+    "Code": "18000073",
+    "TID": "TID_STATUE_LNY_2023",
+    "name": "Magic Show Statue",
+    "image": "images/decorations/Decoration_HV_Magic_Show_Statue.webp",
+    "description": "A statue of a performer for the Lunar New Year magic show.",
+    "released": "January 2023",
+    "availability": "Year of the Rabbit special offer.",
+    "size": "2x2"
+  },
+  {
+    "SN": 41,
+    "Code": "18000074",
+    "TID": "TID_DECO_PAINTED_BABY_DRAGON",
+    "name": "Decorated Dragon Statue",
+    "image": "images/decorations/Decoration_HV_Decorated_Dragon_Statue.webp",
+    "description": "An ornate dragon statue with festive decorations.",
+    "released": "March 2023",
+    "availability": "Special event or bundle purchase.",
+    "size": "2x2"
+  },
+  {
+    "SN": 42,
+    "Code": "18000056",
+    "TID": "TID_DECORATION_BATTLEMACHINE",
+    "name": "Battle Machine Statue",
+    "image": "images/decorations/Battle_Machine_Statue.webp",
+    "description": "A statue of the Builder's powerful Battle Machine.",
+    "released": "May 2023",
+    "availability": "Builder Base 2.0 update reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 43,
+    "Code": "18000080",
+    "TID": "TID_MASTER_BUILDER'S_RETURN",
+    "name": "Master Builder's Return",
+    "image": "images/decorations/Master_Builder_Return.webp",
+    "description": "A statue celebrating the return of the Master Builder.",
+    "released": "May 2023",
+    "availability": "Builder Base 2.0 update reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 44,
+    "Code": "18000079",
+    "TID": "TID_BOOKS_OF_CLASH",
+    "name": "Books of Clash",
+    "image": "images/decorations/Decoration_HV_Books_of_Clash_Statue_active.webp",
+    "description": "A statue representing the Books of Clash graphic novels.",
+    "released": "June 2023",
+    "availability": "Silver Pass reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 45,
+    "Code": "18000089",
+    "TID": "TID_DECO_GOBLIN_CELLAR",
+    "name": "Goblin Cellar",
+    "image": "images/decorations/Decoration_HV_Goblin_Pit.webp",
+    "description": "A cellar door leading to a secret goblin stash.",
+    "released": "July 2023",
+    "availability": "Goblin season event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 46,
+    "Code": "18000090",
+    "TID": "TID_DECO_GOBLIN_DRAGON_STATUE",
+    "name": "Goblin Dragon Statue",
+    "image": "images/decorations/Decoration_HV_Goblin_Dragon_Statue.webp",
+    "description": "A mischievous goblin riding a small dragon.",
+    "released": "July 2023",
+    "availability": "Special event or shop offer.",
+    "size": "2x2"
+  },
+  {
+    "SN": 47,
+    "Code": "18000096",
+    "TID": "TID_DECO_COFFIN",
+    "name": "Cosy Coffin",
+    "image": "images/decorations/Decoration_HV_Coffin.webp",
+    "description": "A spooky yet comfortable coffin for the Halloween season.",
+    "released": "October 2023",
+    "availability": "Halloween event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 48,
+    "Code": "18000097",
+    "TID": "TID_DECO_CLOWN",
+    "name": "Friendly Clown",
+    "image": "images/decorations/Decoration_HV_Hoggywise.webp",
+    "description": "A clown decoration that is more silly than scary.",
+    "released": "October 2023",
+    "availability": "Halloween event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 49,
+    "Code": "18000098",
+    "TID": "TID_DECO_DEAD_JAKUZZI",
+    "name": "Spooky Spa",
+    "image": "images/decorations/Decoration_HV_Jacuzzi.webp",
+    "description": "A relaxing spa with a ghostly green mist.",
+    "released": "October 2023",
+    "availability": "Halloween event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 50,
+    "Code": "18000099",
+    "TID": "TID_DECO_SCARECROW",
+    "name": "Pumpkin Scarecrow",
+    "image": "images/decorations/Decoration_HV_Axe_Pumpkin.webp",
+    "description": "A classic scarecrow with a carved pumpkin head.",
+    "released": "October 2023",
+    "availability": "Halloween event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 51,
+    "Code": "18000100",
+    "TID": "TID_BUILDING_CLASHOWEEN_BUILDING",
+    "name": "Sour Elixir Cauldron",
+    "image": "images/decorations/Decoration_HV_Sour_Elixir_Cauldron.webp",
+    "description": "A bubbling cauldron filled with sour elixir.",
+    "released": "October 2023",
+    "availability": "Halloween Medal Event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 52,
+    "Code": "18000158",
+    "TID": "TID_DECO_CLASHOWEEN_2024_PRISONBOX",
+    "name": "Jailbroken Box",
+    "image": "images/decorations/Obstacle_HV_Prison_Box.webp",
+    "description": "A box that has been broken open by a troop.",
+    "released": "October 2023",
+    "availability": "Halloween Pass reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 53,
+    "Code": "18000101",
+    "TID": "TID_WORLD_FINALS_23_STATUE",
+    "name": "World Finals 23 Statue",
+    "image": "images/decorations/Decoration_HV_World_Finals_23_Statue.webp",
+    "description": "A commemorative statue for the 2023 World Finals.",
+    "released": "November 2023",
+    "availability": "World Finals event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 54,
+    "Code": "18000115",
+    "TID": "TID_DECO_GINGERBREAD_BUILDING",
+    "name": "Gingerbread Bakery",
+    "image": "images/decorations/Decroration_HV_Gingerbread_ Hub_2.webp",
+    "description": "A delicious-looking bakery made of gingerbread.",
+    "released": "December 2023",
+    "availability": "Clashmas event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 55,
+    "Code": "18000116",
+    "TID": "TID_DECO_JINGLEBELL",
+    "name": "Jingle Bell",
+    "image": "images/decorations/Decroration_HV_Jingle_Bell.webp",
+    "description": "A festive golden bell that rings with holiday spirit.",
+    "released": "December 2023",
+    "availability": "Clashmas event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 56,
+    "Code": "18000117",
+    "TID": "TID_DECO_HOGMASTER",
+    "name": "Barbarian Santa",
+    "image": "images/decorations/Decroration_HV_Barbarian_Santa.webp",
+    "description": "A Barbarian dressed up as Santa Claus.",
+    "released": "December 2023",
+    "availability": "Clashmas event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 57,
+    "Code": "18000118",
+    "TID": "TID_DECO_SOCK",
+    "name": "Skeleton Sock",
+    "image": "images/decorations/Decroration_HV_Skeleton_Sock.webp",
+    "description": "A holiday stocking filled with skeleton bones.",
+    "released": "December 2023",
+    "availability": "Clashmas event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 58,
+    "Code": "18000043",
+    "TID": "TID_DECORATION_ARCHER_QUEEN_STATUE",
+    "name": "Archer Queen Statue",
+    "image": "images/decorations/ArcherQueenStatue.webp",
+    "description": "A grand statue of the Archer Queen.",
+    "released": "December 2023",
+    "availability": "Gold Pass final reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 59,
+    "Code": "18000119",
+    "TID": "TID_DECO_LNY24_ANCHOR",
+    "name": "Lucky Anchor",
+    "image": "images/decorations/Decoration_HV_Lucky_Anchor.webp",
+    "description": "An anchor decorated with lucky charms for the New Year.",
+    "released": "January 2024",
+    "availability": "Lunar New Year event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 60,
+    "Code": "18000122",
+    "TID": "TID_DECO_LNY24_DRAGON_PINATA",
+    "name": "Dragon Pinata",
+    "image": "images/decorations/Decoration_HV_Dragon_Pinata.webp",
+    "description": "A colorful dragon pinata filled with treats.",
+    "released": "January 2024",
+    "availability": "Lunar New Year event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 61,
+    "Code": "18000103",
+    "TID": "TID_DECO_DUCK_POND",
+    "name": "Duck Bath",
+    "image": "images/decorations/Decoration_HV_Duck_Bath.webp",
+    "description": "A cute rubber duck floating in a small tub.",
+    "released": "February 2024",
+    "availability": "Valentine's or seasonal event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 62,
+    "Code": "18000109",
+    "TID": "TID_DECO_HOG_PEN",
+    "name": "Hog Pen",
+    "image": "images/decorations/Decoration_HV_Hog_Pen.webp",
+    "description": "A cozy enclosure for your favorite hogs.",
+    "released": "March 2024",
+    "availability": "Season Pass or event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 63,
+    "Code": "18000123",
+    "TID": "TID_DECO_SPACE_2024_CRATER",
+    "name": "Clashy Crater",
+    "image": "images/decorations/Decoration_HV_Clashy_Crater.webp",
+    "description": "A lunar crater with a mysterious blue glow.",
+    "released": "March 2024",
+    "availability": "Super Dragon Spotlight event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 64,
+    "Code": "18000124",
+    "TID": "TID_DECO_SPACE_2024_GLOBE",
+    "name": "Stone Globe",
+    "image": "images/decorations/Decoration_HV_Stone_Globe.webp",
+    "description": "A stone sculpture of the world of Clash.",
+    "released": "March 2024",
+    "availability": "Super Dragon Spotlight event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 65,
+    "Code": "18000125",
+    "TID": "TID_DECO_SPACE_2024_GOBLIN_STATUE",
+    "name": "Goblin Explorer",
+    "image": "images/decorations/Decoration_HV_Goblin_Explorer.webp",
+    "description": "A goblin statue equipped for an adventure.",
+    "released": "March 2024",
+    "availability": "Super Dragon Spotlight event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 66,
+    "Code": "18000114",
+    "TID": "TID_DECO_COZY_CLAM",
+    "name": "Cozy Clam",
+    "image": "images/decorations/Decoration_HV_Cozy_Clam.webp",
+    "description": "A large clam shell containing a comfortable cushion.",
+    "released": "April 2024",
+    "availability": "Spring event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 67,
+    "Code": "18000126",
+    "TID": "TID_DECO_EGYPT_2024_BABYDRAGON",
+    "name": "Baby Ptah",
+    "image": "images/decorations/Baby_Ptah.webp",
+    "description": "A small Egyptian-themed statue.",
+    "released": "April 2024",
+    "availability": "Egyptian season event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 68,
+    "Code": "18000127",
+    "TID": "TID_DECO_EGYPT_2024_GOBLIN",
+    "name": "Goblin Pharaoh",
+    "image": "images/decorations/Goblin_Pharaoh.webp",
+    "description": "A goblin statue dressed as an ancient pharaoh.",
+    "released": "April 2024",
+    "availability": "Egyptian season event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 69,
+    "Code": "18000128",
+    "TID": "TID_DECO_EGYPT_2024_HOG",
+    "name": "Hog Sphinx",
+    "image": "images/decorations/Hog_Sphinx.webp",
+    "description": "A hog-headed sphinx statue.",
+    "released": "April 2024",
+    "availability": "Egyptian season event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 70,
+    "Code": "18000130",
+    "TID": "TID_DECO_GAME_CAMPAIGN",
+    "name": "Surprising Squad",
+    "image": "images/decorations/Surprising Squad.webp",
+    "description": "A group of troops in a surprise box.",
+    "released": "May 2024",
+    "availability": "Haaland event or shop offer.",
+    "size": "2x2"
+  },
+  {
+    "SN": 71,
+    "Code": "18000131",
+    "TID": "TID_DECO_CLASHBALL_GOLDENBOOT",
+    "name": "Golden Boot",
+    "image": "images/decorations/Decoration_HV_Golden_Boot.webp",
+    "description": "A golden soccer boot awarded for excellence.",
+    "released": "May 2024",
+    "availability": "Haaland event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 72,
+    "Code": "18000132",
+    "TID": "TID_DECO_CLASHBALL_TROPHYBALL",
+    "name": "Bestest Ball",
+    "image": "images/decorations/Decoration_HV_Trophy_Ball.webp",
+    "description": "The ultimate golden soccer ball.",
+    "released": "May 2024",
+    "availability": "Haaland event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 73,
+    "Code": "18000133",
+    "TID": "TID_DECO_CLASHBALL_STATUECHARACTER",
+    "name": "Haaland Statue",
+    "image": "images/decorations/Decoration_HV_Haaland_Statue.webp",
+    "description": "A statue honoring the legendary Erling Haaland.",
+    "released": "May 2024",
+    "availability": "Haaland event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 74,
+    "Code": "18000140",
+    "TID": "TID_DECO_CLASHBALL_GOAL",
+    "name": "Football Camp",
+    "image": "images/decorations/Decoration_HV_Building_Goal_Ball.webp",
+    "description": "A small soccer field for practice.",
+    "released": "May 2024",
+    "availability": "Haaland event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 75,
+    "Code": "18000120",
+    "TID": "TID_DECO_LNY24_CRAB",
+    "name": "Crab at home",
+    "image": "images/decorations/Decoration_HV_Crab_at_home_1.webp",
+    "description": "A small crab resting in its underwater home.",
+    "released": "June 2024",
+    "availability": "Summer event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 76,
+    "Code": "18000137",
+    "TID": "TID_DECO_WILDWEST_CACTUS",
+    "name": "Cactus Guy",
+    "image": "images/decorations/Cactus_Guy.webp",
+    "description": "A friendly cactus decoration.",
+    "released": "June 2024",
+    "availability": "Summer event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 77,
+    "Code": "18000138",
+    "TID": "TID_DECO_WILDWEST_SKELLY",
+    "name": "Cowboy Skeleton",
+    "image": "images/decorations/WildWest_Deco_Skelly_High.webp",
+    "description": "A skeleton dressed as a classic cowboy.",
+    "released": "June 2024",
+    "availability": "Wild West event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 78,
+    "Code": "18000139",
+    "TID": "TID_DECO_WILDWEST_TOTEM",
+    "name": "Dragon Totem",
+    "image": "images/decorations/WildWest_Deco_Totem_High.webp",
+    "description": "A tribal totem representing a dragon.",
+    "released": "June 2024",
+    "availability": "Special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 79,
+    "Code": "18000121",
+    "TID": "TID_DECO_LNY24_BABY_DRAGON",
+    "name": "Baby Dragon Statue",
+    "image": "images/decorations/Decoration_HV_Baby_Dragon_Statue.webp",
+    "description": "A cute statue of a young dragon.",
+    "released": "July 2024",
+    "availability": "Special event or shop offer.",
+    "size": "2x2"
+  },
+  {
+    "SN": 80,
+    "Code": "18000134",
+    "TID": "TID_DECO_CLASHBALL_TROPHYCROWN",
+    "name": "Triumphant Trophy",
+    "image": "images/decorations/Decoration_HV_Trophy_Crown.webp",
+    "description": "A large trophy representing victory.",
+    "released": "August 2024",
+    "availability": "12th Anniversary event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 81,
+    "Code": "18000135",
+    "TID": "TID_DECO_CLASHBALL_TROPHYCUP",
+    "name": "Celebration Cup",
+    "image": "images/decorations/Decoration_HV_Trophy_Cup.webp",
+    "description": "A cup filled with celebratory elixir.",
+    "released": "August 2024",
+    "availability": "12th Anniversary event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 82,
+    "Code": "18000136",
+    "TID": "TID_DECO_CLASHBALL_TROPHYMILK",
+    "name": "Victory Milk",
+    "image": "images/decorations/Decoration_HV_Trophy_Milk.webp",
+    "description": "A bottle of milk to celebrate a successful raid.",
+    "released": "August 2024",
+    "availability": "12th Anniversary event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 83,
+    "Code": "18000146",
+    "TID": "TID_DECO_ANIME2024_BONZAI",
+    "name": "Cherry Bonsai",
+    "image": "images/decorations/Decoration_HV_Bonsai.webp",
+    "description": "A beautiful cherry blossom bonsai tree.",
+    "released": "August 2024",
+    "availability": "Anime season special offer.",
+    "size": "2x2"
+  },
+  {
+    "SN": 84,
+    "Code": "18000147",
+    "TID": "TID_DECO_ANIME2024_CHIBIARCHER",
+    "name": "Chibi Archer",
+    "image": "images/decorations/Decoration_HV_Chibi_Archer.webp",
+    "description": "A small, cute version of the Archer.",
+    "released": "August 2024",
+    "availability": "Anime Clash event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 85,
+    "Code": "18000148",
+    "TID": "TID_DECO_ANIME2024_KAWAIIGIANT",
+    "name": "Kawaii Giant",
+    "image": "images/decorations/Decoration_HV_Kawaii_Giant.webp",
+    "description": "A stylishly cute version of the Giant.",
+    "released": "August 2024",
+    "availability": "Anime Clash event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 86,
+    "Code": "18000145",
+    "TID": "TID_DECO_ANIME2024_WIZARD",
+    "name": "Wizard Vendor",
+    "image": "images/decorations/Decoration_HV_Anime_Wizard.webp",
+    "description": "A wizard selling magic items.",
+    "released": "August 2024",
+    "availability": "Anime Clash event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 87,
+    "Code": "18000149",
+    "TID": "TID_DECO_ANIME2024_BRAWLSTAR",
+    "name": "Brawl's Star",
+    "image": "images/decorations/Decoration_HV_Brawl_Star.webp",
+    "description": "A star representing the world of Brawl Stars.",
+    "released": "August 2024",
+    "availability": "Crossover event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 88,
+    "Code": "18000078",
+    "TID": "TID_DECORATION_CROWNSWORD",
+    "name": "Crown Sword",
+    "image": "images/decorations/Decoration_HV_Crown_Sword.webp",
+    "description": "A regal sword embedded in a stone.",
+    "released": "September 2024",
+    "availability": "Supercell ID or special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 89,
+    "Code": "18000155",
+    "TID": "TID_DECO_SPACE2024_JUSTICECROWN",
+    "name": "Justice Crown",
+    "image": "images/decorations/Justice_Crown.webp",
+    "description": "A crown representing law and order.",
+    "released": "September 2024",
+    "availability": "Special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 90,
+    "Code": "18000157",
+    "TID": "TID_DECO_CLASHOWEEN_2024_HEADSTONE",
+    "name": "Hydra Headstone",
+    "image": "images/decorations/Obstacle_HV_Hydra_Headstone.webp",
+    "description": "A headstone for a multi-headed monster.",
+    "released": "October 2024",
+    "availability": "Halloween event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 91,
+    "Code": "18000159",
+    "TID": "TID_DECO_CLASHOWEEN_2024_CAULDRON",
+    "name": "Bubble Boil Cauldron",
+    "image": "images/decorations/Obstacle_HV_Bubble_Boil_Cauldron.webp",
+    "description": "A bubbling cauldron filled with strange magic.",
+    "released": "October 2024",
+    "availability": "Halloween event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 92,
+    "Code": "18000160",
+    "TID": "TID_DECO_CLASHOWEEN_2024_BREWER",
+    "name": "Abra-Cada-Brewer",
+    "image": "images/decorations/Obstacle_HV_Abra-Cada-Brewer.webp",
+    "description": "A magical brewing station.",
+    "released": "October 2024",
+    "availability": "Halloween event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 93,
+    "Code": "18000164",
+    "TID": "TID_DECO_HALLOWEEN_2024_CRAFTEDSTATUE",
+    "name": "Crafted Statue",
+    "image": "images/decorations/HALLOWEEN_2024_CRAFTEDSTATUE.webp",
+    "description": "A statue made of various village materials.",
+    "released": "October 2024",
+    "availability": "Special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 94,
+    "Code": "18000154",
+    "TID": "TID_DECO_CYBER2024_HOLOGRAM",
+    "name": "Cyber Hologram",
+    "image": "images/decorations/Cyber_Hologram.webp",
+    "description": "A futuristic holographic projection.",
+    "released": "December 2024",
+    "availability": "Cyber season offer.",
+    "size": "2x2"
+  },
+  {
+    "SN": 95,
+    "Code": "18000161",
+    "TID": "TID_DECO_CLASHMAS2024_CHOIR",
+    "name": "Clockwork Choir",
+    "image": "images/decorations/Clockwork_Choir.webp",
+    "description": "A group of mechanical singers.",
+    "released": "December 2024",
+    "availability": "Toyshop Throwdown event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 96,
+    "Code": "18000162",
+    "TID": "TID_DECO_CLASHMAS2024_SNOWGLOBE",
+    "name": "Snow Globe",
+    "image": "images/decorations/Snow_Globe.webp",
+    "description": "A magical globe that makes it snow.",
+    "released": "December 2024",
+    "availability": "Toyshop Throwdown event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 97,
+    "Code": "18000163",
+    "TID": "TID_DECO_CLASHMAS2024_REINDEER",
+    "name": "Rocking Reindeer",
+    "image": "images/decorations/Rocking_Reindeer.webp",
+    "description": "A wooden reindeer for the holiday season.",
+    "released": "December 2024",
+    "availability": "Toyshop Throwdown event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 98,
+    "Code": "18000165",
+    "TID": "TID_DECO_CLASHMAS2024_GIFTBAG",
+    "name": "Gift Bag",
+    "image": "images/decorations/Gift_Bag.webp",
+    "description": "A bag filled with holiday gifts.",
+    "released": "December 2024",
+    "availability": "Special offer.",
+    "size": "2x2"
+  },
+  {
+    "SN": 99,
     "Code": "18000204",
     "TID": "TID_OBSTACLE_FROZEN_STONE",
     "name": "Frozen Stone",
-    "image": "images/decorations/Frozen_Stone.webp"
+    "image": "images/decorations/Frozen_Stone.webp",
+    "description": "A stone that has been frozen solid.",
+    "released": "December 2024",
+    "availability": "Winter season event reward.",
+    "size": "2x2"
   },
   {
-    "SN": 132,
-    "Name": "Wolf Statue",
+    "SN": 100,
+    "Code": "18000173",
+    "TID": "TID_DECO_LNY2025_SAUNA",
+    "name": "Cozy Sauna",
+    "image": "images/decorations/Cozy_Sauna.webp",
+    "description": "A warm sauna to relax in.",
+    "released": "January 2025",
+    "availability": "Winter event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 101,
+    "Code": "18000171",
+    "TID": "TID_DECO_LNY2025_SHRINE",
+    "name": "Snake Shrine",
+    "image": "images/decorations/Snake_Shrine.webp",
+    "description": "A shrine honoring the Year of the Snake.",
+    "released": "February 2025",
+    "availability": "Snake Festival event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 102,
+    "Code": "18000172",
+    "TID": "TID_DECO_LNY2025_MONK",
+    "name": "Monk Statue",
+    "image": "images/decorations/Monk_Statue.webp",
+    "description": "A statue of a wise monk.",
+    "released": "February 2025",
+    "availability": "Snake Festival event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 103,
+    "Code": "18000174",
+    "TID": "TID_DECO_LNY2025_COOKIES",
+    "name": "Lucky Cookies",
+    "image": "images/decorations/Lucky_Cookies.webp",
+    "description": "Fortune cookies that bring good luck.",
+    "released": "February 2025",
+    "availability": "Snake Festival event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 104,
+    "Code": "18000181",
+    "TID": "TID_DECO_FRIENDFOE2025_RUMBLING",
+    "name": "Rumbling Goblins",
+    "image": "images/decorations/Rumbling_Goblins.webp",
+    "description": "A group of goblins on the move.",
+    "released": "April 2025",
+    "availability": "Friend or Foe event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 105,
+    "Code": "18000182",
+    "TID": "TID_DECO_FRIENDFOE2025_GOLDGIANT",
+    "name": "Golden Giant",
+    "image": "images/decorations/Golden_Giant.webp",
+    "description": "A solid gold statue of a Giant.",
+    "released": "April 2025",
+    "availability": "Friend or Foe event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 106,
+    "Code": "18000183",
+    "TID": "TID_DECO_FRIENDFOE2025_SURPRISEWHEEL",
+    "name": "Surprise Wheel",
+    "image": "images/decorations/Surprise_Wheel.webp",
+    "description": "A wheel of fortune with many prizes.",
+    "released": "April 2025",
+    "availability": "Friend or Foe event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 107,
+    "Code": "18000185",
+    "TID": "TID_DECO_CREATOR_2025_FOUNTAIN",
+    "name": "Creator Fountain",
+    "image": "images/decorations/Creator_Fountain.webp",
+    "description": "A fountain celebrating content creators.",
+    "released": "June 2025",
+    "availability": "Creator event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 108,
+    "Code": "18000184",
+    "TID": "TID_DECO_CREATOR_2025_SHOOTINGRANGE",
+    "name": "Shooting Range",
+    "image": "images/decorations/Shooting_Range.webp",
+    "description": "A target for practicing arrows.",
+    "released": "June 2025",
+    "availability": "Special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 109,
+    "Code": "18000166",
+    "TID": "TID_DECO_SUMMER2025_HIGHDIVE",
+    "name": "Goblin High Dive",
+    "image": "images/decorations/Goblin_High_Dive.webp",
+    "description": "A goblin preparing for a high dive.",
+    "released": "July 2025",
+    "availability": "Summer event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 110,
+    "Code": "18000167",
+    "TID": "TID_DECO_SUMMER2025_FOOTTRIBUTE",
+    "name": "Foot Tribute",
+    "image": "images/decorations/Foot_Tribute.webp",
+    "description": "A tribute to the sport of soccer.",
+    "released": "July 2025",
+    "availability": "Summer event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 111,
+    "Code": "18000168",
+    "TID": "TID_DECO_SPECIAL2025_PRETTYPORTAL",
+    "name": "Pretty Portal",
+    "image": "images/decorations/Pretty_Portal.webp",
+    "description": "A mysterious and beautiful portal.",
+    "released": "July 2025",
+    "availability": "Special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 112,
+    "Code": "18000169",
+    "TID": "TID_DECO_SPECIAL2025_DECISIONDICE",
+    "name": "Decision Dice",
+    "image": "images/decorations/Decision_Dice.webp",
+    "description": "A pair of dice used to decide battle strategies.",
+    "released": "July 2025",
+    "availability": "Special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 113,
+    "Code": "18000186",
+    "TID": "TID_DECO_SPLASHBASH2025_GATE",
+    "name": "Sacred Gate",
+    "image": "images/decorations/Sacred_Gate.webp",
+    "description": "An ancient gate leading to a sacred place.",
+    "released": "August 2025",
+    "availability": "Special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 114,
+    "Code": "18000187",
+    "TID": "TID_DECO_SPLASHBASH2025_JINGLEMAKER",
+    "name": "Jingle Maker",
+    "image": "images/decorations/Jingle_Maker.webp",
+    "description": "A machine that creates holiday music.",
+    "released": "August 2025",
+    "availability": "Special event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 115,
+    "Code": "18000188",
+    "TID": "TID_DECO_SPLASHBASH2025_WAGON",
+    "name": "Looter Wagon",
+    "image": "images/decorations/Looter_Wagon.webp",
+    "description": "A wagon overflowing with stolen loot.",
+    "released": "August 2025",
+    "availability": "Splash Bash event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 116,
+    "Code": "18000189",
+    "TID": "TID_DECO_SPLASHBASH2025_WIZARD",
+    "name": "Frozen Wizard",
+    "image": "images/decorations/Frozen_Wizard.webp",
+    "description": "A wizard encased in ice.",
+    "released": "August 2025",
+    "availability": "Splash Bash event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 117,
+    "Code": "18000190",
+    "TID": "TID_DECO_SPLASHBASH2025_CARVING",
+    "name": "Clashy Carving",
+    "image": "images/decorations/Clashy_Carving.webp",
+    "description": "A wooden carving of a Clash character.",
+    "released": "August 2025",
+    "availability": "Splash Bash event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 118,
+    "Code": "18000192",
+    "TID": "TID_DECO_SPLASHBASH2025_SODASTAND",
+    "name": "Soda Stand",
+    "image": "images/decorations/Soda_Stand.webp",
+    "description": "A refreshment stand for troops.",
+    "released": "August 2025",
+    "availability": "Splash Bash event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 119,
+    "Code": "18000193",
+    "TID": "TID_DECO_SPLASHBASH2025_BENCH",
+    "name": "Party Bench",
+    "image": "images/decorations/Party_Bench.webp",
+    "description": "A bench for a celebratory feast.",
+    "released": "August 2025",
+    "availability": "Splash Bash event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 120,
+    "Code": "18000179",
+    "TID": "TID_DECO_WWE2025_TITLE",
+    "name": "WWE Title",
+    "image": "images/decorations/WWE_Title.webp",
+    "description": "A championship belt for the world of Clash.",
+    "released": "August 2025",
+    "availability": "WWE crossover event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 121,
+    "Code": "18000191",
+    "TID": "TID_DECO_SPOTLIGHT2025_SUMMONER",
+    "name": "Sketch Summoner",
+    "image": "images/decorations/Sketch_Summoner.webp",
+    "description": "A statue of a troop as a pencil sketch.",
+    "released": "September 2025",
+    "availability": "Mini Spotlight event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 122,
+    "Code": "18000150",
+    "TID": "TID_DECO_SPECIAL2025_GAUNTLET",
+    "name": "Gargantuan Gauntlet",
+    "image": "images/decorations/Gargantuan_Gauntlet.webp",
+    "description": "A giant metal gauntlet.",
+    "released": "September 2025",
+    "availability": "Special event or shop offer.",
+    "size": "2x2"
+  },
+  {
+    "SN": 123,
+    "Code": "18000151",
+    "TID": "TID_DECO_SPECIAL2025_SLEEPYKING",
+    "name": "Sleepy King",
+    "image": "images/decorations/Sleepy_King.webp",
+    "description": "The Barbarian King taking a quick nap.",
+    "released": "September 2025",
+    "availability": "Supercell Store reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 124,
+    "Code": "18000152",
+    "TID": "TID_DECO_SPECIAL2025_FLAME",
+    "name": "Champion's Flame",
+    "image": "images/decorations/Champion's_Flame.webp",
+    "description": "An eternal flame for a true champion.",
+    "released": "September 2025",
+    "availability": "Mini Spotlight event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 125,
+    "Code": "18000194",
+    "TID": "TID_DECO_COSMIC2025_LANTERN",
+    "name": "Cosmic Lantern",
+    "image": "images/decorations/Cosmic_Lantern.webp",
+    "description": "A lantern that glows with cosmic energy.",
+    "released": "October 2025",
+    "availability": "Cosmic Rock event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 126,
+    "Code": "18000195",
+    "TID": "TID_DECO_COSMIC2025_PRINTER",
+    "name": "Fortune Printer",
+    "image": "images/decorations/Fortune_Printer.webp",
+    "description": "A machine that prints your destiny.",
+    "released": "October 2025",
+    "availability": "Cosmic Rock event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 127,
+    "Code": "18000196",
+    "TID": "TID_DECO_COSMIC2025_BOOMBOX",
+    "name": "Boombox",
+    "image": "images/decorations/Boombox.webp",
+    "description": "A portable music player for epic tunes.",
+    "released": "October 2025",
+    "availability": "Cosmic Rock event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 128,
+    "Code": "18000197",
+    "TID": "TID_DECO_COSMIC2025_TOME",
+    "name": "Cursed Tome",
+    "image": "images/decorations/Cursed_Tome.webp",
+    "description": "A book of forbidden magic.",
+    "released": "October 2025",
+    "availability": "Cosmic Rock event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 129,
+    "Code": "18000170",
+    "TID": "TID_DECO_LNY2025_LANTERN",
+    "name": "Festival Lantern",
+    "image": "images/decorations/Festival_Lantern.webp",
+    "description": "A beautiful lantern for a light festival.",
+    "released": "October 2025",
+    "availability": "Diwali event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 130,
+    "Code": "18000198",
+    "TID": "TID_DECO_TREASURE2025_SKULL",
+    "name": "Electro Skull",
+    "image": "images/decorations/Electro_Skull.webp",
+    "description": "A skull crackling with electricity.",
+    "released": "November 2025",
+    "availability": "Treasure Hunt event reward.",
+    "size": "2x2"
+  },
+  {
+    "SN": 131,
     "Code": "18000203",
     "TID": "TID_SUPERDECO_WOLF_STATUE",
     "name": "Hungry Hound",
-    "image": "images/decorations/Hungry_Hound.webp"
+    "image": "images/decorations/Hungry_Hound.webp",
+    "description": "A statue of a Lava Hound looking for food.",
+    "released": "December 2025",
+    "availability": "Winter season event reward.",
+    "size": "3x3"
+  },
+  {
+    "SN": 132,
+    "Code": "18000205",
+    "TID": "TID_OBSTACLE_SMOKEY_STOVE",
+    "name": "Smokey Stove",
+    "image": "images/decorations/Smokey_Stove.webp",
+    "description": "A stove used for cooking village meals.",
+    "released": "December 2025",
+    "availability": "Winter season event reward.",
+    "size": "2x2"
   },
   {
     "SN": 133,
-    "Name": "Smokey Stove",
-    "Code": "18000196",
-    "TID": "TID_DECO_SMOKY_STOVE",
-    "name": "Smokey Stove",
-    "image": "images/decorations/Smokey_Stove.webp"
+    "Code": "18000213",
+    "TID": "TID_DECO_EAGLEMONUMENT",
+    "name": "Eagle Monument",
+    "image": "images/decorations/Eagle_Monument.webp",
+    "description": "A grand monument of an eagle.",
+    "released": "December 2025",
+    "availability": "Special event reward.",
+    "size": "2x2"
   },
   {
     "SN": 134,
-    "Name": "Eagle Monument",
-    "Code": "18000192",
-    "TID": "TID_DECO_COMMUNITY_EAGLEHEAD",
-    "name": "Eagle Monument",
-    "image": "images/decorations/Eagle_Monument.webp"
-  },
-  {
-    "SN": 135,
-    "Name": "Brawny Battleaxe",
-    "Code": "18000199",
-    "TID": "TID_EVENT_DECO_FLEX_AXE",
+    "Code": "18000214",
+    "TID": "TID_DECO_BRAWNYBATTLEAXE",
     "name": "Brawny Battleaxe",
-    "image": "images/decorations/Brawny_Battleaxe.webp"
+    "image": "images/decorations/Brawny_Battleaxe.webp",
+    "description": "A massive battleaxe used in ancient wars.",
+    "released": "December 2025",
+    "availability": "Special event reward.",
+    "size": "2x2"
   }
 ]
