@@ -20,12 +20,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    background: hsl(210, 30%, 8%);
-    color: hsl(210, 20%, 98%);
+    background: #0E1B2B;
+    color: #E5ECF5;
     overflow-x: hidden;
     background-image:
-        radial-gradient(circle at 20% 50%, hsla(210, 30%, 15%, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, hsla(210, 30%, 20%, 0.3) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(47, 109, 181, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(123, 63, 228, 0.1) 0%, transparent 50%);
     min-height: 100vh;
     padding-top: 6rem;
     /* Account for fixed navbars (3.5rem + 2.5rem) */
@@ -46,47 +46,56 @@ svg {
    COLORS & DESIGN TOKENS
    ============================================ */
 :root {
-    /* Base Colors */
-    --background: hsl(210, 30%, 8%);
-    --foreground: hsl(210, 20%, 98%);
-    --card: hsl(210, 25%, 12%);
-    --card-foreground: hsl(210, 20%, 98%);
-    --primary: hsl(45, 100%, 60%);
-    --primary-foreground: hsl(210, 30%, 8%);
-    --secondary: hsl(210, 20%, 16%);
-    --secondary-foreground: hsl(210, 20%, 98%);
-    --muted: hsl(210, 20%, 16%);
-    --muted-foreground: hsl(210, 15%, 60%);
-    --border: hsl(210, 20%, 18%);
-    --input: hsl(210, 20%, 18%);
+    /* Base Colors - In-Game Clash of Clans Dark Theme */
+    --background: #0E1B2B;
+    --foreground: #E5ECF5;
+    --card: #162A44;
+    --card-foreground: #E5ECF5;
+    --primary: #F2C94C;
+    --primary-foreground: #2A1A00;
+    --secondary: #2F6DB5;
+    --secondary-foreground: #FFFFFF;
+    --muted: #132238;
+    --muted-foreground: #B6C2D9;
+    --border: #2F6DB5;
+    --input: #132238;
 
-    /* Accent Colors */
-    --teal: hsl(174, 77%, 47%);
-    --orange: hsl(25, 95%, 53%);
-    --green: hsl(142, 76%, 47%);
-    --purple: hsl(271, 81%, 56%);
-    --gold: hsl(45, 100%, 60%);
-    --gold-dark: hsl(45, 80%, 45%);
-    --gold-light: hsl(48, 100%, 70%);
-    --red: hsl(0, 84.2%, 60.2%);
+    /* Accent Colors - In-Game Rarity & Elements */
+    --teal: #4DA3FF;
+    --orange: #FF8C42;
+    --green: #10B981;
+    --purple: #7B3FE4;
+    --gold: #F2C94C;
+    --gold-dark: #D4A017;
+    --gold-light: #FFD95A;
+    --red: #E63946;
+    --blue-navbar: #1E5AA8;
+    --blue-light: #4DA3FF;
+    --blue-dark: #0B1420;
+
+    /* Text Colors */
+    --text-primary: #E5ECF5;
+    --text-secondary: #B6C2D9;
+    --text-muted: #7A8DA6;
 
     /* Hover State Colors */
-    --card-hover: hsl(210, 25%, 15%);
-    --border-hover: hsl(210, 20%, 25%);
+    --card-hover: #1A3351;
+    --border-hover: #F2C94C;
 
     /* Gradients */
     --gradient-gold: linear-gradient(135deg, var(--gold-light), var(--gold));
-    --gradient-teal: linear-gradient(135deg, hsl(174, 77%, 57%), var(--teal));
-    --gradient-purple: linear-gradient(135deg, hsl(271, 81%, 66%), var(--purple));
-    --gradient-card: linear-gradient(135deg, hsla(210, 25%, 14%, 0.8), hsla(210, 25%, 12%, 0.9));
+    --gradient-blue: linear-gradient(135deg, var(--blue-navbar), var(--secondary));
+    --gradient-navbar: linear-gradient(180deg, #1E5AA8, #1A4F94);
+    --gradient-purple: linear-gradient(135deg, #9D6FFF, var(--purple));
+    --gradient-card: linear-gradient(135deg, #162A44, #1A3351);
 
-    /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.4);
-    --shadow-gold: 0 0 20px hsla(45, 100%, 60%, 0.3);
-    --shadow-gold-lg: 0 0 30px hsla(45, 100%, 60%, 0.4);
+    /* Shadows - Darker for depth */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.45);
+    --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.5);
+    --shadow-gold: 0 0 12px rgba(242, 201, 76, 0.4);
+    --shadow-gold-lg: 0 0 20px rgba(242, 201, 76, 0.5);
 
     /* Animation Timing */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);

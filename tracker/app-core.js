@@ -135,99 +135,28 @@ async function preloadImages(items, maxImages = 100) {
 // DATA LOADING
 // ============================================
 async function loadAllMasterData() {
-    const [decorations, obstacles, heroesData, sceneries, itemDetails] = await Promise.all([
+    const [decorations, obstacles, heroesData, sceneries] = await Promise.all([
         loadJSON("decorations.json"),
         loadJSON("obstacles.json"),
         loadJSON("heros.json"),
-        loadJSON("sceneries.json"),
-        loadJSON("item-details.json")
+        loadJSON("sceneries.json")
     ]).then(results => [
         results[0],
         results[1],
         results[2],
-        results[3] || { sceneries: [] },
-        results[4] || {}
+        results[3] || { sceneries: [] }
     ]);
 
-    function findItemDetails(itemName, itemType, itemCode = null) {
-        if (!itemDetails) return null;
-        if (itemCode) {
-            const codeStr = String(itemCode);
-            if (itemType === 'heroskin' && itemDetails.hero_skins) {
-                for (const hero in itemDetails.hero_skins) {
-                    if (Array.isArray(itemDetails.hero_skins[hero])) {
-                        const found = itemDetails.hero_skins[hero].find(s => String(s.code) === codeStr);
-                        if (found) return found;
-                    }
-                }
-            } else if (itemType === 'decoration' && itemDetails.decorations) {
-                const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
-                for (const cat of categories) {
-                    if (itemDetails.decorations[cat]) {
-                        const found = itemDetails.decorations[cat].find(d => String(d.code) === codeStr);
-                        if (found) return found;
-                    }
-                }
-            } else if (itemType === 'obstacle' && itemDetails.obstacles) {
-                const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
-                for (const cat of categories) {
-                    if (itemDetails.obstacles[cat]) {
-                        const found = itemDetails.obstacles[cat].find(o => String(o.code) === codeStr);
-                        if (found) return found;
-                    }
-                }
-            } else if (itemType === 'scenery' && itemDetails.sceneries) {
-                let sceneryArray = Array.isArray(itemDetails.sceneries) ? itemDetails.sceneries :
-                    (itemDetails.sceneries.all_sceneries || []);
-                const found = sceneryArray.find(s => String(s.code) === codeStr);
-                if (found) return found;
-            }
-        }
-        if (!itemName) return null;
-        const normalizedName = itemName.toLowerCase().trim();
-        if (itemType === 'decoration' && itemDetails.decorations) {
-            const categories = ['permanent_shop', 'war_league', 'limited_events', 'lunar_new_year'];
-            for (const cat of categories) {
-                if (itemDetails.decorations[cat]) {
-                    const found = itemDetails.decorations[cat].find(d => d.name.toLowerCase().trim() === normalizedName);
-                    if (found) return found;
-                }
-            }
-        } else if (itemType === 'obstacle' && itemDetails.obstacles) {
-            const categories = ['clashmas_trees', 'halloween', 'anniversary_cakes', 'special_events', 'meteorites_2025'];
-            for (const cat of categories) {
-                if (itemDetails.obstacles[cat]) {
-                    const found = itemDetails.obstacles[cat].find(o => o.name.toLowerCase().trim() === normalizedName);
-                    if (found) return found;
-                }
-            }
-        } else if (itemType === 'heroskin' && itemDetails.hero_skins) {
-            for (const hero in itemDetails.hero_skins) {
-                if (Array.isArray(itemDetails.hero_skins[hero])) {
-                    const found = itemDetails.hero_skins[hero].find(s => s.name.toLowerCase().trim() === normalizedName);
-                    if (found) return found;
-                }
-            }
-        } else if (itemType === 'scenery' && itemDetails.sceneries) {
-            let sceneryArray = Array.isArray(itemDetails.sceneries) ? itemDetails.sceneries :
-                (itemDetails.sceneries.all_sceneries || []);
-            const found = sceneryArray.find(s => s.name && s.name.toLowerCase().trim() === normalizedName);
-            if (found) return found;
-        }
-        return null;
-    }
+
 
     const formattedDecorations = decorations?.map(item => {
-        const details = findItemDetails(item.name, 'decoration');
-        return formatItem(item, "decoration", "Decoration", null, null, details);
+        return formatItem(item, "decoration", "Decoration", null, null, null);
     }) || [];
     const formattedObstacles = obstacles?.map(item => {
-        const details = findItemDetails(item.name, 'obstacle');
-        return formatItem(item, "obstacle", "Obstacle", null, null, details);
+        return formatItem(item, "obstacle", "Obstacle", null, null, null);
     }) || [];
     const formattedSceneries = sceneries?.sceneries?.map(item => {
-        const details = findItemDetails(item.name, 'scenery');
-        return formatItem(item, "scenery", "Scenery", null, null, details);
+        return formatItem(item, "scenery", "Scenery", null, null, null);
     }) || [];
     const formattedClanCapital = [];
     const formattedHeroSkins = [];
@@ -236,8 +165,7 @@ async function loadAllMasterData() {
             if (hero.skins && Array.isArray(hero.skins)) {
                 const heroId = hero.name.toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
                 hero.skins.forEach(skin => {
-                    const details = findItemDetails(skin.skin_name, 'heroskin', skin.code);
-                    formattedHeroSkins.push(formatItem(skin, "heroskin", "Hero Skin", hero.name, heroId, details));
+                    formattedHeroSkins.push(formatItem(skin, "heroskin", "Hero Skin", hero.name, heroId, null));
                 });
             }
         });

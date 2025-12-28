@@ -46,47 +46,56 @@ svg {
    COLORS & DESIGN TOKENS
    ============================================ */
 :root {
-    /* Base Colors */
-    --background: hsl(210, 30%, 8%);
-    --foreground: hsl(210, 20%, 98%);
-    --card: hsl(210, 25%, 12%);
-    --card-foreground: hsl(210, 20%, 98%);
-    --primary: hsl(45, 100%, 60%);
-    --primary-foreground: hsl(210, 30%, 8%);
-    --secondary: hsl(210, 20%, 16%);
-    --secondary-foreground: hsl(210, 20%, 98%);
-    --muted: hsl(210, 20%, 16%);
-    --muted-foreground: hsl(210, 15%, 60%);
-    --border: hsl(210, 20%, 18%);
-    --input: hsl(210, 20%, 18%);
+    /* Base Colors - In-Game Clash of Clans Dark Theme */
+    --background: #0E1B2B;
+    --foreground: #E5ECF5;
+    --card: #162A44;
+    --card-foreground: #E5ECF5;
+    --primary: #F2C94C;
+    --primary-foreground: #2A1A00;
+    --secondary: #2F6DB5;
+    --secondary-foreground: #FFFFFF;
+    --muted: #132238;
+    --muted-foreground: #B6C2D9;
+    --border: #2F6DB5;
+    --input: #132238;
 
-    /* Accent Colors */
-    --teal: hsl(174, 77%, 47%);
-    --orange: hsl(25, 95%, 53%);
-    --green: hsl(142, 76%, 47%);
-    --purple: hsl(271, 81%, 56%);
-    --gold: hsl(45, 100%, 60%);
-    --gold-dark: hsl(45, 80%, 45%);
-    --gold-light: hsl(48, 100%, 70%);
-    --red: hsl(0, 84.2%, 60.2%);
+    /* Accent Colors - In-Game Rarity & Elements */
+    --teal: #4DA3FF;
+    --orange: #FF8C42;
+    --green: #10B981;
+    --purple: #7B3FE4;
+    --gold: #F2C94C;
+    --gold-dark: #D4A017;
+    --gold-light: #FFD95A;
+    --red: #E63946;
+    --blue-navbar: #1E5AA8;
+    --blue-light: #4DA3FF;
+    --blue-dark: #0B1420;
+
+    /* Text Colors */
+    --text-primary: #E5ECF5;
+    --text-secondary: #B6C2D9;
+    --text-muted: #7A8DA6;
 
     /* Hover State Colors */
-    --card-hover: hsl(210, 25%, 15%);
-    --border-hover: hsl(210, 20%, 25%);
+    --card-hover: #1A3351;
+    --border-hover: #F2C94C;
 
     /* Gradients */
     --gradient-gold: linear-gradient(135deg, var(--gold-light), var(--gold));
-    --gradient-teal: linear-gradient(135deg, hsl(174, 77%, 57%), var(--teal));
-    --gradient-purple: linear-gradient(135deg, hsl(271, 81%, 66%), var(--purple));
-    --gradient-card: linear-gradient(135deg, hsla(210, 25%, 14%, 0.8), hsla(210, 25%, 12%, 0.9));
+    --gradient-blue: linear-gradient(135deg, var(--blue-navbar), var(--secondary));
+    --gradient-navbar: linear-gradient(180deg, #1E5AA8, #1A4F94);
+    --gradient-purple: linear-gradient(135deg, #9D6FFF, var(--purple));
+    --gradient-card: linear-gradient(135deg, #162A44, #1A3351);
 
-    /* Shadows */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.15);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.2);
-    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.3);
-    --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.4);
-    --shadow-gold: 0 0 20px hsla(45, 100%, 60%, 0.3);
-    --shadow-gold-lg: 0 0 30px hsla(45, 100%, 60%, 0.4);
+    /* Shadows - Darker for depth */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.45);
+    --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.5);
+    --shadow-gold: 0 0 12px rgba(242, 201, 76, 0.4);
+    --shadow-gold-lg: 0 0 20px rgba(242, 201, 76, 0.5);
 
     /* Animation Timing */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1164,37 +1173,87 @@ svg {
     /* Extra bottom padding for the indicator */
 }
 
-/* Rarity border colors */
-.item-card.rarity-common {
-    border-color: var(--muted);
-}
+/* Rarity border colors - REMOVED - Now using colored badges instead */
+/* All cards use default border, rarity is shown on the badge */
 
-.item-card.rarity-rare {
-    border-color: var(--teal);
-}
-
-.item-card.rarity-epic {
-    border-color: var(--purple);
-}
-
-/* Gold Pass skins */
-.item-card.rarity-gold {
-    border-color: var(--gold);
-    border-width: 2px;
-}
-
-/* Legendary skins */
-.item-card.rarity-legendary {
-    border-color: hsl(320, 85%, 60%);
-    border-width: 2px;
-}
-
-/* SPECIAL: Hero Skins move the "glow" to the badge, remove from card border */
+/* SPECIAL: Hero Skins and all other types use default border */
 .item-card.type-heroskin.rarity-gold,
 .item-card.type-heroskin.rarity-legendary {
     border-color: var(--border);
-    border-width: 2px;
+    border-width: 1px;
     box-shadow: none;
+}
+
+/* ============================================
+   TYPE BADGE RARITY COLORS - ALL TYPES
+   ============================================ */
+
+/* DECORATION BADGES */
+.item-card.type-decoration.rarity-gold .item-type-badge.decoration {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    color: #000;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.item-card.type-decoration.rarity-legendary .item-type-badge.decoration {
+    background: #e600e6;
+    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* OBSTACLE BADGES */
+.item-card.type-obstacle.rarity-gold .item-type-badge.obstacle {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    color: #000;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.item-card.type-obstacle.rarity-legendary .item-type-badge.obstacle {
+    background: #e600e6;
+    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* SCENERY BADGES */
+.item-card.type-scenery.rarity-gold .item-type-badge.scenery {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    color: #000;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.item-card.type-scenery.rarity-legendary .item-type-badge.scenery {
+    background: #e600e6;
+    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* CLAN ITEM BADGES */
+.item-card.type-clan.rarity-gold .item-type-badge.clan {
+    background: linear-gradient(135deg, #FFD700, #FFA500);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
+    color: #000;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.item-card.type-clan.rarity-legendary .item-type-badge.clan {
+    background: #e600e6;
+    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
+    color: #fff;
+    font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 /* Hero Skin Badge Styles by Rarity */
