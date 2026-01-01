@@ -9,20 +9,21 @@
             "active": true,
             "ignoreDate": true,
             "image": "clashicons/Icon_HV_Gold_Pass.png",
-            "start": "2025-12-01T08:00:00Z",
-            "end": "2026-01-01T08:00:00Z"
+            "start": "2026-01-01T08:00:00Z",
+            "end": "2026-01-31T08:00:00Z"
         },
         {
             "title": "Raid Weekend",
             "baseDate": "Friday",
             "modifier": "weekly",
             "durationDays": 3,
+            "startHour": 7,
             "description": "Capital Raid Weekend battles",
             "active": true,
             "ignoreDate": true,
             "image": "clashicons/Icon_HV_Raid_Medal.png",
-            "start": "2025-12-26T08:00:00Z",
-            "end": "2025-12-29T08:00:00Z"
+            "start": "2025-12-26T07:00:00Z",
+            "end": "2025-12-29T07:00:00Z"
         },
         {
             "title": "Trader Refresh",
@@ -47,50 +48,64 @@
             "image": "clashicons/clangames.webp",
             "start": "2026-01-22T08:00:00Z",
             "end": "2026-01-28T08:00:00Z"
-        }
-    ],
-    "non_repeating_events": [
-        {
-            "title": "1 Gem Boosts",
-            "icon": "gem",
-            "start": "2026-01-15T08:00:00Z",
-            "end": "2026-01-20T08:00:00Z",
-            "description": "All training and building boosts cost 1 gem",
-            "active": false,
-            "type": "one-time",
-            "ignoreDate": false
-        },
-        {
-            "title": "Builder Boost",
-            "icon": "hammer",
-            "start": "2026-01-25T08:00:00Z",
-            "end": "2026-01-28T08:00:00Z",
-            "description": "Reduced building times for all upgrades",
-            "active": false,
-            "type": "one-time",
-            "ignoreDate": false
-        },
-        {
-            "title": "Meltdown Mayhem",
-            "icon": "medal",
-            "start": "2025-12-12T08:00:00Z",
-            "end": "2025-12-30T08:00:00Z",
-            "description": "Collect Sleepy Mites for Rewards",
-            "active": true,
-            "type": "one-time",
-            "ignoreDate": false
         },
         {
             "title": "Clan War League",
             "baseDate": "01",
             "modifier": "monthly",
-            "durationDays": 8,
+            "durationDays": 10,
             "description": "Compete in league wars for medals",
             "active": true,
-            "ignoreDate": false,
+            "ignoreDate": true,
             "image": "clashicons/Icon_HV_CWL_Champion_3.png",
             "start": "2026-01-01T08:00:00Z",
-            "end": "2026-01-09T08:00:00Z"
+            "end": "2026-01-11T08:00:00Z"
+        }
+    ],
+    "non_repeating_events": [
+        {
+            "title": "Challenge Level",
+            "icon": "medal",
+            "start": "2026-01-01T08:00:00Z",
+            "end": "2026-01-10T08:00:00Z",
+            "description": "Complete challenges to unlock rewards",
+            "active": true,
+            "type": "one-time",
+            "ignoreDate": false,
+            "image": "clashicons/challange.png"
+        },
+        {
+            "title": "Trader Specials",
+            "icon": "hammer",
+            "start": "2026-01-06T08:00:00Z",
+            "end": "2026-02-03T08:00:00Z",
+            "description": "Special deals available at the Trader",
+            "active": true,
+            "type": "one-time",
+            "ignoreDate": false,
+            "image": "clashicons/Villager_HV_Trader_2.png"
+        },
+        {
+            "title": "Equipment Blast",
+            "icon": "gem",
+            "start": "2026-01-09T08:00:00Z",
+            "end": "2026-01-22T08:00:00Z",
+            "description": "Special equipment upgrade event",
+            "active": true,
+            "type": "one-time",
+            "ignoreDate": false,
+            "image": "clashicons/equipment.png"
+        },
+        {
+            "title": "Treasure Hunt",
+            "icon": "medal",
+            "start": "2026-01-28T08:00:00Z",
+            "end": "2026-02-01T08:00:00Z",
+            "description": "Collect treasures for special rewards",
+            "active": true,
+            "type": "one-time",
+            "ignoreDate": false,
+            "image": "clashicons/treasurehunt.png"
         }
     ]
 }

@@ -35,6 +35,10 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
     <link rel="manifest" href="/images/favicon_io/site.webmanifest">
     <link rel="icon" href="/images/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&family=Exo+2:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/global.css">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="style.css">
 
@@ -59,14 +63,16 @@
 <body>
     <div id="root">
         <!-- Top Level Navigation -->
-        <nav class="top-nav">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="/">Home</a>
-                </li>
-                <li class="nav-item"><a href="/tracker/" class="active">Tracker</a></li>
-                <li class="nav-item"><a href="/wiki/">Wiki</a></li>
-            </ul>
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="/clashicons/logomain.png" alt="Clash of Clans Vault" class="logo-image">
+            </div>
+            <div class="nav-links">
+                <a href="/index.html">Home</a>
+                <a href="/tracker/index.html" class="active">Tracker</a>
+                <a href="/wiki/index.html">Wiki</a>
+                <a href="/privacy.html">Privacy Policy</a>
+            </div>
         </nav>
 
         <!-- Header (Branding) -->
@@ -403,10 +409,20 @@
         </div>
 
         <div id="toast-container" class="toast-container"></div>
-        <footer class="wiki-footer">
-            <p>&copy; 2025 The Village Vault. Not affiliated with Supercell.</p>
-            <p><a href="/index.html#about">About</a> | <a href="/privacy.html">Privacy Policy</a> | <a
-                    href="mailto:clashofclanscollections@gmail.com">Contact</a></p>
+        <footer class="footer">
+            <div class="logo-container" style="justify-content: center; margin-bottom: 1rem;">
+                <img src="/clashicons/logomain.png" alt="Clash of Clans Vault" class="logo-image"
+                    style="height: 100px; margin: -20px 0;">
+            </div>
+            <div class="footer-links">
+                <a href="/index.html">Home</a>
+                <a href="/tracker/index.html">Tracker</a>
+                <a href="/wiki/index.html">Wiki</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="mailto:clashofclanscollections@gmail.com">Contact</a>
+            </div>
+            <p style="margin-top: 1rem; font-size: 0.8rem;">This content is not affiliated with, endorsed, sponsored, or
+                specifically approved by Supercell and Supercell is not responsible for it.</p>
         </footer>
     </div>
 

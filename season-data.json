@@ -1,40 +1,31 @@
 {
-  "season": "Frost Age",
-  "calendar_image": "https://yt3.ggpht.com/tgmgTy9ZgFy9tv5lCXUV1tRBlBCcOEmbQK_xedqJpT27Glmo1tHCuo64pNCcYQaA17p9fUtEu1pkbw=s640-c-fcrop64=1,00000000ffffffff-rw-nd-v1",
+  "season": "Desert Nights",
+  "calendar_image": "https://i.redd.it/6q58jt8dfjag1.png",
   "skins": [
     {
-      "name": "Awakened King",
-      "image": "src/assets/heroskin/BarbarianKing_FrostAge_f50_3k.webp"
+      "name": "",
+      "image": "src/assets/heroskin/"
     },
     {
-      "name": "Blizzard Queen",
-      "image": "src/assets/heroskin/ArcherQueen_FrostAge_f90_3k_noGroundShadow.webp"
+      "name": "",
+      "image": "src/assets/heroskin/"
     },
     {
-      "name": "Grand Warlock",
-      "image": "src/assets/heroskin/GrandWarden_FrostAge_f50_3k.webp"
+      "name": "",
+      "image": "src/assets/heroskin/"
     },
     {
-      "name": "Glacial Champion",
-      "image": "src/assets/heroskin/RoyalChampion_FrostAge_f15_3k_noGroundshadows.webp"
+      "name": "",
+      "image": "src/assets/heroskin/"
     },
     {
-      "name": "Frost Prince",
-      "image": "src/assets/heroskin/MinionPrince_FrostAge_f60_3k.webp"
+      "name": "",
+      "image": "src/assets/heroskin/"
     }
   ],
   "scenery": {
-    "name": "Frost Age Scenery",
-    "image": "src/assets/sceneries/12_FrostAge_25_Scenery.webp"
+    "name": "Desert Nights Scenery",
+    "image": "src/assets/sceneries/desertnights.png"
   },
-  "decorations": [
-    {
-      "name": "2025 Christmas Tree",
-      "image": "images/obs/Clashmas_Tree_2025.webp"
-    },
-    {
-      "name": "Brawny Battleaxe",
-      "image": "images/decorations/Brawny_Battleaxe.webp"
-    }
-  ]
+  "decorations": []
 }

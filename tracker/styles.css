@@ -16,19 +16,14 @@ html {
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    font-family: 'Electrolize', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    background: hsl(210, 30%, 8%);
-    color: hsl(210, 20%, 98%);
+    background: var(--bg-dark);
+    color: var(--text-main);
     overflow-x: hidden;
-    background-image:
-        radial-gradient(circle at 20% 50%, hsla(210, 30%, 15%, 0.4) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, hsla(210, 30%, 20%, 0.3) 0%, transparent 50%);
     min-height: 100vh;
-    padding-top: 3.5rem;
-    /* Account for fixed top-nav */
     line-height: 1.6;
 }
 
@@ -46,56 +41,56 @@ svg {
    COLORS & DESIGN TOKENS
    ============================================ */
 :root {
-    /* Base Colors - In-Game Clash of Clans Dark Theme */
-    --background: #0E1B2B;
+    /* Base Colors - Clash of Clans Dark Theme (Brown/Gold) */
+    --background: #0e1117;
     --foreground: #E5ECF5;
-    --card: #162A44;
+    --card: #161b25;
     --card-foreground: #E5ECF5;
-    --primary: #F2C94C;
+    --primary: #ffcc00;
     --primary-foreground: #2A1A00;
-    --secondary: #2F6DB5;
+    --secondary: #1c212d;
     --secondary-foreground: #FFFFFF;
-    --muted: #132238;
-    --muted-foreground: #B6C2D9;
-    --border: #2F6DB5;
-    --input: #132238;
+    --muted: #1c212d;
+    --muted-foreground: #a0a0a0;
+    --border: #2d3748;
+    --input: #1c212d;
 
-    /* Accent Colors - In-Game Rarity & Elements */
+    /* Accent Colors - Clash of Clans Theme (Gold/Brown) */
     --teal: #4DA3FF;
     --orange: #FF8C42;
     --green: #10B981;
     --purple: #7B3FE4;
-    --gold: #F2C94C;
+    --gold: #ffcc00;
     --gold-dark: #D4A017;
     --gold-light: #FFD95A;
     --red: #E63946;
-    --blue-navbar: #1E5AA8;
+    --blue-navbar: #2d3748;
     --blue-light: #4DA3FF;
-    --blue-dark: #0B1420;
+    --blue-dark: #0e1117;
 
     /* Text Colors */
-    --text-primary: #E5ECF5;
+    --text-primary: #ffffff;
     --text-secondary: #B6C2D9;
-    --text-muted: #7A8DA6;
+    --text-muted: #a0a0a0;
 
     /* Hover State Colors */
-    --card-hover: #1A3351;
-    --border-hover: #F2C94C;
+    --card-hover: #1c212d;
+    --border-hover: #ffcc00;
 
-    /* Gradients */
+    /* Gradients - Gold/Brown Theme */
     --gradient-gold: linear-gradient(135deg, var(--gold-light), var(--gold));
-    --gradient-blue: linear-gradient(135deg, var(--blue-navbar), var(--secondary));
-    --gradient-navbar: linear-gradient(180deg, #1E5AA8, #1A4F94);
+    --gradient-blue: linear-gradient(135deg, #2d3748, #1c212d);
+    --gradient-navbar: linear-gradient(180deg, #161b25, #1c212d);
     --gradient-purple: linear-gradient(135deg, #9D6FFF, var(--purple));
-    --gradient-card: linear-gradient(135deg, #162A44, #1A3351);
+    --gradient-card: linear-gradient(135deg, #161b25, #1c212d);
 
     /* Shadows - Darker for depth */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.45);
     --shadow-xl: 0 12px 30px rgba(0, 0, 0, 0.5);
-    --shadow-gold: 0 0 12px rgba(242, 201, 76, 0.4);
-    --shadow-gold-lg: 0 0 20px rgba(242, 201, 76, 0.5);
+    --shadow-gold: 0 0 12px rgba(255, 204, 0, 0.4);
+    --shadow-gold-lg: 0 0 20px rgba(255, 204, 0, 0.5);
 
     /* Animation Timing */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -1185,104 +1180,16 @@ svg {
 }
 
 /* ============================================
-   TYPE BADGE RARITY COLORS - ALL TYPES
+   TYPE BADGE - UNIFIED COLOR SCHEME
    ============================================ */
 
-/* DECORATION BADGES */
-.item-card.type-decoration.rarity-gold .item-type-badge.decoration {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-    color: #000;
+/* All type badges now use consistent dark theme color regardless of rarity */
+.item-card .item-type-badge {
+    background: linear-gradient(135deg, #2d3748, #1a202c);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
     font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.item-card.type-decoration.rarity-legendary .item-type-badge.decoration {
-    background: #e600e6;
-    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
-    color: #fff;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-/* OBSTACLE BADGES */
-.item-card.type-obstacle.rarity-gold .item-type-badge.obstacle {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-    color: #000;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.item-card.type-obstacle.rarity-legendary .item-type-badge.obstacle {
-    background: #e600e6;
-    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
-    color: #fff;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-/* SCENERY BADGES */
-.item-card.type-scenery.rarity-gold .item-type-badge.scenery {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-    color: #000;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.item-card.type-scenery.rarity-legendary .item-type-badge.scenery {
-    background: #e600e6;
-    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
-    color: #fff;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-/* CLAN ITEM BADGES */
-.item-card.type-clan.rarity-gold .item-type-badge.clan {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-    color: #000;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.item-card.type-clan.rarity-legendary .item-type-badge.clan {
-    background: #e600e6;
-    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
-    color: #fff;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-/* Hero Skin Badge Styles by Rarity */
-/* Gold Pass */
-.item-card.type-heroskin.rarity-gold .item-type-badge.heroskin {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    box-shadow: 0 0 8px rgba(255, 215, 0, 0.6);
-    color: #000;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    text-shadow: none;
-}
-
-/* Legendary */
-.item-card.type-heroskin.rarity-legendary .item-type-badge.heroskin {
-    background: #e600e6;
-    box-shadow: 0 0 10px rgba(217, 70, 239, 0.6);
-    color: #fff;
-    font-weight: 700;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-/* Standard/Common */
-.item-card.type-heroskin.rarity-common .item-type-badge.heroskin,
-.item-card.type-heroskin.rarity-standard .item-type-badge.heroskin {
-    background: #000;
-    color: var(--secondary-foreground);
-    border: 1px solid var(--border);
-    box-shadow: none;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .item-card.grayscale .item-image {
@@ -1330,8 +1237,7 @@ svg {
     color: var(--primary-foreground);
 }
 
-/* Community Rarity Badge (Corner Style) */
-/* Community Rarity Badge (Corner Style) */
+/* Community Rarity Badge (Corner Style) - Unified Color */
 .community-rarity-badge {
     position: absolute;
     bottom: 0.3rem;
@@ -1347,8 +1253,11 @@ svg {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     z-index: 10;
     backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     letter-spacing: -0.02em;
+    /* All rarities use same dark theme color */
+    background: linear-gradient(135deg, #2d3748, #1a202c);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 /* Mobile adjustments to keep it tiny but visible */
@@ -1359,29 +1268,6 @@ svg {
         right: 0.25rem;
         padding: 1px 3px;
     }
-}
-
-.community-rarity-badge.legendary {
-    background: linear-gradient(135deg, #9C27B0, #673AB7);
-    box-shadow: 0 0 10px rgba(156, 39, 176, 0.5);
-}
-
-.community-rarity-badge.ultra-rare {
-    background: linear-gradient(135deg, #E91E63, #C2185B);
-}
-
-.community-rarity-badge.very-rare {
-    background: linear-gradient(135deg, #2196F3, #1976D2);
-}
-
-.community-rarity-badge.rare {
-    background: linear-gradient(135deg, #4CAF50, #388E3C);
-}
-
-.community-rarity-badge.common {
-    background: rgba(0, 0, 0, 0.6);
-    color: var(--muted-foreground);
-    border: 1px solid var(--border);
 }
 
 /* Responsive adjustments */

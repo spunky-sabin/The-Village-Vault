@@ -79,12 +79,12 @@ class EventsManager {
      * @returns {object} Object with start and end Date objects
      */
     calculateRepeatingEventDates(event, referenceDate = new Date()) {
-        const { baseDate, modifier, durationDays } = event;
+        const { baseDate, modifier, durationDays, startHour = 8 } = event;
 
         if (modifier === 'monthly') {
-            return this.calculateMonthlyEvent(baseDate, durationDays, referenceDate);
+            return this.calculateMonthlyEvent(baseDate, durationDays, referenceDate, startHour);
         } else if (modifier === 'weekly') {
-            return this.calculateWeeklyEvent(baseDate, durationDays, referenceDate);
+            return this.calculateWeeklyEvent(baseDate, durationDays, referenceDate, startHour);
         } else {
             throw new Error(`Unknown modifier: ${modifier}`);
         }
@@ -92,14 +92,16 @@ class EventsManager {
 
     /**
      * Calculate monthly repeating event dates using UTC time
-     * Events start at 08:00 UTC on the specified day of month
+     * Events start at the specified hour UTC on the specified day of month
+     * For events starting on day 1, they end at the same hour on the 1st of next month
      * @private
      * @param {string} baseDate - Day of month (e.g., "01", "15", "22")
      * @param {number} durationDays - How many days the event lasts
      * @param {Date} referenceDate - Current date
+     * @param {number} startHour - Hour of day to start (0-23, defaults to 8)
      * @returns {object} Object with start and end dates in UTC
      */
-    calculateMonthlyEvent(baseDate, durationDays, referenceDate) {
+    calculateMonthlyEvent(baseDate, durationDays, referenceDate, startHour = 8) {
         const dayOfMonth = parseInt(baseDate, 10);
         const currentDate = new Date(referenceDate);
 
@@ -107,47 +109,95 @@ class EventsManager {
         const currentYear = currentDate.getUTCFullYear();
         const currentMonth = currentDate.getUTCMonth();
         const currentDay = currentDate.getUTCDate();
+        const currentHour = currentDate.getUTCHours();
 
-        // Start with this month's occurrence at 08:00 UTC
-        let startDate = new Date(Date.UTC(currentYear, currentMonth, dayOfMonth, 8, 0, 0, 0));
+        // Special case: if we're on the start day but before the start hour
+        // Check if we should use the previous month's event or this month's
+        if (currentDay === dayOfMonth && currentHour < startHour) {
+            // We're on the event day but before it starts
+            // Check if we're in the previous month's event
+            const prevMonthStart = new Date(Date.UTC(currentYear, currentMonth - 1, dayOfMonth, startHour, 0, 0, 0));
+            let prevMonthEnd;
+
+            // Full-month events (>= 28 days) end on the same day of the next month
+            // Short events use their duration
+            if (dayOfMonth === 1 && durationDays >= 28) {
+                // For full-month day 1 events (like Gold Pass): previous month's event ends today at startHour
+                prevMonthEnd = new Date(Date.UTC(currentYear, currentMonth, dayOfMonth, startHour, 0, 0, 0));
+            } else {
+                // For shorter events or other days: use duration days
+                prevMonthEnd = new Date(prevMonthStart);
+                prevMonthEnd.setUTCDate(prevMonthEnd.getUTCDate() + durationDays);
+            }
+
+            // Only return the previous month's event if it's still active
+            // Otherwise, fall through to calculate this month's event
+            if (currentDate < prevMonthEnd) {
+                return { start: prevMonthStart, end: prevMonthEnd };
+            }
+            // If previous event has ended, continue to calculate this month's event below
+        }
+
+        // Start with this month's occurrence at startHour
+        let startDate = new Date(Date.UTC(currentYear, currentMonth, dayOfMonth, startHour, 0, 0, 0));
 
         // If the event day hasn't occurred yet this month, use this month
         // If it has passed and we're still within the event duration, keep this month's date
         // If it has completely passed, move to next month
         if (currentDay < dayOfMonth) {
             // Event hasn't started this month yet
-            startDate = new Date(Date.UTC(currentYear, currentMonth, dayOfMonth, 8, 0, 0, 0));
+            startDate = new Date(Date.UTC(currentYear, currentMonth, dayOfMonth, startHour, 0, 0, 0));
         } else {
             // Check if we're still within the current month's event duration
-            const potentialStart = new Date(Date.UTC(currentYear, currentMonth, dayOfMonth, 8, 0, 0, 0));
-            const potentialEnd = new Date(potentialStart);
-            potentialEnd.setUTCDate(potentialEnd.getUTCDate() + durationDays);
+            const potentialStart = new Date(Date.UTC(currentYear, currentMonth, dayOfMonth, startHour, 0, 0, 0));
+
+            // Calculate end date: full-month events (>= 28 days) end on same day of next month
+            // Shorter events use their duration
+            let potentialEnd;
+            if (dayOfMonth === 1 && durationDays >= 28) {
+                // Full-month day 1 events (like Gold Pass): end on 1st of next month at startHour
+                potentialEnd = new Date(Date.UTC(currentYear, currentMonth + 1, dayOfMonth, startHour, 0, 0, 0));
+            } else {
+                // Other monthly events: use duration days
+                potentialEnd = new Date(potentialStart);
+                potentialEnd.setUTCDate(potentialEnd.getUTCDate() + durationDays);
+            }
 
             if (currentDate >= potentialStart && currentDate < potentialEnd) {
                 // We're within the current event
                 startDate = potentialStart;
             } else {
                 // Event has passed, calculate next month's occurrence
-                startDate = new Date(Date.UTC(currentYear, currentMonth + 1, dayOfMonth, 8, 0, 0, 0));
+                startDate = new Date(Date.UTC(currentYear, currentMonth + 1, dayOfMonth, startHour, 0, 0, 0));
             }
         }
 
-        const endDate = new Date(startDate);
-        endDate.setUTCDate(endDate.getUTCDate() + durationDays);
+        // Calculate end date: full-month events (>= 28 days) end on same day of next month
+        // Shorter events use their duration
+        let endDate;
+        if (dayOfMonth === 1 && durationDays >= 28) {
+            // Full-month day 1 events (like Gold Pass): end on 1st of next month at startHour
+            endDate = new Date(Date.UTC(startDate.getUTCFullYear(), startDate.getUTCMonth() + 1, dayOfMonth, startHour, 0, 0, 0));
+        } else {
+            // Other monthly events: use duration days
+            endDate = new Date(startDate);
+            endDate.setUTCDate(endDate.getUTCDate() + durationDays);
+        }
 
         return { start: startDate, end: endDate };
     }
 
     /**
      * Calculate weekly repeating event dates using UTC time
-     * Events start at 08:00 UTC on the specified day of week
+     * Events start at the specified hour UTC on the specified day of week
      * @private
      * @param {string} baseDate - Day of week (e.g., "Monday", "Friday")
      * @param {number} durationDays - How many days the event lasts
      * @param {Date} referenceDate - Current date
+     * @param {number} startHour - Hour of day to start (0-23, defaults to 8)
      * @returns {object} Object with start and end dates in UTC
      */
-    calculateWeeklyEvent(baseDate, durationDays, referenceDate) {
+    calculateWeeklyEvent(baseDate, durationDays, referenceDate, startHour = 8) {
         const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const targetDay = daysOfWeek.indexOf(baseDate);
 
@@ -172,7 +222,7 @@ class EventsManager {
             // Calculate last week's start
             const lastWeekStart = new Date(currentDate);
             lastWeekStart.setUTCDate(lastWeekStart.getUTCDate() - daysSinceTarget);
-            lastWeekStart.setUTCHours(8, 0, 0, 0);
+            lastWeekStart.setUTCHours(startHour, 0, 0, 0);
 
             const lastWeekEnd = new Date(lastWeekStart);
             lastWeekEnd.setUTCDate(lastWeekEnd.getUTCDate() + durationDays);
@@ -191,7 +241,7 @@ class EventsManager {
 
         const startDate = new Date(currentDate);
         startDate.setUTCDate(startDate.getUTCDate() + daysUntilTarget);
-        startDate.setUTCHours(8, 0, 0, 0);
+        startDate.setUTCHours(startHour, 0, 0, 0);
 
         const endDate = new Date(startDate);
         endDate.setUTCDate(endDate.getUTCDate() + durationDays);

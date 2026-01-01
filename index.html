@@ -10,52 +10,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="global.css">
     <style>
-        /* --- SEASON HEADER & TIMER --- */
-        .season-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            background: linear-gradient(to bottom, var(--bg-panel), var(--bg-dark));
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        .season-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .season-timer-container {
-            display: inline-flex;
-            gap: 2rem;
-            padding: 1rem 2rem;
-            background-color: rgba(0, 0, 0, 0.2);
-            border-radius: 12px;
-            border: 1px solid var(--accent-blue);
-        }
-
-        .timer-box {
-            text-align: center;
-        }
-
-        .timer-value {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--accent-blue);
-            font-family: var(--font-header);
-            text-shadow: 0 0 10px rgba(0, 168, 255, 0.5);
-        }
-
-        .timer-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-        }
-
         /* --- CONTENT SECTIONS --- */
         .section-title {
             font-size: 1.8rem;
@@ -830,25 +784,6 @@
 
     <main class="main-content">
 
-        <section class="season-header">
-            <h1 class="season-title" id="seasonTitle"></h1>
-            <h1 class="season-title">Ends IN: </h1>
-            <div class="season-timer-container">
-                <div class="timer-box">
-                    <div class="timer-value" id="timerDays">00</div>
-                    <div class="timer-label">Days</div>
-                </div>
-                <div class="timer-box">
-                    <div class="timer-value" id="timerHours">00</div>
-                    <div class="timer-label">Hours</div>
-                </div>
-                <div class="timer-box">
-                    <div class="timer-value" id="timerMinutes">00</div>
-                    <div class="timer-label">Minutes</div>
-                </div>
-            </div>
-        </section>
-
         <section class="events-container">
             <div class="calendar-box">
                 <h2 class="section-title">Season Calendar</h2>
@@ -938,7 +873,7 @@
             <a href="tracker/index.html">Tracker</a>
             <a href="wiki/index.html">Wiki</a>
             <a href="privacy.html">Privacy Policy</a>
-            <a href="#">Contact</a>
+            <a href="mailto:clashofclanscollections@gmail.com">Contact</a>
         </div>
         <p style="margin-top: 1rem; font-size: 0.8rem;">This content is not affiliated with, endorsed, sponsored, or
             specifically approved by Supercell and Supercell is not responsible for it.</p>
@@ -967,7 +902,6 @@
                 await eventsManager.loadEvents('events-config.json');
 
                 // Render all sections
-                renderSeasonTitle();
                 renderSkins();
                 renderScenery();
                 renderDecorations();
@@ -975,21 +909,16 @@
                 renderTraderNotification();
                 renderActiveEvents();
                 renderUpcomingEvents();
-                startCountdownTimer();
 
                 // Update active events and trader notification every second
                 setInterval(() => {
                     renderActiveEvents();
                     renderTraderNotification();
-                    // Optional: Update upcoming events periodically too, but less frequent is fine. 
-                    // For now, static load is okay, but if user sits on page for days it might drift.
-                    // Let's just leave it on page load for now as per minimal change.
                 }, 1000);
 
                 console.log('Page initialized successfully');
             } catch (error) {
                 console.error('Initialization error:', error);
-                document.getElementById('seasonTitle').textContent = 'Error Loading Data';
             }
         }
 
@@ -1007,61 +936,7 @@
             }
         }
 
-        // ========================================================================
-        // SEASON TITLE
-        // ========================================================================
-        function renderSeasonTitle() {
-            document.getElementById('seasonTitle').textContent = 'Current Season : ' + seasonData.season;
-        }
 
-        // ========================================================================
-        // COUNTDOWN TIMER
-        // ========================================================================
-        function startCountdownTimer() {
-            const updateTimer = () => {
-                const now = new Date();
-                let seasonEndDate = null;
-
-                // Find Gold Pass event (season duration)
-                if (eventsManager.eventsConfig?.repeating_events) {
-                    const goldPass = eventsManager.eventsConfig.repeating_events.find(
-                        e => e.title === 'Gold Pass'
-                    );
-
-                    if (goldPass) {
-                        const { end } = eventsManager.calculateRepeatingEventDates(goldPass, now);
-                        seasonEndDate = end;
-                    }
-                }
-
-                // Fallback to end of current month
-                if (!seasonEndDate) {
-                    const year = now.getFullYear();
-                    const month = now.getMonth();
-                    seasonEndDate = new Date(year, month + 1, 0, 23, 59, 59);
-                }
-
-                const timeLeft = seasonEndDate.getTime() - now.getTime();
-
-                if (timeLeft <= 0) {
-                    document.getElementById('timerDays').textContent = '00';
-                    document.getElementById('timerHours').textContent = '00';
-                    document.getElementById('timerMinutes').textContent = '00';
-                    return;
-                }
-
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-
-                document.getElementById('timerDays').textContent = String(days).padStart(2, '0');
-                document.getElementById('timerHours').textContent = String(hours).padStart(2, '0');
-                document.getElementById('timerMinutes').textContent = String(minutes).padStart(2, '0');
-            };
-
-            updateTimer();
-            setInterval(updateTimer, 1000);
-        }
 
         // ========================================================================
         // CALENDAR RENDERING
