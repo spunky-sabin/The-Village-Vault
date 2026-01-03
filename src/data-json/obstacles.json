@@ -1,563 +1,360 @@
 [
   {
-    "SN": 1,
+    "SN": 2,
     "name": "2012 Stone",
     "Code": "8000015",
     "TID": "TID_2012_STONE",
-    "image": "images/obs/Obstacle_HV_Stone_rare.webp",
-    "description": "A unique rock formation that spawned only on accounts created during the game's beta phase.",
-    "released": "August 2012",
-    "availability": "Spawned on newly created accounts during the beta period; no longer obtainable.",
-    "size": "2x2"
-  },
-  {
-    "SN": 2,
-    "name": "Clashmas Tree (2012)",
-    "Code": "8000021",
-    "TID": "TID_2012_TREE",
-    "image": "images/obs/XMas_Tree_2012.webp",
-    "description": "The first seasonal Christmas tree featuring a traditional design with blue and gold ornaments.",
-    "released": "December 2012",
-    "availability": "Spawned during the 2012 Clashmas event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Stone_rare.webp"
   },
   {
     "SN": 3,
-    "name": "Clashmas Tree (2013)",
-    "Code": "8000028",
-    "TID": "TID_2013_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2013.webp",
-    "description": "A festive pine tree adorned with gold chains and a star topper.",
-    "released": "December 2013",
-    "availability": "Spawned during the 2013 Clashmas event.",
-    "size": "2x2"
+    "name": "Clashmas Tree (2012)",
+    "Code": "8000021",
+    "TID": "TID_2012_TREE",
+    "image": "images/obs/XMas_Tree_2012.webp"
   },
   {
     "SN": 4,
+    "name": "Clashmas Tree (2013)",
+    "Code": "8000028",
+    "TID": "TID_2013_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2013.webp"
+  },
+  {
+    "SN": 13,
     "name": "Halloween Tombstone",
     "Code": "8000031",
     "TID": "TID_2014_HALLOWEEN_TOMBSTONE",
-    "image": "images/obs/Obstacle_HV_Hallloween_Headstone.webp",
-    "description": "A stone headstone featuring a skeleton hand reaching out from the ground.",
-    "released": "October 2014",
-    "availability": "Spawned during the 2014 Halloween event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Hallloween_Headstone.webp"
   },
   {
     "SN": 5,
     "name": "Clashmas Tree (2014)",
     "Code": "8000032",
     "TID": "TID_2014_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2014.webp",
-    "description": "A frosted Christmas tree decorated with red and gold ornaments.",
-    "released": "December 2014",
-    "availability": "Spawned during the 2014 Clashmas event.",
-    "size": "2x2"
-  },
-  {
-    "SN": 6,
-    "name": "Halloween Cauldron",
-    "Code": "8000036",
-    "TID": "TID_2015_HALLOWEEN_CAULDRON",
-    "image": "images/obs/Obstacle_HV_Halloween_Cauldron.webp",
-    "description": "A bubbling black cauldron filled with a glowing green liquid.",
-    "released": "October 2015",
-    "availability": "Spawned during the 2015 Halloween event.",
-    "size": "2x2"
-  },
-  {
-    "SN": 7,
-    "name": "Clashmas Tree (2015)",
-    "Code": "8000037",
-    "TID": "TID_2015_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2015.webp",
-    "description": "A stylized tree with metallic tiers and a gear-like topper.",
-    "released": "December 2015",
-    "availability": "Spawned during the 2015 Clashmas event.",
-    "size": "2x2"
-  },
-  {
-    "SN": 8,
-    "name": "Scary Pumpkin",
-    "Code": "8000039",
-    "TID": "TID_2016_SCARY_PUMPKIN",
-    "image": "images/obs/Obstacle_HV_Scary_Pumpkin.webp",
-    "description": "A carved orange pumpkin with a sinister face that glows when tapped.",
-    "released": "October 2016",
-    "availability": "Spawned during the 2016 Halloween event.",
-    "size": "2x2"
-  },
-  {
-    "SN": 9,
-    "name": "Clashmas Tree (2016)",
-    "Code": "8000040",
-    "TID": "TID_2016_TREE",
-    "image": "images/obs/XMas_Tree_2016.webp",
-    "description": "A festive tree covered in thick snow with colorful light-bulb decorations.",
-    "released": "December 2016",
-    "availability": "Spawned during the 2016 Clashmas event.",
-    "size": "2x2"
-  },
-  {
-    "SN": 10,
-    "name": "Old Barbarian Statue",
-    "Code": "8000055",
-    "TID": "TID_OBSTACLE_OLD_BARBARIAN_STATUE",
-    "image": "images/obs/Obstacle_BB_Old_Barbarian_Statue.webp",
-    "description": "A weathered stone statue of a Barbarian's head found in the Builder Base.",
-    "released": "May 2017",
-    "availability": "Pre-spawned on the Builder Base map; can be removed or kept as decoration.",
-    "size": "3x3"
-  },
-  {
-    "SN": 11,
-    "name": "5th Anniversary Cake",
-    "Code": "8000065",
-    "TID": "TID_2017_5TH_ANNIVERSARY_CAKE",
-    "image": "images/obs/Obstacle_HV_5th_Anniversary_Cake.webp",
-    "description": "A three-tiered pink cake topped with a '5' candle and chocolate frosting.",
-    "released": "August 2017",
-    "availability": "Spawned during the 5th Clashiversary event.",
-    "size": "2x2"
-  },
-  {
-    "SN": 12,
-    "name": "2017 Halloween Obstacle",
-    "Code": "8000067",
-    "TID": "TID_2017_HALLOWEEN_OBSTACLE",
-    "image": "images/obs/Obstacle_HV_Halloween_Obstabcle.webp",
-    "description": "A dragon skull partially buried in the ground with glowing eyes.",
-    "released": "October 2017",
-    "availability": "Spawned during the 2017 Halloween event.",
-    "size": "2x2"
-  },
-  {
-    "SN": 13,
-    "name": "Clashmas Tree (2017)",
-    "Code": "8000069",
-    "TID": "TID_2017_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2017.webp",
-    "description": "A tall, elegant pine tree decorated with gold baubles and a star.",
-    "released": "December 2017",
-    "availability": "Spawned during the 2017 Clashmas event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2014.webp"
   },
   {
     "SN": 14,
-    "name": "Fireworks Stash CNY",
-    "Code": "8000068",
-    "TID": "TID_2018_FIREWORKS_STASH_CNY",
-    "image": "images/obs/Obstacle_HV_Firework_Stash.webp",
-    "description": "A bundle of fireworks and firecrackers celebrating the Lunar New Year.",
-    "released": "February 2018",
-    "availability": "Spawned during the 2018 Lunar New Year event.",
-    "size": "2x2"
+    "name": "Halloween Cauldron",
+    "Code": "8000036",
+    "TID": "TID_2015_HALLOWEEN_CAULDRON",
+    "image": "images/obs/Obstacle_HV_Halloween_Cauldron.webp"
+  },
+  {
+    "SN": 6,
+    "name": "Clashmas Tree (2015)",
+    "Code": "8000037",
+    "TID": "TID_2015_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2015.webp"
   },
   {
     "SN": 15,
-    "name": "2018 Fortune Tree CNY",
-    "Code": "8000070",
-    "TID": "TID_2018_FORTUNE_TREE_CNY",
-    "image": "images/obs/Obstacle_HV_Fortune_Tree.webp",
-    "description": "A festive tree with red envelopes hanging from its branches.",
-    "released": "February 2018",
-    "availability": "Spawned during the 2018 Lunar New Year event.",
-    "size": "2x2"
+    "name": "Scary Pumpkin",
+    "Code": "8000039",
+    "TID": "TID_2016_SCARY_PUMPKIN",
+    "image": "images/obs/Obstacle_HV_Scary_Pumpkin.webp"
+  },
+  {
+    "SN": 7,
+    "name": "Clashmas Tree (2016)",
+    "Code": "8000040",
+    "TID": "TID_2016_TREE",
+    "image": "images/obs/XMas_Tree_2016.webp"
+  },
+  {
+    "SN": 57,
+    "name": "Old Barbarian Statue",
+    "Code": "8000055",
+    "TID": "TID_OBSTACLE_OLD_BARBARIAN_STATUE",
+    "image": "images/obs/Obstacle_BB_Old_Barbarian_Statue.webp"
   },
   {
     "SN": 16,
-    "name": "6th Anniversary Cake",
-    "Code": "8000071",
-    "TID": "TID_2018_6TH_ANNIVERSARY_CAKE",
-    "image": "images/obs/Obstacle_HV_6th_Anniversary_Cake.webp",
-    "description": "A blue and yellow cake topped with a '6' candle.",
-    "released": "August 2018",
-    "availability": "Spawned during the 6th Clashiversary event.",
-    "size": "2x2"
+    "name": "5th Anniversary Cake",
+    "Code": "8000065",
+    "TID": "TID_2017_5TH_ANNIVERSARY_CAKE",
+    "image": "images/obs/Obstacle_HV_5th_Anniversary_Cake.webp"
   },
   {
     "SN": 17,
-    "name": "2018 Witch's Hat",
-    "Code": "8000073",
-    "TID": "TID_2018_WITCHS_HAT",
-    "image": "images/obs/Obstacle_HV_Witch_Hat.webp",
-    "description": "A classic pointed purple witch's hat with a gold buckle.",
-    "released": "October 2018",
-    "availability": "Spawned during the 2018 Halloween event.",
-    "size": "2x2"
+    "name": "2017 Halloween Obstacle",
+    "Code": "8000067",
+    "TID": "TID_2017_HALLOWEEN_OBSTACLE",
+    "image": "images/obs/Obstacle_HV_Halloween_Obstabcle.webp"
   },
   {
     "SN": 18,
-    "name": "Spike-y Cactus",
-    "Code": "8000074",
-    "TID": "TID_2018_SPIKE_Y_CACTUS",
-    "image": "images/obs/Spike-y_Cactus.webp",
-    "description": "A green cactus wearing a purple vest and hat, representing Spike from Brawl Stars.",
-    "released": "December 2018",
-    "availability": "Spawned during the Brawl Stars global launch crossover event.",
-    "size": "2x2"
+    "name": "Fireworks Stash CNY",
+    "Code": "8000068",
+    "TID": "TID_2018_FIREWORKS_STASH_CNY",
+    "image": "images/obs/Obstacle_HV_Firework_Stash.webp"
+  },
+  {
+    "SN": 8,
+    "name": "Clashmas Tree (2017)",
+    "Code": "8000069",
+    "TID": "TID_2017_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2017.webp"
   },
   {
     "SN": 19,
-    "name": "Clashmas Tree (2018)",
-    "Code": "8000072",
-    "TID": "TID_2018_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2018.webp",
-    "description": "A pine tree with purple ornaments and a crystalline star topper.",
-    "released": "December 2018",
-    "availability": "Spawned during the 2018 Clashmas event.",
-    "size": "2x2"
+    "name": "2018 Fortune Tree CNY",
+    "Code": "8000070",
+    "TID": "TID_2018_FORTUNE_TREE_CNY",
+    "image": "images/obs/Obstacle_HV_Fortune_Tree.webp"
   },
   {
     "SN": 20,
-    "name": "Glowy Lantern (BB)",
-    "Code": "8000075",
-    "TID": "TID_OBSTACLE_LANTERN_CNY2019",
-    "image": "images/obs/Obstacle_BB_Glowy_Lantern.webp",
-    "description": "A traditional red paper lantern that glows in the Builder Base.",
-    "released": "February 2019",
-    "availability": "Spawned during the 2019 Lunar New Year event.",
-    "size": "2x2"
+    "name": "6th Anniversary Cake",
+    "Code": "8000071",
+    "TID": "TID_2018_6TH_ANNIVERSARY_CAKE",
+    "image": "images/obs/Obstacle_HV_6th_Anniversary_Cake.webp"
+  },
+  {
+    "SN": 9,
+    "name": "Clashmas Tree (2018)",
+    "Code": "8000072",
+    "TID": "TID_2018_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2018.webp"
   },
   {
     "SN": 21,
-    "name": "7th Anniversary Cake",
-    "Code": "8000076",
-    "TID": "TID_2019_7TH_BIRTHDAY_SURPRISE",
-    "image": "images/obs/Obstacle_HV_7th_Anniversary_Cake.webp",
-    "description": "A colorful cake with a blue base and a glowing '7' candle.",
-    "released": "August 2019",
-    "availability": "Spawned during the 7th Clashiversary event.",
-    "size": "2x2"
+    "name": "2018 Witch's Hat",
+    "Code": "8000073",
+    "TID": "TID_2018_WITCHS_HAT",
+    "image": "images/obs/Obstacle_HV_Witch_Hat.webp"
   },
   {
     "SN": 22,
-    "name": "2019 Spooky Tree",
-    "Code": "8000077",
-    "TID": "TID_2019_SPOOKY_TREE",
-    "image": "images/obs/Obstacle_HV_Spooky_Tree.webp",
-    "description": "A withered tree with purple leaves and a face carved into the trunk.",
-    "released": "October 2019",
-    "availability": "Spawned during the 2019 Halloween event.",
-    "size": "2x2"
+    "name": "Spike-y Cactus",
+    "Code": "8000074",
+    "TID": "TID_2018_SPIKE_Y_CACTUS",
+    "image": "images/obs/Spike-y_Cactus.webp"
+  },
+  {
+    "SN": 58,
+    "name": "Glowy Lantern (BB)",
+    "Code": "8000075",
+    "TID": "TID_OBSTACLE_LANTERN_CNY2019",
+    "image": "images/obs/Obstacle_BB_Glowy_Lantern.webp"
   },
   {
     "SN": 23,
-    "name": "Clashmas Tree (2019)",
-    "Code": "8000078",
-    "TID": "TID_2019_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2019.webp",
-    "description": "A tree with red and white decorations and a golden tree topper.",
-    "released": "December 2019",
-    "availability": "Spawned during the 2019 Clashmas event.",
-    "size": "2x2"
+    "name": "7th Aniversary Cake",
+    "Code": "8000076",
+    "TID": "TID_2019_7TH_BIRTHDAY_SURPRISE",
+    "image": "images/obs/Obstacle_HV_7th_Anniversary_Cake.webp"
   },
   {
     "SN": 24,
-    "name": "Glowy Lantern",
-    "Code": "8000079",
-    "TID": "TID_2020_GLOWY_LANTERN",
-    "image": "images/obs/Obstacle_HV_Glowy Lantern.webp",
-    "description": "A floating red lantern that emits a soft glow in the Home Village.",
-    "released": "January 2020",
-    "availability": "Spawned during the 2020 Lunar New Year event.",
-    "size": "2x2"
+    "name": "2019 Spooky Tree",
+    "Code": "8000077",
+    "TID": "TID_2019_SPOOKY_TREE",
+    "image": "images/obs/Obstacle_HV_Spooky_Tree.webp"
+  },
+  {
+    "SN": 10,
+    "name": "Clashmas Tree (2019)",
+    "Code": "8000078",
+    "TID": "TID_2019_TREE",
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2019.webp"
   },
   {
     "SN": 25,
-    "name": "8th Birthday Cake",
-    "Code": "8000080",
-    "TID": "TID_2020_8TH_BIRTHDAY_CAKE",
-    "image": "images/obs/Obstacle_HV_8th_Anniversary_Cake.webp",
-    "description": "A retro-styled cake with an '8' candle and silver frosting.",
-    "released": "August 2020",
-    "availability": "Spawned during the 8th Clashiversary event.",
-    "size": "2x2"
+    "name": "Glowy Lantern",
+    "Code": "8000079",
+    "TID": "TID_2020_GLOWY_LANTERN",
+    "image": "images/obs/Obstacle_HV_Glowy Lantern.webp"
   },
   {
     "SN": 26,
-    "name": "2020 Vacant Tomb",
-    "Code": "8000081",
-    "TID": "TID_2020_VACANT_TOMB",
-    "image": "images/obs/Obstacle_HV_Vacant_Tomb.webp",
-    "description": "An open stone casket with a ghostly spirit floating out.",
-    "released": "October 2020",
-    "availability": "Spawned during the 2020 Halloween event.",
-    "size": "2x2"
+    "name": "8th Birthday Cake",
+    "Code": "8000080",
+    "TID": "TID_2020_8TH_BIRTHDAY_CAKE",
+    "image": "images/obs/Obstacle_HV_8th_Anniversary_Cake.webp"
   },
   {
     "SN": 27,
+    "name": "2020 Vacant Tomb",
+    "Code": "8000081",
+    "TID": "TID_2020_VACANT_TOMB",
+    "image": "images/obs/Obstacle_HV_Vacant_Tomb.webp"
+  },
+  {
+    "SN": 11,
     "name": "Clashmas Tree (2020)",
     "Code": "8000082",
     "TID": "TID_2020_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2020.webp",
-    "description": "A pine tree decorated with log-like ornaments and a star.",
-    "released": "December 2020",
-    "availability": "Spawned during the 2020 Clashmas event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2020.webp"
   },
   {
     "SN": 28,
     "name": "Lucky Shrub",
     "Code": "8000083",
     "TID": "TID_2021_LUCKY_SHRUB_CNY",
-    "image": "images/obs/Obstacle_HV_Lucky_Shrub.webp",
-    "description": "A manicured shrub decorated with red flowers and gold ornaments.",
-    "released": "February 2021",
-    "availability": "Spawned during the 2021 Lunar New Year event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Lucky_Shrub.webp"
   },
   {
     "SN": 29,
     "name": "9th Anniversary Cake",
     "Code": "8000084",
     "TID": "TID_2021_9TH_ANNIVERSARY_CAKE",
-    "image": "images/obs/Obstacle_HV_9th_Anniversary_Cake.webp",
-    "description": "A square pink cake with a sword handle sticking out of the top.",
-    "released": "August 2021",
-    "availability": "Spawned during the 9th Clashiversary event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_9th_Anniversary_Cake.webp"
   },
   {
     "SN": 30,
     "name": "Friendly Flower",
     "Code": "8000085",
     "TID": "TID_2021_FRIENDLY_FLOWER",
-    "image": "images/obs/Obstacle_HV_Friendly_Flower.webp",
-    "description": "A yellow sunflower with a smiling face, representing content from Hay Day.",
-    "released": "November 2021",
-    "availability": "Spawned during a crossover event with Hay Day.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Friendly_Flower.webp"
   },
   {
-    "SN": 31,
+    "SN": 12,
     "name": "Clashmas Tree (2021)",
     "Code": "8000086",
     "TID": "TID_2021_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2021.webp",
-    "description": "A tree made of dark green plates with yellow light highlights.",
-    "released": "December 2021",
-    "availability": "Spawned during the 2021 Clashmas event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2021.webp"
   },
   {
-    "SN": 32,
+    "SN": 31,
     "name": "10th Anniversary Cake",
     "Code": "8000087",
     "TID": "TID_2022_10TH_ANNIVERSARY_CAKE",
-    "image": "images/obs/Obstacle_HV_10th_Anniversary_Cake.webp",
-    "description": "A pixelated cake topped with a Roman numeral 'X' candle.",
-    "released": "August 2022",
-    "availability": "Spawned during the 10th Clashiversary event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_10th_Anniversary_Cake.webp"
   },
   {
-    "SN": 33,
+    "SN": 32,
     "name": "Trick or Treat",
     "Code": "8000088",
     "TID": "TID_2022_TRICK_OR_TREAT",
-    "image": "images/obs/Obstacle_HV_Trick_or_Treat.webp",
-    "description": "A basket filled with Halloween candy and a small ghost figurine.",
-    "released": "October 2022",
-    "availability": "Spawned during the 2022 Halloween event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Trick_or_Treat.webp"
   },
   {
-    "SN": 34,
+    "SN": 33,
     "name": "Clashmas Tree (2022)",
     "Code": "8000089",
     "TID": "TID_2022_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2022.webp",
-    "description": "A mountain-themed tree with snow-capped peaks and pine needles.",
-    "released": "December 2022",
-    "availability": "Spawned during the 2022 Clashmas event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2022.webp"
   },
   {
-    "SN": 35,
+    "SN": 34,
     "name": "Rabbit Lantern",
     "Code": "8000090",
     "TID": "TID_2023_RABBIT_LANTERN",
-    "image": "images/obs/Rabbit_Lantern.webp",
-    "description": "A glowing lantern shaped like a rabbit to celebrate the Year of the Rabbit.",
-    "released": "January 2023",
-    "availability": "Spawned during the 2023 Lunar New Year event.",
-    "size": "2x2"
+    "image": "images/obs/Rabbit_Lantern.webp"
   },
   {
-    "SN": 36,
+    "SN": 35,
     "name": "11th Anniversary Cake",
     "Code": "8000108",
     "TID": "TID_2023_11TH_ANNIVERSARY_CAKE",
-    "image": "images/obs/11th_Anniversary_Cake.webp",
-    "description": "A cake designed like a crown with an '11' candle on top.",
-    "released": "August 2023",
-    "availability": "Spawned during the 11th Clashiversary event.",
-    "size": "2x2"
+    "image": "images/obs/11th_Anniversary_Cake.webp"
   },
   {
-    "SN": 37,
+    "SN": 36,
     "name": "Sinister Sapling",
     "Code": "8000110",
     "TID": "TID_SINISTER_SAPLING",
-    "image": "images/obs/Obstacle_HV_Sinister_Sapling.webp",
-    "description": "A small dark tree with glowing red eyes and roots that pulse.",
-    "released": "October 2023",
-    "availability": "Spawned during the 2023 Halloween event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Sinister_Sapling.webp"
   },
   {
-    "SN": 38,
+    "SN": 37,
     "name": "Clashmas Tree (2023)",
     "Code": "8000111",
     "TID": "TID_2023_TREE",
-    "image": "images/obs/Clashmas_Tree_2023.webp",
-    "description": "A colorful tree with neon-style light rings and a futuristic topper.",
-    "released": "December 2023",
-    "availability": "Spawned during the 2023 Clashmas event.",
-    "size": "2x2"
+    "image": "images/obs/Clashmas_Tree_2023.webp"
   },
   {
-    "SN": 39,
+    "SN": 38,
     "name": "Lucky Letterbox",
     "Code": "8000113",
     "TID": "TID_2023_LUCKY_LETTERBOX_CNY",
-    "image": "images/obs/Lucky_Letterbox.webp",
-    "description": "A red and gold mailbox overflowing with red envelopes.",
-    "released": "February 2024",
-    "availability": "Spawned during the 2024 Lunar New Year event.",
-    "size": "2x2"
+    "image": "images/obs/Lucky_Letterbox.webp"
   },
   {
-    "SN": 40,
+    "SN": 39,
     "name": "Mysterious Object",
     "Code": "8000115",
     "TID": "TID_2024_MYSTERIOUS_OBJECT_FOOTBALL",
-    "image": "images/obs/Obstacle_HV_Mysterious_Object_Haaland_Event.webp",
-    "description": "A soccer ball-shaped object with a golden glow and Erling Haaland's branding.",
-    "released": "May 2024",
-    "availability": "Spawned during the Clash of Clans x Erling Haaland event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Mysterious_Object_Haaland_Event.webp"
   },
   {
-    "SN": 41,
+    "SN": 40,
     "name": "2024 12th Anniversary Cake",
     "Code": "8000116",
     "TID": "TID_2024_12TH_ANNIVERSARY_CAKE",
-    "image": "images/obs/Sword_Cake_Obstacle.webp",
-    "description": "An anime-themed cake with a sword embedded in the center.",
-    "released": "August 2024",
-    "availability": "Spawned during the 12th Clashiversary event.",
-    "size": "2x2"
+    "image": "images/obs/Sword_Cake_Obstacle.webp"
   },
   {
-    "SN": 42,
-    "name": "Shiny Ore Meteorite",
-    "Code": "8000132",
-    "TID": "TID_OBSTACLE_COMMON_ORE_STONE",
-    "image": "images/obs/Shiny_Ore_Meteorite.webp",
-    "description": "A crystalline meteorite fragment containing Shiny Ore.",
-    "released": "September 2024",
-    "availability": "Obtainable through special treasure events or periodic spawning.",
-    "size": "2x2"
-  },
-  {
-    "SN": 43,
-    "name": "Glowy Ore Meteorite",
-    "Code": "8000133",
-    "TID": "TID_OBSTACLE_RARE_ORE_STONE",
-    "image": "images/obs/Glowy_Ore_Meteorite.webp",
-    "description": "A glowing celestial stone filled with Rare Glowy Ore.",
-    "released": "September 2024",
-    "availability": "Obtainable through special treasure events or periodic spawning.",
-    "size": "2x2"
-  },
-  {
-    "SN": 44,
-    "name": "Starry Ore Meteorite",
-    "Code": "8000134",
-    "TID": "TID_OBSTACLE_EPIC_ORE_STONE",
-    "image": "images/obs/Starry_Ore_Meteorite.webp",
-    "description": "A rare meteorite fragment pulsating with the light of Starry Ore.",
-    "released": "September 2024",
-    "availability": "Obtainable through special treasure events or periodic spawning.",
-    "size": "2x2"
-  },
-  {
-    "SN": 45,
+    "SN": 41,
     "name": "2024 Ghost Post",
     "Code": "8000117",
     "TID": "TID_2024_GHOST_POST",
-    "image": "images/obs/Ghost_Post_3.webp",
-    "description": "A wooden signpost haunted by several floating spirits.",
-    "released": "October 2024",
-    "availability": "Spawned during the 2024 Halloween event.",
-    "size": "2x2"
+    "image": "images/obs/Ghost_Post_3.webp"
   },
   {
-    "SN": 46,
+    "SN": 42,
     "name": "2024 Tree",
     "Code": "8000127",
     "TID": "TID_2024_TREE",
-    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2024.webp",
-    "description": "A pine tree with intricate glowing star patterns and golden lights.",
-    "released": "December 2024",
-    "availability": "Spawned during the 2024 Clashmas event.",
-    "size": "2x2"
+    "image": "images/obs/Obstacle_HV_Clashmas_Tree_2024.webp"
   },
   {
-    "SN": 47,
+    "SN": 43,
     "name": "2025 Snake Sculpture",
     "Code": "8000128",
     "TID": "TID_2025_SNAKE_SCULPTURE",
-    "image": "images/obs/LNY25_WoodenEgg_Snake_Sculpture_Obstacle.webp",
-    "description": "A wooden sculpture of a snake coiled around an egg for the Year of the Snake.",
-    "released": "February 2025",
-    "availability": "Spawned during the 2025 Lunar New Year event.",
-    "size": "2x2"
+    "image": "images/obs/LNY25_WoodenEgg_Snake_Sculpture_Obstacle.webp"
   },
   {
-    "SN": 48,
+    "SN": 44,
     "name": "2025 Money in the Bank",
     "Code": "8000129",
     "TID": "TID_2025_MONEY_IN_THE_BANK",
-    "image": "images/obs/april25 moneybox 01.webp",
-    "description": "A pile of golden coins and bags of loot spilling out of a vault.",
-    "released": "April 2025",
-    "availability": "Spawned during the April 2025 season event.",
-    "size": "2x2"
+    "image": "images/obs/april25 moneybox 01.webp"
   },
   {
-    "SN": 49,
+    "SN": 59,
     "name": "13th Anniversary Cake (2025)",
     "Code": "8000131",
     "TID": "TID_OBSTACLE_BIRTHDAY2025",
-    "image": "images/obs/13th_Anniversary_Cake.webp",
-    "description": "A giant piñata-style cake inspired by the Clash-A-Rama animation series.",
-    "released": "August 2025",
-    "availability": "Spawned during the 13th Clashiversary event.",
-    "size": "2x2"
+    "image": "images/obs/13th_Anniversary_Cake.webp"
   },
   {
-    "SN": 50,
+    "SN": 60,
+    "name": "Shiny Ore Meteorite",
+    "Code": "8000132",
+    "TID": "TID_OBSTACLE_COMMON_ORE_STONE",
+    "image": "images/obs/Shiny_Ore_Meteorite.webp"
+  },
+  {
+    "SN": 61,
+    "name": "Glowy Ore Meteorite",
+    "Code": "8000133",
+    "TID": "TID_OBSTACLE_RARE_ORE_STONE",
+    "image": "images/obs/Glowy_Ore_Meteorite.webp"
+  },
+  {
+    "SN": 62,
+    "name": "Starry Ore Meteorite",
+    "Code": "8000134",
+    "TID": "TID_OBSTACLE_EPIC_ORE_STONE",
+    "image": "images/obs/Starry_Ore_Meteorite.webp"
+  },
+  {
+    "SN": 63,
     "name": "Cursed Seedling",
     "Code": "8000135",
     "TID": "TID_OBSTACLE_COSMICTREE",
-    "image": "images/obs/Cursed_Seedling.webp",
-    "description": "A strange cosmic sapling that appears during intergalactic events.",
-    "released": "October 2025",
-    "availability": "Spawned during the 2025 Cosmic season event.",
-    "size": "2x2"
+    "image": "images/obs/Cursed_Seedling.webp"
   },
   {
-    "SN": 51,
+    "SN": 64,
     "name": "2025 Christmas Tree",
     "Code": "8000137",
     "TID": "TID_OBSTACLE_XMAS_TREE_2025",
-    "image": "images/obs/Clashmas_Tree_2025.webp",
-    "description": "A frozen Christmas tree with blue crystalline branches and a snowflake topper.",
-    "released": "December 2025",
-    "availability": "Spawned during the 2025 Clashmas event.",
-    "size": "2x2"
+    "image": "images/obs/Clashmas_Tree_2025.webp"
   }
+
 ]

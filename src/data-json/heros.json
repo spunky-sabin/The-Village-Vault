@@ -7,541 +7,325 @@
           "skin_name": "Gladiator King",
           "TID": "TID_BARBARIAN_KING_GLADIATOR",
           "code": "52000001",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Gladiator_King_grass.webp",
-          "description": "A Roman-themed gladiator outfit with leather armor and a classic helm.",
-          "released": "April 2019",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Gladiator_King_grass.webp"
         },
         {
           "skin_name": "P.E.K.K.A King",
           "TID": "TID_BARBARIAN_KING_PEKKA",
           "code": "52000004",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_P.E.K.K.A_King_1.webp",
-          "description": "A metallic armor set inspired by the P.E.K.K.A troop.",
-          "released": "July 2019",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_P.E.K.K.A_King_1.webp"
         },
         {
           "skin_name": "Skeleton King",
           "TID": "TID_SKELETON_KING",
           "code": "52000005",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Skeleton_King_1.webp",
-          "description": "A spooky Halloween skin featuring an undead king with a bone crown.",
-          "released": "October 2019",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Skeleton_King_1.webp"
         },
         {
           "skin_name": "Jolly King",
           "TID": "TID_JOLLY_KING",
           "code": "52000006",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Jolly_King.webp",
-          "description": "A festive Santa Claus-themed skin for the holiday season.",
-          "released": "December 2019",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Jolly_King.webp"
         },
         {
           "skin_name": "Primal King",
           "TID": "TID_PRIMAL_KING",
           "code": "52000007",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Primal_King_1_grass.webp",
-          "description": "A prehistoric skin featuring furs, bone ornaments, and a stone sword.",
-          "released": "March 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Primal_King_1_grass.webp"
         },
         {
           "skin_name": "Clockwork King",
           "TID": "TID_CLOCKWORK_KING",
           "code": "52000008",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Clockwork_King_2.webp",
-          "description": "A mechanical wooden skin with gear-driven limbs.",
-          "released": "April 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Clockwork_King_2.webp"
         },
         {
           "skin_name": "Party King",
           "TID": "TID_PARTY_KING",
           "code": "52000009",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Party_King_1.webp",
-          "description": "A 80s rockstar skin celebrating the 8th Clashiversary.",
-          "released": "August 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Party_King_1.webp"
         },
         {
           "skin_name": "Champion King",
           "TID": "TID_CHAMPION_KING",
           "code": "52000010",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Champion_King_2.webp",
-          "description": "A majestic gladiator skin released for the World Championships.",
-          "released": "November 2020",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Champion_King_2.webp"
         },
         {
           "skin_name": "Pirate King",
           "TID": "TID_PIRATE_KING",
           "code": "52000011",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Pirate_King_2.webp",
-          "description": "A swashbuckling pirate outfit with a hook and tricorne hat.",
-          "released": "November 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Pirate_King_2.webp"
         },
         {
           "skin_name": "Warrior King",
           "TID": "TID_WARRIOR_KING",
           "code": "52000045",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Warrior_King_1_shadow.webp",
-          "description": "A traditional Chinese warrior outfit for Lunar New Year.",
-          "released": "January 2021",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Warrior_King_1_shadow.webp"
         },
         {
           "skin_name": "Rogue King",
           "TID": "TID_ROGUE_KING",
           "code": "52000046",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Rouge_King_1.webp",
-          "description": "A dark hooded skin featuring a rugged green and brown aesthetic.",
-          "released": "March 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Rouge_King_1.webp"
         },
         {
           "skin_name": "Fierce King",
           "TID": "TID_SAVAGE_KING",
           "code": "52000047",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Fierce_King_1_grass.webp",
-          "description": "A menacing armor set with glowing blue crystal highlights.",
-          "released": "May 2021",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Fierce_King_1_grass.webp"
         },
         {
           "skin_name": "Jungle King",
           "TID": "TID_JUNGLE_KING",
           "code": "52000048",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Jungle_King_1.webp",
-          "description": "A tribal-themed skin with wooden armor and colorful feathers.",
-          "released": "June 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Jungle_King_1.webp"
         },
         {
           "skin_name": "Beat King",
           "TID": "TID_ANNIVERSARY_KING",
           "code": "52000049",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Beat_King.webp",
-          "description": "A music-themed skin featuring a boombox and modern clothing.",
-          "released": "August 2021",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Beat_King.webp"
         },
         {
           "skin_name": "Golem King",
           "TID": "TID_GOLEM_KING",
           "code": "52000050",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Golem_King_1_shadow.webp",
-          "description": "A rock-encrusted skin that transforms the king into a stone golem.",
-          "released": "November 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Golem_King_1_shadow.webp"
         },
         {
           "skin_name": "Ice King",
           "TID": "TID_ICE_KING",
           "code": "52000051",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Ice_King_1_grass.webp",
-          "description": "A frozen-themed skin with icicle armor and a crown of ice.",
-          "released": "December 2021",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Ice_King_1_grass.webp"
         },
         {
           "skin_name": "Lunar King",
           "TID": "TID_TIGER_KING",
           "code": "52000052",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Lunar_King_1_grass.webp",
-          "description": "A tiger-themed outfit released for the Year of the Tiger.",
-          "released": "February 2022",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Lunar_King_1_grass.webp"
         },
         {
           "skin_name": "Shadow King",
           "TID": "TID_SHADOW_KING",
           "code": "52000053",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Shadow_King_2.webp",
-          "description": "A dark spectral skin with glowing purple eyes and aura.",
-          "released": "April 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Shadow_King_2.webp"
         },
         {
           "skin_name": "Summer King",
           "TID": "TID_SUMMER_KING",
           "code": "52000054",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Summer_King_1.webp",
-          "description": "A casual beach skin featuring sunglasses and a pool noodle.",
-          "released": "June 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Summer_King_1.webp"
         },
         {
           "skin_name": "Pixel King",
           "TID": "TID_PIXEL_KING",
           "code": "52000055",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Pixel_King.webp",
-          "description": "A retro 8-bit style skin released for the 10th anniversary.",
-          "released": "August 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Pixel_King.webp"
         },
         {
           "skin_name": "Clash Fest King",
           "TID": "TID_CLASHFEST_KING",
           "code": "52000056",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Clash_Fest_King_1_shadow.webp",
-          "description": "An esports-themed skin with futuristic gaming equipment.",
-          "released": "September 2022",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Clash_Fest_King_1_shadow.webp"
         },
         {
           "skin_name": "Magic King",
           "TID": "TID_TH15_KING",
           "code": "52000087",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Magic_King_1.webp",
-          "description": "A mystical skin released for the Town Hall 15 update.",
-          "released": "October 2022",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Painter King",
-          "TID": "TID_PAINTER_KING",
-          "code": "52000089",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Painter_King_3.webp",
-          "description": "An artistic skin with a beret and paint-splattered duster.",
-          "released": "March 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Magic_King_1.webp"
         },
         {
           "skin_name": "Dark Ages King",
           "TID": "TID_DARKAGES_KING",
           "code": "52000088",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Dark_Ages_King_1.webp",
-          "description": "A medieval knight skin with heavy plate armor and a broadsword.",
-          "released": "April 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Dark_Ages_King_1.webp"
+        },
+        {
+          "skin_name": "Painter King",
+          "TID": "TID_PAINTER_KING",
+          "code": "52000089",
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Painter_King_3.webp"
         },
         {
           "skin_name": "Beast King",
           "TID": "TID_BEAST_KING",
           "code": "52000090",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Beast_King_1_shadow.webp",
-          "description": "A primal skin with clawed gauntlets and a beast-like mask.",
-          "released": "May 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Beast_King_1_shadow.webp"
         },
         {
           "skin_name": "League King",
           "TID": "TID_LEAGUE_KING",
           "code": "52000091",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_League_King_1_shadow.webp",
-          "description": "An elite war skin available only to top-tier league competitors.",
-          "released": "May 2023",
-          "availability": "League Shop (2,000 Medals)",
-          "rarity": "exclusive"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_League_King_1_shadow.webp"
         },
         {
           "skin_name": "Goblin King",
           "TID": "TID_GOBLIN_KING",
           "code": "52000092",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Goblin_King_1.webp",
-          "description": "A green-skinned goblin skin with scavenged bone armor.",
-          "released": "June 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Goblin_King_1.webp"
         },
         {
           "skin_name": "Future King",
           "TID": "TID_CLASHIVERSARY_KING",
           "code": "52000093",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Future_King_1_shadow.webp",
-          "description": "A sci-fi skin featuring robotic enhancements and a laser sword.",
-          "released": "August 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
-        },
-        {
-          "skin_name": "Chess King",
-          "TID": "TID_CHESS_KING",
-          "code": "52000096",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Chess_King_1_shadow.webp",
-          "description": "A strategy-themed skin based on the chess King piece.",
-          "released": "September 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Ghost King",
-          "TID": "TID_GHOST_KING",
-          "code": "52000095",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Ghost_King_1.webp",
-          "description": "A translucent ghostly skin with an eerie phantom glow.",
-          "released": "October 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Future_King_1_shadow.webp"
         },
         {
           "skin_name": "Gingerbread King",
           "TID": "TID_GINGERBREAD_KING",
           "code": "52000094",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Gingerbread_King_1.webp",
-          "description": "A festive skin made entirely of cookies and icing.",
-          "released": "December 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Gingerbread_King_1.webp"
         },
         {
-          "skin_name": "King of the North",
-          "TID": "TID_WINTER_KING",
-          "code": "52000133",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_King_of_the_North_1.webp",
-          "description": "A northern warrior skin with heavy furs and ice armor.",
-          "released": "January 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "skin_name": "Ghost King",
+          "TID": "TID_GHOST_KING",
+          "code": "52000095",
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Ghost_King_1.webp"
+        },
+        {
+          "skin_name": "Chess King",
+          "TID": "TID_CHESS_KING",
+          "code": "52000096",
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Chess_King_1_shadow.webp"
         },
         {
           "skin_name": "Dragon King",
           "TID": "TID_LUNAR_KING",
           "code": "52000132",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Dragon_King_1_shadow.webp",
-          "description": "A magnificent dragon-themed skin for Lunar New Year.",
-          "released": "February 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Dragon_King_1_shadow.webp"
         },
         {
-          "skin_name": "Space King",
-          "TID": "TID_SPACE_KING",
-          "code": "52000135",
-          "image_path": "src/assets/heroskin/Hero_Skin_BK_Space_King_1.webp",
-          "description": "A futuristic astronaut skin with a full space suit.",
-          "released": "March 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "skin_name": "King of the North",
+          "TID": "TID_WINTER_KING",
+          "code": "52000133",
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_King_of_the_North_1.webp"
         },
         {
           "skin_name": "Egypt King",
           "TID": "TID_EGYPT_KING",
           "code": "52000134",
-          "image_path": "src/assets/heroskin/egypt-king-clash-of-clans.webp",
-          "description": "An ancient Egyptian pharaoh skin with golden regalia.",
-          "released": "April 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/egypt-king-clash-of-clans.webp"
         },
         {
-          "skin_name": "King Haaland",
-          "TID": "TID_HAALAND_KING",
-          "code": "52000137",
-          "image_path": "src/assets/heroskin/King_Haaland.webp",
-          "description": "A skin modeled after the footballer Erling Haaland.",
-          "released": "May 2024",
-          "availability": "Event Shop",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Football King",
-          "TID": "TID_HAALANDCLASH_KING",
-          "code": "52000138",
-          "image_path": "src/assets/heroskin/football_king.webp",
-          "description": "A sports skin featuring a football jersey and kit.",
-          "released": "May 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "skin_name": "Space King",
+          "TID": "TID_SPACE_KING",
+          "code": "52000135",
+          "image_path": "src/assets/heroskin/Hero_Skin_BK_Space_King_1.webp"
         },
         {
           "skin_name": "Super Squad King",
           "TID": "TID_SQUAD_KING",
           "code": "52000136",
-          "image_path": "src/assets/heroskin/super_squad_king.webp",
-          "description": "A crossover skin released for the launch of Squad Busters.",
-          "released": "June 2024",
-          "availability": "Limited-time event",
-          "rarity": "exclusive"
+          "image_path": "src/assets/heroskin/super_squad_king.webp"
+        },
+        {
+          "skin_name": "King Haaland",
+          "TID": "TID_HAALAND_KING",
+          "code": "52000137",
+          "image_path": "src/assets/heroskin/King_Haaland.webp"
+        },
+        {
+          "skin_name": "Football King",
+          "TID": "TID_HAALANDCLASH_KING",
+          "code": "52000138",
+          "image_path": "src/assets/heroskin/football_king.webp"
         },
         {
           "skin_name": "Wild West King",
           "TID": "TID_WILDWEST_KING",
           "code": "52000139",
-          "image_path": "src/assets/heroskin/BarbarianKing_WildWest_Pose01.webp",
-          "description": "A western outlaw skin with a cowboy hat and spurs.",
-          "released": "June 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/BarbarianKing_WildWest_Pose01.webp"
         },
         {
           "skin_name": "Clash Games King",
           "TID": "TID_CLASH_GAMES_KING",
           "code": "52000141",
-          "image_path": "src/assets/heroskin/clash_games_king.webp",
-          "description": "An Olympic-themed athletic skin.",
-          "released": "July 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/clash_games_king.webp"
         },
         {
           "skin_name": "Anime King",
           "TID": "TID_ANIME_KING",
           "code": "52000191",
-          "image_path": "src/assets/heroskin/Anime_BarbarianKing_01.webp",
-          "description": "A cel-shaded skin inspired by Japanese anime heroes.",
-          "released": "August 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Anime_BarbarianKing_01.webp"
         },
         {
           "skin_name": "Barbarian Orc",
           "TID": "TID_TTRPG_KING",
           "code": "52000192",
-          "image_path": "src/assets/heroskin/BK_TTRPG_01_Shadow.webp",
-          "description": "A green orc skin released for the TTRPG season.",
-          "released": "September 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/BK_TTRPG_01_Shadow.webp"
         },
         {
           "skin_name": "Dark Minion King",
           "TID": "TID_CLASHOWEEN_KING",
           "code": "52000193",
-          "image_path": "src/assets/heroskin/BarbarianKing_Clashoween_01.webp",
-          "description": "A shadowy minion-themed skin for Halloween.",
-          "released": "October 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/BarbarianKing_Clashoween_01.webp"
         },
         {
           "skin_name": "Judgment King",
           "TID": "TID_TH17_KING",
           "code": "52000194",
-          "image_path": "src/assets/heroskin/Judgement_King_02_withShadow.webp",
-          "description": "A regal judge skin with a massive gavel weapon.",
-          "released": "November 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Judgement_King_02_withShadow.webp"
         },
         {
           "skin_name": "Robo King",
           "TID": "TID_CLASHMAS_KING",
           "code": "52000195",
-          "image_path": "src/assets/heroskin/BK_clashmas24_04_NoShadow.webp",
-          "description": "A mechanical toy-themed skin for the holiday season.",
-          "released": "December 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/BK_clashmas24_04_NoShadow.webp"
         },
         {
           "skin_name": "Fire King",
           "TID": "TID_FIRE_KING",
           "code": "52000196",
-          "image_path": "src/assets/heroskin/Fire_Barbarian_King_Skin_05_NoShadow.webp",
-          "description": "A lava-based skin with charred armor and fire effects.",
-          "released": "January 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Fire_Barbarian_King_Skin_05_NoShadow.webp"
         },
         {
           "skin_name": "Snake King",
           "TID": "TID_LNY25_KING",
           "code": "52000197",
-          "image_path": "src/assets/heroskin/Barbarian_King_LNY2025_Skin.webp",
-          "description": "A reptilian skin celebrating the Year of the Snake.",
-          "released": "February 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Barbarian_King_LNY2025_Skin.webp"
         },
         {
           "skin_name": "Combat King",
           "TID": "TID_MILITARY_KING",
           "code": "52000198",
-          "image_path": "src/assets/heroskin/combat_king.webp",
-          "description": "A modern military commander skin with camo gear.",
-          "released": "March 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/combat_king.webp"
         },
         {
           "skin_name": "King Cody",
           "TID": "TID_APRIL25_KING",
           "code": "52000199",
-          "image_path": "src/assets/heroskin/king_cody.webp",
-          "description": "A wrestling superstar skin for the ClashaMania season.",
-          "released": "April 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/king_cody.webp"
         },
         {
           "skin_name": "Samurai King",
           "TID": "TID_JAPAN_KING",
           "code": "52000200",
-          "image_path": "src/assets/heroskin/BK_Japan_NoShadow_01.webp",
-          "description": "A detailed samurai armor skin with a katana.",
-          "released": "May 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/BK_Japan_NoShadow_01.webp"
         },
         {
           "skin_name": "Barbarian Butcher",
           "TID": "TID_DARKDAYS_KING",
           "code": "52000201",
-          "image_path": "src/assets/heroskin/BarbarianKing_DarkDays_f51_NoShadows.webp",
-          "description": "A post-apocalyptic butcher skin from the Dark Days season.",
-          "released": "June 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/BarbarianKing_DarkDays_f51_NoShadows.webp"
         },
         {
           "skin_name": "Renegade King",
           "TID": "TID_CYBERPUNK_KING",
           "code": "52000202",
-          "image_path": "src/assets/heroskin/BK_CyberClash_02_CYBER_NoShadow.webp",
-          "description": "A neon-lit cyberpunk outlaw skin.",
-          "released": "July 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/BK_CyberClash_02_CYBER_NoShadow.webp"
         },
         {
           "skin_name": "Bruiser King",
           "TID": "TID_WASTELANDS_KING",
           "code": "52000285",
-          "image_path": "src/assets/heroskin/BK_Wastelands_03_NoShadow.webp",
-          "description": "A rugged desert survivalist skin from the Wastelands season.",
-          "released": "November 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/BK_Wastelands_03_NoShadow.webp"
         },
         {
           "skin_name": "Awakened King",
           "TID": "TID_FROSTAGE_KING",
           "code": "52000286",
-          "image_path": "src/assets/heroskin/BarbarianKing_FrostAge_f50_3k.webp",
-          "description": "A massive XL Legendary skin with frost magic and blizzard effects.",
-          "released": "December 2025",
-          "availability": "Shop Purchase ($32.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/BarbarianKing_FrostAge_f50_3k.webp"
         }
       ]
     },
@@ -552,1382 +336,837 @@
           "skin_name": "Gladiator Queen",
           "TID": "TID_ARCHER_QUEEN_GLADIATOR",
           "code": "52000012",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Gladiator_Queen_1.webp",
-          "description": "A Roman-themed gladiator skin with a traditional helm.",
-          "released": "May 2019",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Gladiator_Queen_1.webp"
         },
         {
           "skin_name": "Valkyrie Queen",
           "TID": "TID_VALKYRIE_QUEEN",
           "code": "52000013",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Valkyrie_Queen.webp",
-          "description": "A skin inspired by the Valkyrie troop with winged headgear.",
-          "released": "July 2019",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Valkyrie_Queen.webp"
         },
         {
           "skin_name": "Autumn Queen",
           "TID": "TID_AUTUMN_QUEEN",
           "code": "52000014",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Autumn_Queen_1.webp",
-          "description": "A seasonal skin with fall-themed foliage and colors.",
-          "released": "October 2019",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Autumn_Queen_1.webp"
         },
         {
           "skin_name": "Ice Queen",
           "TID": "TID_ICE_QUEEN",
           "code": "52000015",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Ice_Queen_1_grass.webp",
-          "description": "A winter skin with crown of ice and frozen arrows.",
-          "released": "December 2019",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Ice_Queen_1_grass.webp"
         },
         {
           "skin_name": "Warrior Queen",
           "TID": "TID_WARRIOR_QUEEN",
           "code": "52000016",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Warrior_Queen_1.webp",
-          "description": "A Lunar New Year skin with ornate red and gold armor.",
-          "released": "January 2020",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Warrior_Queen_1.webp"
         },
         {
           "skin_name": "Primal Queen",
           "TID": "TID_PRIMAL_QUEEN",
           "code": "52000017",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Primal_Queen_1.webp",
-          "description": "A prehistoric skin with bone ornaments and furs.",
-          "released": "May 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Primal_Queen_1.webp"
         },
         {
           "skin_name": "Clockwork Queen",
           "TID": "TID_CLOCKWORK_QUEEN",
           "code": "52000018",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Clockwork_Queen_1_grass.webp",
-          "description": "A mechanical skin with wind-up keys and wooden limbs.",
-          "released": "June 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Clockwork_Queen_1_grass.webp"
         },
         {
           "skin_name": "Pirate Queen",
           "TID": "TID_PIRATE_QUEEN",
           "code": "52000019",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Pirate_Queen_1.webp",
-          "description": "A pirate captain outfit with a bicorne hat.",
-          "released": "October 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Pirate_Queen_1.webp"
         },
         {
           "skin_name": "Rouge Queen",
           "TID": "TID_ROGUE_QUEEN",
           "code": "52000057",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Rouge_Queen_1.webp",
-          "description": "A rogue-themed skin with a dark green hood and cape.",
-          "released": "February 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Rouge_Queen_1.webp"
         },
         {
           "skin_name": "Jungle Queen",
           "TID": "TID_JUNGLE_QUEEN",
           "code": "52000058",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Jungle_Queen_1.webp",
-          "description": "A tribal skin with wood and bone accessories.",
-          "released": "June 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Jungle_Queen_1.webp"
         },
         {
           "skin_name": "Party Queen",
           "TID": "TID_PARTY_QUEEN",
           "code": "52000059",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Party_Queen_1_grass.webp",
-          "description": "An anniversary skin featuring colorful festive gear.",
-          "released": "August 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Party_Queen_1_grass.webp"
         },
         {
           "skin_name": "Champion Queen",
           "TID": "TID_CHAMPION_QUEEN",
           "code": "52000060",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Champion_Queen_2.webp",
-          "description": "A golden warrior skin for the World Championships.",
-          "released": "November 2021",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Champion_Queen_2.webp"
         },
         {
           "skin_name": "Shadow Queen",
           "TID": "TID_SHADOW_QUEEN",
           "code": "52000061",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Shadow_Queen_1.webp",
-          "description": "A dark spectral skin with a phantom crown.",
-          "released": "February 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Shadow_Queen_1.webp"
         },
         {
           "skin_name": "Miner Queen",
           "TID": "TID_MINER_QUEEN",
           "code": "52000062",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Miner_Queen_1.webp",
-          "description": "A underground-themed skin based on the Miner troop.",
-          "released": "May 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Miner_Queen_1.webp"
         },
         {
           "skin_name": "Summer Queen",
           "TID": "TID_SUMMER_QUEEN",
           "code": "52000063",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Summer_Queen_1_grass.webp",
-          "description": "A casual beach skin with sunglasses and floaties.",
-          "released": "July 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Summer_Queen_1_grass.webp"
         },
         {
           "skin_name": "Pixel Queen",
           "TID": "TID_PIXEL_QUEEN",
           "code": "52000064",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Pixel_Queen_1.webp",
-          "description": "A retro 8-bit style skin released for the 10th anniversary.",
-          "released": "August 2022",
-          "availability": "Shop Purchase ($3.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Pixel_Queen_1.webp"
         },
         {
           "skin_name": "Spooky Queen",
           "TID": "TID_SPOOKY_QUEEN",
           "code": "52000065",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Spooky_Queen_1.webp",
-          "description": "A witch-themed Halloween skin with spider motifs.",
-          "released": "October 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Spooky_Queen_1.webp"
         },
         {
           "skin_name": "Magic Queen",
           "TID": "TID_TH15_QUEEN",
           "code": "52000066",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Magic_Queen_1.webp",
-          "description": "A mystical skin released for the Town Hall 15 update.",
-          "released": "October 2022",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Magic_Queen_1.webp"
         },
         {
           "skin_name": "Jolly Queen",
           "TID": "TID_JOLLY_QUEEN",
           "code": "52000067",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Jolly_Queen_1.webp",
-          "description": "A festive holiday skin with candy-cane bows.",
-          "released": "December 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
-        },
-        {
-          "skin_name": "Lunar Queen",
-          "TID": "TID_LUNAR_QUEEN",
-          "code": "52000097",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Lunar_Queen_1.webp",
-          "description": "A rabbit-themed skin for the Lunar New Year 2023.",
-          "released": "January 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Heart Hunter Queen",
-          "TID": "TID_VALENTINES_QUEEN",
-          "code": "52000099",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Heart_Hunter_Queen_2.webp",
-          "description": "A Valentine-themed skin with pink accents.",
-          "released": "February 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Painter Queen",
-          "TID": "TID_PAINTER_QUEEN",
-          "code": "52000098",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Painter_Queen_1.webp",
-          "description": "An artistic skin with paint-splattered attire.",
-          "released": "March 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Jolly_Queen_1.webp"
         },
         {
           "skin_name": "Dark Ages Queen",
           "TID": "TID_DARKAGES_QUEEN",
           "code": "52000068",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Dark_Ages_Queen_1.webp",
-          "description": "A medieval noble skin with elegant dark armor.",
-          "released": "April 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Dark_Ages_Queen_1.webp"
+        },
+        {
+          "skin_name": "Lunar Queen",
+          "TID": "TID_LUNAR_QUEEN",
+          "code": "52000097",
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Lunar_Queen_1.webp"
+        },
+        {
+          "skin_name": "Painter Queen",
+          "TID": "TID_PAINTER_QUEEN",
+          "code": "52000098",
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Painter_Queen_1.webp"
+        },
+        {
+          "skin_name": "Heart Hunter Queen",
+          "TID": "TID_VALENTINES_QUEEN",
+          "code": "52000099",
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Heart_Hunter_Queen_2.webp"
         },
         {
           "skin_name": "Goblin Queen",
           "TID": "TID_GOBLIN_QUEEN",
           "code": "52000100",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Goblin_Queen_7.webp",
-          "description": "A goblin-themed skin with green skin and scavenged gear.",
-          "released": "June 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "League Queen",
-          "TID": "TID_LEAGUE_QUEEN",
-          "code": "52000102",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_League_Queen_1.webp",
-          "description": "A prestigious war skin available for League Medals.",
-          "released": "July 2023",
-          "availability": "League Shop (2,000 Medals)",
-          "rarity": "exclusive"
-        },
-        {
-          "skin_name": "Future Queen",
-          "TID": "TID_CLASHIVERSARY_QUEEN",
-          "code": "52000103",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Future_Queen_1.webp",
-          "description": "A sci-fi skin with high-tech armor and visors.",
-          "released": "August 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
-        },
-        {
-          "skin_name": "Chess Queen",
-          "TID": "TID_CHESS_QUEEN",
-          "code": "52000105",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Chess_Queen_1_shadow.webp",
-          "description": "A strategy-themed skin based on the chess Queen piece.",
-          "released": "September 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Goblin_Queen_7.webp"
         },
         {
           "skin_name": "Ghost Queen",
           "TID": "TID_GHOST_QUEEN",
           "code": "52000101",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Ghost_Queen_1.webp",
-          "description": "A ghostly skin with a translucent spectral appearance.",
-          "released": "October 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Ghost_Queen_1.webp"
+        },
+        {
+          "skin_name": "League Queen",
+          "TID": "TID_LEAGUE_QUEEN",
+          "code": "52000102",
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_League_Queen_1.webp"
+        },
+        {
+          "skin_name": "Future Queen",
+          "TID": "TID_CLASHIVERSARY_QUEEN",
+          "code": "52000103",
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Future_Queen_1.webp"
         },
         {
           "skin_name": "Gingerbread Queen",
           "TID": "TID_GINGERBREAD_QUEEN",
           "code": "52000104",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Gingerbread_Queen_1.webp",
-          "description": "A holiday skin made of gingerbread and candy.",
-          "released": "December 2023",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Gingerbread_Queen_1.webp"
+        },
+        {
+          "skin_name": "Chess Queen",
+          "TID": "TID_CHESS_QUEEN",
+          "code": "52000105",
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Chess_Queen_1_shadow.webp"
         },
         {
           "skin_name": "Queen of the North",
           "TID": "TID_WINTER_QUEEN",
           "code": "52000106",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Queen_of_the_North_1.webp",
-          "description": "A northern warrior skin with winter furs.",
-          "released": "January 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Queen_of_the_North_1.webp"
         },
         {
           "skin_name": "Dragon Queen",
           "TID": "TID_LUNAR_QUEEN",
           "code": "52000142",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Dragon_Queen_1.webp",
-          "description": "A dragon-themed skin for Lunar New Year 2024.",
-          "released": "February 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Dragon_Queen_1.webp"
         },
         {
           "skin_name": "Space Queen",
           "TID": "TID_SPACE_QUEEN",
           "code": "52000143",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Space_Queen_1.webp",
-          "description": "A lunar explorer skin with an astronaut helmet.",
-          "released": "March 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Space_Queen_1.webp"
         },
         {
           "skin_name": "Egypt Queen",
           "TID": "TID_EGYPT_QUEEN",
           "code": "52000144",
-          "image_path": "src/assets/heroskin/egyptian-queen-clash-of-clans.webp",
-          "description": "An Egyptian pharaoh skin with ornate accessories.",
-          "released": "April 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/egyptian-queen-clash-of-clans.webp"
         },
         {
           "skin_name": "Football Queen",
           "TID": "TID_FOOTBALL_QUEEN",
           "code": "52000145",
-          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Football_Queen_01.webp",
-          "description": "A sports skin with a football kit.",
-          "released": "May 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_AQ_Football_Queen_01.webp"
         },
         {
           "skin_name": "Wild West Queen",
           "TID": "TID_WILDWEST_QUEEN",
           "code": "52000146",
-          "image_path": "src/assets/heroskin/ArcherQueen_WildWest_Pose01.webp",
-          "description": "A western cowgirl skin with a hat and holster.",
-          "released": "June 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/ArcherQueen_WildWest_Pose01.webp"
         },
         {
           "skin_name": "Clash Games Queen",
           "TID": "TID_CLASH_GAMES_QUEEN",
           "code": "52000147",
-          "image_path": "src/assets/heroskin/Clash_Games_Queen_03.webp",
-          "description": "A gold-medal themed skin for the Clash Games.",
-          "released": "July 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Clash_Games_Queen_03.webp"
         },
         {
           "skin_name": "Anime Queen",
           "TID": "TID_ANIME_QUEEN",
           "code": "52000148",
-          "image_path": "src/assets/heroskin/Anime_Archer_Queen_01.webp",
-          "description": "A stylized anime girl skin with vibrant colors.",
-          "released": "August 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Anime_Archer_Queen_01.webp"
         },
         {
           "skin_name": "Satyr Queen",
           "TID": "TID_TTRPG_QUEEN",
           "code": "52000149",
-          "image_path": "src/assets/heroskin/AQ_TTRPG_Pose01_Shadow.webp",
-          "description": "A mythological TTRPG skin depicting the queen as a satyr.",
-          "released": "September 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/AQ_TTRPG_Pose01_Shadow.webp"
         },
         {
           "skin_name": "Dark Minion Queen",
           "TID": "TID_CLASHOWEEN_QUEEN",
           "code": "52000150",
-          "image_path": "src/assets/heroskin/Archer_Queen_Clashoween_01.webp",
-          "description": "A dark Halloween skin based on the minion troop.",
-          "released": "October 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Archer_Queen_Clashoween_01.webp"
         },
         {
           "skin_name": "Justice Queen",
           "TID": "TID_TH17_QUEEN",
           "code": "52000151",
-          "image_path": "src/assets/heroskin/01_Justice_ArcherQueen_noGroundShadows.webp",
-          "description": "A judge-themed skin with scales and robes.",
-          "released": "November 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/01_Justice_ArcherQueen_noGroundShadows.webp"
         },
         {
           "skin_name": "Puppet Queen",
           "TID": "TID_CLASHMAS_QUEEN",
           "code": "52000210",
-          "image_path": "src/assets/heroskin/AQ_clashmas24_03_Shadow.webp",
-          "description": "A toy-themed skin for the Clashmas 2024 season.",
-          "released": "December 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/AQ_clashmas24_03_Shadow.webp"
         },
         {
           "skin_name": "Fire Queen",
           "TID": "TID_FIRE_QUEEN",
           "code": "52000211",
-          "image_path": "src/assets/heroskin/Fire_Archer_Queen_Skin_02_Shadow.webp",
-          "description": "A flaming hero skin with volcanic armor and glowing arrows.",
-          "released": "January 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Fire_Archer_Queen_Skin_02_Shadow.webp"
         },
         {
           "skin_name": "Snake Queen",
           "TID": "TID_LNY25_QUEEN",
           "code": "52000212",
-          "image_path": "src/assets/heroskin/ArcherQueen_LNY_2025_Skin.webp",
-          "description": "A serpent-themed skin for the Year of the Snake.",
-          "released": "February 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/ArcherQueen_LNY_2025_Skin.webp"
         },
         {
           "skin_name": "Quickfire Queen",
           "TID": "TID_MILITARY_QUEEN",
           "code": "52000213",
-          "image_path": "src/assets/heroskin/Quickfire_Queen.webp",
-          "description": "A tactical military skin with advanced gear.",
-          "released": "March 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Quickfire_Queen.webp"
         },
         {
           "skin_name": "Brutality Queen",
           "TID": "TID_APRIL25_QUEEN",
           "code": "52000214",
-          "image_path": "src/assets/heroskin/Brutality_Queen.webp",
-          "description": "A wrestling-themed skin with a champion belt.",
-          "released": "April 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Brutality_Queen.webp"
         },
         {
           "skin_name": "Kyudo Queen",
           "TID": "TID_JAPAN_QUEEN",
           "code": "52000215",
-          "image_path": "src/assets/heroskin/AQ_Japan_Shadow_02.webp",
-          "description": "A traditional Japanese archer skin with traditional robes.",
-          "released": "May 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/AQ_Japan_Shadow_02.webp"
         },
         {
           "skin_name": "Queen Fatale",
           "TID": "TID_DARKDAYS_QUEEN",
           "code": "52000216",
-          "image_path": "src/assets/heroskin/ArcherQueen_DarkDays_f05_NoShadows.webp",
-          "description": "A noir-themed skin from the Dark Days season.",
-          "released": "June 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/ArcherQueen_DarkDays_f05_NoShadows.webp"
         },
         {
           "skin_name": "Renegade Queen",
           "TID": "TID_CYBERPUNK_QUEEN",
           "code": "52000217",
-          "image_path": "src/assets/heroskin/AQ_CyberClash_01_NEUTRAL_NoShadow.webp",
-          "description": "A cyberpunk rogue skin with neon accents.",
-          "released": "July 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/AQ_CyberClash_01_NEUTRAL_NoShadow.webp"
         },
         {
           "skin_name": "Clash-A-Rama Queen",
           "TID": "TID_CLASHARAMA_QUEEN",
           "code": "52000218",
-          "image_path": "src/assets/heroskin/TID_CLASHARAMA_QUEEN.webp",
-          "description": "A hand-drawn skin based on the Clash-A-Rama animation.",
-          "released": "August 2025",
-          "availability": "Event Reward",
-          "rarity": "exclusive"
+          "image_path": "src/assets/heroskin/TID_CLASHARAMA_QUEEN.webp"
         },
         {
           "skin_name": "P.E.Q.Q.A Queen",
           "TID": "TID_CLASHARAMA_2_QUEEN",
           "code": "52000219",
-          "image_path": "src/assets/heroskin/TID_CLASHARAMA_2_QUEEN.webp",
-          "description": "A humorous pixelated skin based on the P.E.K.K.A.",
-          "released": "August 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/TID_CLASHARAMA_2_QUEEN.webp"
         },
         {
           "skin_name": "Archer Hunter",
           "TID": "TID_COSMICCURSE_QUEEN",
           "code": "52000220",
-          "image_path": "src/assets/heroskin/AQ_CosmiCurse_f03_4k.webp",
-          "description": "A cosmic horror skin from the Cosmic Curse season.",
-          "released": "October 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/AQ_CosmiCurse_f03_4k.webp"
         },
         {
           "skin_name": "Fury Queen",
           "TID": "TID_WASTELANDS_QUEEN",
           "code": "52000221",
-          "image_path": "src/assets/heroskin/AQ_Wastelands_01.webp",
-          "description": "A desert scavenger skin from the Wastelands season.",
-          "released": "November 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/AQ_Wastelands_01.webp"
         },
         {
           "skin_name": "Blizzard Queen",
           "TID": "TID_FROSTAGE_QUEEN",
           "code": "52000222",
-          "image_path": "src/assets/heroskin/ArcherQueen_FrostAge_f90_3k_noGroundShadow.webp",
-          "description": "A heavy winter skin with ice-coated gear.",
-          "released": "December 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/ArcherQueen_FrostAge_f90_3k_noGroundShadow.webp"
         }
       ]
     },
     {
       "name": "Grand Warden",
+      "total_skins": 39,
+      "notes": "+ Shaman Warden (Wastelands season)",
       "skins": [
         {
           "skin_name": "Party Warden",
           "TID": "TID_PARTY_WARDEN",
           "code": "52000020",
-          "image_path": "src/assets/heroskin/Party_Warden_3D_preview.webp",
-          "description": "A retro disco-themed skin with a funky staff.",
-          "released": "September 2019",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Party_Warden_3D_preview.webp"
         },
         {
           "skin_name": "Primal Warden",
           "TID": "TID_PRIMAL_WARDEN",
           "code": "52000021",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Primal_Warden_1.webp",
-          "description": "A shamanic prehistoric skin with bone charms.",
-          "released": "April 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Primal_Warden_1.webp"
         },
         {
           "skin_name": "Clockwork Warden",
           "TID": "TID_CLOCKWORK_WARDEN",
           "code": "52000022",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Clockwork_Warden_1.webp",
-          "description": "A mechanical toy skin with gears and a wooden frame.",
-          "released": "July 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Clockwork_Warden_1.webp"
         },
         {
           "skin_name": "Gladiator Warden",
           "TID": "TID_GLADIATOR_WARDEN",
           "code": "52000023",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Gladiator_Warden_1.webp",
-          "description": "A Roman arena skin with a plumed helmet.",
-          "released": "September 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Gladiator_Warden_1.webp"
         },
         {
           "skin_name": "Pirate Warden",
           "TID": "TID_PIRATE_WARDEN",
           "code": "52000024",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Pirate_Warden_1.webp",
-          "description": "A seafaring pirate skin with a parrot companion.",
-          "released": "November 2020",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Pirate_Warden_1.webp"
         },
         {
           "skin_name": "Warden of the North",
           "TID": "TID_WINTER_WARDEN",
           "code": "52000025",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Warden_of_the_North_1_shadow.webp",
-          "description": "A winter skin inspired by northern legends.",
-          "released": "December 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Warden_of_the_North_1_shadow.webp"
         },
         {
           "skin_name": "Jungle Warden",
           "TID": "TID_JUNGLE_WARDEN",
           "code": "52000026",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Jungle_Warden_1.webp",
-          "description": "A tropical tribal skin with wooden armor.",
-          "released": "July 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Jungle_Warden_1.webp"
         },
         {
           "skin_name": "Warden Master",
           "TID": "TID_MASTER_WARDEN",
           "code": "52000027",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Warden_Master_1.webp",
-          "description": "A scholarly skin with academic robes.",
-          "released": "November 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Warden_Master_1.webp"
         },
         {
           "skin_name": "Jolly Warden",
           "TID": "TID_JOLLY_WARDEN",
           "code": "52000069",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Jolly_Warden_1_shadow.webp",
-          "description": "A festive holiday helper skin.",
-          "released": "December 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Jolly_Warden_1_shadow.webp"
         },
         {
           "skin_name": "Warrior Warden",
           "TID": "TID_WARRIOR_WARDEN",
           "code": "52000070",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Warrior_Warden_1.webp",
-          "description": "A traditional Chinese warrior skin for Lunar New Year.",
-          "released": "January 2022",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Warrior_Warden_1.webp"
         },
         {
           "skin_name": "Shadow Warden",
           "TID": "TID_SHADOW_WARDEN",
           "code": "52000071",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Shadow_Warden_1.webp",
-          "description": "A dark spectral skin with shadow effects.",
-          "released": "April 2022",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Shadow_Warden_1.webp"
         },
         {
           "skin_name": "Summer Warden",
           "TID": "TID_SUMMER_WARDEN",
           "code": "52000072",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Summer_Warden_2.webp",
-          "description": "A beach-ready skin with a snorkel and straw hat.",
-          "released": "June 2022",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Summer_Warden_2.webp"
         },
         {
           "skin_name": "Pixel Warden",
           "TID": "TID_PIXEL_WARDEN",
           "code": "52000073",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Pixel_Warden.webp",
-          "description": "A retro 8-bit style skin for the 10th anniversary.",
-          "released": "August 2022",
-          "availability": "Shop Purchase ($3.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Magic Warden",
-          "TID": "TID_TH15_WARDEN",
-          "code": "52000075",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Magic_Warden_1_shadow.webp",
-          "description": "A mystical skin for the Town Hall 15 update.",
-          "released": "October 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Pixel_Warden.webp"
         },
         {
           "skin_name": "Champion Warden",
           "TID": "TID_CHAMPION_WARDEN",
           "code": "52000074",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Champion_Warden_2.webp",
-          "description": "A golden warrior skin for the World Championships.",
-          "released": "November 2022",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Champion_Warden_2.webp"
+        },
+        {
+          "skin_name": "Magic Warden",
+          "TID": "TID_TH15_WARDEN",
+          "code": "52000075",
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Magic_Warden_1_shadow.webp"
         },
         {
           "skin_name": "Painter Warden",
           "TID": "TID_PAINTER_WARDEN",
           "code": "52000076",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Painter_Warden_1_shadow.webp",
-          "description": "An artistic skin with an easel staff.",
-          "released": "March 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Painter_Warden_1_shadow.webp"
         },
         {
           "skin_name": "Dark Ages Warden",
           "TID": "TID_DARKAGES_WARDEN",
           "code": "52000077",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Dark_Ages_Warden_1.webp",
-          "description": "A medieval wizard skin with dark robes.",
-          "released": "April 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Goblin Warden",
-          "TID": "TID_GOBLIN_WARDEN",
-          "code": "52000079",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Goblin_Warden_2.webp",
-          "description": "A green-skinned goblin skin.",
-          "released": "June 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Future Warden",
-          "TID": "TID_CLASHIVERSARY_WARDEN",
-          "code": "52000122",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Future_Warden_1_shadow.webp",
-          "description": "A high-tech cybernetic skin with an energy staff.",
-          "released": "August 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Dark_Ages_Warden_1.webp"
         },
         {
           "skin_name": "Ghost Warden",
           "TID": "TID_GHOST_WARDEN",
           "code": "52000078",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Ghost_Warden_2.webp",
-          "description": "A ghostly translucent skin with spectral energy.",
-          "released": "October 2023",
-          "position": 20,
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Ghost_Warden_2.webp"
+        },
+        {
+          "skin_name": "Goblin Warden",
+          "TID": "TID_GOBLIN_WARDEN",
+          "code": "52000079",
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Goblin_Warden_2.webp"
         },
         {
           "skin_name": "League Warden",
           "TID": "TID_LEAGUE_WARDEN",
           "code": "52000080",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_League_Warden_2.webp",
-          "description": "An elite war skin available for League Medals.",
-          "released": "November 2023",
-          "availability": "League Shop (2,000 Medals)",
-          "rarity": "exclusive"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_League_Warden_2.webp"
+        },
+        {
+          "skin_name": "Future Warden",
+          "TID": "TID_CLASHIVERSARY_WARDEN",
+          "code": "52000122",
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Future_Warden_1_shadow.webp"
         },
         {
           "skin_name": "Gingerbread Warden",
           "TID": "TID_GINGERBREAD_WARDEN",
           "code": "52000123",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Gingerbread_Warden_3_shadow.webp",
-          "description": "A holiday skin made of gingerbread parts.",
-          "released": "December 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Gingerbread_Warden_3_shadow.webp"
         },
         {
           "skin_name": "Dragon Warden",
           "TID": "TID_LUNAR_WARDEN",
           "code": "52000124",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Dragon_Warden_2.webp",
-          "description": "A dragon-themed skin for Lunar New Year.",
-          "released": "February 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Dragon_Warden_2.webp"
         },
         {
           "skin_name": "Space Warden",
           "TID": "TID_SPACE_WARDEN",
           "code": "52000125",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Space_Warden_1.webp",
-          "description": "An astronaut skin with a futuristic staff.",
-          "released": "March 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Space_Warden_1.webp"
         },
         {
           "skin_name": "Egypt Warden",
           "TID": "TID_EGYPT_WARDEN",
           "code": "52000126",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Egypt_Warden_2.webp",
-          "description": "An Egyptian priest skin with pharaonic symbols.",
-          "released": "April 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Egypt_Warden_2.webp"
         },
         {
           "skin_name": "Football Warden",
           "TID": "TID_FOOTBALL_WARDEN",
           "code": "52000127",
-          "image_path": "src/assets/heroskin/Hero_Skin_GW_Football_Warden_02.webp",
-          "description": "A sports skin depicting a football referee.",
-          "released": "May 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_GW_Football_Warden_02.webp"
         },
         {
           "skin_name": "Wild West Warden",
           "TID": "TID_WILDWEST_WARDEN",
           "code": "52000128",
-          "image_path": "src/assets/heroskin/GrandWarden_WildWest_Pose01.webp",
-          "description": "A cowboy sheriff skin with a gold badge.",
-          "released": "June 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GrandWarden_WildWest_Pose01.webp"
         },
         {
           "skin_name": "Olympian Warden",
           "TID": "TID_CLASH_GAMES_WARDEN",
           "code": "52000129",
-          "image_path": "src/assets/heroskin/OlympianGrandWarden_04.webp",
-          "description": "A Greek-themed skin depicting Zeus.",
-          "released": "July 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/OlympianGrandWarden_04.webp"
         },
         {
           "skin_name": "Anime Warden",
           "TID": "TID_ANIME_WARDEN",
           "code": "52000130",
-          "image_path": "src/assets/heroskin/Anime_GrandWarden_2.webp",
-          "description": "A stylized anime wizard skin.",
-          "released": "August 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Anime_GrandWarden_2.webp"
         },
         {
           "skin_name": "RPG Warden",
           "TID": "TID_TTRPG_WARDEN",
           "code": "52000131",
-          "image_path": "src/assets/heroskin/GW_TTRPG_Pose01_NoShadow.webp",
-          "description": "A tabletop RPG skin depicting a classic wizard.",
-          "released": "September 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GW_TTRPG_Pose01_NoShadow.webp"
         },
         {
           "skin_name": "Clashoween Warden",
           "TID": "TID_CLASHOWEEN_WARDEN",
           "code": "52000230",
-          "image_path": "src/assets/heroskin/GrandWarden_Clashoween_03.webp",
-          "description": "A spooky pumpkin-themed Halloween skin.",
-          "released": "October 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GrandWarden_Clashoween_03.webp"
         },
         {
           "skin_name": "Justice Warden",
           "TID": "TID_TH17_WARDEN",
           "code": "52000231",
-          "image_path": "src/assets/heroskin/Grand_Judge_withShadows_08.webp",
-          "description": "A judge skin with robes and scales.",
-          "released": "November 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Grand_Judge_withShadows_08.webp"
         },
         {
           "skin_name": "Ice Warden",
           "TID": "TID_ICE_WARDEN",
           "code": "52000232",
-          "image_path": "src/assets/heroskin/Ice_Warden_Skin_01_NoShadow.webp",
-          "description": "A frozen mage skin with ice-blue armor.",
-          "released": "January 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Ice_Warden_Skin_01_NoShadow.webp"
         },
         {
           "skin_name": "Snake Warden",
           "TID": "TID_LNY25_WARDEN",
           "code": "52000233",
-          "image_path": "src/assets/heroskin/Grand_Warden_LNY2025_Skin_06.webp",
-          "description": "A serpent-themed skin for Lunar New Year.",
-          "released": "February 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Grand_Warden_LNY2025_Skin_06.webp"
         },
         {
           "skin_name": "Jetpack Warden",
           "TID": "TID_MILITARY_WARDEN",
           "code": "52000234",
-          "image_path": "src/assets/heroskin/jetpack_warden.webp",
-          "description": "A military skin with a functional jetpack.",
-          "released": "March 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/jetpack_warden.webp"
         },
         {
           "skin_name": "Darkness Warden",
           "TID": "TID_APRIL25_WARDEN",
           "code": "52000235",
-          "image_path": "src/assets/heroskin/GrandWarden_wwe_f31_3k_fx.webp",
-          "description": "A wrestling-themed villainous fighter skin.",
-          "released": "April 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GrandWarden_wwe_f31_3k_fx.webp"
         },
         {
           "skin_name": "Monk Warden",
           "TID": "TID_JAPAN_WARDEN",
           "code": "52000236",
-          "image_path": "src/assets/heroskin/GW_Japan_Shadow_01.webp",
-          "description": "A traditional Japanese monk skin.",
-          "released": "May 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GW_Japan_Shadow_01.webp"
         },
         {
           "skin_name": "Godfather Warden",
           "TID": "TID_DARKDAYS_WARDEN",
           "code": "52000237",
-          "image_path": "src/assets/heroskin/GW_DarkDays_f121_2k_V3.webp",
-          "description": "A noir crime boss skin from the Dark Days season.",
-          "released": "June 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GW_DarkDays_f121_2k_V3.webp"
         },
         {
           "skin_name": "Grand Doctor",
           "TID": "TID_CYBERPUNK_WARDEN",
           "code": "52000238",
-          "image_path": "src/assets/heroskin/GW_CyberClash_02_Shadow.webp",
-          "description": "A futuristic doctor skin with cybernetic tools.",
-          "released": "July 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GW_CyberClash_02_Shadow.webp"
         },
         {
           "skin_name": "Clash-A-Rama Warden",
           "TID": "TID_CLASHARAMA_WARDEN",
           "code": "52000239",
-          "image_path": "src/assets/heroskin/GW_Clasharama_03_NoShadow.webp",
-          "description": "A hand-drawn animation style skin.",
-          "released": "August 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GW_Clasharama_03_NoShadow.webp"
         },
         {
           "skin_name": "Ivan Warden",
           "TID": "TID_CLASHARAMA_2_WARDEN",
           "code": "52000240",
-          "image_path": "src/assets/heroskin/GW_MashARama_01_Shadow.webp",
-          "description": "A mashup hero skin from the Mash-A-Rama season.",
-          "released": "September 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/GW_MashARama_01_Shadow.webp"
         },
         {
           "skin_name": "Eternal Warden",
           "TID": "TID_COSMICCURSE_WARDEN",
           "code": "52000241",
-          "image_path": "src/assets/heroskin/GW_CosmicCurse_f60_4k.webp",
-          "description": "A cosmic priest skin from the Cosmic Curse season.",
-          "released": "October 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GW_CosmicCurse_f60_4k.webp"
         },
         {
           "skin_name": "Shaman Warden",
           "TID": "TID_WASTELANDS_WARDEN",
           "code": "52000242",
-          "image_path": "src/assets/heroskin/GW_Wastelands_01.webp",
-          "description": "A wasteland shaman skin from the Wastelands season.",
-          "released": "November 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GW_Wastelands_01.webp"
         },
         {
           "skin_name": "Grand Warlock",
           "TID": "TID_FROSTAGE_WARDEN",
           "code": "52000243",
-          "image_path": "src/assets/heroskin/GrandWarden_FrostAge_f50_3k.webp",
-          "description": "A massive XL Legendary skin with frost magic.",
-          "released": "December 2025",
-          "availability": "Shop Purchase ($32.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/GrandWarden_FrostAge_f50_3k.webp"
         }
       ]
     },
     {
       "name": "Royal Champion",
+      "total_skins": 40,
+      "notes": "+ Nomad Champion (Wastelands season)",
       "skins": [
         {
           "skin_name": "Winter Champion",
           "TID": "TID_WINTER_CHAMPION",
           "code": "52000029",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Winter_Champion_1_shadow.webp",
-          "description": "The first RC skin, featuring a snowy holiday outfit.",
-          "released": "December 2020",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Winter_Champion_1_shadow.webp"
         },
         {
           "skin_name": "Rogue Champion",
           "TID": "TID_ROGUE_CHAMPION",
           "code": "52000030",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Rouge_Champion_1.webp",
-          "description": "A rogue-themed skin with a dark green hood.",
-          "released": "April 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Rouge_Champion_1.webp"
         },
         {
           "skin_name": "Jungle Champion",
           "TID": "TID_JUNGLE_CHAMPION",
           "code": "52000031",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Jungle_Champion_1_shadow.webp",
-          "description": "A tribal skin with wood and stone jewelry.",
-          "released": "June 2021",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Jungle_Champion_1_shadow.webp"
         },
         {
           "skin_name": "Gladiator Champion",
           "TID": "TID_GLADIATOR_CHAMPION",
           "code": "52000032",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Gladiator_Champion_1_shadow.webp",
-          "description": "A Roman arena skin with a plumed helmet.",
-          "released": "September 2021",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Gladiator_Champion_1_shadow.webp"
         },
         {
           "skin_name": "Shadow Champion",
           "TID": "TID_SHADOW_CHAMPION",
           "code": "52000033",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Shadow_Champion_2_shadow.webp",
-          "description": "A dark spectral skin with a phantom spear.",
-          "released": "March 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Shadow_Champion_2_shadow.webp"
         },
         {
           "skin_name": "Primal Champion",
           "TID": "TID_PRIMAL_CHAMPION",
           "code": "52000034",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Primal_Champion_3_shadow.webp",
-          "description": "A prehistoric hunter skin with bone armor.",
-          "released": "May 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Primal_Champion_3_shadow.webp"
         },
         {
           "skin_name": "Summer Champion",
           "TID": "TID_SUMMER_CHAMPION",
           "code": "52000035",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Summer_Champion_1_shadow.webp",
-          "description": "A casual beach skin with a snorkel.",
-          "released": "July 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Summer_Champion_1_shadow.webp"
         },
         {
           "skin_name": "Pixel Champion",
           "TID": "TID_PIXEL_CHAMPION",
           "code": "52000036",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Pixel_Champion_shadow.webp",
-          "description": "A retro 8-bit style skin for the 10th anniversary.",
-          "released": "August 2022",
-          "availability": "Shop Purchase ($3.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Pixel_Champion_shadow.webp"
         },
         {
           "skin_name": "Party Champion",
           "TID": "TID_PARTY_CHAMPION",
           "code": "52000037",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Party_Champion_1.webp",
-          "description": "An anniversary skin with festive party gear.",
-          "released": "August 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Party_Champion_1.webp"
         },
         {
           "skin_name": "Magic Champion",
           "TID": "TID_TH15_CHAMPION",
           "code": "52000038",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Magic_Champion_2_shadow.webp",
-          "description": "A mystical skin released for the TH15 update.",
-          "released": "October 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Magic_Champion_2_shadow.webp"
         },
         {
           "skin_name": "Pirate Champion",
           "TID": "TID_PIRATE_CHAMPION",
           "code": "52000039",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Pirate_Champion_2_shadow.webp",
-          "description": "A seafaring skin with a captain's hat.",
-          "released": "November 2022",
-          "availability": "Was Avaiable in Season Challenges (Gold Pass). Currently Avaiable for 1500 Gems in the Shop",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Pirate_Champion_2_shadow.webp"
         },
         {
           "skin_name": "Jolly Champion",
           "TID": "TID_JOLLY_CHAMPION",
           "code": "52000040",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Jolly_Champion_1_shadow.webp",
-          "description": "A holiday skin with festive decorations.",
-          "released": "December 2022",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Jolly_Champion_1_shadow.webp"
         },
         {
           "skin_name": "Warrior Champion",
           "TID": "TID_WARRIOR_CHAMPION",
           "code": "52000041",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Warrior_Champion_2_shadow.webp",
-          "description": "A traditional Chinese armor skin for Lunar New Year.",
-          "released": "January 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Warrior_Champion_2_shadow.webp"
         },
         {
           "skin_name": "Painter Champion",
           "TID": "TID_PAINTER_CHAMPION",
           "code": "52000042",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Painter_Champion_1.webp",
-          "description": "An artistic skin with paint-splattered gear.",
-          "released": "March 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Painter_Champion_1.webp"
         },
         {
           "skin_name": "Dark Ages Champion",
           "TID": "TID_DARKAGES_CHAMPION",
           "code": "52000043",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Dark_Ages_Champion_4_shadow.webp",
-          "description": "A medieval knight skin with heavy armor.",
-          "released": "April 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Goblin Champion",
-          "TID": "TID_GOBLIN_CHAMPION",
-          "code": "52000113",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Goblin_Champion_7.webp",
-          "description": "A green-skinned goblin skin with bone armor.",
-          "released": "June 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Future Champion",
-          "TID": "TID_CLASHIVERSARY_CHAMPION",
-          "code": "52000114",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Future_Champion_2_shadow.webp",
-          "description": "A high-tech cybernetic skin with an energy shield.",
-          "released": "August 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Dark_Ages_Champion_4_shadow.webp"
         },
         {
           "skin_name": "Ghost Champion",
           "TID": "TID_GHOST_CHAMPION",
           "code": "52000044",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Ghost_Champion_1.webp",
-          "description": "A translucent ghostly skin with spectral energy.",
-          "released": "October 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Champions' Champion",
-          "TID": "TID_CHAMPION_CHAMPION",
-          "code": "52000116",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Champions_Champion_1_shadow.webp",
-          "description": "A prestigious golden skin for World Championships.",
-          "released": "November 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Gingerbread Champion",
-          "TID": "TID_GINGERBREAD_CHAMPION",
-          "code": "52000115",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Gingerbread_Champion_3.webp",
-          "description": "A holiday skin made of gingerbread.",
-          "released": "December 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Dragon Champion",
-          "TID": "TID_LUNAR_CHAMPION",
-          "code": "52000117",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Dragon_Champion_3_shadow.webp",
-          "description": "A dragon-themed skin for Lunar New Year.",
-          "released": "February 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Ghost_Champion_1.webp"
         },
         {
           "skin_name": "League Champion",
           "TID": "TID_LEAGUE_CHAMPION",
           "code": "52000112",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_League_Champion_2_shadow.webp",
-          "description": "A prestigious war skin available for League Medals.",
-          "released": "February 2024",
-          "availability": "League Shop (2,000 Medals)",
-          "rarity": "exclusive"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_League_Champion_2_shadow.webp"
+        },
+        {
+          "skin_name": "Goblin Champion",
+          "TID": "TID_GOBLIN_CHAMPION",
+          "code": "52000113",
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Goblin_Champion_7.webp"
+        },
+        {
+          "skin_name": "Future Champion",
+          "TID": "TID_CLASHIVERSARY_CHAMPION",
+          "code": "52000114",
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Future_Champion_2_shadow.webp"
+        },
+        {
+          "skin_name": "Gingerbread Champion",
+          "TID": "TID_GINGERBREAD_CHAMPION",
+          "code": "52000115",
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Gingerbread_Champion_3.webp"
+        },
+        {
+          "skin_name": "Champions' Champion",
+          "TID": "TID_CHAMPION_CHAMPION",
+          "code": "52000116",
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Champions_Champion_1_shadow.webp"
+        },
+        {
+          "skin_name": "Dragon Champion",
+          "TID": "TID_LUNAR_CHAMPION",
+          "code": "52000117",
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Dragon_Champion_3_shadow.webp"
         },
         {
           "skin_name": "Space Champion",
           "TID": "TID_SPACE_CHAMPION",
           "code": "52000118",
-          "image_path": "src/assets/heroskin/Hero_Skin_RC_Space_Champion_1.webp",
-          "description": "An astronaut skin with a space helmet.",
-          "released": "March 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_RC_Space_Champion_1.webp"
         },
         {
           "skin_name": "Egypt Champion",
           "TID": "TID_EGYPTIAN_CHAMPION",
           "code": "52000119",
-          "image_path": "src/assets/heroskin/egypt_champion.webp",
-          "description": "An Egyptian pharaoh skin.",
-          "released": "April 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/egypt_champion.webp"
         },
         {
           "skin_name": "Football Champion",
           "TID": "TID_FOOTBALL_CHAMPION",
           "code": "52000120",
-          "image_path": "src/assets/heroskin/football-champion.webp",
-          "description": "A sports skin with a football kit.",
-          "released": "May 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/football-champion.webp"
         },
         {
           "skin_name": "Wild West Champion",
           "TID": "TID_WILDWEST_CHAMPION",
           "code": "52000121",
-          "image_path": "src/assets/heroskin/RoyalChampion_WildWest_Pose01.webp",
-          "description": "A western skin with a hat and holster.",
-          "released": "June 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Anime Champion",
-          "TID": "TID_ANIME_CHAMPION",
-          "code": "52000174",
-          "image_path": "src/assets/heroskin/Anime_RoyalChampion_02.webp",
-          "description": "A stylized anime skin with vibrant colors.",
-          "released": "August 2024",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Paladin Champion",
-          "TID": "TID_TTRPG_CHAMPION",
-          "code": "52000175",
-          "image_path": "src/assets/heroskin/RC_TTRPG_Pose06_NoShadow.webp",
-          "description": "A medieval paladin skin from the RPG season.",
-          "released": "September 2024",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
-        },
-        {
-          "skin_name": "Ice Champion",
-          "TID": "TID_ICE_CHAMPION",
-          "code": "52000176",
-          "image_path": "src/assets/heroskin/Royal_Champion_Ice_Skin_01_Shadow.webp",
-          "description": "A frozen warrior skin with icicle armor.",
-          "released": "January 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Snake Champion",
-          "TID": "TID_LNY25_CHAMPION",
-          "code": "52000177",
-          "image_path": "src/assets/heroskin/RoyalChampion_LNY_2025_Skin.webp",
-          "description": "A reptilian skin for Lunar New Year.",
-          "released": "February 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Sniper Champion",
-          "TID": "TID_MILITARY_CHAMPION",
-          "code": "52000178",
-          "image_path": "src/assets/heroskin/sniper_champion.webp",
-          "description": "A tactical military sniper skin with camo.",
-          "released": "March 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
-        },
-        {
-          "skin_name": "The RoyalEST",
-          "TID": "TID_APRIL25_CHAMPION",
-          "code": "52000179",
-          "image_path": "src/assets/heroskin/RC_wwe_f32_3k.webp",
-          "description": "A wrestling star skin for the ClashaMania season.",
-          "released": "April 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Royal Ninja",
-          "TID": "TID_JAPAN_CHAMPION",
-          "code": "52000180",
-          "image_path": "src/assets/heroskin/RC_Japan_NoShadow_02.webp",
-          "description": "A stealthy Japanese ninja skin.",
-          "released": "May 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Showtime Champion",
-          "TID": "TID_DARKDAYS_CHAMPION",
-          "code": "52000181",
-          "image_path": "src/assets/heroskin/RoyalChampion_DarkDays_f70.webp",
-          "description": "A gritty street skin from the Dark Days season.",
-          "released": "June 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
-        },
-        {
-          "skin_name": "Royal Officer",
-          "TID": "TID_CYBERPUNK_CHAMPION",
-          "code": "52000182",
-          "image_path": "src/assets/heroskin/RC_CyberClash_01_CYBER_Shadow.webp",
-          "description": "A futuristic cyberpunk police skin.",
-          "released": "July 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
-        },
-        {
-          "skin_name": "Clash-A-Rama Champion",
-          "TID": "TID_CLASHARAMA_CHAMPION",
-          "code": "52000183",
-          "image_path": "src/assets/heroskin/RC_Clasharama_02_NoShadow.webp",
-          "description": "A hand-drawn animation style skin.",
-          "released": "August 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/RoyalChampion_WildWest_Pose01.webp"
         },
         {
           "skin_name": "Yeti Champion",
           "TID": "TID_CLASHARAMA_2_CHAMPION",
           "code": "52000162",
-          "image_path": "src/assets/heroskin/RC_MashARama_01_Shadow.webp",
-          "description": "A beast-themed skin from the Mash-A-Rama season.",
-          "released": "September 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/RC_MashARama_01_Shadow.webp"
         },
         {
           "skin_name": "Cursed Champion",
           "TID": "TID_COSMICCURSE_CHAMPION",
           "code": "52000163",
-          "image_path": "src/assets/heroskin/RC_CosmicCurse_f60_4k.webp",
-          "description": "A dark cosmic horror skin from the Cosmic Curse season.",
-          "released": "October 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/RC_CosmicCurse_f60_4k.webp"
         },
         {
           "skin_name": "Nomad Champion",
           "TID": "TID_WASTELANDS_CHAMPION",
           "code": "52000164",
-          "image_path": "src/assets/heroskin/RC_Wastelands_01.webp",
-          "description": "A desert survivalist skin from the Wastelands season.",
-          "released": "November 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/RC_Wastelands_01.webp"
         },
         {
           "skin_name": "Explorer Champion",
           "TID": "TID_FROSTAGE_CHAMPION",
           "code": "52000165",
-          "image_path": "src/assets/heroskin/RoyalChampion_FrostAge_f15_3k_noGroundshadows.webp",
-          "description": "A massive XL Legendary skin with ice magic.",
-          "released": "December 2025",
-          "availability": "Shop Purchase ($32.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/RoyalChampion_FrostAge_f15_3k_noGroundshadows.webp"
+        },
+        {
+          "skin_name": "Anime Champion",
+          "TID": "TID_ANIME_CHAMPION",
+          "code": "52000174",
+          "image_path": "src/assets/heroskin/Anime_RoyalChampion_02.webp"
+        },
+        {
+          "skin_name": "Paladin Champion",
+          "TID": "TID_TTRPG_CHAMPION",
+          "code": "52000175",
+          "image_path": "src/assets/heroskin/RC_TTRPG_Pose06_NoShadow.webp"
+        },
+        {
+          "skin_name": "Ice Champion",
+          "TID": "TID_ICE_CHAMPION",
+          "code": "52000176",
+          "image_path": "src/assets/heroskin/Royal_Champion_Ice_Skin_01_Shadow.webp"
+        },
+        {
+          "skin_name": "Snake Champion",
+          "TID": "TID_LNY25_CHAMPION",
+          "code": "52000177",
+          "image_path": "src/assets/heroskin/RoyalChampion_LNY_2025_Skin.webp"
+        },
+        {
+          "skin_name": "Sniper Champion",
+          "TID": "TID_MILITARY_CHAMPION",
+          "code": "52000178",
+          "image_path": "src/assets/heroskin/sniper_champion.webp"
+        },
+        {
+          "skin_name": "The RoyalEST",
+          "TID": "TID_APRIL25_CHAMPION",
+          "code": "52000179",
+          "image_path": "src/assets/heroskin/RC_wwe_f32_3k.webp"
+        },
+        {
+          "skin_name": "Royal Ninja",
+          "TID": "TID_JAPAN_CHAMPION",
+          "code": "52000180",
+          "image_path": "src/assets/heroskin/RC_Japan_NoShadow_02.webp"
+        },
+        {
+          "skin_name": "Showtime Champion",
+          "TID": "TID_DARKDAYS_CHAMPION",
+          "code": "52000181",
+          "image_path": "src/assets/heroskin/RoyalChampion_DarkDays_f70.webp"
+        },
+        {
+          "skin_name": "Royal Officer",
+          "TID": "TID_CYBERPUNK_CHAMPION",
+          "code": "52000182",
+          "image_path": "src/assets/heroskin/RC_CyberClash_01_CYBER_Shadow.webp"
+        },
+        {
+          "skin_name": "Clash-A-Rama Champion",
+          "TID": "TID_CLASHARAMA_CHAMPION",
+          "code": "52000183",
+          "image_path": "src/assets/heroskin/RC_Clasharama_02_NoShadow.webp"
         }
       ]
     },
@@ -1938,31 +1177,19 @@
           "skin_name": "Armored Machine",
           "TID": "TID_ARMOREDMACHINE",
           "code": "52000153",
-          "image_path": "src/assets/heroskin/Armored_Battle_Machine.webp",
-          "description": "A heavy armored skin for the Battle Machine.",
-          "released": "May 2023",
-          "availability": "Builder Base 2.0 Unlock",
-          "rarity": "exclusive"
+          "image_path": "src/assets/heroskin/Armored_Battle_Machine.webp"
         },
         {
           "skin_name": "Steampunk Machine",
           "TID": "TID_STEAMPUNK_BATTLE_MACHINE",
           "code": "52000155",
-          "image_path": "src/assets/heroskin/BattleMachineSteamPunk3_Shadow.webp",
-          "description": "A gear-filled mechanical skin with copper and brass aesthetics.",
-          "released": "August 2023",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/BattleMachineSteamPunk3_Shadow.webp"
         },
         {
           "skin_name": "Battle Machine Of the North",
           "TID": "TID_OFTHENORTH_BATTLE_MACHINE",
           "code": "52000156",
-          "image_path": "src/assets/heroskin/Hero_Skin_BM_Battle_Machine_of_the_North_1.webp",
-          "description": "A winter warrior machine with heavy furs.",
-          "released": "December 2023",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Hero_Skin_BM_Battle_Machine_of_the_North_1.webp"
         }
       ]
     },
@@ -1973,111 +1200,67 @@
           "skin_name": "Snake Prince",
           "TID": "TID_LNY25_PRINCE",
           "code": "52000251",
-          "image_path": "src/assets/heroskin/MP_600x600-removebg-preview.webp",
-          "description": "A reptilian skin for the Year of the Snake.",
-          "released": "February 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/MP_600x600-removebg-preview.webp"
         },
         {
           "skin_name": "Minion General",
           "TID": "TID_MINION_GENERAL",
           "code": "52000252",
-          "image_path": "src/assets/heroskin/Minion-General-2-Thawne-Gaming.webp",
-          "description": "A tactical military skin with general's regalia.",
-          "released": "March 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/Minion-General-2-Thawne-Gaming.webp"
         },
         {
           "skin_name": "Prince Mysterio",
           "TID": "TID_PRINCE_MYSTERIO",
           "code": "52000253",
-          "image_path": "src/assets/heroskin/MinionPrince_wwe_f82_3k.webp",
-          "description": "A wrestling fighter skin with a mask.",
-          "released": "April 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/MinionPrince_wwe_f82_3k.webp"
         },
         {
           "skin_name": "Cyclone Prince",
           "TID": "TID_CYCLONE_PRINCE",
           "code": "52000254",
-          "image_path": "src/assets/heroskin/MP_Japan_Shadow_02.webp",
-          "description": "A Japanese nautical skin with wind themes.",
-          "released": "May 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/MP_Japan_Shadow_02.webp"
         },
         {
           "skin_name": "Minion Cop",
           "TID": "TID_MINION_COP",
           "code": "52000255",
-          "image_path": "src/assets/heroskin/MinionPrince_DarkDays_f30.webp",
-          "description": "A gritty law enforcement skin from the Dark Days season.",
-          "released": "June 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/MinionPrince_DarkDays_f30.webp"
         },
         {
           "skin_name": "Minion Inventor",
           "TID": "TID_MINION_INVENTOR",
           "code": "52000256",
-          "image_path": "src/assets/heroskin/MP_CyberClash_02_NoShadow.webp",
-          "description": "A cyberpunk inventor skin with high-tech gear.",
-          "released": "July 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/MP_CyberClash_02_NoShadow.webp"
         },
         {
-          "skin_name": "Clash‑A‑Rama Prince",
+          "skin_name": "Clash\u2011A\u2011Rama Prince",
           "TID": "TID_CLASHARAMA_PRINCE",
           "code": "52000257",
-          "image_path": "src/assets/heroskin/MP_Clasharama_02_NoShadow.webp",
-          "description": "A hand-drawn skin from the Clash-A-Rama season.",
-          "released": "August 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/MP_Clasharama_02_NoShadow.webp"
         },
         {
           "skin_name": "Lava Prince",
           "TID": "TID_LAVA_PRINCE",
           "code": "52000258",
-          "image_path": "src/assets/heroskin/MP_MashARama_02_Shadow.webp",
-          "description": "A fiery lava-themed skin from the Mash-A-Rama season.",
-          "released": "September 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/MP_MashARama_02_Shadow.webp"
         },
         {
           "skin_name": "Nightmare Prince",
           "TID": "TID_NIGHTMARE_PRINCE",
           "code": "52000259",
-          "image_path": "src/assets/heroskin/MP_CosmicCurse_f11_4k.webp",
-          "description": "A dark cosmic horror skin from the Cosmic Curse season.",
-          "released": "October 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/MP_CosmicCurse_f11_4k.webp"
         },
         {
           "skin_name": "Armored Prince",
           "TID": "TID_WASTELANDS_MINION_PRINCE",
           "code": "52000260",
-          "image_path": "src/assets/heroskin/MP_Wastelands_02_NoShadow.webp",
-          "description": "A post-apocalyptic scavenger skin from the Wastelands season.",
-          "released": "November 2025",
-          "availability": "Shop Purchase ($9.99)",
-          "rarity": "legendary"
+          "image_path": "src/assets/heroskin/MP_Wastelands_02_NoShadow.webp"
         },
         {
           "skin_name": "Frost Prince",
           "TID": "TID_FROSTAGE_MINION_PRINCE",
           "code": "52000261",
-          "image_path": "src/assets/heroskin/MinionPrince_FrostAge_f60_3k.webp",
-          "description": "A heavy winter skin for the Frostage season.",
-          "released": "December 2025",
-          "availability": "Season Challenges (Gold Pass)",
-          "rarity": "gold"
+          "image_path": "src/assets/heroskin/MinionPrince_FrostAge_f60_3k.webp"
         }
       ]
     }

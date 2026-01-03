@@ -5,682 +5,434 @@
       "name": "Clashy Constructs Scenery",
       "Code": "60000004",
       "TID": "TID_SCENERY_CLASHY_CONSTRUCTS",
-      "image": "src/assets/sceneries/Scenery_Icon_Clashy_Constructs.webp",
-      "description": "The first custom village scenery, featuring a mechanical and wooden construction theme.",
-      "released": "June 2020",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Clashy_Constructs.webp"
     },
     {
       "SN": 2,
       "name": "Pirate Scenery",
       "Code": "60000005",
       "TID": "TID_SCENERY_PIRATE",
-      "image": "src/assets/sceneries/Scenery_Icon_Pirate.webp",
-      "description": "A tropical pirate hideout with shipwrecked vessels and palm trees.",
-      "released": "November 2020",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Pirate.webp"
     },
     {
       "SN": 3,
       "name": "Epic Winter Scenery",
       "Code": "60000006",
       "TID": "TID_SCENERY_EPIC_WINTER",
-      "image": "src/assets/sceneries/Scenery_Icon_Epic_Winter.webp",
-      "description": "A festive, snow-covered village with holiday decorations and lights.",
-      "released": "December 2020",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Epic_Winter.webp"
     },
     {
       "SN": 4,
       "name": "Hog Mountain Scenery",
       "Code": "60000007",
       "TID": "TID_SCENERY_HOG_MOUNTAIN",
-      "image": "src/assets/sceneries/Scenery_Icon_Hog_Mountain.webp",
-      "description": "A mountain-top scenery set above the clouds with rocky peaks.",
-      "released": "February 2021",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Hog_Mountain.webp"
     },
     {
       "SN": 5,
       "name": "Jungle Scenery",
       "Code": "60000008",
       "TID": "TID_SCENERY_JUNGLE",
-      "image": "src/assets/sceneries/Scenery_Icon_Jungle.webp",
-      "description": "A lush, dense jungle theme unlocked upon reaching Town Hall 14.",
-      "released": "April 2021",
-      "availability": "Town Hall 14 Unlock",
-      "rarity": "common"
+      "image": "src/assets/sceneries/Scenery_Icon_Jungle.webp"
     },
     {
       "SN": 6,
       "name": "Epic Jungle Scenery",
       "Code": "60000009",
       "TID": "TID_SCENERY_EPIC_JUNGLE",
-      "image": "src/assets/sceneries/Scenery_Icon_Epic_Jungle.webp",
-      "description": "An elaborate jungle city featuring ancient stone ruins and waterfalls.",
-      "released": "April 2021",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Epic_Jungle.webp"
     },
     {
       "SN": 7,
       "name": "Inferno War Base Scenery",
       "Code": "60000010",
       "TID": "TID_INFERNO_TOWN_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Inferno.webp",
-      "description": "A fiery lava-themed scenery designed exclusively for the War Base layout.",
-      "released": "June 2021",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Inferno.webp"
     },
     {
       "SN": 8,
       "name": "9th Clashiversary Scenery",
       "Code": "60000011",
       "TID": "TID_9TH_CLASHIVERSARY_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_9th_Clashiversary.webp",
-      "description": "A futuristic party landscape celebrating the game's 9th anniversary.",
-      "released": "August 2021",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_9th_Clashiversary.webp"
     },
     {
       "SN": 9,
       "name": "Pumpkin Graveyard",
       "Code": "60000012",
       "TID": "TID_PUMPKIN_GRAVEYARD_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Pumpkin_Graveyard.webp",
-      "description": "A spooky Halloween graveyard with pumpkin patches and fog.",
-      "released": "October 2021",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Pumpkin_Graveyard.webp"
     },
     {
       "SN": 10,
       "name": "Snow Day",
       "Code": "60000013",
       "TID": "TID_SNOWED_IN_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Snow_Day.webp",
-      "description": "A quiet, snow-filled winter village aesthetic.",
-      "released": "December 2021",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Snow_Day.webp"
     },
     {
       "SN": 11,
       "name": "Tiger Mountain",
       "Code": "60000014",
       "TID": "TID_TIGER_MOUNTAIN_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Tiger_Mountain.webp",
-      "description": "A Lunar New Year scenery featuring tiger statues and floating lanterns.",
-      "released": "January 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 13,
-      "name": "Primal Scenery",
-      "Code": "60000016",
-      "TID": "TID_PRIMAL_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Primal.webp",
-      "description": "A prehistoric landscape with massive skeletons and primitive plants.",
-      "released": "March 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 14,
-      "name": "Shadow Scenery",
-      "Code": "60000017",
-      "TID": "TID_SHADOW_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Shadow.webp",
-      "description": "A dark, mystical scenery with floating islands and purple crystals.",
-      "released": "April 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 15,
-      "name": "Royale Scenery",
-      "Code": "60000018",
-      "TID": "TID_ROYALE_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Royale.webp",
-      "description": "A crossover scenery inspired by the arena design of Clash Royale.",
-      "released": "May 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 16,
-      "name": "Summer Scenery",
-      "Code": "60000019",
-      "TID": "TID_SUMMER_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Summer.webp",
-      "description": "A relaxing summer beach resort with clear blue water.",
-      "released": "June 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Tiger_Mountain.webp"
     },
     {
       "SN": 12,
       "name": "Pixel Scenery",
       "Code": "60000015",
       "TID": "TID_PIXEL_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Pixel.webp",
-      "description": "A retro 8-bit aesthetic celebrating the 10th anniversary; originally a free event reward.",
-      "released": "August 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Pixel.webp"
+    },
+    {
+      "SN": 13,
+      "name": "Primal Scenery",
+      "Code": "60000016",
+      "TID": "TID_PRIMAL_SCENERY",
+      "image": "src/assets/sceneries/Scenery_Icon_Primal.webp"
+    },
+    {
+      "SN": 14,
+      "name": "Shadow Scenery",
+      "Code": "60000017",
+      "TID": "TID_SHADOW_SCENERY",
+      "image": "src/assets/sceneries/Scenery_Icon_Shadow.webp"
+    },
+    {
+      "SN": 15,
+      "name": "Royale Scenery",
+      "Code": "60000018",
+      "TID": "TID_ROYALE_SCENERY",
+      "image": "src/assets/sceneries/Scenery_Icon_Royale.webp"
+    },
+    {
+      "SN": 16,
+      "name": "Summer Scenery",
+      "Code": "60000019",
+      "TID": "TID_SUMMER_SCENERY",
+      "image": "src/assets/sceneries/Scenery_Icon_Summer.webp"
     },
     {
       "SN": 17,
       "name": "10th Clashiversary Scenery",
       "Code": "60000020",
       "TID": "TID_10TH_CLASHIVERSARY_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_10th_Clashiversary.webp",
-      "description": "A grand celebration scenery showcasing highlights from the first decade of Clash.",
-      "released": "August 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_10th_Clashiversary.webp"
     },
     {
       "SN": 18,
       "name": "Clash Fest Scenery",
       "Code": "60000021",
       "TID": "TID_CLASHFEST_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Clash_Fest.webp",
-      "description": "A festival-themed scenery with event tents and gaming monitors.",
-      "released": "September 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Clash_Fest.webp"
     },
     {
       "SN": 19,
       "name": "Magic Scenery",
       "Code": "60000022",
       "TID": "TID_MAGIC_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Magic.webp",
-      "description": "A mystical purple-themed forest unlocked upon reaching Town Hall 15.",
-      "released": "October 2022",
-      "availability": "Town Hall 15 Unlock",
-      "rarity": "common"
+      "image": "src/assets/sceneries/Scenery_Icon_Magic.webp"
     },
     {
       "SN": 20,
       "name": "Epic Magic Scenery",
       "Code": "60000023",
       "TID": "TID_EPIC_MAGIC_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Epic_Magic.webp",
-      "description": "A magical forest environment with enchanted glowing crystals.",
-      "released": "October 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Epic_Magic.webp"
     },
     {
       "SN": 31,
       "name": "Spooky Scenery",
       "Code": "60000034",
       "TID": "TID_SPOOKY2022_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Spooky.webp",
-      "description": "A haunted forest scenery released for the 2022 Halloween season.",
-      "released": "October 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Spooky.webp"
     },
     {
       "SN": 32,
       "name": "Jolly Scenery",
       "Code": "60000035",
       "TID": "TID_JOLLY_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Jolly.webp",
-      "description": "A cheerful, snow-covered holiday village for Clashmas 2022.",
-      "released": "December 2022",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Jolly.webp"
     },
     {
       "SN": 33,
       "name": "Magic Theatre Scenery",
       "Code": "60000036",
       "TID": "TID_MAGIC_THEATRE_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Magic_Theatre.webp",
-      "description": "A shadow-theatre style scenery for the 2023 Lunar New Year.",
-      "released": "January 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Magic_Theatre.webp"
     },
     {
       "SN": 34,
       "name": "Painter Scenery",
       "Code": "60000037",
       "TID": "TID_PAINTER_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Painter.webp",
-      "description": "A colorful artistic canvas theme originally part of the Gold Pass.",
-      "released": "March 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Painter.webp"
     },
     {
       "SN": 36,
       "name": "Dark Ages Scenery",
       "Code": "60000040",
       "TID": "TID_DARK_AGES_SCENERY",
-      "image": "src/assets/sceneries/DarkAges_23_Scenery.webp",
-      "description": "A medieval fortress scenery with dark, heavy stone architecture.",
-      "released": "April 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/DarkAges_23_Scenery.webp"
     },
     {
       "SN": 37,
       "name": "Books of Clash Scenery",
       "Code": "60000041",
       "TID": "TID_SCENERY_BOOKS_OF_CLASH",
-      "image": "src/assets/sceneries/Scenery_Icon_Books_of_Clash.webp",
-      "description": "A scenery inspired by the 'Books of Clash' graphic novels.",
-      "released": "May 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Books_of_Clash.webp"
     },
     {
       "SN": 38,
       "name": "War Arena Scenery",
       "Code": "60000042",
       "TID": "TID_CWL23_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_War_Arena.webp",
-      "description": "A massive gladiator arena designed for War Bases.",
-      "released": "June 2023",
-      "availability": "League Shop (2,400 Medals)",
-      "rarity": "exclusive"
+      "image": "src/assets/sceneries/Scenery_Icon_War_Arena.webp"
     },
     {
       "SN": 39,
       "name": "Goblin Caves Scenery",
       "Code": "60000043",
       "TID": "TID_SCENERY_GOBLIN_CAVES",
-      "image": "src/assets/sceneries/Scenery_Icon_Goblin_Caves.webp",
-      "description": "A subterranean scenery featuring goblin caves and gold-filled mines.",
-      "released": "June 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 44,
-      "name": "Future Scenery",
-      "Code": "60000048",
-      "TID": "TID_SCENERY_FUTURE",
-      "image": "src/assets/sceneries/Scenery_Icon_Future.webp",
-      "description": "A futuristic city with high-tech buildings and holographic displays.",
-      "released": "August 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Goblin_Caves.webp"
     },
     {
       "SN": 42,
       "name": "Chess Scenery",
       "Code": "60000046",
       "TID": "TID_SCENERY_CHESS",
-      "image": "src/assets/sceneries/Scenery_Icon_Chess.webp",
-      "description": "A strategy-themed landscape designed as a giant chessboard.",
-      "released": "September 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Chess.webp"
     },
     {
       "SN": 43,
       "name": "Crystal Caverns Scenery",
       "Code": "60000047",
       "TID": "TID_SCENERY_CRYSTAL_CAVERNS",
-      "image": "src/assets/sceneries/Scenery_Icon_Crystal_Caverns.webp",
-      "description": "An underground cavern system filled with glowing crystals.",
-      "released": "October 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Crystal_Caverns.webp"
+    },
+    {
+      "SN": 44,
+      "name": "Future Scenery",
+      "Code": "60000048",
+      "TID": "TID_SCENERY_FUTURE",
+      "image": "src/assets/sceneries/Scenery_Icon_Future.webp"
     },
     {
       "SN": 45,
       "name": "Ghost Scenery",
       "Code": "60000049",
       "TID": "TID_SCENERY_GHOST",
-      "image": "src/assets/sceneries/Scenery_Icon_Ghost.webp",
-      "description": "A spectral Halloween theme featuring ghosts and a phantom atmosphere.",
-      "released": "October 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Ghost.webp"
     },
     {
       "SN": 48,
       "name": "Champion Scenery",
       "Code": "60000052",
       "TID": "TID_SCENERY_CHAMPION",
-      "image": "src/assets/sceneries/Scenery_Icon_Champion.webp",
-      "description": "A grand arena built for the Clash of Clans World Championships.",
-      "released": "November 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Champion.webp"
     },
     {
       "SN": 49,
       "name": "Gingerbread Scenery",
       "Code": "60000053",
       "TID": "TID_SCENERY_GINGERBREAD",
-      "image": "src/assets/sceneries/Scenery_Icon_Gingerbread.webp",
-      "description": "A candy-filled scenery made of gingerbread and icing for the holidays.",
-      "released": "December 2023",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Gingerbread.webp"
     },
     {
       "SN": 50,
       "name": "Of the North Scenery",
       "Code": "60000054",
       "TID": "TID_SCENERY_OFTHENORTH",
-      "image": "src/assets/sceneries/Scenery_Icon_BB_Winterforest.webp",
-      "description": "A rugged northern landscape with snowy pine forests.",
-      "released": "January 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_BB_Winterforest.webp"
     },
     {
       "SN": 51,
       "name": "Dragon Palace Scenery",
       "Code": "60000055",
       "TID": "TID_DRAGON_PALACE_SCENERY",
-      "image": "src/assets/sceneries/Scenery_Icon_Dragon_Palace.webp",
-      "description": "A majestic dragon palace for the Year of the Dragon.",
-      "released": "February 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Dragon_Palace.webp"
     },
     {
       "SN": 52,
       "name": "Space Scenery",
       "Code": "60000056",
       "TID": "TID_SCENERY_SPACE",
-      "image": "src/assets/sceneries/Scenery_Icon_Space_Scenery.webp",
-      "description": "A village set in space on an asteroid with orbiting planets.",
-      "released": "March 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Space_Scenery.webp"
     },
     {
       "SN": 53,
       "name": "Egypt Scenery",
       "Code": "60000057",
       "TID": "TID_SCENERY_EGYPT",
-      "image": "src/assets/sceneries/Scenery_Icon_HV_Egypt_Scenery.webp",
-      "description": "An ancient Egyptian scenery with pyramids and golden sand dunes.",
-      "released": "April 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_HV_Egypt_Scenery.webp"
     },
     {
       "SN": 54,
       "name": "Football Scenery",
       "Code": "60000058",
       "TID": "TID_SCENERY_CLASHBALL",
-      "image": "src/assets/sceneries/Scenery_Icon_Clashball_Scenery.webp",
-      "description": "A sports-themed scenery featuring a massive football stadium.",
-      "released": "May 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_Clashball_Scenery.webp"
     },
     {
       "SN": 55,
       "name": "Wild West Scenery",
       "Code": "60000059",
       "TID": "TID_SCENERY_WILDWEST",
-      "image": "src/assets/sceneries/Scenery_Icon_WildWest_Scenery.webp",
-      "description": "A dusty Wild West frontier town with saloons and cacti.",
-      "released": "June 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Scenery_Icon_WildWest_Scenery.webp"
     },
     {
       "SN": 56,
       "name": "Clash Games Stadium",
       "Code": "60000060",
       "TID": "TID_SCENERY_CLASHGAMES",
-      "image": "src/assets/sceneries/clash-games-scenery-in-clash-of-clans-icon.webp",
-      "description": "An athletic stadium scenery released for the summer sports season.",
-      "released": "July 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/clash-games-scenery-in-clash-of-clans-icon.webp"
     },
     {
       "SN": 57,
       "name": "Anime Scenery",
       "Code": "60000061",
       "TID": "TID_SCENERY_ANIME",
-      "image": "src/assets/sceneries/Anime_Scenery.webp",
-      "description": "A hand-drawn anime aesthetic with cel-shaded village elements.",
-      "released": "August 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 59,
-      "name": "Clash of Dragons",
-      "Code": "60000063",
-      "TID": "TID_SCENERY_TTRPG",
-      "image": "src/assets/sceneries/clash-of-dragons-legendary-scenery-in-clash-of-clans-icon.webp",
-      "description": "A massive 'XL' Legendary scenery with interactive hero animations.",
-      "released": "September 2024",
-      "availability": "Shop ($32.99)",
-      "rarity": "legendary"
-    },
-    {
-      "SN": 60,
-      "name": "Doomed Scenery",
-      "Code": "60000064",
-      "TID": "TID_SCENERY_CLASHOWEEN2024",
-      "image": "src/assets/sceneries/Clashoween24_Scenery.webp",
-      "description": "A dark, doomed graveyard theme for the 2024 Clashoween event.",
-      "released": "October 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 61,
-      "name": "Justice Scenery",
-      "Code": "60000065",
-      "TID": "TID_SCENERY_TH17",
-      "image": "src/assets/sceneries/Justice_Scenery_Icon.webp",
-      "description": "A heroic and noble scenery released for the Town Hall 17 update.",
-      "released": "November 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 62,
-      "name": "War Machine Scenery",
-      "Code": "60000066",
-      "TID": "TID_SCENERY_WAR_MACHINE",
-      "image": "src/assets/sceneries/War_Machine_Scenery_Icon.webp",
-      "description": "A mechanical war base scenery featuring a giant rolling tank.",
-      "released": "November 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Anime_Scenery.webp"
     },
     {
       "SN": 58,
       "name": "Crossover Scenery",
       "Code": "60000062",
       "TID": "TID_SCENERY_MASHUP",
-      "image": "src/assets/sceneries/crossover-scenery-in-clash-of-clans-icon.webp",
-      "description": "A special crossover landscape for Supercell ID users.",
-      "released": "December 2024",
-      "availability": "Supercell ID Reward",
-      "rarity": "exclusive"
+      "image": "src/assets/sceneries/crossover-scenery-in-clash-of-clans-icon.webp"
+    },
+    {
+      "SN": 59,
+      "name": "Clash of Dragons",
+      "Code": "60000063",
+      "TID": "TID_SCENERY_TTRPG",
+      "image": "src/assets/sceneries/clash-of-dragons-legendary-scenery-in-clash-of-clans-icon.webp"
+    },
+    {
+      "SN": 60,
+      "name": "Doomed Scenery",
+      "Code": "60000064",
+      "TID": "TID_SCENERY_CLASHOWEEN2024",
+      "image": "src/assets/sceneries/Clashoween24_Scenery.webp"
+    },
+    {
+      "SN": 61,
+      "name": "Justice Scenery",
+      "Code": "60000065",
+      "TID": "TID_SCENERY_TH17",
+      "image": "src/assets/sceneries/Justice_Scenery_Icon.webp"
+    },
+    {
+      "SN": 62,
+      "name": "War Machine Scenery",
+      "Code": "60000066",
+      "TID": "TID_SCENERY_WAR_MACHINE",
+      "image": "src/assets/sceneries/War_Machine_Scenery_Icon.webp"
     },
     {
       "SN": 63,
       "name": "Toy Workshop Scenery",
       "Code": "60000067",
       "TID": "TID_SCENERY_CLASHMAS2024",
-      "image": "src/assets/sceneries/toy-workshop-scenery-in-clash-of-clans-icon.webp",
-      "description": "A festive toy-factory workshop for the Clashmas 2024 season.",
-      "released": "December 2024",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/toy-workshop-scenery-in-clash-of-clans-icon.webp"
     },
     {
       "SN": 64,
       "name": "Fire and Ice Scenery",
       "Code": "60000068",
       "TID": "TID_SCENERY_FIRE_ICE",
-      "image": "src/assets/sceneries/Fire_&_Ice_Scenery.webp",
-      "description": "A contrasting realm split between lava flows and arctic ice.",
-      "released": "January 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 66,
-      "name": "Year of the Snake",
-      "Code": "60000070",
-      "TID": "TID_SCENERY_LNY2025",
-      "image": "src/assets/sceneries/scenery_icon_LNY2025.webp",
-      "description": "An XL-sized Legendary scenery celebrating the 2025 Year of the Snake.",
-      "released": "February 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "legendary"
-    },
-    {
-      "SN": 67,
-      "name": "Military Scenery",
-      "Code": "60000071",
-      "TID": "TID_SCENERY_ACTION_HEROES",
-      "image": "src/assets/sceneries/military-scenery-in-clash-of-clans-icon.webp",
-      "description": "A tactical military base scenery with barracks and airfield elements.",
-      "released": "March 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 68,
-      "name": "ClashaMania Scenery",
-      "Code": "60000072",
-      "TID": "TID_SCENERY_APRIL25",
-      "image": "src/assets/sceneries/Clashamania_25_Scenery.webp",
-      "description": "A wrestling-themed arena with stadium seating and bright lights.",
-      "released": "April 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 69,
-      "name": "High Seas Scenery",
-      "Code": "60000073",
-      "TID": "TID_SCENERY_JAPAN25",
-      "image": "src/assets/sceneries/05_Japan_25_Scenery.webp",
-      "description": "A Japanese nautical theme featuring feudal-era ships and sea waves.",
-      "released": "May 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 70,
-      "name": "Dark Days Scenery",
-      "Code": "60000074",
-      "TID": "TID_SCENERY_DARK_DAYS",
-      "image": "src/assets/sceneries/DarkDays_25_Scenery.webp",
-      "description": "A rain-soaked cyberpunk city scenery with urban details.",
-      "released": "June 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "gold"
-    },
-    {
-      "SN": 71,
-      "name": "Cyber Scenery",
-      "Code": "60000075",
-      "TID": "TID_SCENERY_CYBERCLASH",
-      "image": "src/assets/sceneries/07_Cyberclash_25_Scenery.webp",
-      "description": "A neon-lit futuristic city with high-tech buildings and hovering cars.",
-      "released": "July 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Fire_&_Ice_Scenery.webp"
     },
     {
       "SN": 65,
       "name": "Clash-A-Rama Scenery",
       "Code": "60000069",
       "TID": "TID_SCENERY_CLASHARAMA2025",
-      "image": "src/assets/sceneries/08_ClashARama_25_DefaultScenery.webp",
-      "description": "A cell-shaded scenery based on the official Clash-A-Rama animation series.",
-      "released": "August 2025",
-      "availability": "Hero Rush Event Reward",
-      "rarity": "exclusive"
+      "image": "src/assets/sceneries/08_ClashARama_25_DefaultScenery.webp"
+    },
+    {
+      "SN": 66,
+      "name": "Year of the Snake",
+      "Code": "60000070",
+      "TID": "TID_SCENERY_LNY2025",
+      "image": "src/assets/sceneries/scenery_icon_LNY2025.webp"
+    },
+    {
+      "SN": 67,
+      "name": "Military Scenery",
+      "Code": "60000071",
+      "TID": "TID_SCENERY_ACTION_HEROES",
+      "image": "src/assets/sceneries/military-scenery-in-clash-of-clans-icon.webp"
+    },
+    {
+      "SN": 68,
+      "name": "ClashaMania Scenery",
+      "Code": "60000072",
+      "TID": "TID_SCENERY_APRIL25",
+      "image": "src/assets/sceneries/Clashamania_25_Scenery.webp"
+    },
+    {
+      "SN": 69,
+      "name": "High Seas Scenery",
+      "Code": "60000073",
+      "TID": "TID_SCENERY_JAPAN25",
+      "image": "src/assets/sceneries/05_Japan_25_Scenery.webp"
+    },
+    {
+      "SN": 70,
+      "name": "Dark Days Scenery",
+      "Code": "60000074",
+      "TID": "TID_SCENERY_DARK_DAYS",
+      "image": "src/assets/sceneries/DarkDays_25_Scenery.webp"
+    },
+    {
+      "SN": 71,
+      "name": "Cyber Scenery",
+      "Code": "60000075",
+      "TID": "TID_SCENERY_CYBERCLASH",
+      "image": "src/assets/sceneries/07_Cyberclash_25_Scenery.webp"
     },
     {
       "SN": 72,
       "name": "13th Clash-A-Versary Scenery",
       "Code": "60000076",
       "TID": "TID_SCENERY_CLASHAVERSARY2025",
-      "image": "src/assets/sceneries/08_ClashARama_25_Scenery.webp",
-      "description": "A celebratory landscape honoring 13 years of Clash of Clans.",
-      "released": "August 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/08_ClashARama_25_Scenery.webp"
     },
     {
       "SN": 73,
       "name": "Mash-A-Rama Scenery",
       "Code": "60000077",
       "TID": "TID_SCENERY_MASHARAMA",
-      "image": "src/assets/sceneries/paisagem-mistur-a-rama-do-clash-of-clans-XLs2Pw.webp",
-      "description": "A subterranean mashup scenery combining multiple game themes.",
-      "released": "September 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/paisagem-mistur-a-rama-do-clash-of-clans-XLs2Pw.webp"
     },
     {
       "SN": 74,
       "name": "Cosmic Scenery",
       "Code": "60000078",
       "TID": "TID_SCENERY_COSMICCURSE",
-      "image": "src/assets/sceneries/1000x1000_CosmicCurse_25_Scenery.webp",
-      "description": "A large-scale astral space scenery with cosmic visual effects.",
-      "released": "October 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/1000x1000_CosmicCurse_25_Scenery.webp"
     },
     {
       "SN": 75,
       "name": "Ruined Kingdom War Scenery",
       "Code": "60000079",
       "TID": "TID_SCENERY_WAR_RUINED",
-      "image": "src/assets/sceneries/Ruined_Kingdom_War_Scenery.webp",
-      "description": "A devastated kingdom war scenery released for the 2025 season.",
-      "released": "October 2025",
-      "availability": "Shop ($6.99)",
-      "rarity": "gold"
+      "image": "src/assets/sceneries/Ruined_Kingdom_War_Scenery.webp"
     },
     {
       "SN": 76,
       "name": "Wasteland Scenery",
       "Code": "60000080",
       "TID": "TID_SCENERY_WASTELANDS",
-      "image": "src/assets/sceneries/11_Wastelands_25_Scenery.webp",
-      "description": "An XL Legendary scenery featuring post-apocalyptic wasteland terrain.",
-      "released": "November 2025",
-      "availability": "Currently unavailable (Vaulted)",
-      "rarity": "legendary"
+      "image": "src/assets/sceneries/11_Wastelands_25_Scenery.webp"
     },
     {
       "SN": 77,
-      "name": "Frostage Scenery",
+      "name": "Frost Age Scenery",
       "Code": "60000081",
       "TID": "TID_SCENERY_FROSTAGE",
-      "image": "src/assets/sceneries/12_FrostAge_25_Scenery.webp",
-      "description": "A massive winter-themed Legendary scenery with blizzard effects.",
-      "released": "December 2025",
-      "availability": "Shop ($6.99)",
-      "rarity": "legendary"
+      "image": "src/assets/sceneries/12_FrostAge_25_Scenery.webp"
     }
   ]
 }
