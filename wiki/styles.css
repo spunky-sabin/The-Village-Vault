@@ -137,8 +137,8 @@ svg {
 .header {
     position: relative;
     overflow: hidden;
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
     padding: 1.5rem 1rem;
 }
 
@@ -533,22 +533,22 @@ svg {
     border-collapse: separate;
     border-spacing: 0;
     margin-bottom: 2rem;
-    background: var(--card);
+    background: var(--bg-card);
     border-radius: 0.5rem;
     overflow: hidden;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-color);
 }
 
 .wiki-gallery-table th,
 .wiki-gallery-table td {
     border: none;
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-color);
     padding: 1rem;
     vertical-align: middle;
 }
 
 .wiki-gallery-table th {
-    background: var(--secondary);
+    background: var(--bg-panel);
     color: var(--gold);
     text-transform: uppercase;
     font-size: 0.85rem;
@@ -689,9 +689,9 @@ svg {
     text-align: center;
     padding: 2rem;
     margin-top: 4rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-color);
     color: var(--muted-foreground);
-    background: var(--card);
+    background: var(--bg-card);
 }
 
 .wiki-footer a {
