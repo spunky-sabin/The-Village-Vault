@@ -1,31 +1,31 @@
 {
   "season": "Desert Nights",
-  "calendar_image": "https://i.redd.it/6q58jt8dfjag1.png",
+  "calendar_image": "clashicons/calander.webp",
   "skins": [
     {
-      "name": "",
-      "image": "src/assets/heroskin/"
+      "name": "Desert King",
+      "image": "src/assets/heroskin/BarbarianKing_DesertNights_f41_6k.webp"
     },
     {
-      "name": "",
-      "image": "src/assets/heroskin/"
+      "name": "Queen Of the Dunes",
+      "image": "src/assets/heroskin/ArcherQueen_DesertNights_f11_6k_withGroundshadows.webp"
     },
     {
-      "name": "",
-      "image": "src/assets/heroskin/"
+      "name": "Grand Sorcerer",
+      "image": "src/assets/heroskin/GrandWarden_DesertNights_f41_6k_withGroundshadows.webp"
     },
     {
-      "name": "",
-      "image": "src/assets/heroskin/"
+      "name": "Mirage Champion",
+      "image": "src/assets/heroskin/RoyalChampion_DesertNights_f01_6k_withGroundshadows.webp"
     },
     {
-      "name": "",
-      "image": "src/assets/heroskin/"
+      "name": "Genie Prince",
+      "image": "src/assets/heroskin/MinionPrince_DesertNights_f02_6k_withGroundshadows.webp"
     }
   ],
   "scenery": {
     "name": "Desert Nights Scenery",
-    "image": "src/assets/sceneries/desertnights.png"
+    "image": "src/assets/sceneries/01_DesertNights_Scenery.webp"
   },
   "decorations": []
 }

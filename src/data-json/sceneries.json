@@ -433,6 +433,13 @@
       "Code": "60000081",
       "TID": "TID_SCENERY_FROSTAGE",
       "image": "src/assets/sceneries/12_FrostAge_25_Scenery.webp"
+    },
+    {
+      "SN": 78,
+      "name": "Desert Nights Scenery",
+      "Code": "60000082",
+      "TID": "TID_SCENERY_DESERT_NIGHTS",
+      "image": "src/assets/sceneries/01_DesertNights_Scenery.webp"
     }
   ]
 }

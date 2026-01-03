@@ -326,6 +326,12 @@
           "TID": "TID_FROSTAGE_KING",
           "code": "52000286",
           "image_path": "src/assets/heroskin/BarbarianKing_FrostAge_f50_3k.webp"
+        },
+        {
+          "skin_name": "Desert King",
+          "TID": "TID_DESERT_NIGHTS_KING",
+          "code": "52000287",
+          "image_path": "src/assets/heroskin/BarbarianKing_DesertNights_f41_6k_withGroundshadows.webp"
         }
       ]
     },
@@ -649,6 +655,12 @@
           "TID": "TID_FROSTAGE_QUEEN",
           "code": "52000222",
           "image_path": "src/assets/heroskin/ArcherQueen_FrostAge_f90_3k_noGroundShadow.webp"
+        },
+        {
+          "skin_name": "Queen Of the Dunes",
+          "TID": "TID_DESERT_NIGHTS_QUEEN",
+          "code": "52000223",
+          "image_path": "src/assets/heroskin/ArcherQueen_DesertNights_f11_6k_withGroundshadows.webp"
         }
       ]
     },
@@ -920,6 +932,12 @@
           "TID": "TID_FROSTAGE_WARDEN",
           "code": "52000243",
           "image_path": "src/assets/heroskin/GrandWarden_FrostAge_f50_3k.webp"
+        },
+        {
+          "skin_name": "Grand Sorcerer",
+          "TID": "TID_DESERT_NIGHTS_WARDEN",
+          "code": "52000244",
+          "image_path": "src/assets/heroskin/GrandWarden_DesertNights_f41_6k_withGroundshadows.webp"
         }
       ]
     },
@@ -1167,6 +1185,12 @@
           "TID": "TID_CLASHARAMA_CHAMPION",
           "code": "52000183",
           "image_path": "src/assets/heroskin/RC_Clasharama_02_NoShadow.webp"
+        },
+        {
+          "skin_name": "Mirage Champion",
+          "TID": "TID_DESERT_NIGHTS_CHAMPION",
+          "code": "52000184",
+          "image_path": "src/assets/heroskin/RoyalChampion_DesertNights_f01_6k_withGroundshadows.webp"
         }
       ]
     },
@@ -1261,6 +1285,12 @@
           "TID": "TID_FROSTAGE_MINION_PRINCE",
           "code": "52000261",
           "image_path": "src/assets/heroskin/MinionPrince_FrostAge_f60_3k.webp"
+        },
+        {
+          "skin_name": "Genie Prince",
+          "TID": "TID_DESERT_NIGHTS_PRINCE",
+          "code": "52000262",
+          "image_path": "src/assets/heroskin/MinionPrince_DesertNights_f02_6k_withGroundshadows.webp"
         }
       ]
     }

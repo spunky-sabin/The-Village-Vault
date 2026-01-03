@@ -8,7 +8,7 @@
             "description": "Season challenges and rewards available",
             "active": true,
             "ignoreDate": true,
-            "image": "clashicons/Icon_HV_Gold_Pass.png",
+            "image": "clashicons/Icon_HV_Gold_Pass.webp",
             "start": "2026-01-01T08:00:00Z",
             "end": "2026-01-31T08:00:00Z"
         },
@@ -21,7 +21,7 @@
             "description": "Capital Raid Weekend battles",
             "active": true,
             "ignoreDate": true,
-            "image": "clashicons/Icon_HV_Raid_Medal.png",
+            "image": "clashicons/Icon_HV_Raid_Medal.webp",
             "start": "2025-12-26T07:00:00Z",
             "end": "2025-12-29T07:00:00Z"
         },
@@ -33,7 +33,7 @@
             "description": "New deals available from the Trader",
             "active": true,
             "ignoreDate": true,
-            "image": "clashicons/Villager_HV_Trader_2.png",
+            "image": "clashicons/Villager_HV_Trader_1.webp",
             "start": "2025-12-30T08:00:00Z",
             "end": "2025-12-30T08:00:00Z"
         },
@@ -57,7 +57,7 @@
             "description": "Compete in league wars for medals",
             "active": true,
             "ignoreDate": true,
-            "image": "clashicons/Icon_HV_CWL_Champion_3.png",
+            "image": "clashicons/Icon_HV_CWL_Champion_3.webp",
             "start": "2026-01-01T08:00:00Z",
             "end": "2026-01-11T08:00:00Z"
         }
@@ -72,7 +72,7 @@
             "active": true,
             "type": "one-time",
             "ignoreDate": false,
-            "image": "clashicons/challange.png"
+            "image": "clashicons/challange.webp"
         },
         {
             "title": "Trader Specials",
@@ -83,7 +83,7 @@
             "active": true,
             "type": "one-time",
             "ignoreDate": false,
-            "image": "clashicons/Villager_HV_Trader_2.png"
+            "image": "clashicons/Villager_HV_Trader_1.webp"
         },
         {
             "title": "Equipment Blast",
@@ -94,7 +94,7 @@
             "active": true,
             "type": "one-time",
             "ignoreDate": false,
-            "image": "clashicons/equipment.png"
+            "image": "clashicons/equipment.webp"
         },
         {
             "title": "Treasure Hunt",
@@ -105,7 +105,7 @@
             "active": true,
             "type": "one-time",
             "ignoreDate": false,
-            "image": "clashicons/treasurehunt.png"
+            "image": "clashicons/treasurehunt.webp"
         }
     ]
 }
