@@ -2,6 +2,9 @@
 // THE VILLAGE VAULT - SHARED CORE MODULE
 // Common utilities, state management, and rendering functions
 // Used by all tracker sub-pages
+// 
+// DEPENDENCY: This module requires cache-manager.js to be loaded first
+// for localStorage caching with timestamp validation
 // ============================================
 
 // ============================================
@@ -209,7 +212,22 @@ function parseUserData(jsonString) {
         const parsed = JSON.parse(jsonString);
         const codes = extractCodesFromJSON(parsed);
         state.userOwnedCodes = new Set(codes);
-        localStorage.setItem('userCollectionData', jsonString);
+
+        // Use CacheManager to save data with timestamp validation
+        // This ensures the timestamp is validated and stored for 24-hour expiration checks
+        if (window.CacheManager) {
+            const cacheResult = window.CacheManager.saveClanData(jsonString);
+            if (!cacheResult.success) {
+                console.warn('Cache save failed:', cacheResult.message);
+                // Fall back to legacy storage if cache manager fails
+                localStorage.setItem('userCollectionData', jsonString);
+            }
+        } else {
+            // Fallback if cache manager isn't loaded
+            console.warn('CacheManager not available, using legacy storage');
+            localStorage.setItem('userCollectionData', jsonString);
+        }
+
         Object.keys(state.allItems).forEach(categoryId => {
             state.allItems[categoryId] = state.allItems[categoryId].map(item => ({
                 ...item,
@@ -819,9 +837,19 @@ function handleDataClear() {
     state.communityRarity = {};
     state.totalCollectors = 0;
     state.selectedRarity = [];
-    localStorage.removeItem('userCollectionData');
+
+    // Use CacheManager to clear cached data
+    if (window.CacheManager) {
+        window.CacheManager.clearClanData();
+    } else {
+        // Fallback to legacy cleanup
+        localStorage.removeItem('userCollectionData');
+    }
+
+    // Clear community data (not managed by CacheManager)
     localStorage.removeItem('communityRarityData');
     localStorage.removeItem('totalCollectors');
+
     document.getElementById("clear-data-btn").style.display = "none";
     // Hide rarity filter when no community data
     const rarityFilterGroup = document.getElementById('rarity-filter-group');
@@ -917,18 +945,63 @@ async function initializePage(categoryId) {
 
     state.items = state.allItems[categoryId] || [];
 
-    // Load user collection data from localStorage (persists across pages)
-    const userCollectionData = localStorage.getItem('userCollectionData');
-    if (userCollectionData) {
-        try {
-            const parsed = JSON.parse(userCollectionData);
-            const result = parseUserData(JSON.stringify(parsed));
-            if (result.success) {
-                const clearBtn = document.getElementById("clear-data-btn");
-                if (clearBtn) clearBtn.style.display = "block";
+    // Load user collection data from localStorage with timestamp validation
+    // Use CacheManager to ensure data is not older than 24 hours
+    if (window.CacheManager) {
+        const cacheResult = window.CacheManager.loadClanData();
+
+        if (cacheResult.status === 'valid') {
+            // Data is valid and not expired, load it
+            try {
+                const result = parseUserData(JSON.stringify(cacheResult.data));
+                if (result.success) {
+                    const clearBtn = document.getElementById("clear-data-btn");
+                    if (clearBtn) clearBtn.style.display = "block";
+
+                    // Show subtle notification about data age
+                    if (cacheResult.ageHours > 0) {
+                        console.log(`Loaded cached data (${cacheResult.ageHours} hours old)`);
+                    }
+                }
+            } catch (err) {
+                console.error("Error loading cached data:", err);
             }
-        } catch (err) {
-            console.error("Error loading stored collection data:", err);
+        } else if (cacheResult.status === 'expired') {
+            // Data exists but is older than 24 hours
+            console.warn(cacheResult.message);
+
+            // Clear the expired data
+            window.CacheManager.clearClanData();
+
+            // Show user-friendly message that data is stale
+            showToast(
+                "Data Expired",
+                `Your cached data is ${cacheResult.ageHours} hours old. Please upload a fresh export.`,
+                "warning"
+            );
+        } else if (cacheResult.status === 'not_found') {
+            // No cached data, user needs to upload
+            console.log('No cached data found');
+        } else {
+            // Error occurred (corrupted data, invalid timestamp, etc.)
+            console.error('Cache load error:', cacheResult.message);
+            showToast("Cache Error", cacheResult.message, "error");
+        }
+    } else {
+        // Fallback to legacy localStorage loading if CacheManager not available
+        console.warn('CacheManager not available, using legacy data loading');
+        const userCollectionData = localStorage.getItem('userCollectionData');
+        if (userCollectionData) {
+            try {
+                const parsed = JSON.parse(userCollectionData);
+                const result = parseUserData(JSON.stringify(parsed));
+                if (result.success) {
+                    const clearBtn = document.getElementById("clear-data-btn");
+                    if (clearBtn) clearBtn.style.display = "block";
+                }
+            } catch (err) {
+                console.error("Error loading stored collection data:", err);
+            }
         }
     }
 
